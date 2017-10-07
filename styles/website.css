@@ -1,0 +1,27 @@
+p,
+blockquote,
+ul,
+ol,
+dl,
+table,
+figure,
+pre {
+  text-align: justify;
+}
+figure {
+    display: block;
+    margin: 1.5em 0px;
+    padding:10px 0;
+
+}
+ 
+figcaption {
+    clear: left;
+    margin: 0.75em 0px;
+    text-align: left;
+    font-style: italic;
+    line-height: 1.5em;
+    color: #C8CCCC;
+}
+
+

@@ -1,0 +1,17 @@
+{
+    "plugins": [
+        "image-captions",
+        "alerts",
+        "collapsible-menu",
+        "katex"
+    ],
+    "pluginsConfig": {
+      "image-captions": {
+          "caption": "Figura_PAGE_IMAGE_NUMBER_ - _CAPTION_"
+         
+      }
+      
+  }
+
+
+}

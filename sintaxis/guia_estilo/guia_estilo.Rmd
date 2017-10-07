@@ -1,0 +1,286 @@
+```{r knitsetup, echo=FALSE, results='hide', warning=FALSE, message=FALSE, cache=FALSE}
+opts_knit$set(base.dir='./', fig.path='', out.format='md')
+opts_chunk$set(prompt=FALSE, comment='##', results='markup', collapse=TRUE, echo=TRUE, eval=TRUE)
+# See yihui.name/knitr/options for more Knitr options.
+##### Put other setup R code here
+
+
+# end setup chunk
+```
+
+
+```{r, include=FALSE}
+tutorial::go_interactive()
+```
+
+
+
+
+# Guía Estilo R
+
+Los estándares para el estilo en el código no son lo mismo que la sintaxis del lenguaje, aunque están estrechamente relacionados. Es importante adoptar un buen estilo para maximizar la legibilidad de nuestro código para que su mantenimiento sea más fácil tanto para nosotros como otros programadores.
+
+En este curso, hemos adoptado la _[Guía Estilo de Hadley Wickham]_ que incluye en su libro _Advanced R_ y que está basada en la _[Guía Estilo R de Google]_. A continuación se muestra un resumen de sus sugerencias:
+
+[Guía Estilo de Hadley Wickham]: http://adv-r.had.co.nz/Style.html
+[Guía Estilo R de Google]: https://google.github.io/styleguide/Rguide.xml
+
+
+
+## Nombres de Archivos
+
+En los nombres de los archivos debemos usar nombres descriptivos, no tienen que incluir caracteres especiales (tildes, eñes) y asegurarse que su extensión es "__.R__"
+
+
+```r
+# Bien
+regresion_lineal.R
+lectura_datos.R
+
+# Mal
+regresión_lineal.R
+versiondellunes.R
+```
+
+## Nombres de los Objetos
+
+
+> "Hay únicamente dos problemas realmente duros en informática; el primero
+> es la invalidación de cachés, y el segundo darles nombres apropiados a  > lascosas"
+>
+> David Wheeler
+
+
+Los nombres de los objetos y funciones deben ser en minúscula y hemos de separar con guión bajo (_) aquellos nombres compuestos de varias palabras. Wickham recomienda usar sustantivos para los nombres de los objetos y verbos para las funciones. Debemos elegir nombres concisos y descriptivos para nuestros objetos (tarea nada fácil). Para la comunidad hispanohablante recomendamos no utilizar tildes y eñes en los nombres de los objetos.
+
+
+```r
+# Bien
+primer_cuartil
+cuartil_1
+
+# Mal
+CuartilUno
+C1
+está_en_el_primer_cuartil
+```
+
+
+
+## Espacios
+
+Antes y después de todos los operadores infijos (=, +, <-, etc) hay que colocar un espacio. No hay que dejar espacios después de una coma, pero una coma siempre es seguida de un espacio.
+
+
+```r
+# Bien
+hipotenusa <- sqrt( a ^ 2 + b ^ 2)
+v <- c(1, 2, 3)
+```
+
+```{r eval=FALSE}
+hipotenusa<-sqrt(a^2+b^2)
+v <- c(1,2,3)
+```
+
+
+La excepción a esta regla es cuando usamos el operador de secuencia `:` 
+
+
+```r
+# Bien
+vector <- 1:10
+
+# Mal
+vector <- 1 : 10
+
+```
+
+Antes del paréntesis izquierdo va un espacio, a no ser que estemos llamando a una función.
+
+
+```r
+# Bien
+if (1 > 2) "mayor" else "menor"
+mean(1:10)
+
+# Mal
+if(1 > 2) "mayor" else "menor"
+mean (1:10)
+```
+
+## Punto y coma
+
+Se recomienda no usar punto y coma en nuestras expresiones. 
+
+
+```r
+# Bien
+x <- 1
+y <- 2
+z <- 3
+
+# Mal
+x <- 1; y <- 2; z <- 3
+```
+
+
+## Llaves
+
+Abrir una llave nunca debería ocurrir en su propia línea y siempre se sigue con una línea nueva. La llave que cierra siempre tiene que ir su propia línea, a menos que se trate de `else`. Siempre usaremos llaves aunque el cuerpo de la estructura de control contenga sólo una instrucción.
+
+Dentro de las llaves utilizaremos sangrado para indicar que se trata de un bloque de instrucciones.
+
+
+```r
+# Bien
+if (1 < 2) {
+  "mayor"
+  } else {
+  "menor"
+}
+
+if (x == 0) {
+  "cero"
+}
+
+# Mal 
+if (1 < 2) 
+{
+"mayor"
+} 
+else {
+"menor"
+}
+
+if (x == 0) 
+"cero"
+
+```
+
+
+## Longitud de Líneas
+
+La longitud de nuestras líneas debe tener como máximo 80 caracteres. Si usamos
+RStudio podemos activarlo en:
+
+
+> 
+> `Tools -> Global Options -> Code -> Display`
+> 
+
+seleccionando la casilla
+
+
+
+> 
+> `[] Show margin`
+> `Margin column [80]`
+> 
+
+
+nos aparecerá una guía en el editor indicando el límite hasta donde podemos 
+escribir nuestra línea.
+
+![Longitud linea en RStudio](http://i.imgur.com/cPetVB9.png)
+
+
+
+
+## Sangría
+
+Respecto a la sangría en nuestro código se sugiere usar dos espacios para añadir sangría a nuestro código y nunca la tecla
+`TAB`. En el caso que usemos RStudio podemos configurar la tecla `TAB` para que 
+utilice dos espacios en:
+
+
+> 
+> `Tools -> Global Options -> Code -> Editing`
+> 
+
+![Tabulador en RStudio](http://i.imgur.com/Cr0ppy2.png)
+              
+## Asignación
+
+En la instrucción de asignación se aconseja el uso del operador `<-` en lugar de
+`=`, reservando este último para declarar argumentos dentro de las funciones.
+
+
+```r
+# Bien
+x <- 2
+
+# Mal
+x = 2
+```
+
+
+## Comentarios
+
+
+Recomendamos documentar el código mediante el uso de comentarios. Cada linea debe comenzar con el signo almohadilla `(#)` seguido de un espacio en blanco. Los comentarios deben explicar el porqué, y no el qué.
+
+Para separa y estructurar el código en bloques es común el uso de más de una almohadilla `#`. RStudio ofrece las características de _Code Folding y Sections_ que nos permite mostrar y ocultar bloques de código permitiendo una navegación más fácil en nuestros archivos.
+
+![Code folding & Sections en RStudio](http://i.imgur.com/ouGkSdI.png)
+
+## Resumen
+
+- Creamos nuevos objetos con el operador de asignación `<-`.
+- Podemos conocer el tipo de un objeto con la función `typeof()`.
+- Todos los objetos pertenecen a una clase.
+- Mediante la función `class()` hallaremos la clase a la que pertenece un objeto.
+- Alternativamente, podemos comprobar la clase de un objeto mediante la función
+`is`, o mediante una de sus variantes específicas.
+- Podemos cambiar la clase de un objeto mediante la función `as`, o una de sus variantes
+específicas.
+- R proporciona valores especiales para el $$\infty$$ y $$-\infty$$, NaN (not-a-number) y
+NA (valores desconocidos).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
