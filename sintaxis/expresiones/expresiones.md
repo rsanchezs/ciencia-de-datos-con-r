@@ -3,6 +3,8 @@
 
 
 
+
+
 # Expresiones y Asignación
 
 
@@ -40,12 +42,20 @@ R proporciona diferentes construcciones para agrupar expresiones:
 Podemos escribir una serie de expresiones en líneas separadas:
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ4IDwtIDFcbnkgPC0gMlxueiA8LSAzIn0=</div>
+
+```r
+x <- 1
+y <- 2
+z <- 3
+```
 
 Alternativamente, podemos colocarlas en la misma línea, separadas por punto y coma:
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ4IDwtIDE7IHkgPC0gMjsgeiA8LSAzIn0=</div>
+
+```r
+x <- 1; y <- 2; z <- 3
+```
 
 ### Paréntesis
 
@@ -73,23 +83,14 @@ Las llaves son usadas para evaluar una serie de expresiones (separadas por nueva
 
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ7eCA8LSAxOyB5IDwtIDI7IHggKyB5fSJ9</div>
+
+```r
+{x <- 1; y <- 2; x + y}
+## [1] 3
+```
 
 Usado para agrupar un conjunto de expresiones en el cuerpo de una función:
 
 
 <div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJmIDwtIGZ1bmN0aW9uKCkge3ggPC0gMTsgeSA8LSAyOyB4ICsgeX1cbmYoKSJ9</div>
-
-## Ejercicios
-
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJwcmVfZXhlcmNpc2VfY29kZSI6ImIgPC0gNVxuIiwic2FtcGxlIjoiIyBDcmVhIHVuYSB2YXJpYWJsZSBhLCBpZ3VhbCBhIDVcblxuIyBNb3N0cmFtb3MgYVxuIiwic29sdXRpb24iOiIjIENyZWEgdW5hIHZhcmlhYmxlIGEsIGlndWFsIGEgNVxuYSA8LSA1XG4jIE1vc3RyYW1vcyBhXG5hIiwic2N0IjoidGVzdF9vYmplY3QoXCJhXCIpXG50ZXN0X291dHB1dF9jb250YWlucyhcImFcIiwgaW5jb3JyZWN0X21zZyA9IFwiQXNlZ3VyYXRlIGRlIG1vc3RyYXIgcG9yIHBhbnRhbGxhIGBhYC5cIilcbnN1Y2Nlc3NfbXNnKFwiXHUwMGExRXhjZWxlbnRlIVwiKVxuIn0=</div>
-
-
-
-
-
-
-
-
-
 

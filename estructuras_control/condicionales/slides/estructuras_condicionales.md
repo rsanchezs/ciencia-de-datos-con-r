@@ -2,7 +2,10 @@
 title: "Estructuras condicionales"
 author: "Rubén Sánchez Sancho"
 date: "25 de Septiembre de 2017"
-output: ioslides_presentation
+output: 
+  ioslides_presentation:
+    fig_width: 8
+    fig_height: 3
 logo: ./logo.png
 highlight: TRUE
 incremental: TRUE
@@ -49,7 +52,7 @@ slides > slide {
 
 <style>
 pre {
-  width : 100%;
+  width : 90%;
   padding: 10px 15px 10px 15px;
   left: 0px;
   background-color: #2A3137;
@@ -184,7 +187,7 @@ if (is.na(NA)) {
 
 ## La cláusula else
 
-El código después de un `else` se ejecuta sólo si la condición en `if` es `FALSE`:
+El código de `if` se ejecuta sólo si la condición es `TRUE`:
 
 
 ```r
@@ -234,7 +237,7 @@ centralizacion <- "moda"
 ```
 
 
-## Múltiples condiciones | `if-else` anidados
+## Múltiples Condiciones | `if-else` anidados {.smaller}
 
 
 
@@ -252,8 +255,9 @@ if (centralizacion == "media") {
    mediana = median(muestra)
    message("La mediana es ", as.character(mediana))
 } else if (centralizacion == "moda") {
-   moda = mlv(muestra, method = "mfv")
-   message("La moda es ", as.character(moda))
+   moda = mlv(muestra, type="mfv")
+   print(moda)
+   plot.mlv(moda)
 } else {
   message("Este algoritmo sola calcula la media,
           mediana, moda")
@@ -261,16 +265,13 @@ if (centralizacion == "media") {
 ```
 
 
-## If Vectorizado | Con la función __`ifelse`__
+## Múltiples Condiciones | `if-else` anidados {.smaller}
 
 
 
-```r
-if (c(TRUE, FALSE)) {
-  message("dos condiciones")
-}
 ```
-
+## Error in eval(expr, envir, enclos): object 'centralizacion' not found
+```
 
 ## If Vectorizado | Con la función __`ifelse`__
 
@@ -292,6 +293,21 @@ if (condicion) {
 RECUERDA: La instrucción estándar acepta en la condición lógica un 
 único valor lógico. 
 ```
+
+
+
+
+## If Vectorizado | Con la función __`ifelse`__
+
+
+
+```r
+if (c(TRUE, FALSE)) {
+  message("dos condiciones")
+}
+```
+
+
 
 
 
@@ -321,8 +337,7 @@ Ejemplo:
 
 
 ```r
-ifelse(rbinom(n = 10, size = 1, prob = 0.5),
-       "cara", "cruz")
+ifelse(rbinom(n = 10, size = 1, prob = 0.5), "cara", "cruz")
 ```
 
 
@@ -335,27 +350,32 @@ __Uso__
 str(switch)
 ```
 
+
+
 __Argumentos__
 
 ```{}
 EXPR:  una expresión que evalua un string
 ... :  una lista con alternativas. Estas alternativas se les dará nombre, 
 excepto a aquella que sea usada como valor por defecto.
-
 ```
+
 
 ## Selección Múltiple con `swith()` {.smaller}
 
 
+
+
+
+
 ```r
 # Creamos una muestra de 20 observaciones del 1 al 100 en
-# el que se pueden repetir hasta 2 observaciones
-(muestra <- sample(1:100, 20, 2))
-
+# el que se pueden repetir hasta 5
+muestra <- sample(1:100, 20, 5)
 
 #Calculamos la media de la muestra
 (switch(
-  "media",
+  "moda",
   media = mean(muestra),
   mediana = median(muestra),
   moda = mlv(muestra, method = "mfv")

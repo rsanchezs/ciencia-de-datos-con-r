@@ -20,7 +20,7 @@ tutorial::go_interactive()
 Todo el código R manipula objetos. El _objeto_, es el concepto principal sobre el cual se fundamenta la tecnología orientada a objetos. Un objeto puede ser visto como una entidad que posee atributos y efectúa acciones. Ejemplos de objetos en R incluyen las funciones, [symbols](#symbols) (nombre objetos) e incluso las expresiones. A continuación se muestran algunos ejemplos de objetos:
 
 
-```{r eval=FALSE}
+```{r eval=FALSE, tut=FALSE}
 # Una función es un objeto
 function() {x <- 1; y <- 2; x + y}
 
@@ -45,7 +45,7 @@ f(1, 2)
 Formalmente, los nombres de las variables en R se designan como _symbol_. Cuando realizamos una asignación de un objeto al nombre de una variable, estamos en realidad asignando el objeto a un symbol. Por ejemplo, la instrucción:
 
 
-```{r}
+```{r tut=FALSE}
 x <- 1
 ```
 
@@ -82,7 +82,7 @@ El uso de la función `class()` es útil para examinar nuestros objetos en un tr
 
 
 
-```{r eval=FALSE}
+```{r eval=FALSE, tut=FALSE}
 if(!is(x, "alguna_clase")) {
   
   # alguna acción correctiva

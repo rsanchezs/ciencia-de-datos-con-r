@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Estructuras condicionales</title>
+  <title>Estructuras iterativas</title>
 
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -20,7 +20,7 @@
     var SLIDE_CONFIG = {
       // Slide settings
       settings: {
-                title: 'Estructuras condicionales',
+                title: 'Estructuras iterativas',
                         useBuilds: true,
         usePrettify: true,
         enableSlideAreas: true,
@@ -110,7 +110,7 @@
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
       <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
       <p data-config-presenter><!-- populated from slide_config.json --></p>
-            <p style="margin-top: 6px; margin-left: -2px;">25 de Septiembre de 2017</p>
+            <p style="margin-top: 6px; margin-left: -2px;">01 de Octubre de 2017</p>
           </hgroup>
   </slide>
 
@@ -155,7 +155,7 @@ slides > slide {
 
 <style>
 pre {
-  width : 90%;
+  width : 100%;
   padding: 10px 15px 10px 15px;
   left: 0px;
   background-color: #2A3137;
@@ -178,7 +178,7 @@ pre {
 
 <!-- } -->
 
-</style>
+<!-- </style> -->
 
 <style>
 code {
@@ -236,221 +236,241 @@ table.rmdtable td, table th {
 }
 </style>
 
-<slide class=''><hgroup><h2>if y else</h2></hgroup><article  id="if-y-else">
-
-<p>La instrucción <strong><code>if</code></strong> toma un valor lógico (en realidad, un vector lógico de longitud uno) y ejecuta la siguiente instrucción sólo si el valor es <strong><code>TRUE</code></strong>:</p>
-
-<pre class = 'prettyprint lang-r'>n &lt;- 2
-if (n %% 2 == 0) {
-  message(&quot;Es verdadero, se ejecutara la instruccion&quot;,
-          &quot; porque el numero &quot;, n, &quot; es par&quot;)
-}</pre>
-
-<pre >## Es verdadero, se ejecutara la instruccion porque el numero 2 es par</pre>
-
-</article></slide><slide class=''><hgroup><h2>if y else</h2></hgroup><article  id="if-y-else-1">
-
-<p>La instrucción <strong><code>if</code></strong> toma un valor lógico (en realidad, un vector lógico de longitud uno) y ejecuta la siguiente instrucción sólo si el valor es <strong><code>TRUE</code></strong>:</p>
-
-<pre class = 'prettyprint lang-r'>n &lt;- 3
-if (n %% 2 == 0) {
-  message(&quot;Es falso, no se ejecutara la instruccion.&quot;)
-}  </pre>
-
-</article></slide><slide class=''><hgroup><h2>Valores NA en la condición lógica en if</h2></hgroup><article  id="valores-na-en-la-condicion-logica-en-if">
-
-<p>En el caso que pasemos valores desconocidos (<strong><code>NA</code></strong>) a <strong><code>if</code></strong>, R lanzará un error:</p>
-
-<pre class = 'prettyprint lang-r'>if (NA) {
-  message(&quot;Los valores desconocidos lanzan un error&quot;)
-}</pre>
-
-<pre >## Error in if (NA) {: valor ausente donde TRUE/FALSE es necesario</pre>
-
-</article></slide><slide class=''><hgroup><h2>Valores NA en la condición lógica en if</h2></hgroup><article  id="valores-na-en-la-condicion-logica-en-if-1">
-
-<p>Si nos encontramos ante esta situación, deberíamos comprobarlo mediante la función <strong><code>is.na()</code></strong>:</p>
-
-<pre class = 'prettyprint lang-r'>if (is.na(NA)) {
-  message(&quot;El valor es desconocido.&quot;)
-}  </pre>
-
-<pre >## El valor es desconocido.</pre>
-
-</article></slide><slide class=''><hgroup><h2>La cláusula else</h2></hgroup><article  id="la-clausula-else">
-
-<p>El código de <code>if</code> se ejecuta sólo si la condición es <code>TRUE</code>:</p>
-
-<pre class = 'prettyprint lang-r'>n &lt;- 2
-
-if (n %% 2 == 0) {
-  message(n, &quot; es par&quot;)
-} else {
-  message(n, &quot; es impar&quot;)
-}</pre>
-
-<pre >## 2 es par</pre>
-
-</article></slide><slide class=''><hgroup><h2>La cláusula else</h2></hgroup><article  id="la-clausula-else-1">
-
-<p>El código después de un <code>else</code> se ejecuta sólo si la condición en <code>if</code> es <code>FALSE</code>:</p>
-
-<pre class = 'prettyprint lang-r'>n &lt;- 3
-
-if (n %% 2 == 0) {
-  message(n, &quot; es par&quot;)
-} else {
-  message(n, &quot; es impar&quot;)
-}</pre>
-
-<pre >## 3 es impar</pre>
-
-</article></slide><slide class=''><hgroup><h2>Múltiples Condiciones </h2><h3> <code>if-else</code> anidados</h3></hgroup><article  id="multiples-condiciones-if-else-anidados">
+<slide class=''><hgroup><h2>Bucle <strong><code>for</code></strong></h2></hgroup><article  id="bucle-for">
 
 <p><strong>Ejemplo:</strong></p>
 
-<pre class = 'prettyprint lang-r'># Creamos una muestra de 20 observaciones del 1 al 100 en
-# el que se pueden repetir hasta 2 observaciones
-(muestra &lt;- sample(1:100, 20, 2))</pre>
+<pre class = 'prettyprint lang-r'># Creamos un vector aleaotorio de 5 observaciones
+observaciones &lt;- sample(1:50, 5, replace = TRUE)
 
-<pre >##  [1] 27 14 24 36 19 88 71  6 79 48 92 30 41 56 87 30 59 47 71 81</pre>
+# Inicializamos `suma` de todas las observaciones
+suma &lt;- 0
 
-<pre class = 'prettyprint lang-r'>## Creamos una variable indicando la medida de tendencia central
-## que queremos calcular
-centralizacion &lt;- &quot;moda&quot;</pre>
+# Creamos un bucle for que calcula la media
+for(i in seq_along(observaciones)) {
+  suma &lt;-  observaciones[i] + suma
+  media &lt;- suma / length(observaciones)
+}
 
-</article></slide><slide class=''><hgroup><h2>Múltiples Condiciones </h2><h3> <code>if-else</code> anidados</h3></hgroup><article  id="multiples-condiciones-if-else-anidados-1" class="smaller">
+# Mostramos por pantalla la media
+media</pre>
+
+<pre >## [1] 38.8</pre>
+
+</article></slide><slide class=''><hgroup><h2>Bucles <strong><code>for</code></strong> Anidados</h2></hgroup><article  id="bucles-for-anidados">
+
+<p>Los bucles <code>for</code> pueden ser anidados:</p>
+
+<pre class = 'prettyprint lang-r'># Creamos dos matrices cuadradas
+m1 &lt;- matrix(sample(1:100, 9, replace = TRUE), nrow = 3)
+m2 &lt;- matrix(sample(1:100, 9, replace = TRUE), nrow = 3)
+
+# Inicializamos la matriz que contendra m1+m2
+suma &lt;- matrix(nrow = 3, ncol = 3)
+
+# Para cada fila y cada columna, realizamos la suma elemento a elemento 
+for(i in 1:nrow(m1)) {
+  for(j in 1:ncol(m1)) {
+    suma[i, j] &lt;- m1[i, j] + m2[i, j]
+  }
+}
+
+# Mostramos por pantalla la suma de m1+m2
+suma</pre>
+
+<pre >##      [,1] [,2] [,3]
+## [1,]  131  122   25
+## [2,]  165  148  175
+## [3,]   57   32   75</pre>
+
+</article></slide><slide class=''><hgroup><h2>Bucle <strong><code>while</code></strong></h2></hgroup><article  id="bucle-while">
 
 <p><strong>Ejemplo:</strong></p>
 
-<pre class = 'prettyprint lang-r'>## Algoritmo para calcular la tendencia central que deseamos
-if (centralizacion == &quot;media&quot;) {
-   media = mean(muestra)
-   message(&quot;La media es &quot;, as.character(media))
-} else if (centralizacion == &quot;mediana&quot;) {
-   mediana = median(muestra)
-   message(&quot;La mediana es &quot;, as.character(mediana))
-} else if (centralizacion == &quot;moda&quot;) {
-   moda = mlv(muestra, type=&quot;mfv&quot;)
-   print(moda)
-   plot.mlv(moda)
-} else {
-  message(&quot;Este algoritmo sola calcula la media,
-          mediana, moda&quot;)
+<pre class = 'prettyprint lang-r'># Algoritmo que muestra por pantalla los 5 primeros números naturales
+n = 1
+while(n &lt;= 5) {
+  print(n)
+  n = n + 1
 }</pre>
 
-</article></slide><slide class=''><hgroup><h2>Múltiples Condiciones </h2><h3> <code>if-else</code> anidados</h3></hgroup><article  id="multiples-condiciones-if-else-anidados-2" class="smaller">
+<pre >## [1] 1
+## [1] 2
+## [1] 3
+## [1] 4
+## [1] 5</pre>
 
-<pre >## Mode (most frequent value): 30 71 
-## Bickel&#39;s modal skewness: -0.1 
-## Call: mlv.integer(x = muestra, type = &quot;mfv&quot;)</pre>
+</article></slide><slide class=''><hgroup><h2>Bucle <strong><code>repeat</code></strong></h2></hgroup><article  id="bucle-repeat">
 
-<p><img src="data:image/png;base64,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" width="768" /></p>
+<p>Como alternativa al ejemplo anterior, podríamos codificar el algoritmo como:</p>
 
-</article></slide><slide class=''><hgroup><h2>If Vectorizado </h2><h3> Con la función <strong><code>ifelse</code></strong></h3></hgroup><article  id="if-vectorizado-con-la-funcion-ifelse">
-
-<pre class = 'prettyprint lang-r'>if (condicion) {
-  &quot;hacer algo&quot;
-} else {
-  &quot;hacer algo diferente&quot;
+<pre class = 'prettyprint lang-r'># Algoritmo que muestra por pantalla los 5 primeros números naturales
+n = 1
+repeat {
+  if(n &lt;= 5) {
+    print(n)
+    n = n +1
+  } else {
+    break
+  }
 }</pre>
 
-<pre >RECUERDA: La instrucción estándar acepta en la condición lógica un 
-único valor lógico. </pre>
+<pre >## [1] 1
+## [1] 2
+## [1] 3
+## [1] 4
+## [1] 5</pre>
 
-</article></slide><slide class=''><hgroup><h2>If Vectorizado </h2><h3> Con la función <strong><code>ifelse</code></strong></h3></hgroup><article  id="if-vectorizado-con-la-funcion-ifelse-1">
+</article></slide><slide class=''><hgroup><h2>Cláusula <strong><code>break</code></strong></h2></hgroup><article  id="clausula-break">
 
-<pre class = 'prettyprint lang-r'>if (c(TRUE, FALSE)) {
-  message(&quot;dos condiciones&quot;)
+<pre class = 'prettyprint lang-r'># Creamos una matriz cuadrada de 6 x 6
+m &lt;-
+  matrix(
+    data = sample(x = 10, size = 36, replace = TRUE),
+                  nrow = 6,
+                  ncol = 6
+  )
+# Mostramos por pantalla `m`
+m</pre>
+
+<pre >##      [,1] [,2] [,3] [,4] [,5] [,6]
+## [1,]    1    9    7    4    5    1
+## [2,]    4    6    1    8   10    3
+## [3,]    2    7    4    4   10    7
+## [4,]    6    6    3    1   10    8
+## [5,]    1    5    6    7    6    9
+## [6,]    8    6    1    7   10    5</pre>
+
+<pre class = 'prettyprint lang-r'># Creamos un vector para la diagonal principal
+diagonal_principal &lt;- vector(mode = &quot;integer&quot;, length = nrow(m))
+diagonal_principal</pre>
+
+<pre >## [1] 0 0 0 0 0 0</pre>
+
+</article></slide><slide class=''><hgroup><h2>Cláusula <strong><code>break</code></strong></h2></hgroup><article  id="clausula-break-1">
+
+<pre class = 'prettyprint lang-r'># Algoritmo que calcula la matriz triangular inferior y su diagonal principal
+for (i in 1:nrow(m)) {
+  for (j in 1:ncol(m)) {
+    if (i == j) {
+      break
+    } else {
+      m [i, j] &lt;- 0
+    }
+    
+  }
+  diagonal_principal[j] &lt;- m[i, j]
+}
+
+# Mostramos por pantalla diagonal principal
+diagonal_principal</pre>
+
+<pre >## [1] 1 6 4 1 6 5</pre>
+
+<pre class = 'prettyprint lang-r'># Mostraamos por pantalla matriz inferior de m
+m</pre>
+
+<pre >##      [,1] [,2] [,3] [,4] [,5] [,6]
+## [1,]    1    9    7    4    5    1
+## [2,]    0    6    1    8   10    3
+## [3,]    0    0    4    4   10    7
+## [4,]    0    0    0    1   10    8
+## [5,]    0    0    0    0    6    9
+## [6,]    0    0    0    0    0    5</pre>
+
+</article></slide><slide class=''><hgroup><h2>Cláusula <strong><code>next</code></strong></h2></hgroup><article  id="clausula-next">
+
+<pre class = 'prettyprint lang-r'>for (i in 1:10) {
+  if(i %% 2)
+    next
+    print(i)
 }</pre>
 
-<pre >## Warning in if (c(TRUE, FALSE)) {: la condición tiene longitud &gt; 1 y sólo el
-## primer elemento será usado</pre>
+<pre >## [1] 2
+## [1] 4
+## [1] 6
+## [1] 8
+## [1] 10</pre>
 
-<pre >## dos condiciones</pre>
+</article></slide><slide class=''><hgroup><h2>Alternativas al Uso de Bucles en R</h2></hgroup><article  id="alternativas-al-uso-de-bucles-en-r">
 
-</article></slide><slide class=''><hgroup><h2>If Vectorizado </h2><h3> Con la función <strong><code>ifelse</code></strong></h3></hgroup><article  id="if-vectorizado-con-la-funcion-ifelse-2" class="build">
+</article></slide><slide class=''><hgroup><h2>Alternativas al Uso de Bucles en R</h2></hgroup><article  id="alternativas-al-uso-de-bucles-en-r-1">
 
-<p><strong>Uso</strong></p>
+<p>Sirva de ejemplo el siguiente algoritmo que calcula el cuadrado de cada elemento en una secuenca de 1 a <code>n</code>, el cual puede realizarse elemento a elemento mediante el bucle <code>for</code> como:</p>
 
-<pre class = 'prettyprint lang-r'>str(ifelse)</pre>
+<pre class = 'prettyprint lang-r'>n &lt;- 5
+res &lt;- rep(NA_integer_, n) 
+for (i in seq_len(n)) {
+  res[i] &lt;- i ^ 2
+}
+res</pre>
 
-<pre >## function (test, yes, no)</pre>
+<pre >## [1]  1  4  9 16 25</pre>
 
-<p><strong>Argumentos</strong></p>
+</article></slide><slide class=''><hgroup><h2>Alternativas al Uso de Bucles en R </h2><h3> Vectorización</h3></hgroup><article  id="alternativas-al-uso-de-bucles-en-r-vectorizacion">
 
-<pre >test: un objeto que pueda ser coercionado a un tipo lógico
-yes:  devuelve los valores `TRUE` en los elementos de `test`
-no:   devuelve los valores `FALSE` de `test` </pre>
+<p>Si bien, podemos usar como alternativa la vectorización nativa de R:</p>
 
-</article></slide><slide class=''><hgroup><h2>If Vectorizado </h2><h3> Con la función <strong><code>ifelse</code></strong></h3></hgroup><article  id="if-vectorizado-con-la-funcion-ifelse-3">
+<pre class = 'prettyprint lang-r'>n &lt;- 5
+seq_len(n) ^ 2</pre>
 
-<p>Ejemplo:</p>
+<pre >## [1]  1  4  9 16 25</pre>
 
-<pre class = 'prettyprint lang-r'>ifelse(rbinom(n = 10, size = 1, prob = 0.5), &quot;cara&quot;, &quot;cruz&quot;)</pre>
+</article></slide><slide class=''><hgroup><h2>Alternativas al Uso de Bucles en R </h2><h3> El Conjunto de Funciones <strong><code>apply</code></strong></h3></hgroup><article  id="alternativas-al-uso-de-bucles-en-r-el-conjunto-de-funciones-apply" class="build">
 
-<pre >##  [1] &quot;cruz&quot; &quot;cara&quot; &quot;cruz&quot; &quot;cara&quot; &quot;cruz&quot; &quot;cruz&quot; &quot;cruz&quot; &quot;cara&quot; &quot;cara&quot; &quot;cara&quot;</pre>
+<ul>
+<li><p>Nos permite manipular una selección de elementos en estructuras de datos de forma <strong>repetitiva</strong>.</p></li>
+<li><p>Nos permiten <strong>iterar</strong> por los elementos sin tener que utilizar una construcción iterativa.</p></li>
+<li><p>Toman como entrada una estructura de datos y una función y aplican esta función a cada elemento.</p></li>
+</ul>
 
-</article></slide><slide class=''><hgroup><h2>Selección Múltiple con <code class="build">swith()</code></h2></hgroup><article  id="seleccion-multiple-con-swith">
+</article></slide><slide class=''><hgroup><h2>Alternativas al Uso de Bucles en R </h2><h3> El Conjunto de Funciones <strong><code>apply</code></strong></h3></hgroup><article  id="alternativas-al-uso-de-bucles-en-r-el-conjunto-de-funciones-apply-1">
 
-<p><strong>Uso</strong></p>
+<ul>
+<li>apply</li>
+<li>lapply</li>
+<li>sapply</li>
+<li>vapply</li>
+<li>mapply</li>
+<li>rapply</li>
+<li>tapply</li>
+</ul>
 
-<pre class = 'prettyprint lang-r'>str(switch)</pre>
+<p>Podemos consultar la documentación en RStudio mediante la instrucción:</p>
 
-<pre >## function (EXPR, ...)</pre>
+<pre class = 'prettyprint lang-r'>?apply</pre>
 
-<p><strong>Argumentos</strong></p>
+</article></slide><slide class=''><hgroup><h2>Alternativas al Uso de Bucles en R </h2><h3> El Conjunto de Funciones <strong><code>apply</code></strong></h3></hgroup><article  id="alternativas-al-uso-de-bucles-en-r-el-conjunto-de-funciones-apply-2">
 
-<pre >EXPR:  una expresión que evalua un string
-... :  una lista con alternativas. Estas alternativas se les dará nombre, 
-excepto a aquella que sea usada como valor por defecto.</pre>
+<p>El algoritmo del cuadrado de una secuencia de 1 a <code>n</code> se puede calcular mediante <code>sapply</code>:</p>
 
-</article></slide><slide class=''><hgroup><h2>Selección Múltiple con <code class="smaller">swith()</code></h2></hgroup><article  id="seleccion-multiple-con-swith-1">
+<pre class = 'prettyprint lang-r'>n &lt;- 5
+sapply(1:n, function(x) x^2)</pre>
 
-<pre class = 'prettyprint lang-r'># Creamos una muestra de 20 observaciones del 1 al 100 en
-# el que se pueden repetir hasta 5
-muestra &lt;- sample(1:100, 20, 5)
+<pre >## [1]  1  4  9 16 25</pre>
 
-#Calculamos la media de la muestra
-(switch(
-  &quot;moda&quot;,
-  media = mean(muestra),
-  mediana = median(muestra),
-  moda = mlv(muestra, method = &quot;mfv&quot;)
-  ))</pre>
+</article></slide><slide class=''><hgroup><h2>Alternativas al Uso de Bucles en R </h2></hgroup><article  id="alternativas-al-uso-de-bucles-en-r-2">
 
-<pre >## Mode (most frequent value): 13 
-## Bickel&#39;s modal skewness: 0.9 
-## Call: mlv.integer(x = muestra, method = &quot;mfv&quot;)</pre>
+</article></slide><slide class=''><hgroup><h2>Alternativas al Uso de Bucles en R </h2><h3> El paquete</h3></hgroup><article  id="alternativas-al-uso-de-bucles-en-r-el-paquete">
 
-</article></slide><slide class=''><hgroup><h2>Selección Múltiple con <code>swith()</code></h2></hgroup><article  id="seleccion-multiple-con-swith-2">
+<p><strong>Instalación</strong>:</p>
 
-<p>Si ningún nombre coincide, entonces <code>switch</code> devuelve <code>NULL</code>:</p>
+<pre class = 'prettyprint lang-r'># La manera mas facil de conseguir `purrr` es instalar el ecosistema tidyverse
+install.packages(&quot;tidyverse&quot;)</pre>
 
-<pre class = 'prettyprint lang-r'># Intentamos calcular la desviación típica
-(switch(
-  &quot;desviacion_tipica&quot;,
-  media = mean(x),
-  mediana = median(x),
-  moda = mlv(x, method = &quot;mfv&quot;)
-  ))</pre>
+<pre class = 'prettyprint lang-r'># Alternativamente, podemos instalar solo purrr:
+install.packages(&quot;purrr&quot;)</pre>
 
-<pre >## NULL</pre>
+</article></slide><slide class=''><hgroup><h2>Alternativas al Uso de Bucles en R </h2><h3> El paquete</h3></hgroup><article  id="alternativas-al-uso-de-bucles-en-r-el-paquete-1">
 
-</article></slide><slide class=''><hgroup><h2>Selección Múltiple con <code>swith()</code></h2></hgroup><article  id="seleccion-multiple-con-swith-3">
+<p>Por último, el algoritmo del cuadrado de una secuencia de 1 a <code>n</code> se puede calcular mediante <code>purrr::map()</code>:</p>
 
-<p>Podemos proporcionar un valor por defecto:</p>
+<pre class = 'prettyprint lang-r'>n &lt;- 5
+map_dbl(1:n,  function(x) x ^ 2)</pre>
 
-<pre class = 'prettyprint lang-r'># Intentamos calcular la desviación típica
-(switch(
-  &quot;desviacion_tipica&quot;,
-  media = mean(x),
-  mediana = median(x),
-  moda = mlv(x, method = &quot;mfv&quot;),
-  &quot;Solo se puede calcular la media, mediana y moda&quot;
-  ))</pre>
+<pre >## Error in eval(expr, envir, enclos): no se pudo encontrar la función &quot;map_dbl&quot;</pre>
 
-<pre >## [1] &quot;Solo se puede calcular la media, mediana y moda&quot;</pre></article></slide>
+</article></slide><slide class=''><hgroup><h2>Alternativas al Uso de Bucles en R </h2><h3> El paquete</h3></hgroup><article  id="alternativas-al-uso-de-bucles-en-r-el-paquete-2"></article></slide>
 
 
   <slide class="backdrop"></slide>
