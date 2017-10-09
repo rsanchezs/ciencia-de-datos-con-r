@@ -83,8 +83,7 @@ class(vector_numerico)
 ```
 
 ```{r ex="clase_objeto", type="sct"}
-test_function(name = "class", args = "vector_numerico", not_called_msg = "Utiliza la función class() para conocer la clase a la que pertenece un objeto", incorrect_msg =  "Pasa como argumento a la función class el objeto `vector_numerico`", args_not_specified_msg = "Pasa como argumento a la función class el objeto `vector_numerico`")
-test_output_contains(expr = "numeric", incorrect_msg = "Utiliza la función class() para conocer la clase a la que pertenece un objeto, de la forma class(nombre_objeto)")
+test_function(name = "class", args = c("vector_numerico"), index = 1,not_called_msg = "Utiliza la función class() para conocer la clase a la que pertenece un objeto", args_not_specified_msg = "Pasa como argumento el nombre del objeto", incorrect_msg = "Pasa como argumento a la funcion class el nombre del objeto `vector_numerico")
 success_msg("¡Excelente, ya sabemos como conocer la clase a la que pertenece un objeto")
 ```
 
