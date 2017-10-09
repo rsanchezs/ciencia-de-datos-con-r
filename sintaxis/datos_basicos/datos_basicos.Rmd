@@ -49,35 +49,11 @@ b <- 4
 a == b # ¿es igual a b?
 ```
 
-```{r ex="create_a_b", type="pre-exercise-code"}
-a != b # ¿es a distindo de b?
-```
 
-```{r ex="create_a_b", type="sample-code"}
-# Crea una variable a igual a 2
-
-
-# Crea una variable b igual a 4
-```
-
-```{r ex="create_a_b", type="solution"}
-# Crea una variable a igual a 2 
-a <- 2
-
-# # Crea una variable b igual a 4
-```
-
-```{r ex="create_a_b", type="sct"}
-test_an_object(name = "a", undefined_msg = "Asegurate de definir la variable a")
-test_an_object(name = "b", undefined_msg = "Asegurate de definir la variable b")
-test_output_contains(expr = "TRUE", incorrect_msg = "Asegurate de definir las variables antes de ver el resultado")
-success_msg("Excelente!")
-```
 
 ```{r}
 a != b # ¿es a distindo de b?
 ```
-
 
 ```{r}
 (a <3) & (b < 5)  # ¿es a menor que 3 y b menor que 3?
