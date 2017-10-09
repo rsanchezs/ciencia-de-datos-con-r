@@ -27,14 +27,14 @@ function() {x <- 1; y <- 2; x + y}
 ```
 
 
-```{r}
+```{r tut=FALSE}
 #también su nombre (symbol)
 f <- function(x, y){x + y}
 f(1, 2)
 ```
 
 
-```{r}
+```{r tut=FALSE}
 # incluso las expresiones 
 {x <- 1; y <- 2; x + y}
 ```
@@ -63,6 +63,30 @@ vector_numerico <- c(1, 2, 3, 4, 5)
 class(vector_numerico)
 ```
 
+```{r ex="clase_objeto", type="pre-exercise-code"}
+vector_numerico <- c(1, 2, 3, 4, 5)
+```
+
+```{r ex="clase_objeto", type="sample-code"}
+# Creamos un vector numerico
+vector_numerico <- c(1, 2, 3, 4, 5)
+
+# Comprobamos la clase de un objeto mediante `class(nombre_objeto)`
+```
+
+```{r ex="clase_objeto", type="solution"}
+# Creamos un vector numerico
+vector_numerico <- c(1, 2, 3, 4, 5)
+
+# Comprobamos la clase de un objeto mediante `class(nombre_objeto)`
+class(vector_numerico)
+```
+
+```{r ex="clase_objeto", type="sct"}
+test_function(name = "class", args = "vector_numerico", not_called_msg = "Utiliza la función class() para conocer la clase a la que pertenece un objeto", incorrect_msg =  "Pasa como argumento a la función class el objeto `vector_numerico`")
+test_output_contains(expr = "numeric", incorrect_msg = "Utiliza la función class() para conocer la clase a la que pertenece un objeto, de la forma class(nombre_objeto)")
+success_msg("¡Excelente, ya sabemos como conocer la clase a la que pertenece un objeto")
+```
 
 ## Cada Objeto tiene un Tipo {#tipo}
 

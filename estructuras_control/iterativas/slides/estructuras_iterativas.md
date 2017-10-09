@@ -126,7 +126,7 @@ table.rmdtable td, table th {
 
 
 
-## Bucle __`for`__
+## Bucle __`for`__ {.build .smaller}
 
 __Ejemplo:__
 
@@ -135,19 +135,31 @@ __Ejemplo:__
 ```r
 # Creamos un vector aleaotorio de 5 observaciones
 observaciones <- sample(1:50, 5, replace = TRUE)
+```
 
+
+
+
+```r
 # Inicializamos `suma` de todas las observaciones
 suma <- 0
+```
 
+
+```r
 # Creamos un bucle for que calcula la media
 for(i in seq_along(observaciones)) {
   suma <-  observaciones[i] + suma
   media <- suma / length(observaciones)
 }
+```
 
+
+```r
 # Mostramos por pantalla la media
 media
 ```
+
 
 ## Bucles __`for`__ Anidados
 

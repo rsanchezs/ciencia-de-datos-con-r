@@ -110,7 +110,7 @@ Las llaves son usadas para evaluar una serie de expresiones (separadas por nueva
 
 
 
-```{r tut=FALSE}
+```{r}
 {x <- 1; y <- 2; x + y}
 ```
 

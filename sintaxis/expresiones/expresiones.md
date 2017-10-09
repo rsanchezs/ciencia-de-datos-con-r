@@ -83,11 +83,7 @@ Las llaves son usadas para evaluar una serie de expresiones (separadas por nueva
 
 
 
-
-```r
-{x <- 1; y <- 2; x + y}
-## [1] 3
-```
+<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ7eCA8LSAxOyB5IDwtIDI7IHggKyB5fSJ9</div>
 
 Usado para agrupar un conjunto de expresiones en el cuerpo de una función:
 
