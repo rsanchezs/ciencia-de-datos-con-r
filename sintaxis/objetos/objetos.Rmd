@@ -83,8 +83,9 @@ class(vector_numerico)
 ```
 
 ```{r ex="clase_objeto", type="sct"}
-test_function(name = "class", args = "vector_numerico",eval = FALSE, not_called_msg = "Utiliza la función class() para conocer la clase a la que pertenece un objeto", incorrect_msg = "Pasa como argumento a la funcion class `vector_numerico`")
-success_msg("¡Excelente, ya sabemos como conocer la clase a la que pertenece un objeto")
+test_function(name = "class", not_called_msg = "Utiliza la función class() para conocer la clase a la que pertenece un objeto")
+check_arg(arg = "vector_numerico", arg_not_specified_msg = "Pasa como argumento a la funcion class el nombre del objeto `vector_numerico`")
+success_msg("¡Excelente, ya sabemos como comprobar la clase a la que pertenece un objeto!")
 ```
 
 ## Cada Objeto tiene un Tipo {#tipo}
