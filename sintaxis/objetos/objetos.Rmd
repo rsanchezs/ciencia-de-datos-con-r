@@ -72,14 +72,6 @@ vector_numerico <- c(1, 2, 3, 4, 5)
 vector_numerico <- c(1, 2, 3, 4, 5)
 
 # Comprobamos la clase de un objeto mediante `class(nombre_objeto)`
-
-cat(
-  paste(
-  '<script>
-    $(".powered-by-datacamp" ).remove();
-  </script>'
-  , sep="")
-)
 ```
 
 ```{r ex="clase_objeto", type="solution"}
