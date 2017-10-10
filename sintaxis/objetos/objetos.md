@@ -1,7 +1,8 @@
-<script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+<script src="https://cdn.datacamp.com/datacamp-light-latest.min.js">
+</script>
 
-<script type="text/javascript">
-$(".powered-by-datacamp").remove();
+<script type = "text/javascript">
+  $(".powered-by-datacamp" ).remove();
 </script>
 
 
@@ -59,7 +60,12 @@ Todos los objetos en R tienen una clase, la cual define que información contien
 Podemos encontrar la clase de un objeto mediante la función `class(objeto)`:
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ2ZWN0b3JfbnVtZXJpY28gPC0gYygxLCAyLCAzLCA0LCA1KVxuY2xhc3ModmVjdG9yX251bWVyaWNvKSJ9</div>
+<div data-datacamp-exercise data-height="300"
+<script type = "text/javascript">
+  $(".powered-by-datacamp" ).remove();
+</script>
+data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ2ZWN0b3JfbnVtZXJpY28gPC0gYygxLCAyLCAzLCA0LCA1KVxuY2xhc3ModmVjdG9yX251bWVyaWNvKSJ9
+</div>
 
 <div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJwcmVfZXhlcmNpc2VfY29kZSI6InZlY3Rvcl9udW1lcmljbyA8LSBjKDEsIDIsIDMsIDQsIDUpIiwic2FtcGxlIjoiIyBDcmVhbW9zIHVuIHZlY3RvciBudW1lcmljb1xudmVjdG9yX251bWVyaWNvIDwtIGMoMSwgMiwgMywgNCwgNSlcblxuIyBDb21wcm9iYW1vcyBsYSBjbGFzZSBkZSB1biBvYmpldG8gbWVkaWFudGUgYGNsYXNzKG5vbWJyZV9vYmpldG8pYCIsInNvbHV0aW9uIjoiIyBDcmVhbW9zIHVuIHZlY3RvciBudW1lcmljb1xudmVjdG9yX251bWVyaWNvIDwtIGMoMSwgMiwgMywgNCwgNSlcblxuIyBDb21wcm9iYW1vcyBsYSBjbGFzZSBkZSB1biBvYmpldG8gbWVkaWFudGUgYGNsYXNzKG5vbWJyZV9vYmpldG8pYFxuY2xhc3ModmVjdG9yX251bWVyaWNvKSIsInNjdCI6InRlc3RfZnVuY3Rpb24obmFtZSA9IFwiY2xhc3NcIiwgYXJncyA9IFwieFwiLCBldmFsID0gRkFMU0UsIG5vdF9jYWxsZWRfbXNnID0gXCJVc2EgbGEgZnVuY2lcdTAwZjNuIGNsYXNzKCkgcGFyYSBjb25vY2VyIGxhIGNsYXNlIGRlIHVuIG9iamV0by5cIiwgYXJnc19ub3Rfc3BlY2lmaWVkX21zZyA9IFwiUGFzYSBhIGxhIGZ1bmNpXHUwMGYzbiBjbGFzcygpIGNvbW8gcHJpbWVyIGFyZ3VtZW50byBlbCBvYmpldG9cIixpbmNvcnJlY3RfbXNnID0gXCJ2ZWN0b3JfbnVtZXJpY29cIilcbnN1Y2Nlc3NfbXNnKFwiXHUwMGExRXhjZWxlbnRlLCB5YSBzYWJlbW9zIGNvbW8gY29tcHJvYmFyIGxhIGNsYXNlIGEgbGEgcXVlIHBlcnRlbmVjZSB1biBvYmpldG8hXCIpIn0=</div>
 
