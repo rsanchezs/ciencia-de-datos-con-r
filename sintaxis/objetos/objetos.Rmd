@@ -3,11 +3,6 @@ opts_knit$set(base.dir='./', fig.path='', out.format='md', encoding = 'UTF-8')
 opts_chunk$set(prompt=FALSE, comment='##', results='markup', collapse=TRUE, echo=TRUE, eval=TRUE)
 ```
 
-```{js}
-var elem = document.getElementById("powered-by-datacamp");
-elem.parentNode.removeChild(elem);
-```
-
 
 
 ```{r, include=FALSE}
