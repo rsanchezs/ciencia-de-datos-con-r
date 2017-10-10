@@ -12,6 +12,9 @@ opts_chunk$set(prompt=FALSE, echo=TRUE, eval=TRUE, comment='##', results='markup
 tutorial::go_interactive()
 ```
 
+```{js}
+$(".powered-by-datacamp").remove();
+```
 
 # Expresiones y Asignación
 
