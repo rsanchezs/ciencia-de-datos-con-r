@@ -13,7 +13,7 @@ tutorial::go_interactive()
 ```
 
 ```{js}
-$(".powered-by-datacamp").remove()
+$(".powered-by-datacamp").remove();
 ```
 
 # Expresiones y Asignación

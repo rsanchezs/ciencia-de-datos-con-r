@@ -1,5 +1,9 @@
 <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
 
+<script type="text/javascript">
+$(".powered-by-datacamp").remove();
+</script>
+
 
 
 

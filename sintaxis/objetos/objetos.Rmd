@@ -9,6 +9,10 @@ opts_chunk$set(prompt=FALSE, comment='##', results='markup', collapse=TRUE,
 # end setup chunk
 ```
 
+```{r engine = 'js'}
+$(".powered-by-datacamp").remove();
+```
+
 
 ```{r, include=FALSE}
 tutorial::go_interactive()
