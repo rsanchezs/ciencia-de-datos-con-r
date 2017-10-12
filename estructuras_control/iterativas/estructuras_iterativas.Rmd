@@ -1,6 +1,8 @@
 ```{r knitsetup, echo=FALSE, results='hide', warning=FALSE, message=FALSE, cache=FALSE}
 opts_knit$set(base.dir='./', fig.path='', out.format='md')
 opts_chunk$set(prompt=FALSE, comment='', results='markup', collapse=TRUE,echo=TRUE, eval=TRUE)
+
+library(purrr)
 ```
 
 
@@ -332,7 +334,6 @@ sapply(1:n, function(x) x^2)
 Por último, mediante `purrr::map()`:
 
 ```{r}
-library(purrr)
 n <- 5
 map_dbl(1:n,  function(x) x ^ 2)
 ```

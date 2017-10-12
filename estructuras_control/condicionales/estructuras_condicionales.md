@@ -66,6 +66,7 @@ entre 0 y 1. Si el valor es mayor que `0.5`, entonces el mensaje será mostrado:
 if (runif(1) > 0.5) {
   message("Este mensaje aparece con un 50% de probabilidad.")
 }
+Este mensaje aparece con un 50% de probabilidad.
 ```
 
 
@@ -121,7 +122,7 @@ El siguiente ejemplo nos sirve para mostrar el anidamiento de instrucciones `if-
 # Creamos una muestra de 20 observaciones del 1 al 100 en
 # el que se pueden repetir hasta 2 observaciones
 (muestra <- sample(1:100, 20, 2))
- [1] 87 70 17 34 87  4 82  1 81 92 74  9 20 91  7 13  1  9  5 90
+ [1] 90  8 96 98 81  4 49 61 88 76 78 61 28 10  9 57 10 65  3 79
 
 ## Creamos una variable indicando la medida de tendencia central
 ## que queremos calcular
@@ -143,7 +144,7 @@ if (centralizacion == "moda") {
   message("Este algoritmo sola calcula la media,
           mediana, moda")
 }
-La media es 43.7
+La media es 52.55
 ```
 
 ## __`If`__ Vectorizado
@@ -191,7 +192,7 @@ números aleatorios de un distribución binomial simulando el lanzamiento de una
 ```r
 ifelse(rbinom(n = 10, size = 1, prob = 0.5),
        "cara", "cruz")
- [1] "cara" "cara" "cruz" "cara" "cara" "cara" "cara" "cara" "cara" "cruz"
+ [1] "cruz" "cara" "cruz" "cruz" "cara" "cara" "cara" "cara" "cruz" "cara"
 ```
 
 No obstante, `if(test) yes else no` es mucho mas eficiente y preferible a `ifelse(test, yes, no)` cuando `test` es decir, la
@@ -240,7 +241,7 @@ Una alternativa al ejemplo presentado en el apartado anterior mediante la funci�
 # Creamos una muestra de 20 observaciones del 1 al 100 en
 # el que se pueden repetir hasta 2 observaciones
 (muestra <- sample(1:100, 20, 2))
- [1]  4 55 67 73 26 18  2 98 16 30 65 59 39 83 72 59  7 96 64 78
+ [1] 98 35 82 75 59 78 34 89 53  7 40 64 25 33 67 44 94 48 49 69
 
 
 #Calculamos la media de la muestra
@@ -250,7 +251,7 @@ Una alternativa al ejemplo presentado en el apartado anterior mediante la funci�
   mediana = median(muestra),
   moda = mlv(muestra, method = "mfv")
 ))
-[1] 50.55
+[1] 57.15
 ```
 
 Si ningún nombre coincide, entonces `switch` devuelve `NULL`:

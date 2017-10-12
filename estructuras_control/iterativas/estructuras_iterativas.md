@@ -53,7 +53,7 @@ for(i in seq_along(observaciones)) {
 
 # Mostramos por pantalla la media
 media
-[1] 26.24
+[1] 27.42
 ```
 
 ### Bucles __`for`__ Anidados
@@ -79,9 +79,9 @@ for(i in 1:nrow(m1)) {
 # Mostramos por pantalla la suma de m1+m2
 suma
      [,1] [,2] [,3]
-[1,]   97   32  136
-[2,]  108   47  159
-[3,]   66  100   67
+[1,]   51  126  125
+[2,]  121  108  144
+[3,]  103   40   76
 ```
 
 El siguiente ejemplo sirve para ejemplificar el anidamiento de bucles `for`. Cada uno con su propio bloque de instrucciones y manejado con su propio índice. Es decir, `i` controla las filas de las matrices y `j` las columnas.
@@ -186,12 +186,12 @@ m <-
 # Mostramos por pantalla `m`
 m
      [,1] [,2] [,3] [,4] [,5] [,6]
-[1,]    9   10    5    9    5    5
-[2,]   10    9    2    7    2    7
-[3,]    9    9    6    8    2    4
-[4,]    8    3    6    2    1   10
-[5,]    9    3    3    4    7    7
-[6,]    9    3    1    5    6    3
+[1,]    6    6    8    1   10    6
+[2,]    4    8    5   10    1    4
+[3,]    9    2   10    1   10    6
+[4,]    7    8    1    1    5    5
+[5,]    7    2   10   10    1    1
+[6,]    8    7    4   10    7    3
 
 # Creamos un vector para la diagonal principal
 diagonal_principal <- vector(mode = "integer", length = nrow(m))
@@ -213,15 +213,15 @@ for (i in 1:nrow(m)) {
 
 # Mostramos por pantalla diagonal principal
 diagonal_principal
-[1] 9 9 6 2 7 3
+[1]  6  8 10  1  1  3
 # Mostraamos por pantalla matriz inferior de m
 m
      [,1] [,2] [,3] [,4] [,5] [,6]
-[1,]    9   10    5    9    5    5
-[2,]    0    9    2    7    2    7
-[3,]    0    0    6    8    2    4
-[4,]    0    0    0    2    1   10
-[5,]    0    0    0    0    7    7
+[1,]    6    6    8    1   10    6
+[2,]    0    8    5   10    1    4
+[3,]    0    0   10    1   10    6
+[4,]    0    0    0    1    5    5
+[5,]    0    0    0    0    1    1
 [6,]    0    0    0    0    0    3
 ```
 
@@ -386,7 +386,6 @@ Por último, mediante `purrr::map()`:
 
 
 ```r
-library(purrr)
 n <- 5
 map_dbl(1:n,  function(x) x ^ 2)
 [1]  1  4  9 16 25
