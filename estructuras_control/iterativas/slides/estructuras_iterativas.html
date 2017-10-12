@@ -125,7 +125,7 @@ h2 {
 
 <style>
 h3 {
-  font-size: 30px;
+  font-size: 26px;
   letter-spacing: -1px;
   line-height: 2;
   font-weight: inherit;
@@ -255,33 +255,30 @@ for(i in seq_along(observaciones)) {
 <pre class = 'prettyprint lang-r'># Mostramos por pantalla la media
 media</pre>
 
-<pre >## [1] 35.8</pre>
+<pre >## [1] 11</pre>
 
-</article></slide><slide class=''><hgroup><h2>Bucles <strong><code>for</code></strong> Anidados</h2></hgroup><article  id="bucles-for-anidados">
-
-<p>Los bucles <code>for</code> pueden ser anidados:</p>
+</article></slide><slide class=''><hgroup><h2>Bucles <strong><code>for</code></strong> Anidados</h2></hgroup><article  id="bucles-for-anidados" class="build smaller">
 
 <pre class = 'prettyprint lang-r'># Creamos dos matrices cuadradas
 m1 &lt;- matrix(sample(1:100, 9, replace = TRUE), nrow = 3)
-m2 &lt;- matrix(sample(1:100, 9, replace = TRUE), nrow = 3)
+m2 &lt;- matrix(sample(1:100, 9, replace = TRUE), nrow = 3)</pre>
 
-# Inicializamos la matriz que contendra m1+m2
-suma &lt;- matrix(nrow = 3, ncol = 3)
+<pre class = 'prettyprint lang-r'># Inicializamos la matriz que contendra m1+m2
+suma &lt;- matrix(nrow = 3, ncol = 3)</pre>
 
-# Para cada fila y cada columna, realizamos la suma elemento a elemento 
+<pre class = 'prettyprint lang-r'># Para cada fila y cada columna, realizamos la suma elemento a elemento 
 for(i in 1:nrow(m1)) {
   for(j in 1:ncol(m1)) {
     suma[i, j] &lt;- m1[i, j] + m2[i, j]
   }
 }
-
 # Mostramos por pantalla la suma de m1+m2
 suma</pre>
 
 <pre >##      [,1] [,2] [,3]
-## [1,]   50   79  155
-## [2,]  189   35  117
-## [3,]   12   69   89</pre>
+## [1,]  119  111    5
+## [2,]  147   76  169
+## [3,]  113   86  101</pre>
 
 </article></slide><slide class=''><hgroup><h2>Bucle <strong><code>while</code></strong></h2></hgroup><article  id="bucle-while">
 
@@ -300,7 +297,7 @@ while(n &lt;= 5) {
 ## [1] 4
 ## [1] 5</pre>
 
-</article></slide><slide class=''><hgroup><h2>Bucle <strong><code>repeat</code></strong></h2></hgroup><article  id="bucle-repeat">
+</article></slide><slide class=''><hgroup><h2>Bucle <strong><code>repeat</code></strong></h2></hgroup><article  id="bucle-repeat" class="smaller">
 
 <p>Como alternativa al ejemplo anterior, podríamos codificar el algoritmo como:</p>
 
@@ -321,33 +318,38 @@ repeat {
 ## [1] 4
 ## [1] 5</pre>
 
-</article></slide><slide class=''><hgroup><h2>Cláusula <strong><code>break</code></strong></h2></hgroup><article  id="clausula-break">
+</article></slide><slide class=''><hgroup><h2>Cláusula <strong><code>break</code></strong> </h2><h3> Calcular la Matriz Triangular Superior y la Diagonal Principal de una Matriz.</h3></hgroup><article  id="clausula-break-calcular-la-matriz-triangular-superior-y-la-diagonal-principal-de-una-matriz." class="build smaller">
+
+<p><strong>Ejemplo:</strong></p>
 
 <pre class = 'prettyprint lang-r'># Creamos una matriz cuadrada de 6 x 6
-m &lt;-
-  matrix(
-    data = sample(x = 10, size = 36, replace = TRUE),
-                  nrow = 6,
-                  ncol = 6
-  )
-# Mostramos por pantalla `m`
+m &lt;-matrix(data = sample(x = 10, size = 36, replace = TRUE),
+           nrow = 6,
+           ncol = 6
+)</pre>
+
+<pre class = 'prettyprint lang-r'># Mostramos por pantalla `m`
 m</pre>
 
 <pre >##      [,1] [,2] [,3] [,4] [,5] [,6]
-## [1,]    6    7    6    4   10    2
-## [2,]    3    3   10   10    4    5
-## [3,]    3    5    8    6    4    9
-## [4,]    6    4    9    1   10    3
-## [5,]    1    3    4    9    2    2
-## [6,]    7    3    4    3    7    4</pre>
+## [1,]    2    6    4    2    7    9
+## [2,]    8    6   10    9    5    6
+## [3,]    5    8    6    1    3    7
+## [4,]    3    7    7    1    3    6
+## [5,]    2    2   10    6    9    7
+## [6,]    4    8    5    7    1    1</pre>
+
+</article></slide><slide class=''><hgroup><h2>Cláusula <strong><code>break</code></strong> </h2><h3> Calcular la Matriz Triangular Superior y la Diagonal Principal de una Matriz.</h3></hgroup><article  id="clausula-break-calcular-la-matriz-triangular-superior-y-la-diagonal-principal-de-una-matriz.-1" class="build smaller">
 
 <pre class = 'prettyprint lang-r'># Creamos un vector para la diagonal principal
-diagonal_principal &lt;- vector(mode = &quot;integer&quot;, length = nrow(m))
+diagonal_principal &lt;- vector(mode = &quot;integer&quot;, length = nrow(m))</pre>
+
+<pre class = 'prettyprint lang-r'># Diagonal principal inicializado con todos sus valores a cero
 diagonal_principal</pre>
 
 <pre >## [1] 0 0 0 0 0 0</pre>
 
-</article></slide><slide class=''><hgroup><h2>Cláusula <strong><code>break</code></strong></h2></hgroup><article  id="clausula-break-1">
+</article></slide><slide class=''><hgroup><h2>Cláusula <strong><code>break</code></strong> </h2><h3> Calcular la Matriz Triangular Superior y la Diagonal Principal de una Matriz.</h3></hgroup><article  id="clausula-break-calcular-la-matriz-triangular-superior-y-la-diagonal-principal-de-una-matriz.-2" class="build smaller">
 
 <pre class = 'prettyprint lang-r'># Algoritmo que calcula la matriz triangular inferior y su diagonal principal
 for (i in 1:nrow(m)) {
@@ -360,23 +362,25 @@ for (i in 1:nrow(m)) {
     
   }
   diagonal_principal[j] &lt;- m[i, j]
-}
+}</pre>
 
-# Mostramos por pantalla diagonal principal
+</article></slide><slide class=''><hgroup><h2>Cláusula <strong><code>break</code></strong> </h2><h3> Calcular la Matriz Triangular Superior y la Diagonal Principal de una Matriz.</h3></hgroup><article  id="clausula-break-calcular-la-matriz-triangular-superior-y-la-diagonal-principal-de-una-matriz.-3" class="build smaller">
+
+<pre class = 'prettyprint lang-r'># Mostramos por pantalla diagonal principal
 diagonal_principal</pre>
 
-<pre >## [1] 6 3 8 1 2 4</pre>
+<pre >## [1] 2 6 6 1 9 1</pre>
 
-<pre class = 'prettyprint lang-r'># Mostraamos por pantalla matriz inferior de m
+<pre class = 'prettyprint lang-r'># Mostramos por pantalla matriz inferior de m
 m</pre>
 
 <pre >##      [,1] [,2] [,3] [,4] [,5] [,6]
-## [1,]    6    7    6    4   10    2
-## [2,]    0    3   10   10    4    5
-## [3,]    0    0    8    6    4    9
-## [4,]    0    0    0    1   10    3
-## [5,]    0    0    0    0    2    2
-## [6,]    0    0    0    0    0    4</pre>
+## [1,]    2    6    4    2    7    9
+## [2,]    0    6   10    9    5    6
+## [3,]    0    0    6    1    3    7
+## [4,]    0    0    0    1    3    6
+## [5,]    0    0    0    0    9    7
+## [6,]    0    0    0    0    0    1</pre>
 
 </article></slide><slide class=''><hgroup><h2>Cláusula <strong><code>next</code></strong></h2></hgroup><article  id="clausula-next">
 

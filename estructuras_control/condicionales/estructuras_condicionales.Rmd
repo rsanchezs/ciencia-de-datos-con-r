@@ -16,9 +16,9 @@ permite evaluar una expresión y, sobre la base de su resultado (verdadero o fal
 o no la instrucción o el bloque que le sigue. Es decir, si el resultado de la expresión es
 verdadero, ejecuta el código. En caso contrario, el programa sigue su curso normal.
 
-A continuación, mostramos el [diagrama](https://i.imgur.com/KhwkQbf.png) de flujo de `if`. En términos de diagramas de flujo, los rectángulos significan la realización de un proceso, en otras palabras la ejecución de un bloque de instrucciones. Por otro lado, los rombos son conocidos como símbolos de decisión, es decir se corresponden a preguntas cuyas respuestas únicamente tienen dos posibles respuestas, concretamente, TRUE (T) o FALSE (F).
+A continuación, mostramos el [diagrama](https://i.imgur.com/oGa0PW0.png) de flujo de `if`. En términos de diagramas de flujo, los rectángulos significan la realización de un proceso, en otras palabras la ejecución de un bloque de instrucciones. Por otro lado, los rombos son conocidos como símbolos de decisión, es decir se corresponden a preguntas cuyas respuestas únicamente tienen dos posibles respuestas, concretamente, TRUE (T) o FALSE (F).
 
-![Diagrama de Flujo If](https://i.imgur.com/KhwkQbf.png)
+![Diagrama de Flujo If](../images/if.png)
 
 La instrucción __`if`__ toma un valor lógico (en realidad, un vector lógico de longitud uno)
 y ejecuta la siguiente instrucción sólo si el valor es __`TRUE`__:
@@ -79,9 +79,9 @@ __Recuerda__ que para que nuestro código sea lo mas legible posible, algunas [g
 recomiendan el uso de paréntesis, incluso si sólo queremos ejecutar condicionalmente
 una sentencia.
 
-El siguiente paso en complejidad en la sintaxis de `if` es incluir la cláusula `else`. Seguidamente se muestra el [diagrama de flujo](https://i.imgur.com/6HAkO6A.png) de `if-else`:
+El siguiente paso en complejidad en la sintaxis de `if` es incluir la cláusula `else`. Seguidamente se muestra el [diagrama de flujo](https://i.imgur.com/ohHqQXI.png) de `if-else`:
 
-![Diagrama de Flujo if-else](https://i.imgur.com/6HAkO6A.png)
+![Diagrama de Flujo if-else](../images/if_else.png)
 
 
 El código después de un `else` se ejecuta sólo si la condición en `if` es `FALSE`:
@@ -100,7 +100,7 @@ Podemos definir múltiples condiciones combinando `if` y `else` repetidamente, e
 
 A continuación se muestra el [diagrama de flujo]((https://i.imgur.com/9dn41o5.png) de un `if-else` anidado. Como podemos observar se puden plantear múltiples condiciones simultáneamente: si se cumple la condición 1 se ejecuta el bloque de intrucciones 1. En caso contrario se comprueba la condición 2; si es cierta se ejecuta el bloque de sentencias 2, y así sucesivamente hasta __n__ condiciones. Si ninguna de ellas se cumple se ejecuta el bloque de instrucciones de `else`:
 
-![Diagrama de Flujo If-Else Anidados](https://i.imgur.com/9dn41o5.png)
+![Diagrama de Flujo If-Else Anidados](../images/if_else_anidados.png)
 
 El siguiente ejemplo nos sirve para mostrar el anidamiento de instrucciones `if-else`. Pongamos el caso que deseamos crear un algoritmo que nos calcule la [medida de tendencia central](https://es.wikipedia.org/wiki/Medidas_de_tendencia_central) que deseemos, el siguiente fragmento de código podría ser una posible solución:
 
@@ -187,9 +187,9 @@ condición lógica se trata de una expresión cuya longitud sea un vector de lon
 
 El código con muchas clausulas `else` puede hacer nuestro código difícil de leer. En estas circunstancias, podemos hacer uso de la función `switch()`, con la que conseguiremos un código mas legible y fácil de mantener. 
 
-Para comprender mejor su funcionamiento pasemos a examinar el [diagrama de flujo]((https://i.imgur.com/MwHdBC2.png)) de la función `switch()`:
+Para comprender mejor su funcionamiento pasemos a examinar el [diagrama de flujo](https://i.imgur.com/oGa0PW0.png) de la función `switch()`:
 
-![Diagrama de Flujo switch()](https://i.imgur.com/MwHdBC2.png))
+![Diagrama de Flujo switch()](../images/switch.png)
 
 
 Esta función permite ejecutar una de entre varias acciones en función del valor de una expresión. Es una alternativa a los `if-else` anidados cuando se compara la misma expresión con diferentes valores.
