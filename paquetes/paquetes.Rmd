@@ -1,5 +1,5 @@
 ```{r knitsetup, echo=FALSE, results='hide', warning=FALSE, message=FALSE, cache=FALSE}
-opts_knit$set(base.dir='./', fig.path='', out.format='md')
+opts_knit$set(base.dir='./', fig.path='', out.format='md', encoding='UTF-8')
 opts_chunk$set(prompt=FALSE, comment='', results='markup',echo=TRUE, eval=FALSE)
 # See yihui.name/knitr/options for more Knitr options.
 ##### Put other setup R code here
@@ -32,7 +32,7 @@ Después de leer este capítulo, deberíamos:
 - Por último, comentaremos cómo escoger el [paquete correcto](#escoger-el-paquete-correcto-para-nuestro-analisis) para nuestro análisis.
 
 
-## ¿Qué es un Paquete? 
+## ¿Qué es un Paquete? {#que-es-un-paquete}
 
 Antes de examinar que son los paquetes, permitidme introducir algunas definiciones. Un paquete es el modo apropiado de organizar nuestro trabajo, si lo que deseamos, es compartirlo con otros usuarios. Tipicamente, un paquete incluye código (no solamente código R), documentación para el uso del paquete y funciones que incluye y conjunto de datos.
 
@@ -47,7 +47,7 @@ packageDescription("stats")
 help(package = "stats")
 ```
 
-## ¿Qué son los Repositorios? 
+## ¿Qué son los Repositorios? {#que-son-los-repositorios}
 
 Un repositorio es el lugar dónde están alojados los paquetes y desde el cuál podemos descargarlos. Aunque nosotros o nuestra organización disponga de un repositorio local, usualmente los paquetes son accesible online para todo el mundo. Los repositorios mas populares de paquete R son:
 
@@ -58,7 +58,7 @@ Un repositorio es el lugar dónde están alojados los paquetes y desde el cuál 
 - [Github](https://github.com/): a pesar que no es específico para R, github es con toda seguridad el repositorio mas popular para la publicación de projectos __open source__ (del inglés, código abierto). Su popularidad procede del espacio ilimitado que proporciona para el alojamiento de projectos open source, la integración con git (un software de control de versiones) y, la facilidad de compartir y colaborar con otras personas. Se podría objetar que a pesar de que no proporciona procesos de control, sin embargo, será uno de los repositorios que utilizemos con más frecuéncia siempre y cuándo conozcamos la persona/s que publica el paquete. 
 
 
-## ¿Cómo Instalar un Paquete R? 
+## ¿Cómo Instalar un Paquete R? {#como-instalar-un-paquete-r}
 
 ### Instalación de Paquetes desde Cran
 
@@ -152,7 +152,7 @@ devtools::install_github("hadley/babynames")
 ```
 
 
-## Actualizar, Eliminar y Comprobar Paquetes Instalados 
+## Actualizar, Eliminar y Comprobar Paquetes Instalados {#actualizar-eliminar-y-comprobar-paquetes-instalados}
 
 En esta sección, encontraremos unas pocas funciones que nos permitirán la gestión de la colección de paquetes instalados en nuestro equipo.
 
@@ -187,14 +187,14 @@ install.packages("vioplot")
 ```
 
 
-## Interfaces Gráficas para la Instalación de Paquetes 
+## Interfaces Gráficas para la Instalación de Paquetes {#interfaces-graficas-para-la-instalacion-de-paquetes} 
 
 En RStudio en Tools -> Install Package se nos abrirá un cuadro de dialogo para introducir el paquete que deseamos instalar:
 
 ![Instalación Paquetes RStudio](http://i.imgur.com/d0emwzd.png)
 
 
-## Carga de Paquetes 
+## Carga de Paquetes {#carga-de-paquetes}
 
 Una vez tenemos instalado un paquete, estamos en disposición de hacer uso de sus funciones. Si tan solo necesitamos hacer un uso esporádico de unas pocas funciones o datos del paquete podemos acceder con la notación `nombrepaquete::nombrefuncion()`. Por ejemplo, siguiendo con el ejemplo anterior del paquete `babynames`, para explorar uno de sus datasets podemos hacer uso de la siguiente instrucción:
 
@@ -222,7 +222,7 @@ __NOTA:__ que el argumento de la función `install.packages()` es un vector de t
 De manera semejante, podemos hacer uso de la función `require()` para cargar un paquete en memoria, sin embargo la diferencia es que no lanzará un error si el paquete no está instalado. Es por eso, que recomendamos hacer uso de esta función con precaución. 
 
 
-## Cómo Cargar Varios Paquetes al mismo Tiempo 
+## Cómo Cargar Varios Paquetes al mismo Tiempo {#como-cargar-varios-paquetes-al-mismo-tiempo}
 
 A pesar de que podemos pasar como argumento un vector de caracteres a la función `install.packages()` para instalar varios paquetes de una sola vez, en el caso de la función `library()`, esto no es posible.
 
@@ -235,7 +235,7 @@ detach("babynames", unload = TRUE)
 ```
 
 
-## Diferencia entre un Paquete y una Libreria 
+## Diferencia entre un Paquete y una Libreria {#diferencia-entre-un-paquete-y-una-libreria}
 
 En el caso de la función `library()`, en muchas ocasiones existe la confusión entre un paquete y una libreria, y podemos encontrarnos con gente llamando "librerias" a los paquetes.
 

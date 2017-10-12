@@ -53,7 +53,7 @@ for(i in seq_along(observaciones)) {
 
 # Mostramos por pantalla la media
 media
-[1] 27.42
+[1] 24.51
 ```
 
 ### Bucles __`for`__ Anidados
@@ -79,9 +79,9 @@ for(i in 1:nrow(m1)) {
 # Mostramos por pantalla la suma de m1+m2
 suma
      [,1] [,2] [,3]
-[1,]   51  126  125
-[2,]  121  108  144
-[3,]  103   40   76
+[1,]  154  115   67
+[2,]  133  146  132
+[3,]  144  116   59
 ```
 
 El siguiente ejemplo sirve para ejemplificar el anidamiento de bucles `for`. Cada uno con su propio bloque de instrucciones y manejado con su propio índice. Es decir, `i` controla las filas de las matrices y `j` las columnas.
@@ -159,7 +159,7 @@ Observemos que hemos tenido que establecer una condición dentro del bucle la cu
 ## Cláusula __`break`__ {#break}
 
 
-La instrucción `break` se utiliza con las intrucciones de bucle `for`, `while` y `repeat`.
+La instrucción `break` se utiliza con las instrucciones de bucle `for`, `while` y `repeat`.
 
 La cláusula `break` finaliza la ejecución del bucle  más próximo en el que aparece. El control pasa a la instrucción que hay a continuación del final de la instrucción, si hay alguna.
 
@@ -186,12 +186,12 @@ m <-
 # Mostramos por pantalla `m`
 m
      [,1] [,2] [,3] [,4] [,5] [,6]
-[1,]    6    6    8    1   10    6
-[2,]    4    8    5   10    1    4
-[3,]    9    2   10    1   10    6
-[4,]    7    8    1    1    5    5
-[5,]    7    2   10   10    1    1
-[6,]    8    7    4   10    7    3
+[1,]    6    7    5   10    8    7
+[2,]    2    7    2    6   10    4
+[3,]    6    4    8    1    4    6
+[4,]    8   10    5    7   10    9
+[5,]    7    1    2   10    3   10
+[6,]    5    2    7    3   10    6
 
 # Creamos un vector para la diagonal principal
 diagonal_principal <- vector(mode = "integer", length = nrow(m))
@@ -213,16 +213,16 @@ for (i in 1:nrow(m)) {
 
 # Mostramos por pantalla diagonal principal
 diagonal_principal
-[1]  6  8 10  1  1  3
+[1] 6 7 8 7 3 6
 # Mostraamos por pantalla matriz inferior de m
 m
      [,1] [,2] [,3] [,4] [,5] [,6]
-[1,]    6    6    8    1   10    6
-[2,]    0    8    5   10    1    4
-[3,]    0    0   10    1   10    6
-[4,]    0    0    0    1    5    5
-[5,]    0    0    0    0    1    1
-[6,]    0    0    0    0    0    3
+[1,]    6    7    5   10    8    7
+[2,]    0    7    2    6   10    4
+[3,]    0    0    8    1    4    6
+[4,]    0    0    0    7   10    9
+[5,]    0    0    0    0    3   10
+[6,]    0    0    0    0    0    6
 ```
 
 Examinaremos brevemente ahora el código anterior, como se puede observar en primer lugar se define una matriz cuadrada de 6 x 6 y creamos un vector de tipo entero con una longitud de 6 que en el momento de su inicialización contiene todos sus valores igual a cero.
@@ -332,7 +332,7 @@ La familia `apply` esta compuesta de las funciones:
 
 ### El paquete __`purrr`__
 
-El paquete [purr](http://purrr.tidyverse.org/) forma parte del ecosistema [tidyverse](https://www.tidyverse.org/) y esta compuesto de un conjunto de funciones que aprovechan el paradigma de [programación funcional](https://es.wikipedia.org/wiki/Programaci%C3%B3n_funcional) de R, proporcionando un conjunto completo y consistente de herramientas para trabajar con funciones y vectores.
+El paquete [purr](http://purrr.tidyverse.org/) forma parte del ecosistema [tidyverse](https://www.tidyverse.org/) y esta compuesto de un conjunto de funciones que aprovechan el paradigma de [programación funcional](https://es.wikipedia.org/wiki/Programaci%C3%B3n_funcional) de R, proporcionando un conjunto completo y consistente de herramientas para trabajar con funciones en listas y vectores.
 
 #### Instalación
 
@@ -344,6 +344,18 @@ install.packages("tidyverse")
 # Alternativamente, podemos instalar solo purrr:
 install.packages("purrr")
 ```
+
+El patrón de iterar por un vector, realizando una operación en cada elemento y calcular el resultado es tan común que el paquete `purrr` proporciona una familia de funciones para llevar a cabo esta tarea. Existe una función para cada tipo de salida:
+
+* [map()](https://www.rdocumentation.org/packages/purrr/versions/0.2.3/topics/map) devuelve una lista.
+* [map_lgl()](https://www.rdocumentation.org/packages/purrr/versions/0.2.3/topics/map) devuelve un vector lógico.
+* [map_int()](https://www.rdocumentation.org/packages/purrr/versions/0.2.3/topics/map) devuelve un vector de enteros.
+* [map_dbl()](https://www.rdocumentation.org/packages/purrr/versions/0.2.3/topics/map) devuelve un vector de reales.
+* [map_chr()](https://www.rdocumentation.org/packages/purrr/versions/0.2.3/topics/map) devuelve un vector de tipo carácter.
+
+Cada función toma un vector como entrada, aplica una función a cada elemento, y devuelve un vector de la misma longitud y con los mismos nombres de la entrada. El tipo de vector es determinado por el sufijo en la función `map`.
+
+En este curso y en un [módulo posterior](), trataremos en profundidad el uso del paquete `purrr` que hace uso de la programación funcional en las iteraciones en oposición al paradigma de la iteración imperativa y que hemos tratado en este capítulo. Una vez dominemos las funciones en el paquete `purrr`, seremos capaces de resolver la gran mayoría de algoritmos que impliquen la iteración con menos código, mas legible y con menos errores.
 
 
 #### Uso

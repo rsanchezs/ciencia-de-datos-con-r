@@ -1,10 +1,18 @@
 ```{r knitsetup, echo=FALSE, results='hide', warning=FALSE, message=FALSE, cache=FALSE}
-opts_knit$set(base.dir='./', fig.path='', out.format='md')
+opts_knit$set(base.dir='./', fig.path='', out.format='md', encoding='UTF-8')
 opts_chunk$set(prompt=TRUE, comment='', results='markup')
 # See yihui.name/knitr/options for more Knitr options.
 ##### Put other setup R code here
-
+library(knitr)
 
 # end setup chunk
 ```
 # Funciones
+
+Este capítulo nos introduce el concepto de función  desde el punto de vista de un programador R e ilustra el rando de acción que las funciones tienen dentro del código R.
+
+## Objetivos
+
+Después de leer este capítulo, deberíamos:
+
+- Conocer lo que es una función[#que-es-una-funcion]

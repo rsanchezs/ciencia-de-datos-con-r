@@ -142,7 +142,7 @@ Observemos que hemos tenido que establecer una condición dentro del bucle la cu
 ## Cláusula __`break`__ {#break}
 
 
-La instrucción `break` se utiliza con las intrucciones de bucle `for`, `while` y `repeat`.
+La instrucción `break` se utiliza con las instrucciones de bucle `for`, `while` y `repeat`.
 
 La cláusula `break` finaliza la ejecución del bucle  más próximo en el que aparece. El control pasa a la instrucción que hay a continuación del final de la instrucción, si hay alguna.
 
@@ -288,7 +288,7 @@ La familia `apply` esta compuesta de las funciones:
 
 ### El paquete __`purrr`__
 
-El paquete [purr](http://purrr.tidyverse.org/) forma parte del ecosistema [tidyverse](https://www.tidyverse.org/) y esta compuesto de un conjunto de funciones que aprovechan el paradigma de [programación funcional](https://es.wikipedia.org/wiki/Programaci%C3%B3n_funcional) de R, proporcionando un conjunto completo y consistente de herramientas para trabajar con funciones y vectores.
+El paquete [purr](http://purrr.tidyverse.org/) forma parte del ecosistema [tidyverse](https://www.tidyverse.org/) y esta compuesto de un conjunto de funciones que aprovechan el paradigma de [programación funcional](https://es.wikipedia.org/wiki/Programaci%C3%B3n_funcional) de R, proporcionando un conjunto completo y consistente de herramientas para trabajar con funciones en listas y vectores.
 
 #### Instalación
 
@@ -299,6 +299,18 @@ install.packages("tidyverse")
 # Alternativamente, podemos instalar solo purrr:
 install.packages("purrr")
 ```
+
+El patrón de iterar por un vector, realizando una operación en cada elemento y calcular el resultado es tan común que el paquete `purrr` proporciona una familia de funciones para llevar a cabo esta tarea. Existe una función para cada tipo de salida:
+
+* [map()](https://www.rdocumentation.org/packages/purrr/versions/0.2.3/topics/map) devuelve una lista.
+* [map_lgl()](https://www.rdocumentation.org/packages/purrr/versions/0.2.3/topics/map) devuelve un vector lógico.
+* [map_int()](https://www.rdocumentation.org/packages/purrr/versions/0.2.3/topics/map) devuelve un vector de enteros.
+* [map_dbl()](https://www.rdocumentation.org/packages/purrr/versions/0.2.3/topics/map) devuelve un vector de reales.
+* [map_chr()](https://www.rdocumentation.org/packages/purrr/versions/0.2.3/topics/map) devuelve un vector de tipo carácter.
+
+Cada función toma un vector como entrada, aplica una función a cada elemento, y devuelve un vector de la misma longitud y con los mismos nombres de la entrada. El tipo de vector es determinado por el sufijo en la función `map`.
+
+En este curso y en un [módulo posterior](), trataremos en profundidad el uso del paquete `purrr` que hace uso de la programación funcional en las iteraciones en oposición al paradigma de la iteración imperativa y que hemos tratado en este capítulo. Una vez dominemos las funciones en el paquete `purrr`, seremos capaces de resolver la gran mayoría de algoritmos que impliquen la iteración con menos código, mas legible y con menos errores.
 
 
 #### Uso

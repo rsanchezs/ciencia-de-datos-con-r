@@ -305,43 +305,58 @@ for (i in 1:10) {
 }
 ```
 
-## Alternativas al Uso de Bucles en R
+## Alternativas al Uso de Bucles en R {.build}
+
+-Vectorización 
+
+-El Conjunto de Funciones __apply__ 
+
+-El paquete 
 
 
-## Alternativas al Uso de Bucles en R
 
-Sirva de ejemplo el siguiente algoritmo que calcula el cuadrado de cada elemento en una secuenca de 1 a `n`, el cual puede realizarse elemento a elemento mediante el bucle `for` como:
+## Alternativas al Uso de Bucles en R | Vectorización 
+
+__Ejemplo:__
 
 ```{r}
-n <- 5
-res <- rep(NA_integer_, n) 
-for (i in seq_len(n)) {
-  res[i] <- i ^ 2
+
+n <- 4
+v1 <- c(1, 2, 3, 4)
+v2 <- c(5, 6, 7, 8)
+v3 <- vector(mode = "integer", length = length(n))
+
+for (i in 1:n) { 
+	v3[i] <- v1[i] + v2[i] 
 }
-res
+v3
 ```
 
 
 
-## Alternativas al Uso de Bucles en R | Vectorización
+## Alternativas al Uso de Bucles en R | Vectorización 
+
 
 
 Si bien, podemos usar como alternativa la vectorización nativa de R:
 
 ```{r}
-n <- 5
-seq_len(n) ^ 2
+v3 = v1 + v2
+v3
 ```
+
+
+
 
 ## Alternativas al Uso de Bucles en R | El Conjunto de Funciones __`apply`__ {.build}
 
-* Nos permite manipular una selección de elementos en estructuras de datos de forma __repetitiva__.
+-Nos permite manipular una selección de elementos en estructuras de datos de forma repetitiva.
 
-* Nos permiten __iterar__ por los elementos sin tener que utilizar una construcción iterativa.
+-Nos permiten iterar por los elementos sin tener que utilizar una construcción iterativa.
 
-* Toman como entrada una estructura de datos y una función y aplican esta función a cada elemento.
+-Toman como entrada una estructura de datos y una función y aplican esta función a cada elemento.
 
-## Alternativas al Uso de Bucles en R | El Conjunto de Funciones __`apply`__ 
+## Alternativas al Uso de Bucles en R | El Conjunto de Funciones __`apply`__ {.build}
 
 * apply
 * lapply
@@ -357,60 +372,82 @@ Podemos consultar la documentación en RStudio mediante la instrucción:
 ?apply
 ```
 
-## Alternativas al Uso de Bucles en R | El Conjunto de Funciones __`apply`__ 
+## Alternativas al Uso de Bucles en R | El paquete {.build}
 
-El algoritmo del cuadrado de una secuencia de 1 a `n` se puede calcular mediante `sapply`:
+-Forma parte del ecosistema 
+
+-Conjuntos de funciones que aplican una función iterativamente a cada elemento de una lista o vector.
+
+-Similares al conjunto de funciones `apply`
+
+-Pero con nombres y argumentos mas consistentes. 
+
+## Alternativas al Uso de Bucles en R | El paquete
+
+
+## Alternativas al Uso de Bucles en R | Ejemplo:
 
 
 ```{r}
+# Algoritmo que calcula el cuadrado de cada elemento
+# en una secuencia de enteros del 1 a `n`
+n <- 5
+res <- rep(NA_integer_, n) 
+for (i in seq_len(n)) {
+  res[i] <- i ^ 2
+}
+res
+```
+
+## Alternativas al Uso de Bucles en R | Ejemplo:
+
+La segunda opción es por medio de la vectorización:
+
+```{r}
+# Algoritmo que calcula el cuadrado de cada elemento
+# en una secuencia de enteros del 1 a `n`
+n <- 5
+seq_len(n) ^ 2
+```
+
+
+## Alternativas al Uso de Bucles en R | Ejemplo:
+
+
+En tercer lugar, mediante `sapply`:
+
+```{r}
+# Algoritmo que calcula el cuadrado de cada elemento
+# en una secuencia de enteros del 1 a `n`
 n <- 5
 sapply(1:n, function(x) x^2)
 ```
 
 
-## Alternativas al Uso de Bucles en R | 
 
+## Alternativas al Uso de Bucles en R | Ejemplo:
 
-
-## Alternativas al Uso de Bucles en R | El paquete
-
-__Instalación__:
-
-```{r eval=FALSE}
-# La manera mas facil de conseguir `purrr` es instalar el ecosistema tidyverse
-install.packages("tidyverse")
-```
-
-
-```{r eval=FALSE}
-# Alternativamente, podemos instalar solo purrr:
-install.packages("purrr")
-```
-
-## Alternativas al Uso de Bucles en R | El paquete
-
-Por último, el algoritmo del cuadrado de una secuencia de 1 a `n` se puede calcular mediante `purrr::map()`:
-
+Por último, mediante `purrr::map()`:
 
 ```{r}
+# Algoritmo que calcula el cuadrado de cada elemento
+# en una secuencia de enteros del 1 a `n`
 n <- 5
 map_dbl(1:n,  function(x) x ^ 2)
 ```
 
 
-## Alternativas al Uso de Bucles en R | El paquete
+## Consejos para el uso de Bucles en R {.build}
 
+-Poner la menor cantidad de instrucciones dentro de una estructura iterativa. 
 
+-En repeat definir la expresión terminación del bucle. 
 
+-Es mejor el uso de una o mas llamadas a funciones dentro del bucle a que este sea demasiado  
 
+-Considerar las diferentes alternativas en este orden:
 
-
-
-
-
-
-
-
+    bucles < vectorización < apply < purrr
 
 
 
