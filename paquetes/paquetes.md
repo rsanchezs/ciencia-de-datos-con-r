@@ -1,4 +1,11 @@
 
+
+<!-- ```{r} -->
+<!-- go_interactive() -->
+<!-- ``` -->
+
+
+
 # Paquetes
 
 Los paquetes en R son colecciones de funciones y conjunto de datos desarrollados

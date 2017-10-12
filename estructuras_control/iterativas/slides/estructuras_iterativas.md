@@ -19,7 +19,7 @@ h2 {
 
 <style>
 h3 {
-  font-size: 30px;
+  font-size: 26px;
   letter-spacing: -1px;
   line-height: 2;
   font-weight: inherit;
@@ -160,10 +160,12 @@ for(i in seq_along(observaciones)) {
 media
 ```
 
+```
+## [1] 21.8
+```
 
-## Bucles __`for`__ Anidados
 
-Los bucles `for` pueden ser anidados:
+## Bucles __`for`__ Anidados {.build .smaller}
 
 
 
@@ -171,19 +173,33 @@ Los bucles `for` pueden ser anidados:
 # Creamos dos matrices cuadradas
 m1 <- matrix(sample(1:100, 9, replace = TRUE), nrow = 3)
 m2 <- matrix(sample(1:100, 9, replace = TRUE), nrow = 3)
+```
 
+
+
+```r
 # Inicializamos la matriz que contendra m1+m2
 suma <- matrix(nrow = 3, ncol = 3)
+```
 
+
+
+```r
 # Para cada fila y cada columna, realizamos la suma elemento a elemento 
 for(i in 1:nrow(m1)) {
   for(j in 1:ncol(m1)) {
     suma[i, j] <- m1[i, j] + m2[i, j]
   }
 }
-
 # Mostramos por pantalla la suma de m1+m2
 suma
+```
+
+```
+##      [,1] [,2] [,3]
+## [1,]  154   80   21
+## [2,]   85  111  115
+## [3,]   43  102  126
 ```
 
 
@@ -202,7 +218,15 @@ while(n <= 5) {
 }
 ```
 
-## Bucle __`repeat`__
+```
+## [1] 1
+## [1] 2
+## [1] 3
+## [1] 4
+## [1] 5
+```
+
+## Bucle __`repeat`__ {.smaller}
 
 Como alternativa al ejemplo anterior, podríamos codificar el algoritmo como:
 
@@ -220,27 +244,68 @@ repeat {
 }
 ```
 
-## Cláusula __`break`__
+```
+## [1] 1
+## [1] 2
+## [1] 3
+## [1] 4
+## [1] 5
+```
 
+## Cláusula __`break`__  | Calcular la Matriz Triangular Superior y la Diagonal Principal de una Matriz. {.build .smaller} 
+
+__Ejemplo:__
 
 
 ```r
 # Creamos una matriz cuadrada de 6 x 6
-m <-
-  matrix(
-    data = sample(x = 10, size = 36, replace = TRUE),
-                  nrow = 6,
-                  ncol = 6
-  )
+m <-matrix(data = sample(x = 10, size = 36, replace = TRUE),
+           nrow = 6,
+           ncol = 6
+)
+```
+
+
+
+```r
 # Mostramos por pantalla `m`
 m
+```
 
+```
+##      [,1] [,2] [,3] [,4] [,5] [,6]
+## [1,]   10    1    6    7    6    2
+## [2,]    1    3    4   10    6   10
+## [3,]    8    8    2    3    4    5
+## [4,]   10    3    3    3    8    9
+## [5,]    8    1    4    7    3    9
+## [6,]    4    7    3    4   10    4
+```
+
+## Cláusula __`break`__  | Calcular la Matriz Triangular Superior y la Diagonal Principal de una Matriz. {.build .smaller} 
+
+
+
+
+```r
 # Creamos un vector para la diagonal principal
 diagonal_principal <- vector(mode = "integer", length = nrow(m))
+```
+
+
+
+
+```r
+# Diagonal principal inicializado con todos sus valores a cero
 diagonal_principal
 ```
 
-## Cláusula __`break`__
+```
+## [1] 0 0 0 0 0 0
+```
+
+
+## Cláusula __`break`__  | Calcular la Matriz Triangular Superior y la Diagonal Principal de una Matriz. {.build .smaller} 
 
 
 
@@ -257,15 +322,43 @@ for (i in 1:nrow(m)) {
   }
   diagonal_principal[j] <- m[i, j]
 }
+```
 
+## Cláusula __`break`__  | Calcular la Matriz Triangular Superior y la Diagonal Principal de una Matriz. {.build .smaller} 
+
+
+
+```r
 # Mostramos por pantalla diagonal principal
 diagonal_principal
-# Mostraamos por pantalla matriz inferior de m
-m
+```
+
+```
+## [1] 10  3  2  3  3  4
 ```
 
 
+
+```r
+# Mostramos por pantalla matriz inferior de m
+m
+```
+
+```
+##      [,1] [,2] [,3] [,4] [,5] [,6]
+## [1,]   10    1    6    7    6    2
+## [2,]    0    3    4   10    6   10
+## [3,]    0    0    2    3    4    5
+## [4,]    0    0    0    3    8    9
+## [5,]    0    0    0    0    3    9
+## [6,]    0    0    0    0    0    4
+```
+
+
+
 ## Cláusula __`next`__
+
+__Ejemplo:__
 
 
 
@@ -275,6 +368,14 @@ for (i in 1:10) {
     next
     print(i)
 }
+```
+
+```
+## [1] 2
+## [1] 4
+## [1] 6
+## [1] 8
+## [1] 10
 ```
 
 ## Alternativas al Uso de Bucles en R
@@ -294,6 +395,10 @@ for (i in seq_len(n)) {
 res
 ```
 
+```
+## [1]  1  4  9 16 25
+```
+
 
 
 ## Alternativas al Uso de Bucles en R | Vectorización
@@ -305,6 +410,10 @@ Si bien, podemos usar como alternativa la vectorización nativa de R:
 ```r
 n <- 5
 seq_len(n) ^ 2
+```
+
+```
+## [1]  1  4  9 16 25
 ```
 
 ## Alternativas al Uso de Bucles en R | El Conjunto de Funciones __`apply`__ {.build}
@@ -343,6 +452,10 @@ n <- 5
 sapply(1:n, function(x) x^2)
 ```
 
+```
+## [1]  1  4  9 16 25
+```
+
 
 ## Alternativas al Uso de Bucles en R | 
 
@@ -374,6 +487,10 @@ Por último, el algoritmo del cuadrado de una secuencia de 1 a `n` se puede calc
 ```r
 n <- 5
 map_dbl(1:n,  function(x) x ^ 2)
+```
+
+```
+## [1]  1  4  9 16 25
 ```
 
 

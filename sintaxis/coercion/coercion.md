@@ -1,8 +1,8 @@
-<script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
 
 
-
-
+<!-- ```{r, include=FALSE} -->
+<!-- tutorial::go_interactive() -->
+<!-- ``` -->
 
 
 # Coerción
@@ -17,32 +17,61 @@ Cuando llamamos a una función con un argumento de un tipo erróneo, R intentar�
 
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ2IDwtIGMoMSwgMiwgMywgNCwgNSlcbnYifQ==</div>
+
+```r
+v <- c(1, 2, 3, 4, 5)
+v
+## [1] 1 2 3 4 5
+```
 
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ0eXBlb2YodikifQ==</div>
+
+```r
+typeof(v)
+## [1] "double"
+```
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJjbGFzcyh2KSJ9</div>
+
+```r
+class(v)
+## [1] "numeric"
+```
 
 Si cambiamos el segundo elemento del vector con la palabra "coercion". R cambiará la clase del objeto a `character` y todos los elementos del vector a `char` como podemos ver en el siguiente ejemplo:
 
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ2WzJdIDwtIFwiY29lcmNpb25cIiJ9</div>
+
+```r
+v[2] <- "coercion"
+```
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ0eXBlb2YodikifQ==</div>
+
+```r
+typeof(v)
+## [1] "character"
+```
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJjbGFzcyh2KSJ9</div>
+
+```r
+class(v)
+## [1] "character"
+```
 
 
 Cuando un vector lógico es convertido a un integer o double, `TRUE` es cambiado a
 1 y `FALSE` a 0:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ2IDwtIGMoRkFMU0UsIFRSVUUsIEZBTFNFKVxuYXMubnVtZXJpYyh2KSJ9</div>
+
+```r
+v <- c(FALSE, TRUE, FALSE)
+as.numeric(v)
+## [1] 0 1 0
+```
 
 
 ![Coerción](http://i.imgur.com/QrmSoIc.png)
@@ -67,23 +96,46 @@ de la función `as.()*`
 __Ejemplos__
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ2IDwtIGMoMSwgMiwgMywgNCwgNSlcbmNsYXNzKHYpIn0=</div>
+
+```r
+v <- c(1, 2, 3, 4, 5)
+class(v)
+## [1] "numeric"
+```
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJhcy5sb2dpY2FsKHYpIn0=</div>
+
+```r
+as.logical(v)
+## [1] TRUE TRUE TRUE TRUE TRUE
+```
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJhcy5jaGFyYWN0ZXIodikifQ==</div>
+
+```r
+as.character(v)
+## [1] "1" "2" "3" "4" "5"
+```
 
 
 
 En ocasiones, la conversión no puede ser llevada a cabo, en este caso R devuelve [_NA_.](#na)
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ2IDwtIGMoXCJhXCIsIFwiYlwiLCBcImNcIilcbmFzLm51bWVyaWModikifQ==</div>
+
+```r
+v <- c("a", "b", "c")
+as.numeric(v)
+## Warning: NAs introduced by coercion
+## [1] NA NA NA
+```
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJhcy5sb2dpY2FsKHYpIn0=</div>
+
+```r
+as.logical(v)
+## [1] NA NA NA
+```
 
 
 En resumen, la mayoría de las funciones producen un error cuando el tipo de datos que esperan no coincide con los que pasamos como argumentos. En esta situación tenemos dos posibilidades:
@@ -121,10 +173,16 @@ _ Tabla 1: Comprobación y coerción de los tipos más importantes_
 
 Podemos ver una lista completa de todas las funciones `is.()` en el paquete `base` mediante:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJscyhwYXR0ZXJuID0gXCJeaXNcIiwgYmFzZWVudigpKSJ9</div>
+
+```r
+ls(pattern = "^is", baseenv())
+```
 
 
 Asimismo, para obtener las funciones `as.*()` podemos hacerlo mediante la siguiente instrucción:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJscyhwYXR0ZXJuID0gXCJeYXNcIiwgYmFzZWVudigpKSJ9</div>
+
+```r
+ls(pattern = "^as", baseenv())
+```
 

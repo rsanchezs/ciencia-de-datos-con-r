@@ -9,9 +9,9 @@ opts_chunk$set(prompt=FALSE, comment='', results='markup', eval=TRUE, echo=TRUE)
 ```
 
 
-```{r, include=FALSE}
-tutorial::go_interactive()
-```
+<!-- ```{r, include=FALSE} -->
+<!-- tutorial::go_interactive() -->
+<!-- ``` -->
 
 
 # Lectura de Bases de Datos

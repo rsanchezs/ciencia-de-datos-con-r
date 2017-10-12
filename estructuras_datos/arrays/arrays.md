@@ -1,9 +1,9 @@
-<script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
 
 
 
-
-
+<!-- ```{r, include=FALSE} -->
+<!-- tutorial::go_interactive() -->
+<!-- ``` -->
 
 
 # Arrays
@@ -21,16 +21,50 @@ Para crear un _array_ utilizaremos la función `array()`, a la que pasaremos
 un vector atómico con los valores y un vector de dimensiones. Opcionalmente, 
 podemos proporcionar nombres para cada dimensión:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJhcnJheV8zX0QgPC0gYXJyYXkoXG4gIDE6MjQsIFxuICBkaW09Yyg0LCAzLCAyKSxcbiAgZGltbmFtZXMgPSBsaXN0KFxuICAgIGMoXCJ1bm9cIiwgXCJkb3NcIiwgXCJ0cmVzXCIsIFwiY3VhdHJvXCIpLFxuICAgIGMoXCJmaXZlXCIsIFwic2l4XCIsIFwic2V2ZW5cIiksXG4gICAgYyhcInVuXCIsIFwiZGV1eFwiKVxuICApKVxuYXJyYXlfM19EIn0=</div>
+
+```r
+array_3_D <- array(
+  1:24, 
+  dim=c(4, 3, 2),
+  dimnames = list(
+    c("uno", "dos", "tres", "cuatro"),
+    c("five", "six", "seven"),
+    c("un", "deux")
+  ))
+array_3_D
+## , , un
+## 
+##        five six seven
+## uno       1   5     9
+## dos       2   6    10
+## tres      3   7    11
+## cuatro    4   8    12
+## 
+## , , deux
+## 
+##        five six seven
+## uno      13  17    21
+## dos      14  18    22
+## tres     15  19    23
+## cuatro   16  20    24
+```
 
 
 Podemos comprobar si un objeto es un array mediante la función `is.array)`:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJpcy5hcnJheShhcnJheV8zX0QpIn0=</div>
+
+```r
+is.array(array_3_D)
+## [1] TRUE
+```
 
 Finalmente, podemos conocer su dimensión con la ayuda de la función `dim()`:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJkaW0oYXJyYXlfM19EKSJ9</div>
+
+```r
+dim(array_3_D)
+## [1] 4 3 2
+```
 
 
 

@@ -3,9 +3,9 @@ opts_knit$set(base.dir='./', fig.path='', out.format='md', encoding = 'UTF-8')
 opts_chunk$set(prompt=FALSE, comment='##', results='markup', echo=TRUE, eval=TRUE, collapse=TRUE)
 ```
 
-```{r, include=FALSE}
-tutorial::go_interactive()
-```
+<!-- ```{r, include=FALSE} -->
+<!-- tutorial::go_interactive() -->
+<!-- ``` -->
 
 # Expresiones y Asignación
 

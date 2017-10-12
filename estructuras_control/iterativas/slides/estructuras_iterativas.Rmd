@@ -294,6 +294,8 @@ m
 
 ## Cláusula __`next`__
 
+__Ejemplo:__
+
 
 ```{r}
 for (i in 1:10) {

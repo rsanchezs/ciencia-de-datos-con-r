@@ -1,9 +1,9 @@
-<script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
 
 
 
-
-
+<!-- ```{r, include=FALSE} -->
+<!-- tutorial::go_interactive() -->
+<!-- ``` -->
 
 
 
@@ -23,15 +23,27 @@ Los dos primeros, son la forma positiva y negativa para valores infinitos. __NaN
 Si una computación resulta en un número que es demasiado grande, R devolverá `Inf` para un numero positivo y `-Inf` para un número negativo (esto es un valor infinito positivo y infinito negativo, respectivamente):
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIyIF4gMTAyNCJ9</div>
+
+```r
+2 ^ 1024
+## [1] Inf
+```
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiItIDIgXiAxMDI0In0=</div>
+
+```r
+- 2 ^ 1024
+## [1] -Inf
+```
 
 Esto es también cierto cuando hacemos la división entre 0:
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIxIC8gMCJ9</div>
+
+```r
+1 / 0
+## [1] Inf
+```
 
 ## NaN {#nan}
 
@@ -39,10 +51,18 @@ Esto es también cierto cuando hacemos la división entre 0:
 En ocasiones, una computación producirá un resultado que no tiene sentido. En estos casos, R devolverá `NaN` (del inglés, "not a number"):
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJJbmYgLSBJbmYifQ==</div>
+
+```r
+Inf - Inf
+## [1] NaN
+```
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIwIC8gMCJ9</div>
+
+```r
+0 / 0
+## [1] NaN
+```
 
 
 ## NA {#na}
@@ -51,15 +71,26 @@ En R, los valores `NA` son usados para representar valores desconocidos. (NA es 
 
 A modo de ejemplo, si el vector `peso` recoge los pesos de 5 personas, habiéndose perdido el cuarto valor, se codificaría como:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJwZXNvIDwtIGMoNzcsIDY4LCA4NSwgTkEsIDczKSJ9</div>
+
+```r
+peso <- c(77, 68, 85, NA, 73)
+```
 
 Si pretendemos calcular el peso medio, obtendremos como resultado un valor perdido:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJtZWFuKHBlc28pIn0=</div>
+
+```r
+mean(peso)
+## [1] NA
+```
 
 Si, en cualquier caso, deseamos calcular la media de los pesos efectivamente disponibles,
 utilizaríamos la opción de _eliminar valores perdidos_ (del inglés, NA remove) que se declara
 como `na.rm=TRUE`:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJtZWFuKHBlc28sIG5hLnJtID0gVFJVRSkifQ==</div>
+
+```r
+mean(peso, na.rm = TRUE)
+## [1] 75.75
+```
 

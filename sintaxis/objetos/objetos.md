@@ -1,10 +1,10 @@
-<script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
 
 
 
 
-
-
+<!-- ```{r, include=FALSE} -->
+<!-- tutorial::go_interactive() -->
+<!-- ``` -->
 
 
 # Objetos
@@ -56,15 +56,43 @@ Todos los objetos en R tienen una clase, la cual define que información contien
 Podemos encontrar la clase de un objeto mediante la función `class(objeto)`:
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ2ZWN0b3JfbnVtZXJpY28gPC0gYygxLCAyLCAzLCA0LCA1KVxuY2xhc3ModmVjdG9yX251bWVyaWNvKSJ9</div>
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJwcmVfZXhlcmNpc2VfY29kZSI6InZlY3Rvcl9udW1lcmljbyA8LSBjKDEsIDIsIDMsIDQsIDUpIiwic2FtcGxlIjoiIyBDcmVhbW9zIHVuIHZlY3RvciBudW1lcmljb1xudmVjdG9yX251bWVyaWNvIDwtIGMoMSwgMiwgMywgNCwgNSlcblxuIyBDb21wcm9iYW1vcyBsYSBjbGFzZSBkZSB1biBvYmpldG8gbWVkaWFudGUgYGNsYXNzKG5vbWJyZV9vYmpldG8pYCIsInNvbHV0aW9uIjoiIyBDcmVhbW9zIHVuIHZlY3RvciBudW1lcmljb1xudmVjdG9yX251bWVyaWNvIDwtIGMoMSwgMiwgMywgNCwgNSlcblxuIyBDb21wcm9iYW1vcyBsYSBjbGFzZSBkZSB1biBvYmpldG8gbWVkaWFudGUgYGNsYXNzKG5vbWJyZV9vYmpldG8pYFxuY2xhc3ModmVjdG9yX251bWVyaWNvKSIsInNjdCI6InRlc3RfZnVuY3Rpb24obmFtZSA9IFwiY2xhc3NcIiwgYXJncyA9IFwieFwiLCBldmFsID0gRkFMU0UsIG5vdF9jYWxsZWRfbXNnID0gXCJVc2EgbGEgZnVuY2lcdTAwZjNuIGNsYXNzKCkgcGFyYSBjb25vY2VyIGxhIGNsYXNlIGRlIHVuIG9iamV0by5cIiwgYXJnc19ub3Rfc3BlY2lmaWVkX21zZyA9IFwiUGFzYSBhIGxhIGZ1bmNpXHUwMGYzbiBjbGFzcygpIGNvbW8gcHJpbWVyIGFyZ3VtZW50byBlbCBvYmpldG9cIixpbmNvcnJlY3RfbXNnID0gXCJ2ZWN0b3JfbnVtZXJpY29cIilcbnN1Y2Nlc3NfbXNnKFwiXHUwMGExRXhjZWxlbnRlLCB5YSBzYWJlbW9zIGNvbW8gY29tcHJvYmFyIGxhIGNsYXNlIGEgbGEgcXVlIHBlcnRlbmVjZSB1biBvYmpldG8hXCIpIn0=</div>
+```r
+vector_numerico <- c(1, 2, 3, 4, 5)
+class(vector_numerico)
+## [1] "numeric"
+```
 
 
+```r
+vector_numerico <- c(1, 2, 3, 4, 5)
+```
 
 
+```r
+# Creamos un vector numerico
+vector_numerico <- c(1, 2, 3, 4, 5)
+
+# Comprobamos la clase de un objeto mediante `class(nombre_objeto)`
+```
 
 
+```r
+# Creamos un vector numerico
+vector_numerico <- c(1, 2, 3, 4, 5)
+
+# Comprobamos la clase de un objeto mediante `class(nombre_objeto)`
+class(vector_numerico)
+## [1] "numeric"
+```
+
+
+```r
+test_function(name = "class", args = "x", eval = FALSE, not_called_msg = "Usa la función class() para conocer la clase de un objeto.", args_not_specified_msg = "Pasa a la función class() como primer argumento el objeto",incorrect_msg = "vector_numerico")
+## Error in eval(expr, envir, enclos): could not find function "test_function"
+success_msg("¡Excelente, ya sabemos como comprobar la clase a la que pertenece un objeto!")
+## Error in eval(expr, envir, enclos): could not find function "success_msg"
+```
 
 ## Cada Objeto tiene un Tipo {#tipo}
 
@@ -73,7 +101,12 @@ Cada objeto en R tiene un tipo. El tipo define como es almacenado el objeto en R
 Podemos conocer el tipo de objeto con la función `typeof(objeto)`:
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ2ZWN0b3JfbnVtZXJpY28gPC0gYygxLCAyLCAzLCA0LCA1KVxudHlwZW9mKHZlY3Rvcl9udW1lcmljbykifQ==</div>
+
+```r
+vector_numerico <- c(1, 2, 3, 4, 5)
+typeof(vector_numerico)
+## [1] "double"
+```
 
 ### Comprobar la Clase de un Objeto en **_scripts_**
 
@@ -94,12 +127,19 @@ if(!is(x, "alguna_clase")) {
 La mayoría de las clases tienen su propia función `is.*()`, utilizar esta función es mas efectivo que el uso de la función general `is()`. Por ejemplo:
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJpcy5jaGFyYWN0ZXIoXCJDaWVuY2lhIGRlIERhdG9zIGNvbiBSXCIpIn0=</div>
+
+```r
+is.character("Ciencia de Datos con R")
+## [1] TRUE
+```
 
 Podemos ver una lista completa de las funciones `is()` en el paquete `base` mediante la siguiente instrucción:
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJscyhwYXR0ZXJuID0gXCJeaXNcIiwgYmFzZWVudigpKSJ9</div>
+
+```r
+ls(pattern = "^is", baseenv())
+```
 
 
 ## Nombres de los Objetos {#nombres}

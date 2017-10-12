@@ -1,9 +1,9 @@
-<script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
 
 
 
-
-
+<!-- ```{r, include=FALSE} -->
+<!-- tutorial::go_interactive() -->
+<!-- ``` -->
 
 
 
@@ -70,7 +70,11 @@ hipotenusa <- sqrt( a ^ 2 + b ^ 2)
 v <- c(1, 2, 3)
 ```
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJoaXBvdGVudXNhPC1zcXJ0KGFeMitiXjIpXG52IDwtIGMoMSwyLDMpIn0=</div>
+
+```r
+hipotenusa<-sqrt(a^2+b^2)
+v <- c(1,2,3)
+```
 
 
 La excepción a esta regla es cuando usamos el operador de secuencia `:` 

@@ -1,9 +1,9 @@
-<script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
 
 
 
-
-
+<!-- ```{r, include=FALSE} -->
+<!-- tutorial::go_interactive() -->
+<!-- ``` -->
 
 
 # Vectores
@@ -22,31 +22,75 @@ debe ser conocido en tiempo de ejecución o compilación.
 Los vectores atómicos pueden ser creados con la función `c()`, que corresponde
 a la sigla de _combinar_:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ2ZWN0b3JfZG91YmxlIDwtIGMoMSwgMi41LCA0LjUpXG4jIENvbiBlbCBzdWZpam8gTCwgY29uc2VndWltb3MgdW4gaW50ZWdlciBlbiBsdWdhciBkZSB1biBkb3VibGVcbnZlY3Rvcl9pbnRlZ2VyIDwtIGMoMUwsIDZMLCAxMEwpXG4jIFVzYW1vcyBUUlVFIHkgRkFMU0UgKG8gVCB5IEYpIHBhcmEgY3JlYXIgdmVjdG9yZXMgbFx1MDBmM2dpY29zXG52ZWN0b3JfbG9naWNhbCA8LSBjKFRSVUUsIEZBTFNFLCBULCBGKVxudmVjdG9yX2NoYXJhY3RlciA8LSBjKFwiSG9sYVwiLCBcIk11bmRvIVwiKSJ9</div>
+
+```r
+vector_double <- c(1, 2.5, 4.5)
+# Con el sufijo L, conseguimos un integer en lugar de un double
+vector_integer <- c(1L, 6L, 10L)
+# Usamos TRUE y FALSE (o T y F) para crear vectores lógicos
+vector_logical <- c(TRUE, FALSE, T, F)
+vector_character <- c("Hola", "Mundo!")
+```
 
 
 La función `vector()` crea un vector de un tipo y longitud que debemos especificar
 en el momento de su declaración:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ2ZWN0b3JfZG91YmxlIDwtIHZlY3Rvcihtb2RlID0gXCJkb3VibGVcIiwgbGVuZ3RoID0gMylcbnZlY3Rvcl9pbnRlZ2VyIDwtIHZlY3Rvcihtb2RlID0gXCJpbnRlZ2VyXCIsIGxlbmd0aCA9IDMpXG52ZWN0b3JfbG9naWNhbCA8LSB2ZWN0b3IobW9kZSA9IFwibG9naWNhbFwiLCBsZW5ndGggPSA0KVxudmVjdG9yX2NoYXJhY3RlciA8LSB2ZWN0b3IobW9kZSA9IFwiY2hhcmFjdGVyXCIsIGxlbmd0aCA9IDIpIn0=</div>
+
+```r
+vector_double <- vector(mode = "double", length = 3)
+vector_integer <- vector(mode = "integer", length = 3)
+vector_logical <- vector(mode = "logical", length = 4)
+vector_character <- vector(mode = "character", length = 2)
+```
 
 Otra posibilidad es hacer uso de las funciones _wrapper_ (del inglés, envoltorio) que
 existen para cada tipo de datos. Las siguientes instrucciones son equivalentes a
 las anteriores:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ2ZWN0b3JfZG91YmxlIDwtIGRvdWJsZSgzKVxudmVjdG9yX2ludGVnZXIgPC0gaW50ZWdlcigzKVxudmVjdG9yX2xvZ2ljYWwgPC0gbG9naWNhbCg0KVxudmVjdG9yX2NoYXJhY3RlciA8LSBjaGFyYWN0ZXIoMikifQ==</div>
+
+```r
+vector_double <- double(3)
+vector_integer <- integer(3)
+vector_logical <- logical(4)
+vector_character <- character(2)
+```
 
 
 Además, mediante el operador `:` podemos generar sucesiones de números:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIxOjEwXG4xNToxMVxuMToxMCAtIDFcbjE6KDEwIC0gMSkifQ==</div>
+
+```r
+1:10
+##  [1]  1  2  3  4  5  6  7  8  9 10
+15:11
+## [1] 15 14 13 12 11
+1:10 - 1
+##  [1] 0 1 2 3 4 5 6 7 8 9
+1:(10 - 1)
+## [1] 1 2 3 4 5 6 7 8 9
+```
 
 También podemos usar las funciones `seq()` y `rep()`:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJzZXEoMTApICMgbWlzbW8gZWZlY3RvIHF1ZSAxOjEwXG5zZXEoMywgMTApICMgbWlzbW8gZWZlY3RvIHF1ZSAzOjEwXG5zZXEoMSwgMTAsIGJ5PTMpICNzYWx0YW5kbyBkZSAzIGVuIDMifQ==</div>
+
+```r
+seq(10) # mismo efecto que 1:10
+##  [1]  1  2  3  4  5  6  7  8  9 10
+seq(3, 10) # mismo efecto que 3:10
+## [1]  3  4  5  6  7  8  9 10
+seq(1, 10, by=3) #saltando de 3 en 3
+## [1]  1  4  7 10
+```
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJyZXAoMTo0LCAyKSAjcmVwZXRpbW9zIDE6NCBkb3MgdmVjZXNcbnJlcCgxOjQsIGVhY2g9MikgI3JlcGV0aW1vcyAxOjQgZG9zIHZlY2VzLCBpbnRlcmNhbGFuZG8gcmVzdWx0YWRvIn0=</div>
+
+```r
+rep(1:4, 2) #repetimos 1:4 dos veces
+## [1] 1 2 3 4 1 2 3 4
+rep(1:4, each=2) #repetimos 1:4 dos veces, intercalando resultado
+## [1] 1 1 2 2 3 3 4 4
+```
 
 
 ## Longitud {#longitud}
@@ -55,19 +99,39 @@ Todos los vectores tienen dos propiedades:
 
 - Un _tipo_, que se puede determinar con la función `typeof()`:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ0eXBlb2YobGV0dGVycylcbnR5cGVvZigxOjEwKSJ9</div>
+
+```r
+typeof(letters)
+## [1] "character"
+typeof(1:10)
+## [1] "integer"
+```
 
 - Una _longitud_, que nos dice cuantos elementos contiene el vector. Podemos
 conocer este valor mediante la función `length()`:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ2IDwtIGMoMSwgMiwgMylcbmxlbmd0aCh2KVxubGVuZ3RoKGMoVFJVRSwgRkFMU0UsIE5BKSlcbiJ9</div>
+
+```r
+v <- c(1, 2, 3)
+length(v)
+## [1] 3
+length(c(TRUE, FALSE, NA))
+## [1] 3
+```
 
 
 Una posible fuente de confusión es cuando trabajamos con vectores de tipo character.
 Con este tipo de vector, la longitud es el número de strings, no el número de caracteres
 en cada string. Para esto último, utilizaremos la función `nchar()`:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJhbHVtbm9zIDwtIGMoXCJKdWFuXCIsIFwiUGVwZVwiLCBcIk1hcmlhXCIsIFwiRG9sb3Jlc1wiKVxubGVuZ3RoKGFsdW1ub3MpXG5uY2hhcihhbHVtbm9zKSJ9</div>
+
+```r
+alumnos <- c("Juan", "Pepe", "Maria", "Dolores")
+length(alumnos)
+## [1] 4
+nchar(alumnos)
+## [1] 4 4 5 7
+```
 
 
 
@@ -89,12 +153,22 @@ utilizados en el análisis de datos, es por eso que no los trataremos en este te
 Los vectores lógicos son  el tipo más simple de vector atómico puesto que sólo pueden
 tomar tres posibles valores `TRUE`, `FALSE` y `NA`. Los vectores lógicos usualmente
 son el resultado de expresiones con los operadores lógicos y de comparación. 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIxIDogMTAgJSUgMyA9PSAwIn0=</div>
+
+```r
+1 : 10 %% 3 == 0
+##  [1] FALSE FALSE  TRUE FALSE FALSE  TRUE FALSE FALSE  TRUE FALSE
+```
 
 Para mas información sobre la sintaxis de los operadores y su precedencia consultar la
 documentación R: 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIFNpbnRheGlzIGRlIGxvcyBvcGVyYWRvcmVzIHkgc3UgcHJlY2VkXHUwMGU5bmNpYVxuaGVscChcIlN5bnRheFwiLCBcImJhc2VcIilcbiMgT3BlcmFkb3JlcyBsXHUwMGYzZ2ljb3NcbmhlbHAoXCJMb2dpY1wiLCBcImJhc2VcIikifQ==</div>
+
+```r
+# Sintaxis de los operadores y su precedéncia
+help("Syntax", "base")
+# Operadores lógicos
+help("Logic", "base")
+```
 
 
 ### Numeric {#numeric}
@@ -103,14 +177,25 @@ Los vectores de tipo integer y double son en R vectores de tipo numeric.
 En R, los números son double por defecto. Si queremos un integer, añadiremos la letra
 `L` después del número:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ0eXBlb2YoMSlcbnR5cGVvZigxTClcbjEuNUwifQ==</div>
+
+```r
+typeof(1)
+## [1] "double"
+typeof(1L)
+## [1] "integer"
+1.5L
+## [1] 1.5
+```
 
 ### Character {#character}
 
 Los vectores de tipo character son aquellos en los que cada elemento del vector es un 
 _string_ (cadena de caracteres):
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ0aXR1bG8gPC0gXCJDaWVuY2lhIGRlIGRhdG9zIGVuIFJcIiJ9</div>
+
+```r
+titulo <- "Ciencia de datos en R"
+```
 
 ## Manipulación de Vectores Atómicos {#manipulacion}
 
@@ -133,17 +218,41 @@ opción es usar la función `typeof()`. Otra es usar las funciones que realizan 
 comprobación de tipo y devuelven `TRUE` o `FALSE`, como `is.character()`, `is.double()`, 
 `is.integer()`, `is.logical()` o, de forma más general mediante `is.atomic()`:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ2ZWN0b3JfaW50ZWdlciA8LSBjKDFMLCAyTCwgM0wpXG50eXBlb2YodmVjdG9yX2ludGVnZXIpXG5pcy5pbnRlZ2VyKHZlY3Rvcl9pbnRlZ2VyKVxuaXMuYXRvbWljKHZlY3Rvcl9pbnRlZ2VyKSJ9</div>
+
+```r
+vector_integer <- c(1L, 2L, 3L)
+typeof(vector_integer)
+## [1] "integer"
+is.integer(vector_integer)
+## [1] TRUE
+is.atomic(vector_integer)
+## [1] TRUE
+```
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ2ZWN0b3JfZG91YmxlIDwtIGMoMSwgMi41LCA0LjUpXG50eXBlb2YodmVjdG9yX2RvdWJsZSlcbmlzLmRvdWJsZSh2ZWN0b3JfZG91YmxlKVxuaXMuYXRvbWljKHZlY3Rvcl9kb3VibGUpIn0=</div>
+
+```r
+vector_double <- c(1, 2.5, 4.5)
+typeof(vector_double)
+## [1] "double"
+is.double(vector_double)
+## [1] TRUE
+is.atomic(vector_double)
+## [1] TRUE
+```
 
 
 Es importante subrayar que la función `is.numeric()` comprueba si un objeto es de
 tipo numeric y devuelve `TRUE` tanto para vectores de tipo integer como de tipo 
 double. 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJpcy5udW1lcmljKHZlY3Rvcl9pbnRlZ2VyKVxuaXMubnVtZXJpYyh2ZWN0b3JfZG91YmxlKSJ9</div>
+
+```r
+is.numeric(vector_integer)
+## [1] TRUE
+is.numeric(vector_double)
+## [1] TRUE
+```
 
 
 En la siguiente tabla resumimos las funciones para comprobar el tipo de nuestros
@@ -173,13 +282,27 @@ siguiente:
     
 Por ejemplo, mezclar un character y un integer producirá un character:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ2IDwtIGMoXCJhXCIsIDEpXG52XG50eXBlb2YodilcbmNsYXNzKHYpXG4ifQ==</div>
+
+```r
+v <- c("a", 1)
+v
+## [1] "a" "1"
+typeof(v)
+## [1] "character"
+class(v)
+## [1] "character"
+```
 
 
 Cuando un vector lógico es convertido a un integer o double, `TRUE` es cambiado a
 1 y `FALSE` a 0:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ2IDwtIGMoRkFMU0UsIEZBTFNFLCBGQUxTRSlcbmFzLm51bWVyaWModikifQ==</div>
+
+```r
+v <- c(FALSE, FALSE, FALSE)
+as.numeric(v)
+## [1] 0 0 0
+```
 
  
 La coerción sucede normalmente de forma automática. La mayoría de funciones matemáticas
@@ -193,20 +316,40 @@ Una gran característica de los vectores en R es que podemos asignar a cada elem
 nombre. Etiquetar los elementos hace nuestro código mas legible. Podemos especificar
 los nombres cuando creamos un vector con la forma `nombre = valor`: 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJjKG1hbnphbmEgPSAxLCBwbGF0YW5vID0gMiwga2l3aSA9IDMpIn0=</div>
+
+```r
+c(manzana = 1, platano = 2, kiwi = 3)
+## manzana platano    kiwi 
+##       1       2       3
+```
 
 Podemos añadir nombres a los elementos de un vector después de su creación con la 
 ayuda de la función `names()`:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJmcnV0YXMgPC0gMTo0XG5uYW1lcyhmcnV0YXMpIDwtIGMoXCJtYW56YW5hXCIsIFwicGxhdGFub1wiLCBcImtpd2lcIilcbmZydXRhcyJ9</div>
+
+```r
+frutas <- 1:4
+names(frutas) <- c("manzana", "platano", "kiwi")
+frutas
+## manzana platano    kiwi    <NA> 
+##       1       2       3       4
+```
 
 Gracias a la función `names()` podemos conocer los nombres de un vector:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJuYW1lcyhmcnV0YXMpIn0=</div>
+
+```r
+names(frutas)
+## [1] "manzana" "platano" "kiwi"    NA
+```
 
 Por último, si un vector no tiene nombres, la función `names()` devuelve `NULL`:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJuYW1lcygxOjQpIn0=</div>
+
+```r
+names(1:4)
+## NULL
+```
 
 ### Operaciones Vectorizadas {#operaciones-vectorizadas}
 
@@ -217,7 +360,14 @@ eficiente, conciso y mas legible que en otros lenguajes de programación.
 
 El ejemplo mas simple es cuando sumamos dos vectores:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ2MSA8LSAxOjRcbnYyIDwtIDU6OFxudjM8LSB2MSArIHYyXG52MyJ9</div>
+
+```r
+v1 <- 1:4
+v2 <- 5:8
+v3<- v1 + v2
+v3
+## [1]  6  8 10 12
+```
 
 
 Cuando usamos dos o mas vectores en una operación, R alineará los vectores y llevará
@@ -237,21 +387,51 @@ longitud que los anteriores, como muestra la [Figura 1]().
 Sin la vectorización tendríamos que realizar la suma mediante el uso de una estructura
 iterativa, como por ejemplo:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ2MyA8LSBudW1lcmljKGxlbmd0aCh2MSkpXG5mb3IoaSBpbiBzZXFfYWxvbmcodjEpKSB7XG4gIHYzW2ldIDwtIHYxW2ldICsgdjJbaV1cbn1cbnYzIn0=</div>
+
+```r
+v3 <- numeric(length(v1))
+for(i in seq_along(v1)) {
+  v3[i] <- v1[i] + v2[i]
+}
+v3
+## [1]  6  8 10 12
+```
 
 Otro tipo de operaciones que podemos realizar de forma vectorizada son las comparaciones
 lógicas. Supongamos que queremos saber que elementos en un vector son mas grandes que 2.
 Podríamos hacer lo siguiente:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ2MSA8LSAxOjRcbnYxID4gMiJ9</div>
+
+```r
+v1 <- 1:4
+v1 > 2
+## [1] FALSE FALSE  TRUE  TRUE
+```
 
 A continuación, mostramos otros ejemplos de operaciones vectorizadas de tipo lógico:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ2MSA8LSAxOjRcbnYxID49IDJcbnYyIDwgM1xudjMgPT0gOCJ9</div>
+
+```r
+v1 <- 1:4
+v1 >= 2
+## [1] FALSE  TRUE  TRUE  TRUE
+v2 < 3
+## [1] FALSE FALSE FALSE FALSE
+v3 == 8
+## [1] FALSE  TRUE FALSE FALSE
+```
 
 Desde luego, la resta, multiplicación y división son también operaciones vectorizadas:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ2MSAtIHYyXG52MSAqIHYyXG52MSAvIHYyIn0=</div>
+
+```r
+v1 - v2
+## [1] -4 -4 -4 -4
+v1 * v2
+## [1]  5 12 21 32
+v1 / v2
+## [1] 0.2000000 0.3333333 0.4285714 0.5000000
+```
 
 ### Reciclado de Vectores y Repetición {#reciclado-de-vectores-y-repeticion}
 
@@ -263,7 +443,11 @@ intentamos realizar operaciones en vectores de diferente longitud?".
 Si intentamos realizar la suma de un único número (escalar) a un vector, entonces el número
 es sumado a cada elemento en el vector, como muestra la [Figura 2]():
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIxOjUgKyAxIn0=</div>
+
+```r
+1:5 + 1
+## [1] 2 3 4 5 6
+```
 
 ![Vectorización con un escalar](http://i.imgur.com/977D3ug.png)
 
@@ -271,7 +455,11 @@ es sumado a cada elemento en el vector, como muestra la [Figura 2]():
 Cuando sumamos dos vectores de diferente longitud, R reciclará los elementos del vector 
 más pequeño para que coincida con el más grande, como podemos ver en la [Figura 3]():
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIxOjIgKyAxOjQifQ==</div>
+
+```r
+1:2 + 1:4
+## [1] 2 4 4 6
+```
 
 ![Vectorización vectores diferente longitud](http://i.imgur.com/bDKyVRP.png)
 
@@ -279,7 +467,13 @@ más pequeño para que coincida con el más grande, como podemos ver en la [Figu
 Si la longitud del vector más grande no es múltiple con la longitud del vector más
 pequeño, R nos lo hará saber mediante un mensaje:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIxOjUgKyAxOjcifQ==</div>
+
+```r
+1:5 + 1:7
+## Warning in 1:5 + 1:7: longer object length is not a multiple of shorter
+## object length
+## [1]  2  4  6  8 10  7  9
+```
 
 
 Aunque R nos permita realizar operaciones con vectores de diferente longitud, esto
@@ -291,9 +485,24 @@ vectores de la misma longitud antes de operar con ellos.
 La función `rep()` es muy útil para esta tarea, permitiéndonos crear un vector con 
 elementos repetidos:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJyZXAoMTo1LCAzKVxucmVwKDE6NSwgZWFjaCA9IDMpXG5yZXAoMTo1LCB0aW1lcyA9IDE6NSlcbiJ9</div>
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJyZXAoMTo1LCBsZW5ndGgub3V0ID0gNylcbiMgQWx0ZXJuYXRpdmFtZW50ZSBwb2RlbW9zIGhhY2VybG8gbWVkaWFudGUgcmVwX2xlbiAoZGVzZGUgdjMuMC4wKVxucmVwX2xlbigxOjUsIDcpIn0=</div>
+```r
+rep(1:5, 3)
+##  [1] 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5
+rep(1:5, each = 3)
+##  [1] 1 1 1 2 2 2 3 3 3 4 4 4 5 5 5
+rep(1:5, times = 1:5)
+##  [1] 1 2 2 3 3 3 4 4 4 4 5 5 5 5 5
+```
+
+
+```r
+rep(1:5, length.out = 7)
+## [1] 1 2 3 4 5 1 2
+# Alternativamente podemos hacerlo mediante rep_len (desde v3.0.0)
+rep_len(1:5, 7)
+## [1] 1 2 3 4 5 1 2
+```
 
 ### Selección de Elementos {#seleccion-de-elementos}
 
@@ -308,44 +517,82 @@ todos negativos, o cero.
 
  Seleccionar los elementos con integers positivos extrae los elementos de las posiciones indicadas:
   
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ2IDwtIGMoXCJ1bm9cIiwgXCJkb3NcIiwgXCJ0cmVzXCIsIFwiY3VhdHJvXCIsIFwiY2luY29cIilcbnZbYygzLCAyLCA1KV0ifQ==</div>
+
+```r
+v <- c("uno", "dos", "tres", "cuatro", "cinco")
+v[c(3, 2, 5)]
+## [1] "tres"  "dos"   "cinco"
+```
 
   Repitiendo una posición, podemos obtener un vector de una longitud más grande que
 el vector original:
   
   
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ2W2MoMSwgMSwgNSwgNSwgNSwgMildIn0=</div>
+
+```r
+v[c(1, 1, 5, 5, 5, 2)]
+## [1] "uno"   "uno"   "cinco" "cinco" "cinco" "dos"
+```
 
   
   Los valores negativos eliminan los elementos en las posiciones especificadas:
   
     
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ2W2MoLTEsIC0zLCAtNSldIn0=</div>
+
+```r
+v[c(-1, -3, -5)]
+## [1] "dos"    "cuatro"
+```
 
   
   No podemos mezclar valores positivos y negativos:
   
 
   
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ2W2MoMSwgLTEpXSJ9</div>
+
+```r
+v[c(1, -1)]
+```
 
 
 - Por medio de un vector lógico obtenemos todos los valores correspondientes
 al valor `TRUE`. Este tipo es útil en conjunción con la funciones de comparación:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ2IDwtIGMoMTAsIDMsIE5BLCA1LCA4LCAxLCBOQSlcbiMgRGV2dWVsdmUgdG9kb3MgbG9zIHZhbG9yZXMgcXVlIG5vIHNvbiBOQSBlbiB4XG52WyFpcy5uYSh2KV0ifQ==</div>
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIFRvZG9zIGxvcyB2YWxvcmVzIHBhcmVzIChvIGRlc2Nvbm9jaWRvcykgZW4geFxudlt2ICUlIDIgPT0gMF0ifQ==</div>
+```r
+v <- c(10, 3, NA, 5, 8, 1, NA)
+# Devuelve todos los valores que no son NA en x
+v[!is.na(v)]
+## [1] 10  3  5  8  1
+```
+
+
+```r
+# Todos los valores pares (o desconocidos) en x
+v[v %% 2 == 0]
+## [1] 10 NA  8 NA
+```
 
 
 - Si hemos dado nombres a los elementos de nuestro vector, podemos seleccionar
 sus elementos con un vector de tipo character:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJmcnV0YXMgPC0gYyhtYW56YW5hID0gMSwgcGxhdGFubz0gMiwga2l3aT0zLCBwZXJhPTQsIG5hcmFuamE9NSlcbmZydXRhc1tjKFwicGxhdGFub1wiLCBcIm5hcmFuamFcIildIn0=</div>
+
+```r
+frutas <- c(manzana = 1, platano= 2, kiwi=3, pera=4, naranja=5)
+frutas[c("platano", "naranja")]
+## platano naranja 
+##       2       5
+```
 
 - Mediante `v[]`, obtendremos el vector completo:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ2IDwtIGMoMTAsIDMsIE5BLCA1LCA4LCAxLCBOQSlcbnZbXSJ9</div>
+
+```r
+v <- c(10, 3, NA, 5, 8, 1, NA)
+v[]
+## [1] 10  3 NA  5  8  1 NA
+```
  
  Esta notación no es muy útil para acceder a vectores, sin embargo nos será de 
  gran ayuda en el acceso a [matrices](../matrices/matrices.Rmd) (y cualquier tipo 

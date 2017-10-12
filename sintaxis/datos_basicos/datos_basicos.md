@@ -1,8 +1,8 @@
-<script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
 
 
-
-
+<!-- ```{r, include=FALSE} -->
+<!-- tutorial::go_interactive() -->
+<!-- ``` -->
 
 
 # Datos Básicos en R
@@ -19,26 +19,56 @@ R proporciona cuatro tipos básicos de datos, también conocidos como vectores a
 El tipo _logical_ es la forma que tiene R para los datos binarios. Usados en test lógicos son conocidos como valores boleanos y toman los valores **TRUE** y **FALSE**. TRUE y FALSE pueden ser abreviados con las T y F en mayúsculas respectivamente. Sin embargo, recomendamos utilizar la versión completa de TRUE y FALSE. 
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIzIDwgNCJ9</div>
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJjbGFzcyhUUlVFKSJ9</div>
+```r
+3 < 4
+## [1] TRUE
+```
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJjbGFzcyhUKSJ9</div>
+```r
+class(TRUE)
+## [1] "logical"
+```
+
+
+
+```r
+class(T)
+## [1] "logical"
+```
 
 
 Es posible construir condiciones lógicas utilizando los operadores `&`, `|` y `!` (en lenguaje formal, $$y$$, $$o$$ y $$no$$ respectivamente). La comparación de valores se lleva a cabo mediante `==` (es igual a) y `!=` (es distinto de):
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJhIDwtIDJcbmIgPC0gNFxuYSA9PSBiICMgXHUwMGJmZXMgaWd1YWwgYSBiPyJ9</div>
+
+```r
+a <- 2
+b <- 4
+a == b # ¿es igual a b?
+## [1] FALSE
+```
 
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJhICE9IGIgIyBcdTAwYmZlcyBhIGRpc3RpbmRvIGRlIGI/In0=</div>
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIoYSA8MykgJiAoYiA8IDUpICAjIFx1MDBiZmVzIGEgbWVub3IgcXVlIDMgeSBiIG1lbm9yIHF1ZSAzPyJ9</div>
+```r
+a != b # ¿es a distindo de b?
+## [1] TRUE
+```
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIoYSA8IDEpIHwgKGIgPCAzKSAgIyBcdTAwYmZlcyBhIG1lbm9yIHF1ZSAxIG8gYiBtZW5vciBxdWUgMz8ifQ==</div>
+```r
+(a <3) & (b < 5)  # ¿es a menor que 3 y b menor que 3?
+## [1] TRUE
+```
+
+
+
+```r
+(a < 1) | (b < 3)  # ¿es a menor que 1 o b menor que 3?
+## [1] FALSE
+```
 
 A continuación se muestran los operadores de comparación y lógicos en R:
 
@@ -68,7 +98,13 @@ _Tabla 2: Operadores lógicos_
 Para mas información sobre la sintaxis de los operadores y su precedencia consultar la
 documentación R: 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIFNpbnRheGlzIGRlIGNvbXBhcmFjaVx1MDBmM25cbj9Db21wYXJpc29uXG4jIE9wZXJhZG9yZXMgbFx1MDBmM2dpY29zXG4/YmFzZTo6TG9naWMifQ==</div>
+
+```r
+# Sintaxis de comparación
+?Comparison
+# Operadores lógicos
+?base::Logic
+```
 
 
 
@@ -77,48 +113,96 @@ documentación R:
 Para representar los números reales R proporciona el tipo _numeric_. Podemos realizar toda clase de operaciones con ellos como por ejemplo sumas, restas, multiplicaciones, divisiones y utilizarlos en el amplio catálogo de funciones matemáticas con las que cuenta R:
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJtaV9hbHR1cmFfZW5fY20gPC0gMTgwXG5taV9hbHR1cmFfZW5fY20ifQ==</div>
+
+```r
+mi_altura_en_cm <- 180
+mi_altura_en_cm
+## [1] 180
+```
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJtaV9wZXNvIDwtIDc5LjVcbm1pX3Blc28ifQ==</div>
+
+```r
+mi_peso <- 79.5
+mi_peso
+## [1] 79.5
+```
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJJTUMgPC0gbWlfcGVzbyAvIG1pX2FsdHVyYV9lbl9jbSBeIDJcbklNQyJ9</div>
+
+```r
+IMC <- mi_peso / mi_altura_en_cm ^ 2
+IMC
+## [1] 0.002453704
+```
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJyb3VuZChtaV9wZXNvKSJ9</div>
+
+```r
+round(mi_peso)
+## [1] 80
+```
 
 ## Integer {#integer}
 
 Un tipo especial de numeric es el _integer_. Este es el modo de representar los números enteros en R. Para especificar que un número es entero, debemos añadir la letra L en mayúscula como sufijo.
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJtaV9lZGFkIDwtIDQwTFxubWlfZWRhZCJ9</div>
+
+```r
+mi_edad <- 40L
+mi_edad
+## [1] 40
+```
 
 En el ejemplo anterior, no podemos apreciar la diferencia entre el número real y el número entero.Sin embargo, con la función `class()` podemos comprobar esta diferencia:
 
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJjbGFzcyg0MCkifQ==</div>
+
+```r
+class(40)
+## [1] "numeric"
+```
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJjbGFzcyg0MEwpIn0=</div>
+
+```r
+class(40L)
+## [1] "integer"
+```
 
 En lugar de preguntar por la clase de una variable mediante la función `class()`, podemos utilizar las funciones `is.*()` para comprobar si un objeto es realmente de un cierto tipo. Por ejemplo, para comprobar si una variable es numeric, usaremos la función `is.numeric()`:
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJpcy5udW1lcmljKDQwKSJ9</div>
+
+```r
+is.numeric(40)
+## [1] TRUE
+```
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJpcy5udW1lcmljKDQwTCkifQ==</div>
+
+```r
+is.numeric(40L)
+## [1] TRUE
+```
 
 Para comprobar si una variable es integer, usaremos la función `is.integer()`:
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJpcy5pbnRlZ2VyKDQwKSJ9</div>
+
+```r
+is.integer(40)
+## [1] FALSE
+```
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJpcy5pbnRlZ2VyKDQwTCkifQ==</div>
+
+```r
+is.integer(40L)
+## [1] TRUE
+```
 
 Como podemos ver en el ejemplo anterior los números reales son numeric, pero no todos los numeric son enteros.
 
@@ -128,7 +212,11 @@ Cualquier dato alfanumérico (o cadenas, _strings_ en inglés; todo aquello que 
 interpretado por R como _character_. Por ejemplo:
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJcIkNpZW5jaWEgZGUgRGF0b3MgY29uIFJcIiJ9</div>
+
+```r
+"Ciencia de Datos con R"
+## [1] "Ciencia de Datos con R"
+```
 
 
 

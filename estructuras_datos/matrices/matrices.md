@@ -1,10 +1,10 @@
-<script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
 
 
 
 
-
-
+<!-- ```{r, include=FALSE} -->
+<!-- tutorial::go_interactive() -->
+<!-- ``` -->
 
 
 # Matrices {#matrices}
@@ -19,7 +19,11 @@ Una _matriz_ es una extensión de un vector a dos dimensiones, lo que implica qu
 
 Para crear matrices utilizaremos la función `matrix()`, la sintaxis es la siguiente
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJzdHIobWF0cml4KSJ9</div>
+
+```r
+str(matrix)
+## function (data = NA, nrow = 1, ncol = 1, byrow = FALSE, dimnames = NULL)
+```
 
 
 A continuación mostramos la descripción de los argumentos:
@@ -34,39 +38,107 @@ A continuación mostramos la descripción de los argumentos:
 Seguidamente se muestra un ejemplo de creación de una matriz:
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJtYXRyaXogPC0gbWF0cml4KDE6MTIsIG5yb3cgPSA0KVxubWF0cml6In0=</div>
+
+```r
+matriz <- matrix(1:12, nrow = 4)
+matriz
+##      [,1] [,2] [,3]
+## [1,]    1    5    9
+## [2,]    2    6   10
+## [3,]    3    7   11
+## [4,]    4    8   12
+```
 
 
 A partir de un vector, si le añadimos el atributo dimensión podemos obtener una matriz:
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJtIDwtIDE6MTJcbm0ifQ==</div>
+
+```r
+m <- 1:12
+m
+##  [1]  1  2  3  4  5  6  7  8  9 10 11 12
+```
 
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJkaW0obSkgPC0gYyg0LCAzKVxubSJ9</div>
+
+```r
+dim(m) <- c(4, 3)
+m
+##      [,1] [,2] [,3]
+## [1,]    1    5    9
+## [2,]    2    6   10
+## [3,]    3    7   11
+## [4,]    4    8   12
+```
 
 
 Cuando creamos una matriz, los valores que pasamos son ordenados por columnas. Pero también es posible llenar la matriz por filas especificando el argumento `byrow = TRUE`:
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJtYXRyaXogPC0gbWF0cml4KDE6MTIsIG5yb3cgPSA0LCBieXJvdyA9IFRSVUUpXG5tYXRyaXoifQ==</div>
+
+```r
+matriz <- matrix(1:12, nrow = 4, byrow = TRUE)
+matriz
+##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    4    5    6
+## [3,]    7    8    9
+## [4,]   10   11   12
+```
 
 
 En el siguiente ejemplo hacemos uso del argumento `dimnames` para dar nombre a las filas y columnas:
 
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJhdXRvbW92aWxlcyA8LSBtYXRyaXgoXG4gICAgICAgICAgICAgICAgMToxMixcbiAgICAgICAgICAgICAgICBucm93ID0gNCxcbiAgICAgICAgICAgICAgICBieXJvdyA9IFRSVUUsXG4gICAgICAgICAgICAgICAgZGltbmFtZXMgPSBsaXN0KFxuICAgICAgICAgICAgICAgICAgYyhcIkJsYW5jb1wiLCBcIlJvam9cIiwgXCJOZWdyb1wiLCBcIkdyaXNcIiksXG4gICAgICAgICAgICAgICAgICBjKFwiVG95b3RhXCIsIFwiQXVkaVwiLCBcIk5pc3NhblwiKVxuICAgICAgICAgICAgICAgIClcbilcbmF1dG9tb3ZpbGVzIn0=</div>
+
+```r
+automoviles <- matrix(
+                1:12,
+                nrow = 4,
+                byrow = TRUE,
+                dimnames = list(
+                  c("Blanco", "Rojo", "Negro", "Gris"),
+                  c("Toyota", "Audi", "Nissan")
+                )
+)
+automoviles
+##        Toyota Audi Nissan
+## Blanco      1    2      3
+## Rojo        4    5      6
+## Negro       7    8      9
+## Gris       10   11     12
+```
 
 
 Mediante las funciones `cbind()` y `rbind()` es posible crear matrices por columnas o por filas a partir de dos vectores de la misma longitud:
 
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ2MSA8LSBjKDEsIDIsIDMpXG52MiA8LSBjKDQsIDUsIDYpXG5tMSA8LSBjYmluZCh2MSwgdjIpXG5tMSJ9</div>
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ2MSA8LSBjKDEsIDIsIDMpXG52MiA8LSBjKDQsIDUsIDYpXG5tMSA8LSByYmluZCh2MSwgdjIpXG5tMSJ9</div>
+```r
+v1 <- c(1, 2, 3)
+v2 <- c(4, 5, 6)
+m1 <- cbind(v1, v2)
+m1
+##      v1 v2
+## [1,]  1  4
+## [2,]  2  5
+## [3,]  3  6
+```
+
+
+```r
+v1 <- c(1, 2, 3)
+v2 <- c(4, 5, 6)
+m1 <- rbind(v1, v2)
+m1
+##    [,1] [,2] [,3]
+## v1    1    2    3
+## v2    4    5    6
+```
 
 
 
@@ -76,15 +148,27 @@ Mediante las funciones `cbind()` y `rbind()` es posible crear matrices por colum
 
 La función `dim()` devuelve un vector de integers con la dimensión del objeto:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJkaW0oYXV0b21vdmlsZXMpIn0=</div>
+
+```r
+dim(automoviles)
+## [1] 4 3
+```
 
 
 Además con las funciones `nrow()` y `ncol()` podemos conocer el número de filas y columnas, respectivamente:
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJucm93KGF1dG9tb3ZpbGVzKSJ9</div>
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJuY29sKGF1dG9tb3ZpbGVzKSJ9</div>
+```r
+nrow(automoviles)
+## [1] 4
+```
+
+
+```r
+ncol(automoviles)
+## [1] 3
+```
 
 
 La función `length()` que hemos visto con anterioridad en los vectores, también funciona en matrices. Cuando trabajamos con matrices; no obstante, devuelve el producto de cada una de las dimensiones:
@@ -92,7 +176,11 @@ La función `length()` que hemos visto con anterioridad en los vectores, tambié
 
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJsZW5ndGgoYXV0b21vdmlsZXMpIn0=</div>
+
+```r
+length(automoviles)
+## [1] 12
+```
 
 
 ## Nombres de las Filas, Columnas y Dimensiones {#nombres-de-las-filas-columnas-y-dimensiones}
@@ -101,14 +189,32 @@ La función `length()` que hemos visto con anterioridad en los vectores, tambié
 Del mismo modo que los vectores poseen el atributo `names` para sus elementos, las matrices disponen de `rownames` y `colnames` para las filas y columnas.
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJjb2xvcmVzIDwtIHJvd25hbWVzKGF1dG9tb3ZpbGVzKVxuY29sb3JlcyJ9</div>
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJtYXJjYXMgPC0gY29sbmFtZXMoYXV0b21vdmlsZXMpXG5tYXJjYXMifQ==</div>
+```r
+colores <- rownames(automoviles)
+colores
+## [1] "Blanco" "Rojo"   "Negro"  "Gris"
+```
+
+
+```r
+marcas <- colnames(automoviles)
+marcas
+## [1] "Toyota" "Audi"   "Nissan"
+```
 
 Por medio de la función `dimnames()` obtendremos una [lista](../listas/listas.md) que
 contiene dos vectores con los atributos `rownames` y `colnames`:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJkaW1uYW1lcyhhdXRvbW92aWxlcykifQ==</div>
+
+```r
+dimnames(automoviles)
+## [[1]]
+## [1] "Blanco" "Rojo"   "Negro"  "Gris"  
+## 
+## [[2]]
+## [1] "Toyota" "Audi"   "Nissan"
+```
 
 ## Operaciones con Matrices {#operaciones-con-matrices}
 
@@ -117,19 +223,48 @@ contiene dos vectores con los atributos `rownames` y `colnames`:
 
 La función `diag()` extrae la diagonal principal de una matriz:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJBIDwtIG1hdHJpeChjKDEsIDIsIDMsIDQsIDUsIDYsIDcsIDgsIDkpLCBucm93ID0gMywgbmNvbCA9IDMsIGJ5cm93ID0gVFJVRSlcbkEifQ==</div>
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJkaWFnKEEpIn0=</div>
+```r
+A <- matrix(c(1, 2, 3, 4, 5, 6, 7, 8, 9), nrow = 3, ncol = 3, byrow = TRUE)
+A
+##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    4    5    6
+## [3,]    7    8    9
+```
+
+
+```r
+diag(A)
+## [1] 1 5 9
+```
 
 Además, `diag()` nos permite crear matrices diagonales:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJkaWFnKGMoMSwgMiwgMywgNCkpIn0=</div>
+
+```r
+diag(c(1, 2, 3, 4))
+##      [,1] [,2] [,3] [,4]
+## [1,]    1    0    0    0
+## [2,]    0    2    0    0
+## [3,]    0    0    3    0
+## [4,]    0    0    0    4
+```
 
 La matriz identidad es muy fácil de crear en R. Por ejemplo, la matriz identidad de dimensión 4 es:
 
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJJZDQgPSBkaWFnKDEsIG5yb3cgPSA0KVxuSWQ0In0=</div>
+
+```r
+Id4 = diag(1, nrow = 4)
+Id4
+##      [,1] [,2] [,3] [,4]
+## [1,]    1    0    0    0
+## [2,]    0    1    0    0
+## [3,]    0    0    1    0
+## [4,]    0    0    0    1
+```
 
 
 
@@ -137,27 +272,65 @@ Hay que tener cierto cuidado con los operadores aritméticos básicos (`+`, `-`,
 
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJNID0gbWF0cml4KG5yb3c9MixjKDEsMiwzLCA0KSxieXJvdyA9IEZBTFNFKVxuTSJ9</div>
+
+```r
+M = matrix(nrow=2,c(1,2,3, 4),byrow = FALSE)
+M
+##      [,1] [,2]
+## [1,]    1    3
+## [2,]    2    4
+```
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJNICsgMiJ9</div>
+
+```r
+M + 2
+##      [,1] [,2]
+## [1,]    3    5
+## [2,]    4    6
+```
 
 
 Asimismo, si a una matriz se le suma un vector cuya longitud sea igual al número de filas de la matriz, se obtiene como resultado una nueva matriz cuyas columnas son la suma de las columnas de la matriz original más dicho vector.
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ2ID0gYygzLDQpXG5NICsgdiJ9</div>
+
+```r
+v = c(3,4)
+M + v
+##      [,1] [,2]
+## [1,]    4    6
+## [2,]    6    8
+```
 
 La suma o resta de matrices de la misma dimensión se realiza con los operadores `+` y `-`; el producto de matrices (siempre que sean compatibles) se realiza con el operador `%*%`:
 
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJNICsgTSJ9</div>
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJNIC0gTSJ9</div>
+```r
+M + M
+##      [,1] [,2]
+## [1,]    2    6
+## [2,]    4    8
+```
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJNJSolTSJ9</div>
+```r
+M - M
+##      [,1] [,2]
+## [1,]    0    0
+## [2,]    0    0
+```
+
+
+
+```r
+M%*%M
+##      [,1] [,2]
+## [1,]    7   15
+## [2,]   10   22
+```
 
 
 
@@ -165,19 +338,45 @@ Una fuente de posibles errores en el cálculo matricial, cuando se utilizan matr
 
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJNICogTSJ9</div>
+
+```r
+M * M
+##      [,1] [,2]
+## [1,]    1    9
+## [2,]    4   16
+```
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJNIC8gTSJ9</div>
+
+```r
+M / M
+##      [,1] [,2]
+## [1,]    1    1
+## [2,]    1    1
+```
 
 La traspuesta de una matriz se calcula simplemente con la función `t()`:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJNXG50KE0pIn0=</div>
+
+```r
+M
+##      [,1] [,2]
+## [1,]    1    3
+## [2,]    2    4
+t(M)
+##      [,1] [,2]
+## [1,]    1    2
+## [2,]    3    4
+```
 
 
 El determinante de una matriz cuadrada se calcula mediante la función `det()`:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJkZXQoTSkifQ==</div>
+
+```r
+det(M)
+## [1] -2
+```
 
 
 
@@ -186,7 +385,13 @@ La función `solve()` permite obtener la inversa de una matriz cuando sólo se l
 
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJzb2x2ZShNKSJ9</div>
+
+```r
+solve(M)
+##      [,1] [,2]
+## [1,]   -2  1.5
+## [2,]    1 -0.5
+```
 
 
 
@@ -203,7 +408,13 @@ $$ \begin{pmatrix} 3 & 2 \\ 1 & -1 \end{pmatrix}\begin{pmatrix} x \\ y \end{pmat
 
 Podemos resolver el sistema de ecuaciones en R, del siguiente modo:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJBIDwtIG1hdHJpeChjKDMsIDIsIDEsIC0xKSwgbmNvbCA9IDIsIGJ5cm93ID0gVFJVRSlcbmIgPC0gYyg1LCAwKVxuc29sdmUoQSwgYikifQ==</div>
+
+```r
+A <- matrix(c(3, 2, 1, -1), ncol = 2, byrow = TRUE)
+b <- c(5, 0)
+solve(A, b)
+## [1] 1 1
+```
 
 
 ## Selección de Elementos {#seleccion-de-elementos}
@@ -219,21 +430,40 @@ Siguiendo con el ejemplo anterior, si quisiéramos seleccionar el número de aut
 
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJhdXRvbW92aWxlc1tcIkJsYW5jb1wiLCBcIkF1ZGlcIl0ifQ==</div>
+
+```r
+automoviles["Blanco", "Audi"]
+## [1] 2
+```
 
 - Alternativamente, podemos utilizar la notación de índices:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJhdXRvbW92aWxlc1sxLCAyXSJ9</div>
+
+```r
+automoviles[1, 2]
+## [1] 2
+```
 
 
 También podemos seleccionar columnas y filas enteras, de manera que si queremos seleccionar todos los automóviles blancos lo haríamos del siguiente modo:
 
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJhdXRvbW92aWxlc1sxLF0ifQ==</div>
+
+```r
+automoviles[1,]
+## Toyota   Audi Nissan 
+##      1      2      3
+```
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIG90cmEgZm9ybWEgZGUgaGFjZXJsbyBlc1xuYXV0b21vdmlsZXNbXCJCbGFuY29cIixdIn0=</div>
+
+```r
+# otra forma de hacerlo es
+automoviles["Blanco",]
+## Toyota   Audi Nissan 
+##      1      2      3
+```
 
 
 ## Agregar Filas y Columnas
@@ -243,10 +473,34 @@ Podemos emplear las funciones `cbind()` y `rbind()` para agregar filas y columna
 </p>
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIEFcdTAwZjFhZGltb3MgdW5hIG51ZXZhIGZpbGEgYSBsYSBtYXRyaXpcbnZlcmRlIDwtIGMoOCwgNSwgNylcbmF1dG9tb3ZpbGVzIDwtIHJiaW5kKGF1dG9tb3ZpbGVzLCB2ZXJkZSlcbmF1dG9tb3ZpbGVzIn0=</div>
+
+```r
+# Añadimos una nueva fila a la matriz
+verde <- c(8, 5, 7)
+automoviles <- rbind(automoviles, verde)
+automoviles
+##        Toyota Audi Nissan
+## Blanco      1    2      3
+## Rojo        4    5      6
+## Negro       7    8      9
+## Gris       10   11     12
+## verde       8    5      7
+```
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIEFcdTAwZjFhZGltb3MgdW5hIG51ZXZhIGNvbHVtbmFcbmZvcmQgPC0gYygyLCA3LCAzLCA1LCA5KVxuYXV0b21vdmlsZXMgPC0gY2JpbmQoYXV0b21vdmlsZXMsIGZvcmQpXG5hdXRvbW92aWxlcyJ9</div>
+
+```r
+# Añadimos una nueva columna
+ford <- c(2, 7, 3, 5, 9)
+automoviles <- cbind(automoviles, ford)
+automoviles
+##        Toyota Audi Nissan ford
+## Blanco      1    2      3    2
+## Rojo        4    5      6    7
+## Negro       7    8      9    3
+## Gris       10   11     12    5
+## verde       8    5      7    9
+```
 
 ## Eliminar Filas y Columnas {#eliminar-filas-y-columnas}
 
@@ -257,10 +511,29 @@ y columna que hemos añadido en el apartado anterior:
 
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjRWxpbWluYW5kbyBsYSBmaWxhIHZlcmRlXG5hdXRvbW92aWxlc1stNSwgXSJ9</div>
+
+```r
+#Eliminando la fila verde
+automoviles[-5, ]
+##        Toyota Audi Nissan ford
+## Blanco      1    2      3    2
+## Rojo        4    5      6    7
+## Negro       7    8      9    3
+## Gris       10   11     12    5
+```
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIEVsaW1pbmFuZG8gY29sdW1uYSBmb3JkXG5hdXRvbW92aWxlc1ssIC00XSJ9</div>
+
+```r
+# Eliminando columna ford
+automoviles[, -4]
+##        Toyota Audi Nissan
+## Blanco      1    2      3
+## Rojo        4    5      6
+## Negro       7    8      9
+## Gris       10   11     12
+## verde       8    5      7
+```
 
 ## Resumen {#resumen}
 

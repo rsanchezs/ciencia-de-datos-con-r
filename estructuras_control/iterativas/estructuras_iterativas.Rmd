@@ -4,9 +4,9 @@ opts_chunk$set(prompt=FALSE, comment='', results='markup', collapse=TRUE,echo=TR
 ```
 
 
-```{r, include=FALSE}
-tutorial::go_interactive()
-```
+<!-- ```{r, include=FALSE} -->
+<!-- tutorial::go_interactive() -->
+<!-- ``` -->
 
 
 
@@ -214,7 +214,7 @@ Como hemos comentado con anterioridad `break` fuerza la transferencia del contro
 
 * En un bucle `while` o `repeat`, la siguiente iteración se inicia reevaluando la expresión de control de la instrucción `while` o `repeat`.
 
-* En un bucle `for`, en primer lugar se incrementa el índice del bucle. A continuación, se evalúa de nuevo la condición lógica de la instrucción `for` y, en función del resultado, el bucle finaliza o se produce otra iteración.
+* En un bucle `for`, en primer lugar se incrementa el índice del bucle. A continuación, se evalúa de nuevo la expresión de control de la instrucción `for` y, en función del resultado, el bucle finaliza o se produce otra iteración.
 
 Pongamos por caso que queremos mostrar por pantalla los números pares de una secuencia de enteros:
 

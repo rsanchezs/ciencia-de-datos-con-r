@@ -1,9 +1,9 @@
-<script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
 
 
 
-
-
+<!-- ```{r, include=FALSE} -->
+<!-- tutorial::go_interactive() -->
+<!-- ``` -->
 
 
 
@@ -25,25 +25,64 @@ El bucle `for` es una estructura iterativa que se ejecuta un número preestablec
 A continuación, mostramos el diagrama de flujo del bucle `for`. En términos de diagramas de flujo, los rectángulos significan la realización de un proceso, en otras palabras la ejecución de un bloque de instrucciones. Por otro lado, los rombos con conocidos como símbolos de decisión, es decir se corresponden a preguntas cuyas respuestas únicamente tienen dos posibles respuestas, concretamente, TRUE (T) o FALSE (F).
 
 
-![Diagrama de Flujo Bucle For](https://i.imgur.com/ggkzeJR.png)
+![Diagrama de Flujo Bucle For](../images/for.png)
 
-Una o mas instrucciones dentro del rectángulo de inicialización son seguidas por la evaluación de la condición en una variable la cual puede asumir valores dentro de una secuencia. En la [figura](https://i.imgur.com/ggkzeJR.png), esto es representado por el símbolo del rombo.
+Una o mas instrucciones dentro del rectángulo de inicialización son seguidas por la evaluación de la condición en una variable la cual puede asumir valores dentro de una secuencia. En la [figura](https://i.imgur.com/i5vInG7.png), esto es representado por el símbolo del rombo.
 
 En otras palabras, estamos comprobando si el valor actual de la variable está dentro de un rango específico. Por lo general, especificaremos el rango en la inicialización.
 
 Si la condición no se cumple, es decir el resultado es `False`, el bucle nunca se ejecutará. Esto es indicado por la flecha de la derecha de la estructura `for`. El programa entonces ejecutará la primera instrucción que se encuentre después del bucle.
 
-Si la condición se verifica, una instrucción o bloque de instrucciones es ejecutado. Una vez la ejecución de estas instrucciones ha finalizado, la condición es evaluada de nuevo. En la [figura](https://i.imgur.com/ggkzeJR.png) esto es indicado por las líneas que van desde el rectángulo que incrementa o disminuye el contador hasta el símbolo del rombo que evalúa la condición.
+Si la condición se verifica, una instrucción o bloque de instrucciones es ejecutado. Una vez la ejecución de estas instrucciones ha finalizado, la condición es evaluada de nuevo. En la [figura](https://i.imgur.com/i5vInG7.png) esto es indicado por las líneas que van desde el rectángulo que incrementa o disminuye el contador hasta el símbolo del rombo que evalúa la condición.
 
-Por ejemplo, en el siguiente fragmento de código calculamos la mediana de un conjunto de observaciones, que se obtiene dividiendo la suma de todas las observaciones por el número de individuos:
+Por ejemplo, en el siguiente fragmento de código calculamos la media de un conjunto de observaciones, que se obtiene dividiendo la suma de todas las observaciones por el número de individuos:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIENyZWFtb3MgdW4gdmVjdG9yIGFsZWFvdG9yaW8gZGUgMTAgb2JzZXJ2YWNpb25lc1xub2JzZXJ2YWNpb25lcyA8LSBzYW1wbGUoMTo1MCwgMTAwLCByZXBsYWNlID0gVFJVRSlcblxuIyBJbmljaWFsaXphbW9zIGBzdW1hYCBkZSB0b2RhcyBsYXMgb2JzZXJ2YWNpb25lc1xuc3VtYSA8LSAwXG5cbiMgQ3JlYW1vcyB1biBidWNsZSBmb3IgcXVlIGNhbGN1bGEgbGEgbWVkaWFcbmZvcihpIGluIHNlcV9hbG9uZyhvYnNlcnZhY2lvbmVzKSkge1xuICBzdW1hIDwtICBvYnNlcnZhY2lvbmVzW2ldICsgc3VtYVxuICBtZWRpYSA8LSBzdW1hIC8gbGVuZ3RoKG9ic2VydmFjaW9uZXMpXG59XG5cbiMgTW9zdHJhbW9zIHBvciBwYW50YWxsYSBsYSBtZWRpYVxubWVkaWEifQ==</div>
+
+```r
+# Creamos un vector aleaotorio de 10 observaciones
+observaciones <- sample(1:50, 100, replace = TRUE)
+
+# Inicializamos `suma` de todas las observaciones
+suma <- 0
+
+# Creamos un bucle for que calcula la media
+for(i in seq_along(observaciones)) {
+  suma <-  observaciones[i] + suma
+  media <- suma / length(observaciones)
+}
+
+# Mostramos por pantalla la media
+media
+[1] 26.24
+```
 
 ### Bucles __`for`__ Anidados
 
 Los bucles `for` pueden ser anidados. En el siguiente fragmento de código creamos un algoritmo que calcula la suma de dos matrices cuadradas:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIENyZWFtb3MgZG9zIG1hdHJpY2VzIGN1YWRyYWRhc1xubTEgPC0gbWF0cml4KHNhbXBsZSgxOjEwMCwgOSwgcmVwbGFjZSA9IFRSVUUpLCBucm93ID0gMylcbm0yIDwtIG1hdHJpeChzYW1wbGUoMToxMDAsIDksIHJlcGxhY2UgPSBUUlVFKSwgbnJvdyA9IDMpXG5cbiMgSW5pY2lhbGl6YW1vcyBsYSBtYXRyaXogcXVlIGNvbnRlbmRyYSBtMSttMlxuc3VtYSA8LSBtYXRyaXgobnJvdyA9IDMsIG5jb2wgPSAzKVxuXG4jIFBhcmEgY2FkYSBmaWxhIHkgY2FkYSBjb2x1bW5hLCByZWFsaXphbW9zIGxhIHN1bWEgZWxlbWVudG8gYSBlbGVtZW50byBcbmZvcihpIGluIDE6bnJvdyhtMSkpIHtcbiAgZm9yKGogaW4gMTpuY29sKG0xKSkge1xuICAgIHN1bWFbaSwgal0gPC0gbTFbaSwgal0gKyBtMltpLCBqXVxuICB9XG59XG5cbiMgTW9zdHJhbW9zIHBvciBwYW50YWxsYSBsYSBzdW1hIGRlIG0xK20yXG5zdW1hIn0=</div>
+
+```r
+# Creamos dos matrices cuadradas
+m1 <- matrix(sample(1:100, 9, replace = TRUE), nrow = 3)
+m2 <- matrix(sample(1:100, 9, replace = TRUE), nrow = 3)
+
+# Inicializamos la matriz que contendra m1+m2
+suma <- matrix(nrow = 3, ncol = 3)
+
+# Para cada fila y cada columna, realizamos la suma elemento a elemento 
+for(i in 1:nrow(m1)) {
+  for(j in 1:ncol(m1)) {
+    suma[i, j] <- m1[i, j] + m2[i, j]
+  }
+}
+
+# Mostramos por pantalla la suma de m1+m2
+suma
+     [,1] [,2] [,3]
+[1,]   97   32  136
+[2,]  108   47  159
+[3,]   66  100   67
+```
 
 El siguiente ejemplo sirve para ejemplificar el anidamiento de bucles `for`. Cada uno con su propio bloque de instrucciones y manejado con su propio índice. Es decir, `i` controla las filas de las matrices y `j` las columnas.
 
@@ -54,46 +93,137 @@ Cuando nos encontramos en la situación en la que no conocemos el número de ite
 
 A continuación se muestra el diagrama de flujo de `while`:
 
-![Diagrama de Flujo Bucle While](https://i.imgur.com/JdLHPIL.png)
+![Diagrama de Flujo Bucle While](../images/while.png)
 
 La estructura de una construcción `while` está compuesta de un bloque de inicialización, seguido por una condición lógica. Esta condición es normalmente una expresión de comparación entre una variable de control y un valor, en la que usaremos los operadores de comparación, pero cabe señalar que cualquier expresión que evalúa a un valor lógico, `TRUE` o `FALSE`, es válida.
 
-Si el resultado es `FALSE` (F), el bucle nunca será ejecutado. Esto es indicado por la flecha de la derecha en la [figura](https://i.imgur.com/JdLHPIL.png). En esta situación el programa ejecutará la primera instrucción que encuentre después del bloque iterativo.
+Si el resultado es `FALSE` (F), el bucle nunca será ejecutado. Esto es indicado por la flecha de la derecha en la [figura](https://i.imgur.com/i5vInG7.png). En esta situación el programa ejecutará la primera instrucción que encuentre después del bloque iterativo.
 
 Por otro lado, si el resultado es `TRUE` (T), la instrucción o bloque de instrucciones del cuerpo de `while` son ejecutadas. Esto sucederá hasta que la condición lógica sea `FALSE`.
 
 El siguiente ejemplo es un ejemplo de utilización de la estructura `while`:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIEFsZ29yaXRtbyBxdWUgbXVlc3RyYSBwb3IgcGFudGFsbGEgbG9zIDEwIHByaW1lcm9zIG5cdTAwZmFtZXJvcyBuYXR1cmFsZXNcbm4gPSAxXG53aGlsZShuIDw9IDUpIHtcbiAgcHJpbnQobilcbiAgbiA9IG4gKyAxXG59XG5cbiJ9</div>
+
+```r
+# Algoritmo que muestra por pantalla los 10 primeros números naturales
+n = 1
+while(n <= 5) {
+  print(n)
+  n = n + 1
+}
+[1] 1
+[1] 2
+[1] 3
+[1] 4
+[1] 5
+```
 
 ## Bucle __`repeat`__
 
-El bucle `repeat` es similar a `while`, excepto que la instrucción o bloque de instrucciones del `while` es ejecutado al menos una vez, sin importar cual es el resultado de la condición.
+El bucle `repeat` es similar a `while`, excepto que la instrucción o bloque de instrucciones de `repeat` es ejecutado al menos una vez, sin importar cual es el resultado de la condición.
 
-A continuación, como en los apartados anteriores mostramos el [diagrama de flujo](https://i.imgur.com/OXnEscG.png) de la estructura `repeat`:
+A continuación, como en los apartados anteriores mostramos el [diagrama de flujo](https://i.imgur.com/i5vInG7.png) de la estructura `repeat`:
 
-![Diagrama de Flujo Repeat](https://i.imgur.com/OXnEscG.png)
+![Diagrama de Flujo Repeat](../images/repeat.png)
 
 Como alternativa al ejemplo anterior, podríamos codificar el algoritmo como:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIEFsZ29yaXRtbyBxdWUgbXVlc3RyYSBwb3IgcGFudGFsbGEgbG9zIDEwIHByaW1lcm9zIG5cdTAwZmFtZXJvcyBuYXR1cmFsZXNcbm4gPSAxXG5yZXBlYXQge1xuICBpZihuIDw9IDEwKSB7XG4gICAgcHJpbnQobilcbiAgICBuID0gbiArMVxuICB9IGVsc2Uge1xuICAgIGJyZWFrXG4gIH1cbn0ifQ==</div>
+
+```r
+# Algoritmo que muestra por pantalla los 10 primeros números naturales
+n = 1
+repeat {
+  if(n <= 10) {
+    print(n)
+    n = n +1
+  } else {
+    break
+  }
+}
+[1] 1
+[1] 2
+[1] 3
+[1] 4
+[1] 5
+[1] 6
+[1] 7
+[1] 8
+[1] 9
+[1] 10
+```
 
 En el ejemplo de la estructura `repeat` podemos observar que el bloque de código es ejecutado al menos una vez y que finaliza cuando la función `if` es verificada.
 
-Observemos que hemos tenido que establecer una condición dentro del loop la cual establece la salida con la cláusula [`break`](#break). Esta cláusula nos introduce en los conceptos de salida e interrupción de las iteraciones en una estructura iterativa y que pasamos a analizar en los apartados siguientes.
+Observemos que hemos tenido que establecer una condición dentro del bucle la cual establece la salida con la cláusula [`break`](#break). Esta cláusula nos introduce en el concepto de __salida de las iteraciones__ en los bucles y que pasamos a analizar en el apartado siguiente.
 
 ## Cláusula __`break`__ {#break}
 
-Cuando el intérprete R encuentra un `break`, pasará el control a la instrucción que se encuentra justo después  del final de la estructura iterativa (en el caso que la hubiese). En el caso de bucles anidados, la cláusula `break` nos permitirá salir del bucle mas interno.
 
-A continuación se muestra el [diagrama de flujo](https://i.imgur.com/AGH5wIx.png) de `break`:
+La instrucción `break` se utiliza con las intrucciones de bucle `for`, `while` y `repeat`.
 
-![Diagrama Flujo Break](https://i.imgur.com/AGH5wIx.png)
+La cláusula `break` finaliza la ejecución del bucle  más próximo en el que aparece. El control pasa a la instrucción que hay a continuación del final de la instrucción, si hay alguna.
+
+A continuación se muestra el [diagrama de flujo](https://i.imgur.com/PkhhUjz.png) de `break`:
+
+![Diagrama Flujo Break](../images/break.png)
+
+Como podemos ver en el diagrama de flujo, la instrucción `break` finaliza la ejecución de la instrucción envolvente `for`, `while` o `repeat` mas próxima. El control pasa a la instrucción que hay a continuación de la instrucción finalizada, si hay alguna.
 
 Para ilustrar mejor el uso de `break` crearemos un algoritmo que define una [matriz cuadrada](https://es.wikipedia.org/wiki/Matriz_cuadrada)  y que utiliza dos bucles `for` anidados para calcular la [diagonal principal](https://es.wikipedia.org/wiki/Diagonal_principal) y su [matriz triangular superior](https://es.wikipedia.org/wiki/Matriz_triangular):
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJcblxuIyBDcmVhbW9zIHVuYSBtYXRyaXogY3VhZHJhZGEgZGUgNiB4IDZcbm0gPC1cbiAgbWF0cml4KFxuICAgIGRhdGEgPSBzYW1wbGUoeCA9IDEwLCBzaXplID0gMzYsIHJlcGxhY2UgPSBUUlVFKSxcbiAgICAgICAgICAgICAgICAgIG5yb3cgPSA2LFxuICAgICAgICAgICAgICAgICAgbmNvbCA9IDZcbiAgKVxuIyBNb3N0cmFtb3MgcG9yIHBhbnRhbGxhIGBtYFxubVxuXG4jIENyZWFtb3MgdW4gdmVjdG9yIHBhcmEgbGEgZGlhZ29uYWwgcHJpbmNpcGFsXG5kaWFnb25hbF9wcmluY2lwYWwgPC0gdmVjdG9yKG1vZGUgPSBcImludGVnZXJcIiwgbGVuZ3RoID0gbnJvdyhtKSlcbmRpYWdvbmFsX3ByaW5jaXBhbFxuXG4jIEFsZ29yaXRtbyBxdWUgY2FsY3VsYSBsYSBtYXRyaXogdHJpYW5ndWxhciBpbmZlcmlvciB5IHN1IGRpYWdvbmFsIHByaW5jaXBhbFxuZm9yIChpIGluIDE6bnJvdyhtKSkge1xuICBmb3IgKGogaW4gMTpuY29sKG0pKSB7XG4gICAgaWYgKGkgPT0gaikge1xuICAgICAgYnJlYWtcbiAgICB9IGVsc2Uge1xuICAgICAgbSBbaSwgal0gPC0gMFxuICAgIH1cbiAgICBcbiAgfVxuICBkaWFnb25hbF9wcmluY2lwYWxbal0gPC0gbVtpLCBqXVxufVxuXG4jIE1vc3RyYW1vcyBwb3IgcGFudGFsbGEgZGlhZ29uYWwgcHJpbmNpcGFsXG5kaWFnb25hbF9wcmluY2lwYWxcbiMgTW9zdHJhYW1vcyBwb3IgcGFudGFsbGEgbWF0cml6IGluZmVyaW9yIGRlIG1cbm0ifQ==</div>
+
+```r
+
+
+# Creamos una matriz cuadrada de 6 x 6
+m <-
+  matrix(
+    data = sample(x = 10, size = 36, replace = TRUE),
+                  nrow = 6,
+                  ncol = 6
+  )
+# Mostramos por pantalla `m`
+m
+     [,1] [,2] [,3] [,4] [,5] [,6]
+[1,]    9   10    5    9    5    5
+[2,]   10    9    2    7    2    7
+[3,]    9    9    6    8    2    4
+[4,]    8    3    6    2    1   10
+[5,]    9    3    3    4    7    7
+[6,]    9    3    1    5    6    3
+
+# Creamos un vector para la diagonal principal
+diagonal_principal <- vector(mode = "integer", length = nrow(m))
+diagonal_principal
+[1] 0 0 0 0 0 0
+
+# Algoritmo que calcula la matriz triangular inferior y su diagonal principal
+for (i in 1:nrow(m)) {
+  for (j in 1:ncol(m)) {
+    if (i == j) {
+      break
+    } else {
+      m [i, j] <- 0
+    }
+    
+  }
+  diagonal_principal[j] <- m[i, j]
+}
+
+# Mostramos por pantalla diagonal principal
+diagonal_principal
+[1] 9 9 6 2 7 3
+# Mostraamos por pantalla matriz inferior de m
+m
+     [,1] [,2] [,3] [,4] [,5] [,6]
+[1,]    9   10    5    9    5    5
+[2,]    0    9    2    7    2    7
+[3,]    0    0    6    8    2    4
+[4,]    0    0    0    2    1   10
+[5,]    0    0    0    0    7    7
+[6,]    0    0    0    0    0    3
+```
 
 Examinaremos brevemente ahora el código anterior, como se puede observar en primer lugar se define una matriz cuadrada de 6 x 6 y creamos un vector de tipo entero con una longitud de 6 que en el momento de su inicialización contiene todos sus valores igual a cero.
 
@@ -101,20 +231,42 @@ Cuando los indices son iguales cumpliéndose la condición del bucle `for` mas i
 
 En el caso de que los indices sean diferentes, a la posición del elemento `[i, j]` se le asigna el valor de cero con el propósito de calcular la matriz triangula superior.
 
+Por otro lado, dentro de instrucciones anidadas, la instrucción `break` finaliza solo la instrucción `for`, `while` o `repeat` que la envuelve inmediatamente. Podemos utilizar la instrucción `next` para transferir el control desde estructuras más anidadas. Esta cláusula nos introduce en el concepto de  __interrupción de las iteraciones__ en una estructura iterativa y que pasamos a analizar en el apartado siguiente.
+
+
 
 ## Cláusula __`next`__
 
-La cláusula `next` interrumpe una iteración y salta al siguiente cico. De hecho, salta a la evaluación de la condición del bucle en el que se encuentra.
+La cláusula `next` interrumpe una iteración y salta al siguiente ciclo. De hecho, salta a la evaluación de la condición del bucle en el que se encuentra.
 
 En otros lenguajes de programación el equivalente a `next` es conocido como __continue__, cuyo significado es el mismo: en la línea de código que te encuentres, bajo la verificación de la condición, salta a la evaluación del bucle.
 
-El diagrama de flujo de `break` se muestra en la [figura](https://i.imgur.com/vZknTyQ.png) siguiente:
+El diagrama de flujo de `break` se muestra en la [figura](https://i.imgur.com/d9bD6H6.png) siguiente:
 
-![Diagrama flujo Next](https://i.imgur.com/vZknTyQ.png)
+![Diagrama flujo Next](../images/next.png)
+
+Examinemos a continuación el diagrama de flujo de la instrucción `break`.
+Como hemos comentado con anterioridad `break` fuerza la transferencia del control a la expresión de control del bucle contenedor `for`, `while` o `repeat` más pequeño. Es decir, no se ejecuta ninguna de las instrucciones restantes de la iteración actual. La siguiente iteración del bucle se determina del modo siguiente:
+
+* En un bucle `while` o `repeat`, la siguiente iteración se inicia reevaluando la expresión de control de la instrucción `while` o `repeat`.
+
+* En un bucle `for`, en primer lugar se incrementa el índice del bucle. A continuación, se evalúa de nuevo la expresión de control de la instrucción `for` y, en función del resultado, el bucle finaliza o se produce otra iteración.
 
 Pongamos por caso que queremos mostrar por pantalla los números pares de una secuencia de enteros:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJmb3IgKGkgaW4gMToxMCkge1xuICBpZihpICUlIDIpXG4gICAgbmV4dFxuICAgIHByaW50KGkpXG59In0=</div>
+
+```r
+for (i in 1:10) {
+  if(i %% 2)
+    next
+    print(i)
+}
+[1] 2
+[1] 4
+[1] 6
+[1] 8
+[1] 10
+```
 
 Este algoritmo utiliza el [teorema del resto](https://es.wikipedia.org/wiki/Teorema_del_resto) para calcular si un número es par o impar. Si el resto de dividir el número entre dos es igual a cero entonces se trata de un número par y es mostrado por pantalla.
 
@@ -137,11 +289,29 @@ De ahí que, la mayoría de las construcciones iterativas que hemos visto en los
 Sirva de ejemplo la suma de dos vectores `v1` y `v1` en un vector `v3`, la cual puede realizarse elemento a elemento mediante un bucle `for` como:
 
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJcbm4gPC0gNFxudjEgPC0gYygxLCAyLCAzLCA0KVxudjIgPC0gYyg1LCA2LCA3LCA4KVxudjMgPC0gdmVjdG9yKG1vZGUgPSBcImludGVnZXJcIiwgbGVuZ3RoID0gbGVuZ3RoKG4pKVxuXG5mb3IgKGkgaW4gMTpuKSB7IFxuXHR2M1tpXSA8LSB2MVtpXSArIHYyW2ldIFxufVxudjMifQ==</div>
+
+```r
+
+n <- 4
+v1 <- c(1, 2, 3, 4)
+v2 <- c(5, 6, 7, 8)
+v3 <- vector(mode = "integer", length = length(n))
+
+for (i in 1:n) { 
+	v3[i] <- v1[i] + v2[i] 
+}
+v3
+[1]  6  8 10 12
+```
 
 Si bien, podemos usar como alternativa la vectorización nativa de R:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ2MyA9IHYxICsgdjJcbnYzIn0=</div>
+
+```r
+v3 = v1 + v2
+v3
+[1]  6  8 10 12
+```
 
 ### El Conjunto de Funciones __`apply`__
 
@@ -166,7 +336,14 @@ El paquete [purr](http://purrr.tidyverse.org/) forma parte del ecosistema [tidyv
 
 #### Instalación
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIExhIG1hbmVyYSBtYXMgZmFjaWwgZGUgY29uc2VndWlyIGBwdXJycmAgZXMgaW5zdGFsYXIgZWwgZWNvc2lzdGVtYSB0aWR5dmVyc2Vcbmluc3RhbGwucGFja2FnZXMoXCJ0aWR5dmVyc2VcIilcblxuIyBBbHRlcm5hdGl2YW1lbnRlLCBwb2RlbW9zIGluc3RhbGFyIHNvbG8gcHVycnI6XG5pbnN0YWxsLnBhY2thZ2VzKFwicHVycnJcIikifQ==</div>
+
+```r
+# La manera mas facil de conseguir `purrr` es instalar el ecosistema tidyverse
+install.packages("tidyverse")
+
+# Alternativamente, podemos instalar solo purrr:
+install.packages("purrr")
+```
 
 
 #### Uso
@@ -175,20 +352,45 @@ El siguiente ejemplo sirve para demostrar las diferentes alternativas que dispon
 
 Consideremos que queremos calcular el cuadrado de cada elemento en una secuencia de enteros del 1 a `n`. La primera solución pasa por utilizar una construcción iterativa:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJuIDwtIDVcbnJlcyA8LSByZXAoTkFfaW50ZWdlcl8sIG4pIFxuZm9yIChpIGluIHNlcV9sZW4obikpIHtcbiAgcmVzW2ldIDwtIGkgXiAyXG59XG5yZXMifQ==</div>
+
+```r
+n <- 5
+res <- rep(NA_integer_, n) 
+for (i in seq_len(n)) {
+  res[i] <- i ^ 2
+}
+res
+[1]  1  4  9 16 25
+```
 
 La segunda opción es por medio de la vectorización:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJuIDwtIDVcbnNlcV9sZW4obikgXiAyIn0=</div>
+
+```r
+n <- 5
+seq_len(n) ^ 2
+[1]  1  4  9 16 25
+```
 
 En tercer lugar, mediante `sapply`:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJuIDwtIDVcbnNhcHBseSgxOm4sIGZ1bmN0aW9uKHgpIHheMikifQ==</div>
+
+```r
+n <- 5
+sapply(1:n, function(x) x^2)
+[1]  1  4  9 16 25
+```
 
 
 Por último, mediante `purrr::map()`:
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJsaWJyYXJ5KHB1cnJyKVxubiA8LSA1XG5tYXBfZGJsKDE6biwgIGZ1bmN0aW9uKHgpIHggXiAyKSJ9</div>
+
+```r
+library(purrr)
+n <- 5
+map_dbl(1:n,  function(x) x ^ 2)
+[1]  1  4  9 16 25
+```
 
 En este ejemplo por la sencillez del caso las dos últimas alternativas no son necesarias y la correcta sería hacerlo mediante vectorización. Pero en estructuras de datos y funciones mas complejas optaríamos por cualquiera de las dos últimas opciones.
 

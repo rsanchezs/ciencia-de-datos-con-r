@@ -8,9 +8,9 @@ opts_chunk$set(prompt=FALSE, comment='', results='markup', echo=TRUE, eval=FALSE
 # end setup chunk
 ```
 
-```{r, include=FALSE}
-tutorial::go_interactive()
-```
+<!-- ```{r, include=FALSE} -->
+<!-- tutorial::go_interactive() -->
+<!-- ``` -->
 
 
 
