@@ -236,7 +236,20 @@ Hay que mencionar, además el uso del operador `%%` para calcular el resto de la
 
 ## Alternativas al Uso de Bucles en R
 
-### Vectorización
+Hasta el momento hemos visto el uso de bucles en R, pero podemos estar preguntándonos,¿Cuando usar los bucles en R y cuando no?
+
+Como regla general, si nos encontramos en la situación que tenemos que llevar a cabo una tarea que requiere tres o mas repeticiones, entonces una instrucción iterativa puede ser útil. Esto hace que nuestro código sea mas compacto, legible y mas fácil de mantener.
+
+Sin embargo, la peculiar naturaleza de R sugiere no hacer uso de los bucles en todas las situaciones cuandos exiten otras alternativas. R dispone de una característica que otros lenguajes de programación no disponen, que es conocida como [vectorización](#vectorizacion) y que ya hemos visto con anterioridad.
+
+Además, puesto que R soporta el paradigma de programación funcional exiten la posibilidad de hacer uso de funciones en lugar de construcciones imperativas que hemos visto en esta sección y d la vectorización. 
+
+Este conjunto de funciones pertenecen la familia de funciones [`apply`](#familia-apply) y las del paquete [`purr`](#paquete-purrr).
+
+
+
+
+### Vectorización {#vectorizacion}
 
 Como ya hemos visto con anterioridad, la vectorización nos permite realizar operaciones elemento a elemento en vectores y matrices.
 
@@ -269,7 +282,7 @@ v3 = v1 + v2
 v3
 ```
 
-### El Conjunto de Funciones __`apply`__
+### El Conjunto de Funciones __`apply`__ {#familia-apply}
 
 La familia `apply` pertenece al paquete base R y esta formado por un conjunto de funciones que nos permiten manipular una selección de elementos en matrices, arrays, listas y dataframes de forma repetitiva.
 
@@ -286,7 +299,7 @@ La familia `apply` esta compuesta de las funciones:
 * [tapply](https://www.rdocumentation.org/packages/base/versions/3.3.1/topics/tapply)
 
 
-### El paquete __`purrr`__
+### El paquete __`purrr`__ {#paquete-purrr}
 
 El paquete [purr](http://purrr.tidyverse.org/) forma parte del ecosistema [tidyverse](https://www.tidyverse.org/) y esta compuesto de un conjunto de funciones que aprovechan el paradigma de [programación funcional](https://es.wikipedia.org/wiki/Programaci%C3%B3n_funcional) de R, proporcionando un conjunto completo y consistente de herramientas para trabajar con funciones en listas y vectores.
 

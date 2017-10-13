@@ -305,13 +305,21 @@ for (i in 1:10) {
 }
 ```
 
-## Alternativas al Uso de Bucles en R {.build}
+## Alternativas al Uso de Bucles en R 
 
--Vectorización 
+## Alternativas al Uso de Bucles en R | Vectorización {.build}
 
--El Conjunto de Funciones __apply__ 
 
--El paquete 
+> - Nos permite realizar operaciones elemento a elemento en vectores y matrices.
+
+
+> - El tipo de dato más basico en R es el vector.
+
+
+> - Combinando dos vectores de la misma longitud obtenemos una matriz.
+
+
+> - Podemos vectorizar operaciones repetitivas en vectores y matrices.
 
 
 
@@ -429,6 +437,11 @@ sapply(1:n, function(x) x^2)
 
 Por último, mediante `purrr::map()`:
 
+```{r echo=FALSE}
+library(purrr)
+```
+
+
 ```{r}
 # Algoritmo que calcula el cuadrado de cada elemento
 # en una secuencia de enteros del 1 a `n`
@@ -443,11 +456,11 @@ map_dbl(1:n,  function(x) x ^ 2)
 
 -En repeat definir la expresión terminación del bucle. 
 
--Es mejor el uso de una o mas llamadas a funciones dentro del bucle a que este sea demasiado  
+-Es mejor el uso de una o mas llamadas a funciones dentro del bucle a que este sea demasiado grande. 
 
 -Considerar las diferentes alternativas en este orden:
 
-    bucles < vectorización < apply < purrr
+    bucles < vectorización < purrr
 
 
 

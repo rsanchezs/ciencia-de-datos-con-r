@@ -39,11 +39,11 @@
 ### Parte 2. Manipulación de Datos
 
 * [Importar Datos en R](importar_datos/importar_datos.md)
-  * [Lectura de CSV, TXT, HTML y Otros Archivos Comúnes en R ](importar_datos/archivos_comunes/archivos_comunes.md)
-  * [Lectura de SAS, SPSS y Otros Programas Estadísticos en R](importar_datos/programas_estadisticos/programas_estadisticos.md)
+  * [Lectura de Archivos de Texto y Excel ](importar_datos/tabular/archivos_formato_tabular.md)
+  * [Lectura de Archivos de Programas Estadísticos](importar_datos/programas_estadisticos/programas_estadisticos.md)
+  * [Lectura de Archivos Jerarquizados](importar_datos/jerarquico/archivos_formato_jerarquico.Rmd)
   * [Lectura de Bases de Datos](importar_datos/bases_datos/bases_datos.md)
 
-    
     
 ------------------------------------------------------
 

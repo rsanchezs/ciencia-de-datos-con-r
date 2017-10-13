@@ -3,7 +3,7 @@ opts_knit$set(base.dir='./', fig.path='', out.format='md')
 opts_chunk$set(prompt=FALSE, comment='', results='markup', eval=TRUE, echo=TRUE)
 # See yihui.name/knitr/options for more Knitr options.
 ##### Put other setup R code here
-
+library(haven)
 
 # end setup chunk
 ```
@@ -14,7 +14,7 @@ opts_chunk$set(prompt=FALSE, comment='', results='markup', eval=TRUE, echo=TRUE)
 <!-- ``` -->
 
 
-# Lectura de SAS, SPSS y Otros Programas Estadísticos en R
+# Lectura de Archivos de Programas Estadísticos en R
 
 Como ya sabemos, R es un lenguaje de programación y un entorno de computación para computación estadística. Su naturaleza de código fuente abierto ha hecho que en los últimos años prolifere ante alternativas a programas estadísticos de tipo comercial, como SPSS, SAS, etc.
 
@@ -24,52 +24,79 @@ En esta sección, veremos como podemos importar datos desde programas estadísti
 
 Si somos usuarios del programa SPSS y deseamos importar nuestros archivos SPSS a R, en primer lugar necesitaremos instalar el paquete [haven](http://haven.tidyverse.org/) que forma parte del ecosistema [tidyverse](http://tidyverse.org/). 
 
-```{r eval=FALSE}
-# Instalamos el paquete
-install.packages("haven")
-# Cargamos el paquete
-library(haven)
+### Instalación
+
+```{r eval=FALSE, message=FALSE}
+# La forma mas facil de instalar `haven` es instalar el ecosistema
+# `tidyverse`
+install.packages("tidyverse")
 ```
 
+```{r eval=FALSE, message=FALSE}
+# Alternativamente, para instalar unicamente `haven`
+install.packages("haven")
+```
+
+
+```{r eval=FALSE, message=FALSE}
+# O instala la versión en desarrollo desde Github
+# install.packages("devtools")
+devtools::install_github("tidyverse/haven")
+```
+
+__Nota__ que la última opción requiere de la instalación del paquete `devtools`.
+
+### Uso
 
 ```{r}
 # Lectura de los datos SPSS
 read_sav("data/Child_Data.sav")
 ```
 
+Por supueso `haven` nos permite gravar nuestros datos en un archivo SPSS con la ayuda de la función `write_sas`:
+
+```{r}
+# Escritura del dataframe `mtcars` a un archivo SPSS
+write_sav(mtcars, "data/mtcars.sav")
+```
+
+
+
 ## Lectura de Archivos Stata en R
 
 Como en el caso anterior utilizaremos el paquete `haven` y utilizaremos la función `read_stata()`:
 
-```{r eval=FALSE}
-# Instalamos el paquete
-install.packages("haven")
-# Cargamos el paquete
-library(haven)
-```
-
 
 ```{r}
 # Lectura de los datos STATA
-read_stata("data/Milk_Production.dta")
+read_dta("data/Milk_Production.dta")
 ```
+
+De igual manera que en el caso anterior podemos exportar nuestros datos a STATA, pero en este caso utilizaremos la función  `write_dta()`:
+
+```{r}
+# Escritura del dataframe `mtcars` a un archivo STATA
+write_dta(mtcars, "data/mtcars.dta")
+```
+
 
 
 ## Lectura de Archivos SAS en R
 
-De igual manera que en los dos casos anteriores utilizaremos el paquete `haven`, pero en este caso utilizaremos la función `read_sas()` para leer nuestros datos SAS dentro de R:
-
-```{r}
-# Instalamos el paquete
-install.packages("haven")
-# Cargamos el paquete
-library(haven)
-```
+De la misma forma que en los dos casos anteriores utilizaremos el paquete `haven`, pero en este caso utilizaremos la función `read_sas()` para leer nuestros datos SAS dentro de R:
 
 ```{r}
 # Lectura de los datos STATA
 read_sas("data/iris.sas7bdat")
 ```
+
+De manera semejante podemos exportar nuestros datos a STATA, aunque en esta ocasión utilizaremos la función `write_sas()`:
+
+```{r}
+# Escritura del dataframe `mtcars` a un archivo SAS
+write_sas(mtcars, "data/mtcars.sas7bdat")
+```
+
 
 
 ## Lectura de Archivos Systat en R

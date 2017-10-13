@@ -15,8 +15,8 @@ Este capítulo nos introduce el concepto de función  desde el punto de vista de
 
 Después de leer este capítulo, deberíamos:
 
-- Conocer el concepto de [función].(#que-es-una-funcion)
-- Saber que son las [funciones en R].(#funciones-en-r)
+- Conocer el concepto de [función](#que-es-una-funcion).
+- Saber que son las [funciones en R](#funciones-en-r).
 - Ser capaces de [crear](#funciones-definidas-usuario) nuestras funciones.
 - Utilizar RStudio para crear, guardar y [ver](#funciones-rstudio) nuestras funciones.
 - [Llamar](#llamada) a funciones definidas en otros scripts.
@@ -41,7 +41,7 @@ De hecho, existen varias definiciones formales de lo que es una función que aba
 
 En R, de acuerdo con la documentación base, definimos una función con la siguiente construcción:
 
-```{r eval=FALSE}
+```{}
  function(lista_argumentos) {
   cuerpo_funcion
 }
@@ -70,7 +70,11 @@ Así que, en la mayoría de los casos, una función tiene un nombre, argumentos 
 
 Además, definiremos las funciones de forma similar a las variables con la ayuda del operador de asignación de la forma:
 
-> nombre_funcion <- function(argumentos) {cuerpo}
+
+```{}
+nombre_funcion <- function(argumentos) {cuerpo}
+```
+
 
 __Recuerda__ que existen funciones que no disponen de nombres y que son conocidas como [funciones anónimas](#funciones-anonimas) y que analizaremos en un apartado posterior.
 
