@@ -6,7 +6,7 @@
 <!-- ``` -->
 
 
-# Lectura de SAS, SPSS y Otros Programas Estadísticos en R
+# Lectura de Archivos de Programas Estadísticos en R
 
 Como ya sabemos, R es un lenguaje de programación y un entorno de computación para computación estadística. Su naturaleza de código fuente abierto ha hecho que en los últimos años prolifere ante alternativas a programas estadísticos de tipo comercial, como SPSS, SAS, etc.
 
@@ -16,14 +16,32 @@ En esta sección, veremos como podemos importar datos desde programas estadísti
 
 Si somos usuarios del programa SPSS y deseamos importar nuestros archivos SPSS a R, en primer lugar necesitaremos instalar el paquete [haven](http://haven.tidyverse.org/) que forma parte del ecosistema [tidyverse](http://tidyverse.org/). 
 
+### Instalación
+
 
 ```r
-# Instalamos el paquete
-install.packages("haven")
-# Cargamos el paquete
-library(haven)
+# La forma mas facil de instalar `haven` es instalar el ecosistema
+# `tidyverse`
+install.packages("tidyverse")
 ```
 
+
+```r
+# Alternativamente, para instalar unicamente `haven`
+install.packages("haven")
+```
+
+
+
+```r
+# O instala la versión en desarrollo desde Github
+# install.packages("devtools")
+devtools::install_github("tidyverse/haven")
+```
+
+__Nota__ que la última opción requiere de la instalación del paquete `devtools`.
+
+### Uso
 
 
 ```r
@@ -32,59 +50,82 @@ read_sav("data/Child_Data.sav")
 ```
 
 ```
-Error in eval(expr, envir, enclos): could not find function "read_sav"
+# A tibble: 20 � 4
+     AGE MEM_SPAN    IQ READ_AB
+   <dbl>    <dbl> <dbl>   <dbl>
+1   6.70      4.4    95     7.2
+2   5.90      4.0    90     6.0
+3   5.50      4.1   105     6.0
+4   6.20      4.8    98     6.6
+5   6.40      5.0   106     7.0
+6   7.30      5.5   100     7.2
+7   5.70      3.6    88     5.3
+8   6.15      5.0    95     6.4
+9   7.50      5.4    96     6.6
+10  6.90      5.0   104     7.3
+11  4.10      3.9   108     5.0
+12  5.50      4.2    90     5.8
+13  6.90      4.5    91     6.6
+14  7.20      5.0    92     6.8
+15  4.00      4.2   101     5.6
+16  7.30      5.5   100     7.2
+17  5.90      4.0    90     6.0
+18  5.50      4.2    90     5.8
+19  4.00      4.2   101     5.6
+20  5.90      4.0    90     6.0
 ```
+
+Por supueso `haven` nos permite gravar nuestros datos en un archivo SPSS con la ayuda de la función `write_sas`:
+
+
+```r
+# Escritura del dataframe `mtcars` a un archivo SPSS
+write_sav(mtcars, "data/mtcars.sav")
+```
+
+
 
 ## Lectura de Archivos Stata en R
 
 Como en el caso anterior utilizaremos el paquete `haven` y utilizaremos la función `read_stata()`:
 
 
-```r
-# Instalamos el paquete
-install.packages("haven")
-# Cargamos el paquete
-library(haven)
-```
-
-
 
 ```r
 # Lectura de los datos STATA
-read_stata("data/Milk_Production.dta")
+read_dta("data/Milk_Production.dta")
 ```
 
 ```
-Error in eval(expr, envir, enclos): could not find function "read_stata"
+# A tibble: 199 � 7
+   currentm previous   fat protein  days lactatio   i79
+      <dbl>    <dbl> <dbl>   <dbl> <dbl>    <dbl> <dbl>
+1        45       45   5.5     8.9    21        5     0
+2        86       86   4.4     4.1    25        4     0
+3        50       50   6.5     4.0    25        7     0
+4        42       42   7.4     4.1    25        2     0
+5        61       61   3.8     3.8    33        2     0
+6        93       93   4.2     3.0    45        3     0
+7        91       91   2.9     2.6    46        2     0
+8        90       90   4.7     2.9    46        5     0
+9        53       53   2.5     3.5    46        2     0
+10       84       84   4.3     3.3    50        7     0
+# ... with 189 more rows
 ```
+
+De igual manera que en el caso anterior podemos exportar nuestros datos a STATA, pero en este caso utilizaremos la función  `write_dta()`:
+
+
+```r
+# Escritura del dataframe `mtcars` a un archivo STATA
+write_dta(mtcars, "data/mtcars.dta")
+```
+
 
 
 ## Lectura de Archivos SAS en R
 
-De igual manera que en los dos casos anteriores utilizaremos el paquete `haven`, pero en este caso utilizaremos la función `read_sas()` para leer nuestros datos SAS dentro de R:
-
-
-```r
-# Instalamos el paquete
-install.packages("haven")
-```
-
-```
-Installing package into 'C:/Users/Ruben/Documents/R/win-library/3.3'
-(as 'lib' is unspecified)
-```
-
-```
-package 'haven' successfully unpacked and MD5 sums checked
-
-The downloaded binary packages are in
-	C:\Users\Ruben\AppData\Local\Temp\RtmpgNvh01\downloaded_packages
-```
-
-```r
-# Cargamos el paquete
-library(haven)
-```
+De la misma forma que en los dos casos anteriores utilizaremos el paquete `haven`, pero en este caso utilizaremos la función `read_sas()` para leer nuestros datos SAS dentro de R:
 
 
 ```r
@@ -108,6 +149,15 @@ read_sas("data/iris.sas7bdat")
 10          4.9         3.1          1.5         0.1  setosa
 # ... with 140 more rows
 ```
+
+De manera semejante podemos exportar nuestros datos a STATA, aunque en esta ocasión utilizaremos la función `write_sas()`:
+
+
+```r
+# Escritura del dataframe `mtcars` a un archivo SAS
+write_sas(mtcars, "data/mtcars.sas7bdat")
+```
+
 
 
 ## Lectura de Archivos Systat en R

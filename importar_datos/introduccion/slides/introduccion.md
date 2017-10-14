@@ -1,8 +1,11 @@
 ---
-title: "Estructuras iterativas"
+title: "Importar Datos:Introducción"
 author: "Rubén Sánchez Sancho"
-date: "01 de Octubre de 2017"
-output: ioslides_presentation
+date: "13 de Octubre de 2017"
+output: 
+  ioslides_presentation:
+    df_print: tibble
+  
 logo: ./logo.png
 highlight: TRUE
 incremental: TRUE
@@ -128,21 +131,30 @@ table.rmdtable td, table th {
 
 ## Objetivos
 
-> - Bullet 1
-> - Bullet 2
-> - Bullet 3
 
-## Slide with R Output
+```r
+library(EDAWR)
+```
+
 
 
 ```r
-summary(cars)
+storms
 ```
 
-## Slide with Plot
-
-
-```r
-plot(pressure)
 ```
+## # A tibble: 6 � 4
+##     storm  wind pressure       date
+##     <chr> <int>    <int>     <date>
+## 1 Alberto   110     1007 2000-08-03
+## 2    Alex    45     1009 1998-07-27
+## 3 Allison    65     1005 1995-06-03
+## 4     Ana    40     1013 1997-06-30
+## 5  Arlene    50     1010 1999-06-11
+## 6  Arthur    45     1010 1996-06-17
+```
+
+
+
+
 
