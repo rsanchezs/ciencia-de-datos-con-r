@@ -136,6 +136,17 @@ table.rmdtable td, table th {
 library(EDAWR)
 ```
 
+```
+## 
+## Attaching package: 'EDAWR'
+```
+
+```
+## The following objects are masked from 'package:tidyr':
+## 
+##     population, who
+```
+
 
 
 ```r

@@ -18,15 +18,15 @@ library(tidyverse)
 
 ## Lectura de Archivos de Texto con `readr`
 
-La mayoría de las funciones del paquete `readr` estan destinadas a convertir [archivos en formato tabular]((https://es.wikipedia.org/wiki/Valores_separados_por_comas)) en `dataframes`:
+La mayoría de las funciones del paquete [`readr`](http://readr.tidyverse.org/) están destinadas a convertir [archivos en formato tabular](https://es.wikipedia.org/wiki/Valores_separados_por_comas) en `dataframes`:
 
-* `read_csv()` lee archivos en que las columnas estan separadas por comas, `read_csv2()` lee archivos separados por punto y coma (comunes en paises donde `,` es usada para separar los decimales en los numeros),
-  `read_tsv()` lee archivos separados por tabuladores, y `read_delim()` lee archivos separados por cualquier otro tipo de delimitador.
+*`read_csv()` lee archivos en que las columnas están separadas por comas,`read_csv2()` lee archivos separados por punto y coma (comunes en países donde `,` es usada para separar los decimales en los números),
+`read_tsv()` lee archivos separados por tabuladores, y `read_delim()` lee archivos separados por cualquier otro tipo de delimitador.
 
-* `read_fwf()` lee archivos con un ancho fijo. Podemos especificar los campos o por su ancho con `fwf_widths()` o su posicion mediante `fwf_positions()`.
-  `read_table()` lee un tipo de variación de archivos con un ancho fijo donde las columnas estan separadas por espacios en blanco.
+*`read_fwf()` lee archivos con un ancho fijo. Podemos especificar los campos o por su ancho con `fwf_widths()` o su posición mediante `fwf_positions()`.
+`read_table()` lee un tipo de variación de archivos con un ancho fijo donde las columnas están separadas por espacios en blanco.
   
-Estas funciones comparten la misma sintaxis: una vez hemos dominado una,  podemos hacer uso de las otras funciones sin dificultad. Para el resto de este capítulo nos centraremos en `read_csv`.  No sólo porque los archivos csv son una de las formas mas comunes de almacenamiento de datos, sino también porque una vez entendamos `read_csv()`, podremos con facilidad aplicar nuestros conocimientos al resto de las otras funciones en `readr`.
+Estas funciones comparten la misma sintaxis: una vez hemos dominado una,  podemos hacer uso de las otras funciones sin dificultad. Para el resto de este capítulo nos centraremos en `read_csv`.  No sólo porque los archivos [csv](https://es.wikipedia.org/wiki/Valores_separados_por_comas) son una de las formas mas comunes de almacenamiento de datos, sino también porque una vez entendamos `read_csv()`, podremos con facilidad aplicar nuestros conocimientos al resto de las otras funciones del paquete `readr`.
 
 El primer argumento en `read_csv()` es el mas importante, puesto que se trata de la localización del archivo que deseamos importar:
 
@@ -78,70 +78,75 @@ read_csv("a,b,c
 ```
 
 
-En ambos casos `read_csv()` usa la primera línea como nombre de las columnas, lo que es una convención generalizada. Existen dos situaciones en las que estariamos interesados en modificar este comportamiento:
+En ambos casos `read_csv()` usa la primera línea como nombre de las columnas, lo que es una convención generalizada. Existen dos situaciones en las que estaríamos interesados en modificar este comportamiento:
 
 1. En ocasiones existen unas pocas líneas de metadatos en la cabecera del archivo. Podemos hacer uso de `skip=n` para descartar las `n` primeras lineas; o usar `comment = "#"` para eliminar todas las líneas que empiezan con `#`.
 
     
-    
-    ```r
-    read_csv("La primera linea de metadatos
-      La segunda linea de metadatos
-      x,y,z
-      1,2,3", skip = 2)
-    ```
-    
-    ```
-    # A tibble: 1 � 3
-          x     y     z
-      <int> <int> <int>
-    1     1     2     3
-    ```
-    
-    ```r
-    read_csv("# Un comentario que deseamos eliminar
-      x,y,z
-      1,2,3", comment = "#")
-    ```
-    
-    ```
-    # A tibble: 1 � 3
-          x     y     z
-      <int> <int> <int>
-    1     1     2     3
-    ```
+
+```r
+read_csv("La primera linea de metadatos
+  La segunda linea de metadatos
+  x,y,z
+  1,2,3", skip = 2)
+```
+
+```
+# A tibble: 1 � 3
+      x     y     z
+  <int> <int> <int>
+1     1     2     3
+```
+
+```r
+read_csv("# Un comentario que deseamos eliminar
+  x,y,z
+  1,2,3", comment = "#")
+```
+
+```
+Warning: closing unused connection 5 (https://es.wikipedia.org/wiki/
+Anexo:PaÃ­ses_y_territorios_dependientes_por_poblaciÃ³n)
+```
+
+```
+# A tibble: 1 � 3
+      x     y     z
+  <int> <int> <int>
+1     1     2     3
+```
 
 2. Los datos podrían no contener columnas con nombres. En esta situación podemos hacer uso del argumento `col_names=FALSE` para indicar a `read_csv()` que no trate la primera linea como cabecera, y en lugar etiquete secuencialmente de `X1`a `Xn`:
 
-    
-    ```r
-    read_csv("1,2,3\n4,5,6", col_names = FALSE)
-    ```
-    
-    ```
-    # A tibble: 2 � 3
-         X1    X2    X3
-      <int> <int> <int>
-    1     1     2     3
-    2     4     5     6
-    ```
-  
-  __Nota__ que hemos usado `"\n"` para añadir una nueva linea.
 
-  Alternativamente, podemos paras a `col_names` un vector de caracteres que será      usado para los nombres de las columnas:
+```r
+read_csv("1,2,3\n4,5,6", col_names = FALSE)
+```
+
+```
+# A tibble: 2 � 3
+     X1    X2    X3
+  <int> <int> <int>
+1     1     2     3
+2     4     5     6
+```
+
+__Nota__ que hemos usado `"\n"` para añadir una nueva linea.
+
+Alternativamente, podemos pasar a `col_names` un vector de caracteres que será      usado para los nombres de las columnas:
   
-    
-    ```r
-    read_csv("1,2,3\n4,5,6", col_names = c("x", "y", "z"))
-    ```
-    
-    ```
-    # A tibble: 2 � 3
-          x     y     z
-      <int> <int> <int>
-    1     1     2     3
-    2     4     5     6
-    ```
+
+```r
+read_csv("1,2,3\n4,5,6", col_names = c("x", "y", "z"))
+```
+
+```
+# A tibble: 2 � 3
+      x     y     z
+  <int> <int> <int>
+1     1     2     3
+2     4     5     6
+```
 
 
 Otro argumento de gran utilidad es `na`, que especifica el valor (o valores) que son usados para representar los valores desconocidos en nuestro archivo:
@@ -158,13 +163,13 @@ read_csv("a,b,c\n1,2,#N/A", na = "#N/A")
 1     1     2  <NA>
 ```
 
-Esto es todo lo que necesitamos saber para importar ~75% de archivos csv que nos encontraremos en la práctica. Además, podemos facilmente adaptar lo que hemos aprendido en esta sección para leer archivos separados por tabulados con `read_tsv()` y archivos con un ancho fijo con `read_fwf()`.
+Esto es todo lo que necesitamos saber para importar ~75% de archivos csv que nos encontraremos en la práctica. Además, podemos fácilmente adaptar lo que hemos aprendido en esta sección para leer archivos separados por tabulados con `read_tsv()` y archivos con un ancho fijo con `read_fwf()`.
   
 
 
 ## Lectura Archivos Excel con `readxl` 
 
-El paquete `readxl` facilita la importación de archivos Excel en R. Comparado con la mayoría de paquetes existentes (e.g. `gdata`, `xlsx`, `xlsReadWrite`) `readxl` no requiere de dependencias externas, por lo tanto es más fácil de instalar y usar en los sistemas operativos. Como en los apartados anteriores es usado para el trabajo de datos en formato tabular. Este paquete forma parte de la colección de paquetes del ecosistema [tidyverse](http://tidyverse.org/) que comparten la misma filosofía y están diseñados para trabajar de forma conjunta.
+El paquete [`readxl`](http://readxl.tidyverse.org/) facilita la importación de archivos Excel en R. Comparado con la mayoría de paquetes existentes (e.g. `gdata`, `xlsx`, `xlsReadWrite`) `readxl` no requiere de dependencias externas, por lo tanto es más fácil de instalar y usar en los sistemas operativos. Como en los apartados anteriores es usado para el trabajo de datos en formato tabular. Este paquete forma parte de la colección de paquetes del ecosistema [tidyverse](http://tidyverse.org/) que comparten la misma filosofía y están diseñados para trabajar de forma conjunta.
 
 ### Instalación
 
@@ -2131,30 +2136,26 @@ shim, : Expecting logical in P5829 / R5829C16: got '8455'
 
 ```r
 #Mostramos la hoja de calculo
-hoja_calculo_xls
+head(hoja_calculo_xls)
 ```
 
 ```
-# A tibble: 5,836 � 25
-   WR_DOC_ID DOCUMENT_NUMBER DOCUMENT_TYPE PURPOSE_CODE_LIST
-       <dbl>           <chr>         <chr>             <chr>
-1    2229352       S1-*04254        NewApp             CI MU
-2    2085332        R4-10948        NewApp                IR
-3    2285593        S1-13219        NewApp                MU
-4    2285597       G1-*12139        NewApp                DM
-5    2285599       G1-*12141        NewApp                DM
-6    2283433        G3-20099        NewApp                CI
-7    2283437        G3-20191        NewApp                MU
-8    2283438        G3-20192        NewApp                MU
-9    6765211        S1-20171        NewApp                DM
-10   2285603        G1-20257        NewApp                DM
-# ... with 5,826 more rows, and 21 more variables:
-#   PERSON_LAST_OR_ORGANIZATION_NAME <chr>, PRIORITY_DATE <dttm>,
-#   YEAR_APPLIED <dbl>, CFS <dbl>, GPM <dbl>, DOMESTIC_UNITS <dbl>,
-#   ACRE_FEET <dbl>, ACRE_IRR <dbl>, COUNTY_NAME <chr>, WRIA_NUMBER <dbl>,
-#   WATERSHED <chr>, CERT_NUM <lgl>, TRS <chr>, QUAD_DESIGNATION <chr>,
-#   SOURCE_NAME <chr>, TRIBUTARY_NAME <chr>, IMAGE_URL <chr>,
-#   MAP_URL <chr>, Latitude1 <chr>, Longitude1 <chr>, Location <chr>
+# A tibble: 6 � 25
+  WR_DOC_ID DOCUMENT_NUMBER DOCUMENT_TYPE PURPOSE_CODE_LIST
+      <dbl>           <chr>         <chr>             <chr>
+1   2229352       S1-*04254        NewApp             CI MU
+2   2085332        R4-10948        NewApp                IR
+3   2285593        S1-13219        NewApp                MU
+4   2285597       G1-*12139        NewApp                DM
+5   2285599       G1-*12141        NewApp                DM
+6   2283433        G3-20099        NewApp                CI
+# ... with 21 more variables: PERSON_LAST_OR_ORGANIZATION_NAME <chr>,
+#   PRIORITY_DATE <dttm>, YEAR_APPLIED <dbl>, CFS <dbl>, GPM <dbl>,
+#   DOMESTIC_UNITS <dbl>, ACRE_FEET <dbl>, ACRE_IRR <dbl>,
+#   COUNTY_NAME <chr>, WRIA_NUMBER <dbl>, WATERSHED <chr>, CERT_NUM <lgl>,
+#   TRS <chr>, QUAD_DESIGNATION <chr>, SOURCE_NAME <chr>,
+#   TRIBUTARY_NAME <chr>, IMAGE_URL <chr>, MAP_URL <chr>, Latitude1 <chr>,
+#   Longitude1 <chr>, Location <chr>
 ```
 
 
@@ -2163,11 +2164,11 @@ Podemos obtener los nombres de las hojas en el libro con la ayuda de la función
 
 
 ```r
-excel_sheets("data/Water_Right_Applications.xlsx")
+excel_sheets("data/datasets.xls")
 ```
 
 ```
-[1] "Water Right Applications"
+[1] "iris"     "mtcars"   "chickwts" "quakes"  
 ```
 
 
@@ -2175,14 +2176,31 @@ Es posible seleccionar una hoja de cálculo mediante su nombre o por la posició
 
 
 ```r
-  read_excel(path = "data/Water_Right_Applications.xlsx", sheet = "Water Right Applications")
+read_excel(path = "data/datasets.xls", sheet = "quakes")
 ```
 
 
 
 
 ```r
-read_excel(path = "data/datasets.xlsx", sheet = 1)
+read_excel(path = "data/datasets.xlsx", sheet = 2)
+```
+
+```
+# A tibble: 32 � 11
+     mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb
+   <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
+1   21.0     6 160.0   110  3.90 2.620 16.46     0     1     4     4
+2   21.0     6 160.0   110  3.90 2.875 17.02     0     1     4     4
+3   22.8     4 108.0    93  3.85 2.320 18.61     1     1     4     1
+4   21.4     6 258.0   110  3.08 3.215 19.44     1     0     3     1
+5   18.7     8 360.0   175  3.15 3.440 17.02     0     0     3     2
+6   18.1     6 225.0   105  2.76 3.460 20.22     1     0     3     1
+7   14.3     8 360.0   245  3.21 3.570 15.84     0     0     3     4
+8   24.4     4 146.7    62  3.69 3.190 20.00     1     0     4     2
+9   22.8     4 140.8    95  3.92 3.150 22.90     1     0     4     2
+10  19.2     6 167.6   123  3.92 3.440 18.30     1     0     4     4
+# ... with 22 more rows
 ```
 
 
@@ -2190,63 +2208,52 @@ El argumento `range` de la función `read_excel` nos permite seleccionar un rang
 
 
 ```r
-read_excel(path = "data/Water_Right_Applications.xlsx", range = "C1:E4")
+read_excel(path = "data/datasets.xls", range = "C1:E4")
 ```
 
 ```
 # A tibble: 3 � 3
-  DOCUMENT_TYPE PURPOSE_CODE_LIST PERSON_LAST_OR_ORGANIZATION_NAME
-          <chr>             <chr>                            <chr>
-1        NewApp             CI MU               Seattle Water Dept
-2        NewApp                IR    US Bureau Reclamation - Boise
-3        NewApp                MU                     Everett City
+  Petal.Length Petal.Width Species
+         <dbl>       <dbl>   <chr>
+1          1.4         0.2  setosa
+2          1.4         0.2  setosa
+3          1.3         0.2  setosa
 ```
 
 Además, podemos especificar la hoja del libro de la cual queremos extraer un rango y con el símbolo lógico de negación `!` excluir celdas y columnas en nuestra selección:
 
 
 ```r
-read_excel(path = "data/Water_Right_Applications.xlsx", range = "Water Right Applications!B1:D5")
+read_excel(path = "data/datasets.xls", range = "mtcars!B1:D5")
 ```
 
 ```
 # A tibble: 4 � 3
-  DOCUMENT_NUMBER DOCUMENT_TYPE PURPOSE_CODE_LIST
-            <chr>         <chr>             <chr>
-1       S1-*04254        NewApp             CI MU
-2        R4-10948        NewApp                IR
-3        S1-13219        NewApp                MU
-4       G1-*12139        NewApp                DM
+    cyl  disp    hp
+  <dbl> <dbl> <dbl>
+1     6   160   110
+2     6   160   110
+3     4   108    93
+4     6   258   110
 ```
 
 Por defecto, la función `read_excel` trata los campos vacíos como valores desconocidos `NA`. En caso contrario, debemos especificarlo en el argumento `na`:
 
 
 ```r
-read_excel(path = "data/Water_Right_Applications.xlsx", na = "NULL")
+head(read_excel(path = "data/datasets.xls", na = "setosa"))
 ```
 
 ```
-# A tibble: 5,836 � 25
-   WR_DOC_ID DOCUMENT_NUMBER DOCUMENT_TYPE PURPOSE_CODE_LIST
-       <dbl>           <chr>         <chr>             <chr>
-1    2229352       S1-*04254        NewApp             CI MU
-2    2085332        R4-10948        NewApp                IR
-3    2285593        S1-13219        NewApp                MU
-4    2285597       G1-*12139        NewApp                DM
-5    2285599       G1-*12141        NewApp                DM
-6    2283433        G3-20099        NewApp                CI
-7    2283437        G3-20191        NewApp                MU
-8    2283438        G3-20192        NewApp                MU
-9    6765211        S1-20171        NewApp                DM
-10   2285603        G1-20257        NewApp                DM
-# ... with 5,826 more rows, and 21 more variables:
-#   PERSON_LAST_OR_ORGANIZATION_NAME <chr>, PRIORITY_DATE <dttm>,
-#   YEAR_APPLIED <dbl>, CFS <dbl>, GPM <dbl>, DOMESTIC_UNITS <dbl>,
-#   ACRE_FEET <dbl>, ACRE_IRR <dbl>, COUNTY_NAME <chr>, WRIA_NUMBER <dbl>,
-#   WATERSHED <chr>, CERT_NUM <chr>, TRS <chr>, QUAD_DESIGNATION <chr>,
-#   SOURCE_NAME <chr>, TRIBUTARY_NAME <chr>, IMAGE_URL <chr>,
-#   MAP_URL <chr>, Latitude1 <chr>, Longitude1 <chr>, Location <chr>
+# A tibble: 6 � 5
+  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+         <dbl>       <dbl>        <dbl>       <dbl>   <chr>
+1          5.1         3.5          1.4         0.2    <NA>
+2          4.9         3.0          1.4         0.2    <NA>
+3          4.7         3.2          1.3         0.2    <NA>
+4          4.6         3.1          1.5         0.2    <NA>
+5          5.0         3.6          1.4         0.2    <NA>
+6          5.4         3.9          1.7         0.4    <NA>
 ```
 
 

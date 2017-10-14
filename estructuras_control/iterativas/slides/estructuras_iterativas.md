@@ -161,7 +161,7 @@ media
 ```
 
 ```
-## [1] 19.8
+## [1] 33.8
 ```
 
 
@@ -197,9 +197,9 @@ suma
 
 ```
 ##      [,1] [,2] [,3]
-## [1,]   67   92  125
-## [2,]   97  100  185
-## [3,]  106  119  179
+## [1,]  120  111  117
+## [2,]  112  123  127
+## [3,]   50  123  153
 ```
 
 
@@ -274,12 +274,12 @@ m
 
 ```
 ##      [,1] [,2] [,3] [,4] [,5] [,6]
-## [1,]    9    6    8    2    4    8
-## [2,]    3    6    2    1   10    1
-## [3,]    3    3    4    7    7    8
-## [4,]    3    1    5    6    3   10
-## [5,]    5    9    5    5    5    3
-## [6,]    2    7    2    7    2    2
+## [1,]    7    3    7    7    3    3
+## [2,]    9    7    6    9    5    7
+## [3,]    6    9    9    7    7    9
+## [4,]    2    4    9    2    4    5
+## [5,]    8    3    1    7    5    6
+## [6,]    6    7    6    7    5    4
 ```
 
 ## Cláusula __`break`__  | Calcular la Matriz Triangular Superior y la Diagonal Principal de una Matriz. {.build .smaller} 
@@ -334,7 +334,7 @@ diagonal_principal
 ```
 
 ```
-## [1] 9 6 4 6 5 2
+## [1] 7 7 9 2 5 4
 ```
 
 
@@ -346,12 +346,12 @@ m
 
 ```
 ##      [,1] [,2] [,3] [,4] [,5] [,6]
-## [1,]    9    6    8    2    4    8
-## [2,]    0    6    2    1   10    1
-## [3,]    0    0    4    7    7    8
-## [4,]    0    0    0    6    3   10
-## [5,]    0    0    0    0    5    3
-## [6,]    0    0    0    0    0    2
+## [1,]    7    3    7    7    3    3
+## [2,]    0    7    6    9    5    7
+## [3,]    0    0    9    7    7    9
+## [4,]    0    0    0    2    4    5
+## [5,]    0    0    0    0    5    6
+## [6,]    0    0    0    0    0    4
 ```
 
 
@@ -378,13 +378,21 @@ for (i in 1:10) {
 ## [1] 10
 ```
 
-## Alternativas al Uso de Bucles en R {.build}
+## Alternativas al Uso de Bucles en R 
 
--Vectorización 
+## Alternativas al Uso de Bucles en R | Vectorización {.build}
 
--El Conjunto de Funciones __apply__ 
 
--El paquete 
+> - Nos permite realizar operaciones elemento a elemento en vectores y matrices.
+
+
+> - El tipo de dato más basico en R es el vector.
+
+
+> - Combinando dos vectores de la misma longitud obtenemos una matriz.
+
+
+> - Podemos vectorizar operaciones repetitivas en vectores y matrices.
 
 
 
@@ -528,6 +536,9 @@ sapply(1:n, function(x) x^2)
 Por último, mediante `purrr::map()`:
 
 
+
+
+
 ```r
 # Algoritmo que calcula el cuadrado de cada elemento
 # en una secuencia de enteros del 1 a `n`
@@ -546,11 +557,11 @@ map_dbl(1:n,  function(x) x ^ 2)
 
 -En repeat definir la expresión terminación del bucle. 
 
--Es mejor el uso de una o mas llamadas a funciones dentro del bucle a que este sea demasiado  
+-Es mejor el uso de una o mas llamadas a funciones dentro del bucle a que este sea demasiado grande. 
 
 -Considerar las diferentes alternativas en este orden:
 
-    bucles < vectorización < apply < purrr
+    bucles < vectorización < purrr
 
 
 

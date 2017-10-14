@@ -18,23 +18,25 @@ Si somos usuarios del programa SPSS y deseamos importar nuestros archivos SPSS a
 
 ### Instalación
 
+La forma mas fácil de instalar `haven` es instalar el ecosistema
+`tidyverse`:
+
 
 ```r
-# La forma mas facil de instalar `haven` es instalar el ecosistema
-# `tidyverse`
 install.packages("tidyverse")
 ```
 
+Alternativamente, para instalar únicamente `haven`:
+
 
 ```r
-# Alternativamente, para instalar unicamente `haven`
 install.packages("haven")
 ```
 
+Por último, podemos instalar la última versión en desarrollo desde su repositorio en GitHub:
 
 
 ```r
-# O instala la versión en desarrollo desde Github
 # install.packages("devtools")
 devtools::install_github("tidyverse/haven")
 ```
@@ -42,6 +44,9 @@ devtools::install_github("tidyverse/haven")
 __Nota__ que la última opción requiere de la instalación del paquete `devtools`.
 
 ### Uso
+
+
+Para leer archivos SPSS desde R haremos uso de la función `read_sav()`:
 
 
 ```r
@@ -75,7 +80,7 @@ read_sav("data/Child_Data.sav")
 20  5.90      4.0    90     6.0
 ```
 
-Por supueso `haven` nos permite gravar nuestros datos en un archivo SPSS con la ayuda de la función `write_sas`:
+Por supuesto `haven` nos permite gravar nuestros datos en un archivo SPSS con la ayuda de la función `write_sas`:
 
 
 ```r
@@ -87,7 +92,7 @@ write_sav(mtcars, "data/mtcars.sav")
 
 ## Lectura de Archivos Stata en R
 
-Como en el caso anterior utilizaremos el paquete `haven` y utilizaremos la función `read_stata()`:
+Como en el caso anterior utilizaremos el paquete `haven` y pero en este caso utilizaremos la función `read_stata()`:
 
 
 
@@ -113,7 +118,7 @@ read_dta("data/Milk_Production.dta")
 # ... with 189 more rows
 ```
 
-De igual manera que en el caso anterior podemos exportar nuestros datos a STATA, pero en este caso utilizaremos la función  `write_dta()`:
+De igual manera que en el caso anterior podemos exportar nuestros datos a STATA sin embargo, para archivos Stata utilizaremos la función  `write_dta()`:
 
 
 ```r

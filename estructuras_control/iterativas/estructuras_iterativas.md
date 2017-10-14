@@ -53,7 +53,7 @@ for(i in seq_along(observaciones)) {
 
 # Mostramos por pantalla la media
 media
-[1] 24.51
+[1] 25.5
 ```
 
 ### Bucles __`for`__ Anidados
@@ -79,9 +79,9 @@ for(i in 1:nrow(m1)) {
 # Mostramos por pantalla la suma de m1+m2
 suma
      [,1] [,2] [,3]
-[1,]  154  115   67
-[2,]  133  146  132
-[3,]  144  116   59
+[1,]  149   87  113
+[2,]   76  100  143
+[3,]   98   48   46
 ```
 
 El siguiente ejemplo sirve para ejemplificar el anidamiento de bucles `for`. Cada uno con su propio bloque de instrucciones y manejado con su propio índice. Es decir, `i` controla las filas de las matrices y `j` las columnas.
@@ -186,12 +186,12 @@ m <-
 # Mostramos por pantalla `m`
 m
      [,1] [,2] [,3] [,4] [,5] [,6]
-[1,]    6    7    5   10    8    7
-[2,]    2    7    2    6   10    4
-[3,]    6    4    8    1    4    6
-[4,]    8   10    5    7   10    9
-[5,]    7    1    2   10    3   10
-[6,]    5    2    7    3   10    6
+[1,]    2   10    5    7    8    7
+[2,]   10    5    6    3    2    7
+[3,]    1    3    6   10    9    7
+[4,]    3   10    9    8    7    7
+[5,]    6    1   10    7    9    9
+[6,]    5   10    4    2    1    4
 
 # Creamos un vector para la diagonal principal
 diagonal_principal <- vector(mode = "integer", length = nrow(m))
@@ -213,16 +213,16 @@ for (i in 1:nrow(m)) {
 
 # Mostramos por pantalla diagonal principal
 diagonal_principal
-[1] 6 7 8 7 3 6
+[1] 2 5 6 8 9 4
 # Mostraamos por pantalla matriz inferior de m
 m
      [,1] [,2] [,3] [,4] [,5] [,6]
-[1,]    6    7    5   10    8    7
-[2,]    0    7    2    6   10    4
-[3,]    0    0    8    1    4    6
-[4,]    0    0    0    7   10    9
-[5,]    0    0    0    0    3   10
-[6,]    0    0    0    0    0    6
+[1,]    2   10    5    7    8    7
+[2,]    0    5    6    3    2    7
+[3,]    0    0    6   10    9    7
+[4,]    0    0    0    8    7    7
+[5,]    0    0    0    0    9    9
+[6,]    0    0    0    0    0    4
 ```
 
 Examinaremos brevemente ahora el código anterior, como se puede observar en primer lugar se define una matriz cuadrada de 6 x 6 y creamos un vector de tipo entero con una longitud de 6 que en el momento de su inicialización contiene todos sus valores igual a cero.
@@ -276,7 +276,20 @@ Hay que mencionar, además el uso del operador `%%` para calcular el resto de la
 
 ## Alternativas al Uso de Bucles en R
 
-### Vectorización
+Hasta el momento hemos visto el uso de bucles en R, pero podemos estar preguntándonos,¿Cuando usar los bucles en R y cuando no?
+
+Como regla general, si nos encontramos en la situación que tenemos que llevar a cabo una tarea que requiere tres o mas repeticiones, entonces una instrucción iterativa puede ser útil. Esto hace que nuestro código sea mas compacto, legible y mas fácil de mantener.
+
+Sin embargo, la peculiar naturaleza de R sugiere no hacer uso de los bucles en todas las situaciones cuandos exiten otras alternativas. R dispone de una característica que otros lenguajes de programación no disponen, que es conocida como [vectorización](#vectorizacion) y que ya hemos visto con anterioridad.
+
+Además, puesto que R soporta el paradigma de programación funcional exiten la posibilidad de hacer uso de funciones en lugar de construcciones imperativas que hemos visto en esta sección y d la vectorización. 
+
+Este conjunto de funciones pertenecen la familia de funciones [`apply`](#familia-apply) y las del paquete [`purr`](#paquete-purrr).
+
+
+
+
+### Vectorización {#vectorizacion}
 
 Como ya hemos visto con anterioridad, la vectorización nos permite realizar operaciones elemento a elemento en vectores y matrices.
 
@@ -313,7 +326,7 @@ v3
 [1]  6  8 10 12
 ```
 
-### El Conjunto de Funciones __`apply`__
+### El Conjunto de Funciones __`apply`__ {#familia-apply}
 
 La familia `apply` pertenece al paquete base R y esta formado por un conjunto de funciones que nos permiten manipular una selección de elementos en matrices, arrays, listas y dataframes de forma repetitiva.
 
@@ -330,7 +343,7 @@ La familia `apply` esta compuesta de las funciones:
 * [tapply](https://www.rdocumentation.org/packages/base/versions/3.3.1/topics/tapply)
 
 
-### El paquete __`purrr`__
+### El paquete __`purrr`__ {#paquete-purrr}
 
 El paquete [purr](http://purrr.tidyverse.org/) forma parte del ecosistema [tidyverse](https://www.tidyverse.org/) y esta compuesto de un conjunto de funciones que aprovechan el paradigma de [programación funcional](https://es.wikipedia.org/wiki/Programaci%C3%B3n_funcional) de R, proporcionando un conjunto completo y consistente de herramientas para trabajar con funciones en listas y vectores.
 

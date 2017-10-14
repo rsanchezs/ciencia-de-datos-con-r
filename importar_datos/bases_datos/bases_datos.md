@@ -29,12 +29,10 @@ library(DBI)
 library(RSQLite)
 ```
 
-Después definimos la conexión a la base de datos, en el que definiremos el driver para que sea de tipo "SQLite" y que pasaremos a la función `dbConnect()` a la que además le pasaremos como argumento la ruta del archivo de la base de datos
+Después definimos la conexión a la base de datos, en la que especificaremos el driver para que sea de tipo "SQLite" y que pasaremos a la función `dbConnect()` a la que además le pasaremos como argumento la ruta del archivo de la base de datos
 
 
 ```r
-library(DBI)
-library(RSQLite)
 # Definimos el driver
 driver <- dbDriver("SQLite")
 # Definimos la ruta al archivo de la bd
@@ -45,7 +43,7 @@ con <- dbConnect(driver, archivo_bd)
 
 ### Conexión a MySQL
 
-La única diferencia para la conexión a una base de datos MySQL es cargar el paquete `RMySQL`, establecer el driver a "MYSQL", proporcionar el usuario y contraseña:
+La única diferencia para la conexión a una base de datos MySQL es cargar el paquete `RMySQL`, establecer el driver a "MYSQL" y por último, proporcionar el usuario y contraseña:
 
 
 ```r
