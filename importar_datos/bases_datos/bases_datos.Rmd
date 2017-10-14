@@ -5,7 +5,6 @@ opts_chunk$set(prompt=FALSE, comment='', results='markup', eval=TRUE, echo=TRUE)
 ##### Put other setup R code here
 library(DBI)
 library(RSQLite)
-
 # end setup chunk
 ```
 
@@ -64,11 +63,14 @@ library(RMySQL)
 ```{r eval=FALSE}
 # Definimos el driver
 driver <- dbDriver("MySQL")
-# Definimos la ruta al archivo de la bd
-archivo_bd <- system.file("ruta/a/MySQL/db")
 # Establecemos la conexión
-conn <- dbConnect(driver, archivo_bd, user="usuario", password="contraseña")
+conn <- dbConnect(driver,
+                  user = "ruben",
+                  password = "1234",
+                  db = "sakila")
 ```
+
+
 
 ### Conexión a PostgreSQL, Oracle y JDBC 
 

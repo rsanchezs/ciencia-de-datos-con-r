@@ -59,11 +59,14 @@ library(RMySQL)
 ```r
 # Definimos el driver
 driver <- dbDriver("MySQL")
-# Definimos la ruta al archivo de la bd
-archivo_bd <- system.file("ruta/a/MySQL/db")
 # Establecemos la conexión
-conn <- dbConnect(driver, archivo_bd, user="usuario", password="contraseña")
+conn <- dbConnect(driver,
+                  user = "ruben",
+                  password = "1234",
+                  db = "sakila")
 ```
+
+
 
 ### Conexión a PostgreSQL, Oracle y JDBC 
 
