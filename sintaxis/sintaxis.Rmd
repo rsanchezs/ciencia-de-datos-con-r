@@ -1,4 +1,4 @@
-```{r knitsetup, echo=FALSE, results='hide', warning=FALSE, message=FALSE, cache=FALSE}
+```{r knitsetup, echo=TRUE, message=FALSE, warning=FALSE, cache=FALSE, results='hide'}
 opts_knit$set(base.dir='./', fig.path='', out.format='md')
 opts_chunk$set(prompt=FALSE, comment='##', results='markup', collapse=TRUE)
 ```

@@ -1,4 +1,8 @@
 
+```r
+opts_knit$set(base.dir='./', fig.path='', out.format='md')
+opts_chunk$set(prompt=FALSE, comment='##', results='markup', echo=TRUE, eval=TRUE, collapse=TRUE)
+```
 
 <!-- ```{r, include=FALSE} -->
 <!-- tutorial::go_interactive() -->

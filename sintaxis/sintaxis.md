@@ -1,4 +1,8 @@
 
+```r
+opts_knit$set(base.dir='./', fig.path='', out.format='md')
+opts_chunk$set(prompt=FALSE, comment='##', results='markup', collapse=TRUE)
+```
 
 # Sintaxis R
 

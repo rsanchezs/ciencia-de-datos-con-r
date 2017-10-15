@@ -1,6 +1,15 @@
 <script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
 
 
+```r
+opts_knit$set(base.dir='./', fig.path='', out.format='md')
+opts_chunk$set(prompt=FALSE, echo=TRUE, eval=TRUE, comment='##', results='markup',collapse=TRUE)
+# See yihui.name/knitr/options for more Knitr options.
+##### Put other setup R code here
+
+
+# end setup chunk
+```
 
 
 
@@ -10,7 +19,7 @@ You can use the `tutorial` package to convert static code chunks into 'fiddles',
 
 You can also create interactive exercises right inside your R Markdown document. Suppose you want to explain people how variable assignment works in R. Create an exercise with a certain identifier, `create_a` in this case. Then, in different R code chunks, specify the elements of the exercise by setting the `type` inside the code chunk options.
 
-<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJwcmVfZXhlcmNpc2VfY29kZSI6ImIgPC0gNSIsInNhbXBsZSI6IiMgQ3JlYXRlIGEgdmFyaWFibGUgYSwgZXF1YWwgdG8gNVxuXG5cbiMgUHJpbnQgb3V0IGFcbiIsInNvbHV0aW9uIjoiIyBDcmVhdGUgYSB2YXJpYWJsZSBhLCBlcXVhbCB0byA1XG5hIDwtIDVcblxuIyBQcmludCBvdXQgYVxuYSIsInNjdCI6InRlc3Rfb2JqZWN0KFwiYVwiKVxudGVzdF9vdXRwdXRfY29udGFpbnMoXCJhXCIsIGluY29ycmVjdF9tc2cgPSBcIk1ha2Ugc3VyZSB0byBwcmludCBgYWAuXCIpXG5zdWNjZXNzX21zZyhcIkdyZWF0IVwiKSJ9</div>
+<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJwcmVfZXhlcmNpc2VfY29kZSI6ImIgPC0gNSIsInNhbXBsZSI6IiMgQ3JlYXRlIGEgdmFyaWFibGUgYSwgZXF1YWwgdG8gNVxuXG5cbiMgUHJpbnQgb3V0IGEiLCJzb2x1dGlvbiI6IiMgQ3JlYXRlIGEgdmFyaWFibGUgYSwgZXF1YWwgdG8gNVxuYSA8LSA1XG5cbiMgUHJpbnQgb3V0IGFcbmEiLCJzY3QiOiJ0ZXN0X29iamVjdChcImFcIilcbnRlc3Rfb3V0cHV0X2NvbnRhaW5zKFwiYVwiLCBpbmNvcnJlY3RfbXNnID0gXCJNYWtlIHN1cmUgdG8gcHJpbnQgYGFgLlwiKVxuc3VjY2Vzc19tc2coXCJHcmVhdCFcIikifQ==</div>
 
 
 
