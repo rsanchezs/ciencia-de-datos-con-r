@@ -16,7 +16,7 @@ opts_chunk$set(prompt=FALSE, comment='', results='markup', eval=TRUE, echo=TRUE,
 
 # Lectura de Archivos en Formato Tabular
 
-En este apartado veremos funciones para importar datos en R en formato tabular.
+En este apartado veremos como importar datos en R en formato tabular.
 
 
 ```{r message=FALSE}
@@ -130,7 +130,7 @@ __NOTA:__ Para esta última forma debemos tener instalado el paquete `devtools`.
 
 En primer lugar tendremos que cargarlo:
 
-```{r}
+```{r message=FALSE}
 # Cargamos el paquete
 library(readxl)
 ```

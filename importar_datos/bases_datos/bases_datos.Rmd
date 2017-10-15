@@ -1,11 +1,6 @@
 ```{r knitsetup, echo=FALSE, results='hide', warning=FALSE, message=FALSE, cache=FALSE}
 opts_knit$set(base.dir='./', fig.path='', out.format='md')
 opts_chunk$set(prompt=FALSE, comment='', results='markup', eval=TRUE, echo=TRUE)
-# See yihui.name/knitr/options for more Knitr options.
-##### Put other setup R code here
-library(DBI)
-library(RSQLite)
-# end setup chunk
 ```
 
 
@@ -31,6 +26,10 @@ Para conectarnos a una base de datos SQLite, en primer lugar debemos instalar y 
 ```{r eval=FALSE}
 # Instalamos el paquetes
 install.packages(c("DBI","RSQLite"))
+```
+
+
+```{r}
 # Cargamos los paquetes
 library(DBI)
 library(RSQLite)
@@ -58,6 +57,12 @@ install.packages(c("DBI","RMySQL"))
 library(DBI)
 library(RMySQL)
 ```
+
+```{r echo=FALSE}
+library(DBI)
+library(RMySQL)
+```
+
 
 
 ```{r eval=FALSE}
@@ -97,8 +102,8 @@ Por otro lado, para recuperar los datos de una base de datos escribiremos una co
 consulta <- "SELECT * FROM mtcars"
 # Enviamos la consulta al SGBDR
 datos <- dbGetQuery(con, consulta)
-#Inspeccionamos resultado
-datos
+# Mostramos por pantalla un subconjunto de los datos
+datos[1:10, 1:5]
 ```
 
 Para aquellos que no conocen el lenguaje SQL, el paquete `DBI` proporciona multitud de funciones para la manipulación de base de datos. A modo de ejemplo, 

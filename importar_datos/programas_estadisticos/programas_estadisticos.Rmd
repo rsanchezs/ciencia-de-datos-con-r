@@ -1,11 +1,6 @@
 ```{r knitsetup, echo=FALSE, results='hide', warning=FALSE, message=FALSE, cache=FALSE}
 opts_knit$set(base.dir='./', fig.path='', out.format='md', encoding= 'UTF-8')
 opts_chunk$set(prompt=FALSE, comment='', results='markup', eval=TRUE, echo=TRUE)
-# See yihui.name/knitr/options for more Knitr options.
-##### Put other setup R code here
-library(haven)
-library(foreign)
-# end setup chunk
 ```
 
 
@@ -50,21 +45,34 @@ __Nota__ que la última opción requiere de la instalación del paquete `devtool
 
 ### Uso
 
+Lo primero que haremos será cargar el ecosistema `tidyverse`:
+
+```{r eval=FALSE}
+library(tidyverse)
+```
+
+O alternativamente cargar únicamente el paquete `haven`:
+
+```{r}
+library(haven)
+```
+
 
 Para leer archivos SPSS desde R haremos uso de la función `read_sav()`:
 
 ```{r}
 # Lectura de los datos SPSS
-read_sav("data/Child_Data.sav")
+spss <- read_sav("data/Child_Data.sav")
+# Mostramos las 6 primeras filas
+head(spss)
 ```
 
 Por supuesto `haven` nos permite gravar nuestros datos en un archivo SPSS con la ayuda de la función `write_sas`:
 
-```{r}
+```{r eval=FALSE}
 # Escritura del dataframe `mtcars` a un archivo SPSS
 write_sav(mtcars, "data/mtcars.sav")
 ```
-
 
 
 ## Lectura de Archivos Stata en R
@@ -74,12 +82,14 @@ Como en el caso anterior utilizaremos el paquete `haven` y pero en este caso uti
 
 ```{r}
 # Lectura de los datos STATA
-read_dta("data/Milk_Production.dta")
+stata <-read_dta("data/Milk_Production.dta")
+# Mostramos las 6 primeras filas
+head(stata)
 ```
 
 De igual manera que en el caso anterior podemos exportar nuestros datos a STATA sin embargo, para archivos Stata utilizaremos la función  `write_dta()`:
 
-```{r}
+```{r eval=FALSE}
 # Escritura del dataframe `mtcars` a un archivo STATA
 write_dta(mtcars, "data/mtcars.dta")
 ```
@@ -92,12 +102,14 @@ De la misma forma que en los dos casos anteriores utilizaremos el paquete `haven
 
 ```{r}
 # Lectura de los datos STATA
-read_sas("data/iris.sas7bdat")
+sas <- read_sas("data/iris.sas7bdat")
+# Mostramos las 6 primeras filas
+head(sas)
 ```
 
 De manera semejante podemos exportar nuestros datos a STATA, aunque en esta ocasión utilizaremos la función `write_sas()`:
 
-```{r}
+```{r eval=FALSE}
 # Escritura del dataframe `mtcars` a un archivo SAS
 write_sas(mtcars, "data/mtcars.sas7bdat")
 ```

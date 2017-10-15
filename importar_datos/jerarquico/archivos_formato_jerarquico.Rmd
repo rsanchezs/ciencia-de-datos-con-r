@@ -1,12 +1,6 @@
 ```{r knitsetup, echo=FALSE, results='hide', warning=FALSE, message=FALSE, cache=FALSE}
 opts_knit$set(base.dir='./', fig.path='', out.format='md')
 opts_chunk$set(prompt=FALSE, comment='', results='markup', eval=TRUE, echo=TRUE)
-# See yihui.name/knitr/options for more Knitr options.
-##### Put other setup R code here
-library(jsonlite)
-library(xml2)
-library
-# end setup chunk
 ```
 
 
@@ -36,17 +30,23 @@ install.packages("jsonlite")
 Para importar archivos JSON haremos uso de la función `fromJSON()`:
 
 
-```{r eval=FALSE}
+```{r message=FALSE}
 # Cargamos `rjson`
-library(rjson)
-```
-
-```{r eval=FALSE}
-# Importamos los datos desde un archivo json
-fromJSON(txt = "data/Water_Right_Applications.json")
+library(jsonlite)
 ```
 
 
+```{r}
+# Importamos los datos a un dataframe desde  Github en un archivo json
+datos <- fromJSON("https://api.github.com/users/rsanchezs/repos")
+# Mostramos las variables de ´datos´
+names(json)
+```
+
+```{r}
+# Accedemos a los nombres de mis repositorios
+datos$name
+```
 
 
 # Lectura de archivos XML en R
@@ -73,10 +73,11 @@ Mediante la función `read_xml()` podemos importar archivos XML:
 
 ```{r}
 # Cargamos el paquete
-library(XML)
+library(xml2)
 # Importamos los datos XML 
-read_xml("data/Water_Right_Applications.xml")
+xml <- read_xml("data/Water_Right_Applications.xml")
 ```
+
 
 
 # Lectura de datos de tablas HTML en R
@@ -101,17 +102,31 @@ devtools::install_github("hadley/rvest")
 
 ## Uso
 
-```{r eval=FALSE}
+Cargamos la libreria `rvest`:
+
+```{r message=FALSE}
 library(rvest)
 ```
 
-```{r}
-html <- read_html("https://es.wikipedia.org/wiki/Anexo:Países_y_territorios_dependientes_por_población")
-table <- xml_find_first(html, "//table")
-df <- (html_table(table))
-df
+Para el ejemplo, además haremos uso del paquete `xml2` para descargar una tabla de la siguiente [página]("https://es.wikipedia.org/wiki/Anexo:Países_y_territorios_dependientes_por_población) de la Wikipedia:
+
+```{r eval=FALSE}
+library(xml2)
 ```
 
+Descargamos la página mediante `xml2::read_html()` y con la ayuda de `xml2::xml_find_first()` encontramos el nodo que coincide con `xpath = "//table"`:
+
+```{r}
+html <- read_html("https://es.wikipedia.org/wiki/Anexo:Países_y_territorios_dependientes_por_población")
+tabla <- xml_find_first(html, xpath = "//table")
+```
+
+Por último, mediante `rvest::html_table` analizamos sintácticamente la tabla html y la transformamos en un `dataframe`:
+
+```{r}
+df <- html_table(tabla)
+head(df)
+```
 
 
 
