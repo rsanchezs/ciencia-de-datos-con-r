@@ -250,7 +250,7 @@ __Ejemplo:__
 ```
 
 ```
-##  [1] 16 61 77 75  2 29 78 19 28 80 28 43 15 99 45 73 29 53 91  9
+##  [1] 45 14 55  1 28 75 93 29 79 92 42 62 17 83 71 24 80 64  6 78
 ```
 
 
@@ -294,8 +294,8 @@ if (centralizacion == "media") {
 
 
 ```
-## Mode (most frequent value): 28 29 
-## Bickel's modal skewness: 0.35 
+## Mode (most frequent value):  1  6 14 17 24 28 29 42 45 55 62 64 71 75 78 79 80 83 92 93 
+## Bickel's modal skewness: -0.05 
 ## Call: mlv.integer(x = muestra, type = "mfv")
 ```
 
@@ -382,7 +382,7 @@ ifelse(rbinom(n = 10, size = 1, prob = 0.5), "cara", "cruz")
 ```
 
 ```
-##  [1] "cruz" "cruz" "cruz" "cara" "cara" "cruz" "cara" "cruz" "cara" "cara"
+##  [1] "cruz" "cruz" "cara" "cruz" "cara" "cruz" "cruz" "cara" "cara" "cara"
 ```
 
 
@@ -432,8 +432,18 @@ muestra <- sample(1:100, 20, 5)
 ```
 
 ```
-## Mode (most frequent value):  1  8 11 17 18 19 24 45 47 48 51 55 58 62 71 85 91 94 96 98 
-## Bickel's modal skewness: -0.1 
+## Warning in x < th: longer object length is not a multiple of shorter object
+## length
+```
+
+```
+## Warning in x == th: longer object length is not a multiple of shorter
+## object length
+```
+
+```
+## Mode (most frequent value):  6 33 45 
+## Bickel's modal skewness: 0.6 
 ## Call: mlv.integer(x = muestra, method = "mfv")
 ```
 

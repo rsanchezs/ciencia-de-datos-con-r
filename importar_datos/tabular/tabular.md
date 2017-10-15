@@ -157,9 +157,9 @@ Observemos que en el siguiente ejemplo a pesar que la extensión del archivo es 
 
 
 ```r
-hoja_calculo_xls <- read_excel("data/datasets.xls")
+hoja_calculo_xls <- read_excel("data/datasets.xls", n_max = 8)
 #Mostramos la hoja de calculo
-head(hoja_calculo_xls)
+hoja_calculo_xls
 ```
 
 
@@ -205,7 +205,7 @@ Por defecto, la función `read_excel` trata los campos vacíos como valores desc
 
 
 ```r
-head(read_excel(path = "data/datasets.xls", na = "setosa"))
+read_excel(path = "data/datasets.xls", na = "setosa", n_max = 8)
 ```
 
 

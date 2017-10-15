@@ -122,7 +122,7 @@ El siguiente ejemplo nos sirve para mostrar el anidamiento de instrucciones `if-
 # Creamos una muestra de 20 observaciones del 1 al 100 en
 # el que se pueden repetir hasta 2 observaciones
 (muestra <- sample(1:100, 20, 2))
- [1] 66 62 79 59 77 13 79 11 65 71 47 99  6 95 32  2 93  5  6 97
+ [1] 16 61 23 33 21 20 44  5 52 62 58 60 66 11 18 27 63 56 88 67
 
 ## Creamos una variable indicando la medida de tendencia central
 ## que queremos calcular
@@ -144,7 +144,7 @@ if (centralizacion == "moda") {
   message("Este algoritmo sola calcula la media,
           mediana, moda")
 }
-La media es 53.2
+La media es 42.55
 ```
 
 ## __`If`__ Vectorizado
@@ -192,7 +192,7 @@ nÃºmeros aleatorios de un distribuciÃ³n binomial simulando el lanzamiento de una
 ```r
 ifelse(rbinom(n = 10, size = 1, prob = 0.5),
        "cara", "cruz")
- [1] "cara" "cara" "cruz" "cara" "cruz" "cruz" "cara" "cara" "cruz" "cara"
+ [1] "cruz" "cara" "cara" "cruz" "cara" "cruz" "cara" "cara" "cara" "cruz"
 ```
 
 No obstante, `if(test) yes else no` es mucho mas eficiente y preferible a `ifelse(test, yes, no)` cuando `test` es decir, la
@@ -241,7 +241,8 @@ Una alternativa al ejemplo presentado en el apartado anterior mediante la funciÃ
 # Creamos una muestra de 20 observaciones del 1 al 100 en
 # el que se pueden repetir hasta 2 observaciones
 (muestra <- sample(1:100, 20, 2))
- [1] 44  2 25 43 91  2 19 69 67 24  3 47 90 69 29 68 71 64 35 52
+ [1]  68  72   6  13 100  26  35  77  18  84  82  87  69 100  62   7  35
+[18]  33  43  24
 
 
 #Calculamos la media de la muestra
@@ -251,7 +252,7 @@ Una alternativa al ejemplo presentado en el apartado anterior mediante la funciÃ
   mediana = median(muestra),
   moda = mlv(muestra, method = "mfv")
 ))
-[1] 45.7
+[1] 52.05
 ```
 
 Si ningÃºn nombre coincide, entonces `switch` devuelve `NULL`:

@@ -25,7 +25,6 @@ function() {x <- 1; y <- 2; x + y}
 #también su nombre (symbol)
 f <- function(x, y){x + y}
 f(1, 2)
-## [1] 3
 ```
 
 
@@ -33,7 +32,6 @@ f(1, 2)
 ```r
 # incluso las expresiones 
 {x <- 1; y <- 2; x + y}
-## [1] 3
 ```
 
 
@@ -60,34 +58,6 @@ Podemos encontrar la clase de un objeto mediante la función `class(objeto)`:
 ```r
 vector_numerico <- c(1, 2, 3, 4, 5)
 class(vector_numerico)
-```
-
-
-```r
-vector_numerico <- c(1, 2, 3, 4, 5)
-```
-
-
-```r
-# Creamos un vector numerico
-vector_numerico <- c(1, 2, 3, 4, 5)
-
-# Comprobamos la clase de un objeto mediante `class(nombre_objeto)`
-```
-
-
-```r
-# Creamos un vector numerico
-vector_numerico <- c(1, 2, 3, 4, 5)
-
-# Comprobamos la clase de un objeto mediante `class(nombre_objeto)`
-class(vector_numerico)
-```
-
-
-```r
-test_function(name = "class", args = "x", eval = FALSE, not_called_msg = "Usa la función class() para conocer la clase de un objeto.", args_not_specified_msg = "Pasa a la función class() como primer argumento el objeto",incorrect_msg = "vector_numerico")
-success_msg("¡Excelente, ya sabemos como comprobar la clase a la que pertenece un objeto!")
 ```
 
 ## Cada Objeto tiene un Tipo {#tipo}
