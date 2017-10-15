@@ -75,12 +75,6 @@ library(XML)
 read_xml("data/Water_Right_Applications.xml")
 ```
 
-```
-{xml_document}
-<response>
-[1] <row>\n  <row _address="http://data.wa.gov/resource/_9ubz-5r4b/22293 ...
-```
-
 
 # Lectura de datos de tablas HTML en R
 
@@ -103,26 +97,6 @@ Para descargar la versión en desarrollo desde su repositorio en GitHub:
 devtools::install_github("hadley/rvest")
 ```
 
-```
-Downloading GitHub repo hadley/rvest@master
-from URL https://api.github.com/repos/hadley/rvest/zipball/master
-```
-
-```
-Installing rvest
-```
-
-```
-"C:/PROGRA~1/R/R-33~1.3/bin/x64/R" --no-site-file --no-environ --no-save  \
-  --no-restore --quiet CMD INSTALL  \
-  "C:/Users/Ruben/AppData/Local/Temp/RtmpMFxKRr/devtools2f7491e6193/hadley-rvest-9a51a5d"  \
-  --library="C:/Users/Ruben/Documents/R/win-library/3.3" --install-tests 
-```
-
-```
-
-```
-
 
 ## Uso
 
@@ -134,53 +108,9 @@ library(rvest)
 
 ```r
 html <- read_html("https://es.wikipedia.org/wiki/Anexo:Países_y_territorios_dependientes_por_población")
-```
-
-```
-Error in open.connection(x, "rb"): HTTP error 404.
-```
-
-```r
 table <- xml_find_first(html, "//table")
-```
-
-```
-Error in doc_namespaces(doc): external pointer is not valid
-```
-
-```r
 df <- (html_table(table))
-```
-
-```
-Error in eval(expr, envir, enclos): could not find function "html_table"
-```
-
-```r
 df
-```
-
-```
-# A tibble: 5,836 � 25
-   WR_DOC_ID DOCUMENT_NUMBER DOCUMENT_TYPE PURPOSE_CODE_LIST
-       <int>           <chr>         <chr>             <chr>
-1    2229352       S1-*04254        NewApp             CI MU
-2    2085332        R4-10948        NewApp                IR
-3    2285593        S1-13219        NewApp                MU
-4    2285597       G1-*12139        NewApp                DM
-5    2285599       G1-*12141        NewApp                DM
-6    2283433        G3-20099        NewApp                CI
-7    2283437        G3-20191        NewApp                MU
-8    2283438        G3-20192        NewApp                MU
-9    6765211        S1-20171        NewApp                DM
-10   2285603        G1-20257        NewApp                DM
-# ... with 5,826 more rows, and 21 more variables:
-#   PERSON_LAST_OR_ORGANIZATION_NAME <chr>, PRIORITY_DATE <chr>,
-#   YEAR_APPLIED <int>, CFS <dbl>, GPM <dbl>, DOMESTIC_UNITS <int>,
-#   ACRE_FEET <dbl>, ACRE_IRR <dbl>, COUNTY_NAME <chr>, WRIA_NUMBER <int>,
-#   WATERSHED <chr>, CERT_NUM <chr>, TRS <chr>, QUAD_DESIGNATION <chr>,
-#   SOURCE_NAME <chr>, TRIBUTARY_NAME <chr>, IMAGE_URL <chr>,
-#   MAP_URL <chr>, Latitude1 <dbl>, Longitude1 <dbl>, Location <chr>
 ```
 
 

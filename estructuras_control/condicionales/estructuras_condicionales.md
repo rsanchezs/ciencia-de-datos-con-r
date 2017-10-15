@@ -25,7 +25,6 @@ y ejecuta la siguiente instrucción sólo si el valor es __`TRUE`__:
 if (TRUE) {
   message("Es verdadero, se ejecutara la instruccion.")
 }
-Es verdadero, se ejecutara la instruccion.
 ```
 
 
@@ -43,7 +42,6 @@ En el caso que pasemos valores desconocidos (`NA`) a `if`, R lanzará un error:
 if (NA) {
   message("Los valores desconocidos lanzan un error")
 }
-Error in if (NA) {: missing value where TRUE/FALSE needed
 ```
 
 Si nos encontramos ante esta situación, deberíamos comprobarlo mediante la función `is.na()`:
@@ -53,7 +51,6 @@ Si nos encontramos ante esta situación, deberíamos comprobarlo mediante la fun
 if (is.na(NA)) {
   message("El valor es desconocido.")
 }  
-El valor es desconocido.
 ```
 
 Desde luego, en nuestro código en pocas ocasiones pasaremos los valores
@@ -66,7 +63,6 @@ entre 0 y 1. Si el valor es mayor que `0.5`, entonces el mensaje será mostrado:
 if (runif(1) > 0.5) {
   message("Este mensaje aparece con un 50% de probabilidad.")
 }
-Este mensaje aparece con un 50% de probabilidad.
 ```
 
 
@@ -101,7 +97,6 @@ if (FALSE) {
 } else {
   message("pero este si lo hará")
 }
-pero este si lo hará
 ```
 
 
@@ -122,7 +117,6 @@ El siguiente ejemplo nos sirve para mostrar el anidamiento de instrucciones `if-
 # Creamos una muestra de 20 observaciones del 1 al 100 en
 # el que se pueden repetir hasta 2 observaciones
 (muestra <- sample(1:100, 20, 2))
- [1] 90  8 96 98 81  4 49 61 88 76 78 61 28 10  9 57 10 65  3 79
 
 ## Creamos una variable indicando la medida de tendencia central
 ## que queremos calcular
@@ -144,7 +138,7 @@ if (centralizacion == "moda") {
   message("Este algoritmo sola calcula la media,
           mediana, moda")
 }
-La media es 52.55
+
 ```
 
 ## __`If`__ Vectorizado
@@ -158,9 +152,6 @@ mayor que uno, R nos lo indicará mediante un __warning__ indicándonos que hemo
 if (c(TRUE, FALSE)) {
   message("dos condiciones")
 }
-Warning in if (c(TRUE, FALSE)) {: the condition has length > 1 and only the
-first element will be used
-dos condiciones
 ```
 
 Puesto que muchas de las operaciones en R son vectorizadas, R nos proporciona la función `ifelse`. La función `ifelse` toma tres argumentos. El primer argumento es un vector lógico de condiciones. El segundo es un vector que contiene los valores que
@@ -172,7 +163,6 @@ es `FALSE`.
 
 ```r
 str(ifelse)
-function (test, yes, no)  
 ```
 
 
@@ -192,7 +182,6 @@ números aleatorios de un distribución binomial simulando el lanzamiento de una
 ```r
 ifelse(rbinom(n = 10, size = 1, prob = 0.5),
        "cara", "cruz")
- [1] "cruz" "cara" "cruz" "cruz" "cara" "cara" "cara" "cara" "cruz" "cara"
 ```
 
 No obstante, `if(test) yes else no` es mucho mas eficiente y preferible a `ifelse(test, yes, no)` cuando `test` es decir, la
@@ -218,7 +207,6 @@ El caso más común toma como primer argumento una expresión que devuelve un st
 
 ```r
 str(switch)
-function (EXPR, ...)  
 ```
 
 #### Argumentos
@@ -241,7 +229,6 @@ Una alternativa al ejemplo presentado en el apartado anterior mediante la funci�
 # Creamos una muestra de 20 observaciones del 1 al 100 en
 # el que se pueden repetir hasta 2 observaciones
 (muestra <- sample(1:100, 20, 2))
- [1] 98 35 82 75 59 78 34 89 53  7 40 64 25 33 67 44 94 48 49 69
 
 
 #Calculamos la media de la muestra
@@ -251,7 +238,7 @@ Una alternativa al ejemplo presentado en el apartado anterior mediante la funci�
   mediana = median(muestra),
   moda = mlv(muestra, method = "mfv")
 ))
-[1] 57.15
+
 ```
 
 Si ningún nombre coincide, entonces `switch` devuelve `NULL`:
@@ -265,7 +252,6 @@ Si ningún nombre coincide, entonces `switch` devuelve `NULL`:
   mediana = median(x),
   moda = mlv(x, method = "mfv")
   ))
-NULL
 ```
 
 En este escenario, podemos proporcionar un argumento por defecto sin nombre que `switch()` devolverá cuando no coincida ningún otro:
@@ -280,7 +266,6 @@ En este escenario, podemos proporcionar un argumento por defecto sin nombre que 
   moda = mlv(x, method = "mfv"),
   "Solo se puede calcular la media, mediana y moda"
   ))
-[1] "Solo se puede calcular la media, mediana y moda"
 ```
 
 [if]:https://i.imgur.com/KhwkQbf.png

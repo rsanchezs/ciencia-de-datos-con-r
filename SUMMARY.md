@@ -39,9 +39,9 @@
 ### Parte 2. Manipulación de Datos
 
 * [Importar Datos en R](importar_datos/importar_datos.md)
-  * [Lectura de Archivos de Texto y Excel ](importar_datos/tabular/archivos_formato_tabular.md)
+  * [Lectura de Archivos de Texto y Excel ](importar_datos/tabular/tabular.md)
   * [Lectura de Archivos de Programas Estadísticos](importar_datos/programas_estadisticos/programas_estadisticos.md)
-  * [Lectura de Archivos Jerarquizados](importar_datos/jerarquico/archivos_formato_jerarquico.Rmd)
+  * [Lectura de Archivos Jerarquizados](importar_datos/jerarquico/archivos_formato_jerarquico.md)
   * [Lectura de Bases de Datos](importar_datos/bases_datos/bases_datos.md)
 
     

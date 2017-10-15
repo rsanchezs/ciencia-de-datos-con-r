@@ -60,7 +60,6 @@ Podemos encontrar la clase de un objeto mediante la función `class(objeto)`:
 ```r
 vector_numerico <- c(1, 2, 3, 4, 5)
 class(vector_numerico)
-## [1] "numeric"
 ```
 
 
@@ -83,15 +82,12 @@ vector_numerico <- c(1, 2, 3, 4, 5)
 
 # Comprobamos la clase de un objeto mediante `class(nombre_objeto)`
 class(vector_numerico)
-## [1] "numeric"
 ```
 
 
 ```r
 test_function(name = "class", args = "x", eval = FALSE, not_called_msg = "Usa la función class() para conocer la clase de un objeto.", args_not_specified_msg = "Pasa a la función class() como primer argumento el objeto",incorrect_msg = "vector_numerico")
-## Error in eval(expr, envir, enclos): could not find function "test_function"
 success_msg("¡Excelente, ya sabemos como comprobar la clase a la que pertenece un objeto!")
-## Error in eval(expr, envir, enclos): could not find function "success_msg"
 ```
 
 ## Cada Objeto tiene un Tipo {#tipo}
@@ -105,7 +101,6 @@ Podemos conocer el tipo de objeto con la función `typeof(objeto)`:
 ```r
 vector_numerico <- c(1, 2, 3, 4, 5)
 typeof(vector_numerico)
-## [1] "double"
 ```
 
 ### Comprobar la Clase de un Objeto en **_scripts_**
@@ -130,7 +125,6 @@ La mayoría de las clases tienen su propia función `is.*()`, utilizar esta func
 
 ```r
 is.character("Ciencia de Datos con R")
-## [1] TRUE
 ```
 
 Podemos ver una lista completa de las funciones `is()` en el paquete `base` mediante la siguiente instrucción:

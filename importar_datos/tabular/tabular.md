@@ -1,14 +1,4 @@
-```{r knitsetup, echo=FALSE, results='hide', warning=FALSE, message=FALSE, cache=FALSE}
-opts_knit$set(base.dir='./', fig.path='', out.format='md', encoding='UTF-8')
-opts_chunk$set(prompt=FALSE, comment='', results='markup', eval=TRUE, echo=TRUE)
-# See yihui.name/knitr/options for more Knitr options.
-##### Put other setup R code here
-library(tidyverse)
-library(readr)
-library(readxl)
 
-# end setup chunk
-```
 
 
 <!-- ```{r, include=FALSE} -->
@@ -16,12 +6,14 @@ library(readxl)
 <!-- ``` -->
 
 
+
 # Lectura de Archivos en Formato Tabular
 
 En este apartado veremos funciones para importar datos en R en formato tabular.
 
 
-```{r eval=FALSE, message = FALSE}
+
+```r
 library(tidyverse)
 ```
 
@@ -40,7 +32,8 @@ Estas funciones comparten la misma sintaxis: una vez hemos dominado una,  podemo
 El primer argumento en `read_csv()` es el mas importante, puesto que se trata de la localización del archivo que deseamos importar:
 
 
-```{r, message = TRUE}
+
+```r
 df <- read_csv("data/Water_Right_Applications.csv")
 ```
 
@@ -49,7 +42,8 @@ __Observemos__ que cuando ejecutamos la función `read_csv` muestra por la conso
 Podemos pasar un archivo csv en una sola línea de código. Esto es útil para experimentar con `readr` y para crear ejemplos reproducibles que podemos compartir con otros:
 
 
-```{r}
+
+```r
 read_csv("a,b,c
 1,2,3
 4,5,6")
@@ -61,20 +55,26 @@ En ambos casos `read_csv()` usa la primera línea como nombre de las columnas, l
 1. En ocasiones existen unas pocas líneas de metadatos en la cabecera del archivo. Podemos hacer uso de `skip=n` para descartar las `n` primeras lineas; o usar `comment = "#"` para eliminar todas las líneas que empiezan con `#`.
 
     
-```{r}
+
+```r
 read_csv("La primera linea de metadatos
   La segunda linea de metadatos
   x,y,z
   1,2,3", skip = 2)
+```
 
+
+```r
 read_csv("# Un comentario que deseamos eliminar
   x,y,z
   1,2,3", comment = "#")
 ```
 
+
 2. Los datos podrían no contener columnas con nombres. En esta situación podemos hacer uso del argumento `col_names=FALSE` para indicar a `read_csv()` que no trate la primera linea como cabecera, y en lugar etiquete secuencialmente de `X1`a `Xn`:
 
-```{r}
+
+```r
 read_csv("1,2,3\n4,5,6", col_names = FALSE)
 ```
 
@@ -82,14 +82,16 @@ __Nota__ que hemos usado `"\n"` para añadir una nueva linea.
 
 Alternativamente, podemos pasar a `col_names` un vector de caracteres que será      usado para los nombres de las columnas:
   
-```{r}
+
+```r
 read_csv("1,2,3\n4,5,6", col_names = c("x", "y", "z"))
 ```
 
 
 Otro argumento de gran utilidad es `na`, que especifica el valor (o valores) que son usados para representar los valores desconocidos en nuestro archivo:
 
-```{r}
+
+```r
 read_csv("a,b,c\n1,2,#N/A", na = "#N/A")
 ```
 
@@ -105,19 +107,22 @@ El paquete [`readxl`](http://readxl.tidyverse.org/) facilita la importación de 
 
 El modo más fácil de instalar la última versión desde CRAN es instalar el conjunto de paquetes __tidyverse__.
 
-```{r eval=FALSE}
+
+```r
 install.packages("tidyverse")
 ```
 
 Alternativamente, podemos instalar solo `readxl` desde CRAN mediante la siguiente línea de código:
 
-```{r eval=FALSE}
+
+```r
 install.packages("readxl")
 ```
 
 O instalar la versión en desarrollo desde GitHub:
 
-```{r eval= FALSE}
+
+```r
 # install.packages("devtools")
 devtools::install_github("tidyverse/readxl")
 ```
@@ -129,7 +134,8 @@ __NOTA:__ Para esta última forma debemos tener instalado el paquete `devtools`.
 
 En primer lugar tendremos que cargarlo:
 
-```{r eval=FALSE}
+
+```r
 # Cargamos el paquete
 library(readxl)
 ```
@@ -139,8 +145,9 @@ library(readxl)
 La función `read_excel()` nos permite leer los archivos tanto si son `xls` o `xlsx` :
 
 
-```{r}
-hoja_calculo_xlsx <- read_excel("data/Water_Right_Applications.xlsx")
+
+```r
+hoja_calculo_xlsx <- read_excel("data/datasets.xlsx", n_max = 6)
 hoja_calculo_xlsx
 ```
 
@@ -148,8 +155,9 @@ hoja_calculo_xlsx
 Observemos que en el siguiente ejemplo a pesar que la extensión del archivo es `xls` utilizamos la misma función que en el caso anterior:
 
 
-```{r}
-hoja_calculo_xls <- read_excel("data/Water_Right_Applications.xls")
+
+```r
+hoja_calculo_xls <- read_excel("data/datasets.xls")
 #Mostramos la hoja de calculo
 head(hoja_calculo_xls)
 ```
@@ -158,39 +166,45 @@ head(hoja_calculo_xls)
 
 Podemos obtener los nombres de las hojas en el libro con la ayuda de la función `excel_sheets()`:
 
-```{r}
+
+```r
 excel_sheets("data/datasets.xls")
 ```
 
 
 Es posible seleccionar una hoja de cálculo mediante su nombre o por la posición que ocupa en el libro:
 
-```{r eval=FALSE}
-read_excel(path = "data/datasets.xls", sheet = "quakes")
+
+```r
+read_excel(path = "data/datasets.xls", sheet = "iris", n_max = 8)
 ```
 
 
 
-```{r}
-read_excel(path = "data/datasets.xlsx", sheet = 2)
+
+```r
+read_excel(path = "data/datasets.xlsx", sheet = 1, n_max = 8)
 ```
 
 
 El argumento `range` de la función `read_excel` nos permite seleccionar un rango de filas y columnas con la misma nomenclatura que utilizamos en Excel:
 
-```{r}
+
+```r
 read_excel(path = "data/datasets.xls", range = "C1:E4")
 ```
 
 Además, podemos especificar la hoja del libro de la cual queremos extraer un rango y con el símbolo lógico de negación `!` excluir celdas y columnas en nuestra selección:
 
-```{r}
-read_excel(path = "data/datasets.xls", range = "mtcars!B1:D5")
+
+```r
+read_excel(path = "data/datasets.xls", range = "iris!B1:D5")
 ```
 
 Por defecto, la función `read_excel` trata los campos vacíos como valores desconocidos `NA`. En caso contrario, debemos especificarlo en el argumento `na`:
 
-```{r}
+
+```r
 head(read_excel(path = "data/datasets.xls", na = "setosa"))
 ```
 

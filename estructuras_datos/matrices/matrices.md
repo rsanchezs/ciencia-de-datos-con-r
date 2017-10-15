@@ -22,7 +22,6 @@ Para crear matrices utilizaremos la función `matrix()`, la sintaxis es la sigui
 
 ```r
 str(matrix)
-## function (data = NA, nrow = 1, ncol = 1, byrow = FALSE, dimnames = NULL)
 ```
 
 
@@ -42,11 +41,6 @@ Seguidamente se muestra un ejemplo de creación de una matriz:
 ```r
 matriz <- matrix(1:12, nrow = 4)
 matriz
-##      [,1] [,2] [,3]
-## [1,]    1    5    9
-## [2,]    2    6   10
-## [3,]    3    7   11
-## [4,]    4    8   12
 ```
 
 
@@ -57,7 +51,6 @@ A partir de un vector, si le añadimos el atributo dimensión podemos obtener un
 ```r
 m <- 1:12
 m
-##  [1]  1  2  3  4  5  6  7  8  9 10 11 12
 ```
 
 
@@ -66,11 +59,6 @@ m
 ```r
 dim(m) <- c(4, 3)
 m
-##      [,1] [,2] [,3]
-## [1,]    1    5    9
-## [2,]    2    6   10
-## [3,]    3    7   11
-## [4,]    4    8   12
 ```
 
 
@@ -81,11 +69,6 @@ Cuando creamos una matriz, los valores que pasamos son ordenados por columnas. P
 ```r
 matriz <- matrix(1:12, nrow = 4, byrow = TRUE)
 matriz
-##      [,1] [,2] [,3]
-## [1,]    1    2    3
-## [2,]    4    5    6
-## [3,]    7    8    9
-## [4,]   10   11   12
 ```
 
 
@@ -105,11 +88,6 @@ automoviles <- matrix(
                 )
 )
 automoviles
-##        Toyota Audi Nissan
-## Blanco      1    2      3
-## Rojo        4    5      6
-## Negro       7    8      9
-## Gris       10   11     12
 ```
 
 
@@ -123,10 +101,6 @@ v1 <- c(1, 2, 3)
 v2 <- c(4, 5, 6)
 m1 <- cbind(v1, v2)
 m1
-##      v1 v2
-## [1,]  1  4
-## [2,]  2  5
-## [3,]  3  6
 ```
 
 
@@ -135,9 +109,6 @@ v1 <- c(1, 2, 3)
 v2 <- c(4, 5, 6)
 m1 <- rbind(v1, v2)
 m1
-##    [,1] [,2] [,3]
-## v1    1    2    3
-## v2    4    5    6
 ```
 
 
@@ -151,7 +122,6 @@ La función `dim()` devuelve un vector de integers con la dimensión del objeto:
 
 ```r
 dim(automoviles)
-## [1] 4 3
 ```
 
 
@@ -161,13 +131,11 @@ Además con las funciones `nrow()` y `ncol()` podemos conocer el número de fila
 
 ```r
 nrow(automoviles)
-## [1] 4
 ```
 
 
 ```r
 ncol(automoviles)
-## [1] 3
 ```
 
 
@@ -179,7 +147,6 @@ La función `length()` que hemos visto con anterioridad en los vectores, tambié
 
 ```r
 length(automoviles)
-## [1] 12
 ```
 
 
@@ -193,14 +160,12 @@ Del mismo modo que los vectores poseen el atributo `names` para sus elementos, l
 ```r
 colores <- rownames(automoviles)
 colores
-## [1] "Blanco" "Rojo"   "Negro"  "Gris"
 ```
 
 
 ```r
 marcas <- colnames(automoviles)
 marcas
-## [1] "Toyota" "Audi"   "Nissan"
 ```
 
 Por medio de la función `dimnames()` obtendremos una [lista](../listas/listas.md) que
@@ -209,11 +174,6 @@ contiene dos vectores con los atributos `rownames` y `colnames`:
 
 ```r
 dimnames(automoviles)
-## [[1]]
-## [1] "Blanco" "Rojo"   "Negro"  "Gris"  
-## 
-## [[2]]
-## [1] "Toyota" "Audi"   "Nissan"
 ```
 
 ## Operaciones con Matrices {#operaciones-con-matrices}
@@ -227,16 +187,11 @@ La función `diag()` extrae la diagonal principal de una matriz:
 ```r
 A <- matrix(c(1, 2, 3, 4, 5, 6, 7, 8, 9), nrow = 3, ncol = 3, byrow = TRUE)
 A
-##      [,1] [,2] [,3]
-## [1,]    1    2    3
-## [2,]    4    5    6
-## [3,]    7    8    9
 ```
 
 
 ```r
 diag(A)
-## [1] 1 5 9
 ```
 
 Además, `diag()` nos permite crear matrices diagonales:
@@ -244,11 +199,6 @@ Además, `diag()` nos permite crear matrices diagonales:
 
 ```r
 diag(c(1, 2, 3, 4))
-##      [,1] [,2] [,3] [,4]
-## [1,]    1    0    0    0
-## [2,]    0    2    0    0
-## [3,]    0    0    3    0
-## [4,]    0    0    0    4
 ```
 
 La matriz identidad es muy fácil de crear en R. Por ejemplo, la matriz identidad de dimensión 4 es:
@@ -259,11 +209,6 @@ La matriz identidad es muy fácil de crear en R. Por ejemplo, la matriz identida
 ```r
 Id4 = diag(1, nrow = 4)
 Id4
-##      [,1] [,2] [,3] [,4]
-## [1,]    1    0    0    0
-## [2,]    0    1    0    0
-## [3,]    0    0    1    0
-## [4,]    0    0    0    1
 ```
 
 
@@ -276,18 +221,12 @@ Hay que tener cierto cuidado con los operadores aritméticos básicos (`+`, `-`,
 ```r
 M = matrix(nrow=2,c(1,2,3, 4),byrow = FALSE)
 M
-##      [,1] [,2]
-## [1,]    1    3
-## [2,]    2    4
 ```
 
 
 
 ```r
 M + 2
-##      [,1] [,2]
-## [1,]    3    5
-## [2,]    4    6
 ```
 
 
@@ -298,9 +237,6 @@ Asimismo, si a una matriz se le suma un vector cuya longitud sea igual al númer
 ```r
 v = c(3,4)
 M + v
-##      [,1] [,2]
-## [1,]    4    6
-## [2,]    6    8
 ```
 
 La suma o resta de matrices de la misma dimensión se realiza con los operadores `+` y `-`; el producto de matrices (siempre que sean compatibles) se realiza con el operador `%*%`:
@@ -310,26 +246,17 @@ La suma o resta de matrices de la misma dimensión se realiza con los operadores
 
 ```r
 M + M
-##      [,1] [,2]
-## [1,]    2    6
-## [2,]    4    8
 ```
 
 
 ```r
 M - M
-##      [,1] [,2]
-## [1,]    0    0
-## [2,]    0    0
 ```
 
 
 
 ```r
 M%*%M
-##      [,1] [,2]
-## [1,]    7   15
-## [2,]   10   22
 ```
 
 
@@ -341,18 +268,12 @@ Una fuente de posibles errores en el cálculo matricial, cuando se utilizan matr
 
 ```r
 M * M
-##      [,1] [,2]
-## [1,]    1    9
-## [2,]    4   16
 ```
 
 
 
 ```r
 M / M
-##      [,1] [,2]
-## [1,]    1    1
-## [2,]    1    1
 ```
 
 La traspuesta de una matriz se calcula simplemente con la función `t()`:
@@ -360,13 +281,7 @@ La traspuesta de una matriz se calcula simplemente con la función `t()`:
 
 ```r
 M
-##      [,1] [,2]
-## [1,]    1    3
-## [2,]    2    4
 t(M)
-##      [,1] [,2]
-## [1,]    1    2
-## [2,]    3    4
 ```
 
 
@@ -375,7 +290,6 @@ El determinante de una matriz cuadrada se calcula mediante la función `det()`:
 
 ```r
 det(M)
-## [1] -2
 ```
 
 
@@ -388,9 +302,6 @@ La función `solve()` permite obtener la inversa de una matriz cuando sólo se l
 
 ```r
 solve(M)
-##      [,1] [,2]
-## [1,]   -2  1.5
-## [2,]    1 -0.5
 ```
 
 
@@ -413,7 +324,6 @@ Podemos resolver el sistema de ecuaciones en R, del siguiente modo:
 A <- matrix(c(3, 2, 1, -1), ncol = 2, byrow = TRUE)
 b <- c(5, 0)
 solve(A, b)
-## [1] 1 1
 ```
 
 
@@ -433,7 +343,6 @@ Siguiendo con el ejemplo anterior, si quisiéramos seleccionar el número de aut
 
 ```r
 automoviles["Blanco", "Audi"]
-## [1] 2
 ```
 
 - Alternativamente, podemos utilizar la notación de índices:
@@ -441,7 +350,6 @@ automoviles["Blanco", "Audi"]
 
 ```r
 automoviles[1, 2]
-## [1] 2
 ```
 
 
@@ -452,8 +360,6 @@ También podemos seleccionar columnas y filas enteras, de manera que si queremos
 
 ```r
 automoviles[1,]
-## Toyota   Audi Nissan 
-##      1      2      3
 ```
 
 
@@ -461,8 +367,6 @@ automoviles[1,]
 ```r
 # otra forma de hacerlo es
 automoviles["Blanco",]
-## Toyota   Audi Nissan 
-##      1      2      3
 ```
 
 
@@ -479,12 +383,6 @@ Podemos emplear las funciones `cbind()` y `rbind()` para agregar filas y columna
 verde <- c(8, 5, 7)
 automoviles <- rbind(automoviles, verde)
 automoviles
-##        Toyota Audi Nissan
-## Blanco      1    2      3
-## Rojo        4    5      6
-## Negro       7    8      9
-## Gris       10   11     12
-## verde       8    5      7
 ```
 
 
@@ -494,12 +392,6 @@ automoviles
 ford <- c(2, 7, 3, 5, 9)
 automoviles <- cbind(automoviles, ford)
 automoviles
-##        Toyota Audi Nissan ford
-## Blanco      1    2      3    2
-## Rojo        4    5      6    7
-## Negro       7    8      9    3
-## Gris       10   11     12    5
-## verde       8    5      7    9
 ```
 
 ## Eliminar Filas y Columnas {#eliminar-filas-y-columnas}
@@ -515,11 +407,6 @@ y columna que hemos añadido en el apartado anterior:
 ```r
 #Eliminando la fila verde
 automoviles[-5, ]
-##        Toyota Audi Nissan ford
-## Blanco      1    2      3    2
-## Rojo        4    5      6    7
-## Negro       7    8      9    3
-## Gris       10   11     12    5
 ```
 
 
@@ -527,12 +414,6 @@ automoviles[-5, ]
 ```r
 # Eliminando columna ford
 automoviles[, -4]
-##        Toyota Audi Nissan
-## Blanco      1    2      3
-## Rojo        4    5      6
-## Negro       7    8      9
-## Gris       10   11     12
-## verde       8    5      7
 ```
 
 ## Resumen {#resumen}
