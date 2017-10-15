@@ -143,6 +143,10 @@ if (n %% 2 == 0) {
 }
 ```
 
+```
+## Es verdadero, se ejecutara la instruccion porque el numero 2 es par
+```
+
 
 ## if y else
 
@@ -170,6 +174,10 @@ if (NA) {
 }
 ```
 
+```
+## Error in if (NA) {: missing value where TRUE/FALSE needed
+```
+
 
 ## Valores NA en la condición lógica en if
 
@@ -181,6 +189,10 @@ Si nos encontramos ante esta situación, deberíamos comprobarlo mediante la fun
 if (is.na(NA)) {
   message("El valor es desconocido.")
 }  
+```
+
+```
+## El valor es desconocido.
 ```
 
 
@@ -200,6 +212,10 @@ if (n %% 2 == 0) {
 }
 ```
 
+```
+## 2 es par
+```
+
 ## La cláusula else
 
 El código después de un `else` se ejecuta sólo si la condición en `if` es `FALSE`:
@@ -215,6 +231,10 @@ if (n %% 2 == 0) {
 }
 ```
 
+```
+## 3 es impar
+```
+
 
 
 
@@ -227,6 +247,10 @@ __Ejemplo:__
 # Creamos una muestra de 20 observaciones del 1 al 100 en
 # el que se pueden repetir hasta 2 observaciones
 (muestra <- sample(1:100, 20, 2))
+```
+
+```
+##  [1] 16 61 77 75  2 29 78 19 28 80 28 43 15 99 45 73 29 53 91  9
 ```
 
 
@@ -270,8 +294,12 @@ if (centralizacion == "media") {
 
 
 ```
-## Error in eval(expr, envir, enclos): object 'centralizacion' not found
+## Mode (most frequent value): 28 29 
+## Bickel's modal skewness: 0.35 
+## Call: mlv.integer(x = muestra, type = "mfv")
 ```
+
+![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11-1.png)
 
 ## If Vectorizado | Con la función __`ifelse`__
 
@@ -307,6 +335,15 @@ if (c(TRUE, FALSE)) {
 }
 ```
 
+```
+## Warning in if (c(TRUE, FALSE)) {: the condition has length > 1 and only the
+## first element will be used
+```
+
+```
+## dos condiciones
+```
+
 
 
 
@@ -319,6 +356,10 @@ __Uso__
 
 ```r
 str(ifelse)
+```
+
+```
+## function (test, yes, no)
 ```
 
 
@@ -340,6 +381,10 @@ Ejemplo:
 ifelse(rbinom(n = 10, size = 1, prob = 0.5), "cara", "cruz")
 ```
 
+```
+##  [1] "cruz" "cruz" "cruz" "cara" "cara" "cruz" "cara" "cruz" "cara" "cara"
+```
+
 
 ## Selección Múltiple con `swith()` {.build}
 
@@ -348,6 +393,10 @@ __Uso__
 
 ```r
 str(switch)
+```
+
+```
+## function (EXPR, ...)
 ```
 
 
@@ -382,6 +431,12 @@ muestra <- sample(1:100, 20, 5)
   ))
 ```
 
+```
+## Mode (most frequent value):  1  8 11 17 18 19 24 45 47 48 51 55 58 62 71 85 91 94 96 98 
+## Bickel's modal skewness: -0.1 
+## Call: mlv.integer(x = muestra, method = "mfv")
+```
+
 ## Selección Múltiple con `swith()`
 
 Si ningún nombre coincide, entonces `switch` devuelve `NULL`:
@@ -395,6 +450,10 @@ Si ningún nombre coincide, entonces `switch` devuelve `NULL`:
   mediana = median(x),
   moda = mlv(x, method = "mfv")
   ))
+```
+
+```
+## NULL
 ```
 
 ## Selección Múltiple con `swith()`
@@ -411,6 +470,10 @@ Podemos proporcionar un valor por defecto:
   moda = mlv(x, method = "mfv"),
   "Solo se puede calcular la media, mediana y moda"
   ))
+```
+
+```
+## [1] "Solo se puede calcular la media, mediana y moda"
 ```
 
 

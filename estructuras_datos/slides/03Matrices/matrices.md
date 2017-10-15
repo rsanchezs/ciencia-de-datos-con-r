@@ -62,6 +62,10 @@ Para crear matrices utilizaremos la función `matrix()`, la sintaxis es la sigui
 str(matrix)
 ```
 
+```
+## function (data = NA, nrow = 1, ncol = 1, byrow = FALSE, dimnames = NULL)
+```
+
 
 A continuación mostramos la descripción de los argumentos:
 
@@ -80,6 +84,14 @@ matriz <- matrix(1:12, nrow = 4)
 matriz
 ```
 
+```
+##      [,1] [,2] [,3]
+## [1,]    1    5    9
+## [2,]    2    6   10
+## [3,]    3    7   11
+## [4,]    4    8   12
+```
+
 
 ## Creación de Matrices | A partir de un Vector y mediante `dim()`
 
@@ -89,11 +101,23 @@ m <- 1:12
 m
 ```
 
+```
+##  [1]  1  2  3  4  5  6  7  8  9 10 11 12
+```
+
 
 
 ```r
 dim(m) <- c(4, 3)
 m
+```
+
+```
+##      [,1] [,2] [,3]
+## [1,]    1    5    9
+## [2,]    2    6   10
+## [3,]    3    7   11
+## [4,]    4    8   12
 ```
 
 
@@ -104,6 +128,14 @@ m
 ```r
 matriz <- matrix(1:12, nrow = 4, byrow = TRUE)
 matriz
+```
+
+```
+##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    4    5    6
+## [3,]    7    8    9
+## [4,]   10   11   12
 ```
 
 ## Creación de Matrices | Nombre Filas y Columnas con __dimnames__ {.smaller}
@@ -122,6 +154,14 @@ automoviles <- matrix(
 automoviles
 ```
 
+```
+##        Toyota Audi Nissan
+## Blanco      1    2      3
+## Rojo        4    5      6
+## Negro       7    8      9
+## Gris       10   11     12
+```
+
 
 ## Creación de Matrices mediante funciones `cbind()` y `rbind()` | Ejemplo uso de la función `cbind()`
 
@@ -131,6 +171,13 @@ v1 <- c(1, 2, 3)
 v2 <- c(4, 5, 6)
 m1 <- cbind(v1, v2)
 m1
+```
+
+```
+##      v1 v2
+## [1,]  1  4
+## [2,]  2  5
+## [3,]  3  6
 ```
 
 
@@ -145,6 +192,12 @@ m1 <- rbind(v1, v2)
 m1
 ```
 
+```
+##    [,1] [,2] [,3]
+## v1    1    2    3
+## v2    4    5    6
+```
+
 
 ## Filas, Columnas y Dimensión 
 
@@ -154,6 +207,10 @@ La función __`dim()`__ devuelve un vector de integers con la dimensión del obj
 
 ```r
 dim(automoviles)
+```
+
+```
+## [1] 4 3
 ```
 
 
@@ -168,9 +225,17 @@ Además con las funciones __`nrow()`__ y __`ncol()`__ podemos conocer el número
 nrow(automoviles)
 ```
 
+```
+## [1] 4
+```
+
 
 ```r
 ncol(automoviles)
+```
+
+```
+## [1] 3
 ```
 
 
@@ -182,6 +247,10 @@ ncol(automoviles)
 length(automoviles)
 ```
 
+```
+## [1] 12
+```
+
 
 ## Nombres de las Filas, Columnas y Dimensiones | Funciones __`rownames()`__ y __`colnames()`__:
 
@@ -191,10 +260,18 @@ colores <- rownames(automoviles)
 colores
 ```
 
+```
+## [1] "Blanco" "Rojo"   "Negro"  "Gris"
+```
+
 
 ```r
 marcas <- colnames(automoviles)
 marcas
+```
+
+```
+## [1] "Toyota" "Audi"   "Nissan"
 ```
 
 ## Nombres de las Filas, Columnas y Dimensiones | Función __`dimnames()`__
@@ -202,6 +279,14 @@ marcas
 
 ```r
 dimnames(automoviles)
+```
+
+```
+## [[1]]
+## [1] "Blanco" "Rojo"   "Negro"  "Gris"  
+## 
+## [[2]]
+## [1] "Toyota" "Audi"   "Nissan"
 ```
 
 
@@ -218,9 +303,20 @@ A <- matrix(c(1, 2, 3, 4, 5, 6, 7, 8, 9),
 A
 ```
 
+```
+##      [,1] [,2] [,3]
+## [1,]    1    2    3
+## [2,]    4    5    6
+## [3,]    7    8    9
+```
+
 
 ```r
 diag(A)
+```
+
+```
+## [1] 1 5 9
 ```
 
 ## Operaciones con Matrices | Creación de Matrices Diagonales
@@ -231,12 +327,28 @@ Además, __`diag()`__ nos permite crear matrices diagonales:
 diag(c(1, 2, 3, 4))
 ```
 
+```
+##      [,1] [,2] [,3] [,4]
+## [1,]    1    0    0    0
+## [2,]    0    2    0    0
+## [3,]    0    0    3    0
+## [4,]    0    0    0    4
+```
+
 ## Operaciones con Matrices | Matriz Identidad
 
 
 ```r
 Id4 = diag(1, nrow = 4)
 Id4
+```
+
+```
+##      [,1] [,2] [,3] [,4]
+## [1,]    1    0    0    0
+## [2,]    0    1    0    0
+## [3,]    0    0    1    0
+## [4,]    0    0    0    1
 ```
 
 ## Operaciones con Matrices | Operadores Aritméticos Básicos y una Constante
@@ -247,9 +359,21 @@ M = matrix(nrow=2,c(1,2,3, 4),byrow = FALSE)
 M
 ```
 
+```
+##      [,1] [,2]
+## [1,]    1    3
+## [2,]    2    4
+```
+
 
 ```r
 M + 2
+```
+
+```
+##      [,1] [,2]
+## [1,]    3    5
+## [2,]    4    6
 ```
 
 ## Operaciones con Matrices | Operadores Aritméticos Básicos y un Vector
@@ -261,10 +385,22 @@ M = matrix(nrow=2,c(1,2,3, 4),
 M
 ```
 
+```
+##      [,1] [,2]
+## [1,]    1    3
+## [2,]    2    4
+```
+
 
 ```r
 v = c(3,4)
 M + v
+```
+
+```
+##      [,1] [,2]
+## [1,]    4    6
+## [2,]    6    8
 ```
 
 ## Operaciones con Matrices | Matrices de la misma Dimensión 
@@ -277,9 +413,21 @@ M + v
 M
 ```
 
+```
+##      [,1] [,2]
+## [1,]    1    3
+## [2,]    2    4
+```
+
 
 ```r
 M + M
+```
+
+```
+##      [,1] [,2]
+## [1,]    2    6
+## [2,]    4    8
 ```
 
 
@@ -287,9 +435,21 @@ M + M
 M - M
 ```
 
+```
+##      [,1] [,2]
+## [1,]    0    0
+## [2,]    0    0
+```
+
 
 ```r
 M%*%M
+```
+
+```
+##      [,1] [,2]
+## [1,]    7   15
+## [2,]   10   22
 ```
 
 </div>
@@ -304,9 +464,21 @@ M = matrix(nrow=2,c(1,2,3, 4),
 M
 ```
 
+```
+##      [,1] [,2]
+## [1,]    1    3
+## [2,]    2    4
+```
+
 
 ```r
 t(M)
+```
+
+```
+##      [,1] [,2]
+## [1,]    1    2
+## [2,]    3    4
 ```
 
 ## Operaciones con Matrices | Determinante Matriz Cuadrada
@@ -319,9 +491,19 @@ M = matrix(nrow=2,c(1,2,3, 4),
 M
 ```
 
+```
+##      [,1] [,2]
+## [1,]    1    3
+## [2,]    2    4
+```
+
 
 ```r
 det(M)
+```
+
+```
+## [1] -2
 ```
 
 
@@ -335,10 +517,22 @@ M = matrix(nrow=2,c(1,2,3, 4),
 M
 ```
 
+```
+##      [,1] [,2]
+## [1,]    1    3
+## [2,]    2    4
+```
+
 
 
 ```r
 solve(M)
+```
+
+```
+##      [,1] [,2]
+## [1,]   -2  1.5
+## [2,]    1 -0.5
 ```
 
 ## Operaciones con Matrices | Resolución de Sistemas de Ecuaciones Lineales
@@ -364,6 +558,10 @@ A <- matrix(c(3, 2, 1, -1),
             byrow = TRUE)
 b <- c(5, 0)
 solve(A, b)
+```
+
+```
+## [1] 1 1
 ```
 
 
@@ -398,6 +596,14 @@ automoviles <- matrix(
 automoviles
 ```
 
+```
+##        Toyota Audi Nissan
+## Blanco      1    2      3
+## Rojo        4    5      6
+## Negro       7    8      9
+## Gris       10   11     12
+```
+
 ## Selección de Elementos | Con un vector de enteros positivos {.build}
 
 
@@ -405,10 +611,22 @@ automoviles
 automoviles
 ```
 
+```
+##        Toyota Audi Nissan
+## Blanco      1    2      3
+## Rojo        4    5      6
+## Negro       7    8      9
+## Gris       10   11     12
+```
+
 
 
 ```r
 automoviles[1, 2]
+```
+
+```
+## [1] 2
 ```
 
 ## Selección de Elementos | Con un vector de enteros negativos {.build}
@@ -418,10 +636,22 @@ automoviles[1, 2]
 automoviles
 ```
 
+```
+##        Toyota Audi Nissan
+## Blanco      1    2      3
+## Rojo        4    5      6
+## Negro       7    8      9
+## Gris       10   11     12
+```
+
 
 
 ```r
 automoviles[c(-2, -3, -4), c(-1, -3)]
+```
+
+```
+## [1] 2
 ```
 
 ## Selección de Elementos | Con un vector de caracteres {.build}
@@ -431,10 +661,22 @@ automoviles[c(-2, -3, -4), c(-1, -3)]
 automoviles
 ```
 
+```
+##        Toyota Audi Nissan
+## Blanco      1    2      3
+## Rojo        4    5      6
+## Negro       7    8      9
+## Gris       10   11     12
+```
+
 
 
 ```r
 automoviles["Blanco", "Audi"]
+```
+
+```
+## [1] 2
 ```
 
 ## Selección de Elementos | Con un vector lógico {.build}
@@ -444,11 +686,23 @@ automoviles["Blanco", "Audi"]
 automoviles
 ```
 
+```
+##        Toyota Audi Nissan
+## Blanco      1    2      3
+## Rojo        4    5      6
+## Negro       7    8      9
+## Gris       10   11     12
+```
+
 
 
 ```r
 automoviles[c(TRUE, FALSE, FALSE, FALSE), 
             c(FALSE, TRUE, FALSE)]
+```
+
+```
+## [1] 2
 ```
 
 
@@ -458,6 +712,14 @@ automoviles[c(TRUE, FALSE, FALSE, FALSE),
 
 ```r
 automoviles
+```
+
+```
+##        Toyota Audi Nissan
+## Blanco      1    2      3
+## Rojo        4    5      6
+## Negro       7    8      9
+## Gris       10   11     12
 ```
 
 
@@ -466,6 +728,11 @@ automoviles
 automoviles[1, ]
 ```
 
+```
+## Toyota   Audi Nissan 
+##      1      2      3
+```
+
 
 ## Selección de Elementos | Extracción de filas {.build}
 
@@ -474,9 +741,22 @@ automoviles[1, ]
 automoviles
 ```
 
+```
+##        Toyota Audi Nissan
+## Blanco      1    2      3
+## Rojo        4    5      6
+## Negro       7    8      9
+## Gris       10   11     12
+```
+
 
 ```r
 automoviles["Blanco", ]
+```
+
+```
+## Toyota   Audi Nissan 
+##      1      2      3
 ```
 
 ## Selección de Elementos | Extracción de columnas {.build}
@@ -484,6 +764,14 @@ automoviles["Blanco", ]
 
 ```r
 automoviles
+```
+
+```
+##        Toyota Audi Nissan
+## Blanco      1    2      3
+## Rojo        4    5      6
+## Negro       7    8      9
+## Gris       10   11     12
 ```
 
 
@@ -491,6 +779,11 @@ automoviles
 automoviles[ , 1]
 ```
 
+```
+## Blanco   Rojo  Negro   Gris 
+##      1      4      7     10
+```
+
 ## Selección de Elementos | Extracción de columnas {.build}
 
 
@@ -498,9 +791,22 @@ automoviles[ , 1]
 automoviles
 ```
 
+```
+##        Toyota Audi Nissan
+## Blanco      1    2      3
+## Rojo        4    5      6
+## Negro       7    8      9
+## Gris       10   11     12
+```
+
 
 ```r
 automoviles[ , "Toyota"]
+```
+
+```
+## Blanco   Rojo  Negro   Gris 
+##      1      4      7     10
 ```
 
 ## Agregar Filas y Columnas | Agregar filas con __`rbind()`__
@@ -514,6 +820,15 @@ automoviles <- rbind(automoviles, verde)
 automoviles
 ```
 
+```
+##        Toyota Audi Nissan
+## Blanco      1    2      3
+## Rojo        4    5      6
+## Negro       7    8      9
+## Gris       10   11     12
+## verde       8    5      7
+```
+
 ## Agregar Filas y Columnas | Agregar columnas con __`cbind()`__
 
 
@@ -525,12 +840,29 @@ automoviles <- cbind(automoviles, ford)
 automoviles
 ```
 
+```
+##        Toyota Audi Nissan ford
+## Blanco      1    2      3    2
+## Rojo        4    5      6    7
+## Negro       7    8      9    3
+## Gris       10   11     12    5
+## verde       8    5      7    9
+```
+
 ## Eliminar Filas y Columnas | Eliminar filas con __`[-i, ]`__
 
 
 ```r
 #Eliminando la fila verde
 automoviles[-5, ]
+```
+
+```
+##        Toyota Audi Nissan ford
+## Blanco      1    2      3    2
+## Rojo        4    5      6    7
+## Negro       7    8      9    3
+## Gris       10   11     12    5
 ```
 
 
@@ -540,6 +872,15 @@ automoviles[-5, ]
 ```r
 # Eliminando columna ford
 automoviles[, -4]
+```
+
+```
+##        Toyota Audi Nissan
+## Blanco      1    2      3
+## Rojo        4    5      6
+## Negro       7    8      9
+## Gris       10   11     12
+## verde       8    5      7
 ```
 
 
