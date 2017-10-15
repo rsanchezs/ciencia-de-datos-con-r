@@ -53,7 +53,6 @@ for(i in seq_along(observaciones)) {
 
 # Mostramos por pantalla la media
 media
-[1] 25.19
 ```
 
 ### Bucles __`for`__ Anidados
@@ -78,10 +77,6 @@ for(i in 1:nrow(m1)) {
 
 # Mostramos por pantalla la suma de m1+m2
 suma
-     [,1] [,2] [,3]
-[1,]  114  132   68
-[2,]  169  132   93
-[3,]  131   85   64
 ```
 
 El siguiente ejemplo sirve para ejemplificar el anidamiento de bucles `for`. Cada uno con su propio bloque de instrucciones y manejado con su propio índice. Es decir, `i` controla las filas de las matrices y `j` las columnas.
@@ -111,11 +106,7 @@ while(n <= 5) {
   print(n)
   n = n + 1
 }
-[1] 1
-[1] 2
-[1] 3
-[1] 4
-[1] 5
+
 ```
 
 ## Bucle __`repeat`__
@@ -140,16 +131,6 @@ repeat {
     break
   }
 }
-[1] 1
-[1] 2
-[1] 3
-[1] 4
-[1] 5
-[1] 6
-[1] 7
-[1] 8
-[1] 9
-[1] 10
 ```
 
 En el ejemplo de la estructura `repeat` podemos observar que el bloque de código es ejecutado al menos una vez y que finaliza cuando la función `if` es verificada.
@@ -185,18 +166,10 @@ m <-
   )
 # Mostramos por pantalla `m`
 m
-     [,1] [,2] [,3] [,4] [,5] [,6]
-[1,]    2    8   10    1    1    6
-[2,]    6    3    9    1    1    4
-[3,]    4    2    6    4   10   10
-[4,]    4    3    9    4    5    7
-[5,]    9    3    8    5    3    7
-[6,]    9    2    7    9    7   10
 
 # Creamos un vector para la diagonal principal
 diagonal_principal <- vector(mode = "integer", length = nrow(m))
 diagonal_principal
-[1] 0 0 0 0 0 0
 
 # Algoritmo que calcula la matriz triangular inferior y su diagonal principal
 for (i in 1:nrow(m)) {
@@ -213,16 +186,8 @@ for (i in 1:nrow(m)) {
 
 # Mostramos por pantalla diagonal principal
 diagonal_principal
-[1]  2  3  6  4  3 10
 # Mostraamos por pantalla matriz inferior de m
 m
-     [,1] [,2] [,3] [,4] [,5] [,6]
-[1,]    2    8   10    1    1    6
-[2,]    0    3    9    1    1    4
-[3,]    0    0    6    4   10   10
-[4,]    0    0    0    4    5    7
-[5,]    0    0    0    0    3    7
-[6,]    0    0    0    0    0   10
 ```
 
 Examinaremos brevemente ahora el código anterior, como se puede observar en primer lugar se define una matriz cuadrada de 6 x 6 y creamos un vector de tipo entero con una longitud de 6 que en el momento de su inicialización contiene todos sus valores igual a cero.
@@ -261,11 +226,6 @@ for (i in 1:10) {
     next
     print(i)
 }
-[1] 2
-[1] 4
-[1] 6
-[1] 8
-[1] 10
 ```
 
 Este algoritmo utiliza el [teorema del resto](https://es.wikipedia.org/wiki/Teorema_del_resto) para calcular si un número es par o impar. Si el resto de dividir el número entre dos es igual a cero entonces se trata de un número par y es mostrado por pantalla.
@@ -314,7 +274,6 @@ for (i in 1:n) {
 	v3[i] <- v1[i] + v2[i] 
 }
 v3
-[1]  6  8 10 12
 ```
 
 Si bien, podemos usar como alternativa la vectorización nativa de R:
@@ -323,7 +282,6 @@ Si bien, podemos usar como alternativa la vectorización nativa de R:
 ```r
 v3 = v1 + v2
 v3
-[1]  6  8 10 12
 ```
 
 ### El Conjunto de Funciones __`apply`__ {#familia-apply}
@@ -385,7 +343,6 @@ for (i in seq_len(n)) {
   res[i] <- i ^ 2
 }
 res
-[1]  1  4  9 16 25
 ```
 
 La segunda opción es por medio de la vectorización:
@@ -394,7 +351,6 @@ La segunda opción es por medio de la vectorización:
 ```r
 n <- 5
 seq_len(n) ^ 2
-[1]  1  4  9 16 25
 ```
 
 En tercer lugar, mediante `sapply`:
@@ -403,7 +359,6 @@ En tercer lugar, mediante `sapply`:
 ```r
 n <- 5
 sapply(1:n, function(x) x^2)
-[1]  1  4  9 16 25
 ```
 
 
@@ -413,7 +368,6 @@ Por último, mediante `purrr::map()`:
 ```r
 n <- 5
 map_dbl(1:n,  function(x) x ^ 2)
-[1]  1  4  9 16 25
 ```
 
 En este ejemplo por la sencillez del caso las dos últimas alternativas no son necesarias y la correcta sería hacerlo mediante vectorización. Pero en estructuras de datos y funciones mas complejas optaríamos por cualquiera de las dos últimas opciones.
