@@ -4,11 +4,6 @@ opts_chunk$set(prompt=FALSE, comment='##', results='markup', echo=TRUE, eval=TRU
 ```
 
 
-<!-- ```{r, include=FALSE} -->
-<!-- tutorial::go_interactive() -->
-<!-- ``` -->
-
-
 
 # Valores Especiales
 

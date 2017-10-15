@@ -3,9 +3,6 @@ opts_knit$set(base.dir='./', fig.path='', out.format='md')
 opts_chunk$set(prompt=FALSE, echo=TRUE, eval=TRUE, comment='##', results='markup',collapse=TRUE)
 ```
 
-<!-- ```{r, include=FALSE} -->
-<!-- tutorial::go_interactive() -->
-<!-- ``` -->
 
 
 # Datos Básicos en R
