@@ -1,0 +1,89 @@
+
+
+
+<!-- ```{r, include=FALSE} -->
+<!-- tutorial::go_interactive() -->
+<!-- ``` -->
+
+
+
+# Valores Especiales
+
+Para ayudarnos con los cálculos aritméticos R, soporta cuatro valores numéricos especiales:
+
+- Inf
+- -Inf
+- NaN
+- Na
+
+Los dos primeros, son la forma positiva y negativa para valores infinitos. __NaN__ (del inglés, "not-a-number") significa que nuestro cálculo o no tiene sentido matemático o que podría no haberse realizado correctamente. __NA__ (del inglés, "not available") representa un valor desconocido.
+
+## Inf y -Inf {#inf}
+
+Si una computación resulta en un número que es demasiado grande, R devolverá `Inf` para un numero positivo y `-Inf` para un número negativo (esto es un valor infinito positivo y infinito negativo, respectivamente):
+
+
+
+```r
+2 ^ 1024
+```
+
+
+
+```r
+- 2 ^ 1024
+```
+
+Esto es también cierto cuando hacemos la división entre 0:
+
+
+
+```r
+1 / 0
+```
+
+## NaN {#nan}
+
+
+En ocasiones, una computación producirá un resultado que no tiene sentido. En estos casos, R devolverá `NaN` (del inglés, "not a number"):
+
+
+
+```r
+Inf - Inf
+```
+
+
+
+```r
+0 / 0
+```
+
+
+## NA {#na}
+
+En R, los valores `NA` son usados para representar valores desconocidos. (NA es la abreviación "not available"). Nos encontraremos valores NA en texto importado a R (representando valores desconocidos) o datos importados desde bases de datos (para reemplazar valores __NULL__).
+
+A modo de ejemplo, si el vector `peso` recoge los pesos de 5 personas, habiéndose perdido el cuarto valor, se codificaría como:
+
+
+```r
+peso <- c(77, 68, 85, NA, 73)
+```
+
+Si pretendemos calcular el peso medio, obtendremos como resultado un valor perdido:
+
+
+```r
+mean(peso)
+```
+
+Si, en cualquier caso, deseamos calcular la media de los pesos efectivamente disponibles,
+utilizaríamos la opción de _eliminar valores perdidos_ (del inglés, NA remove) que se declara
+como `na.rm=TRUE`:
+
+
+```r
+mean(peso, na.rm = TRUE)
+```
+

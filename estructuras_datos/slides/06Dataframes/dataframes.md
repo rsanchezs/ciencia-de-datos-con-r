@@ -109,12 +109,26 @@ censo <- data.frame(nombre, apellido, fecha_nacimiento, sexo, nro_hijos)
 censo
 ```
 
+```
+##      nombre apellido fecha_nacimiento   sexo nro_hijos
+## 1      Juan  Sanchez       1976-06-14 HOMBRE         1
+## 2 Margarita   Garcia       1974-05-07  MUJER         2
+## 3     Ruben   Sancho       1958-12-25 HOMBRE         3
+## 4    Daniel   Alfara       1983-09-19 HOMBRE         4
+```
+
 ## Inspeccionar las primeras filas con __`head()`__
 
 
 
 ```r
 head(censo, 2)
+```
+
+```
+##      nombre apellido fecha_nacimiento   sexo nro_hijos
+## 1      Juan  Sanchez       1976-06-14 HOMBRE         1
+## 2 Margarita   Garcia       1974-05-07  MUJER         2
 ```
 
 
@@ -126,6 +140,12 @@ head(censo, 2)
 tail(censo, 2)
 ```
 
+```
+##   nombre apellido fecha_nacimiento   sexo nro_hijos
+## 3  Ruben   Sancho       1958-12-25 HOMBRE         3
+## 4 Daniel   Alfara       1983-09-19 HOMBRE         4
+```
+
 
 
 ## Conocer la estructura de un dataframe con __`str()`__
@@ -134,6 +154,15 @@ tail(censo, 2)
 
 ```r
 str(censo)
+```
+
+```
+## 'data.frame':	4 obs. of  5 variables:
+##  $ nombre          : Factor w/ 4 levels "Daniel","Juan",..: 2 3 4 1
+##  $ apellido        : Factor w/ 4 levels "Alfara","Garcia",..: 3 2 4 1
+##  $ fecha_nacimiento: Factor w/ 4 levels "1958-12-25","1974-05-07",..: 3 2 1 4
+##  $ sexo            : Factor w/ 2 levels "HOMBRE","MUJER": 1 2 1 1
+##  $ nro_hijos       : num  1 2 3 4
 ```
 
 ## Creación de Variables con el tipo de dato Deseado {.build}
@@ -164,6 +193,15 @@ censo <- data.frame(nombre, apellido, fecha_nacimiento, sexo, nro_hijos)
 str(censo)
 ```
 
+```
+## 'data.frame':	4 obs. of  5 variables:
+##  $ nombre          :Class 'AsIs'  chr [1:4] "Juan" "Margarita" "Ruben" "Daniel"
+##  $ apellido        :Class 'AsIs'  chr [1:4] "Sanchez" "Garcia" "Sancho" "Alfara"
+##  $ fecha_nacimiento: Date, format: "1976-06-14" "1974-05-07" ...
+##  $ sexo            : Factor w/ 2 levels "HOMBRE","MUJER": 1 2 1 1
+##  $ nro_hijos       : num  1 2 3 4
+```
+
 ## Filas, Columnas y Dimensión | Dimensión con __`dim()`__
 
 
@@ -172,12 +210,20 @@ str(censo)
 dim(censo)
 ```
 
+```
+## [1] 4 5
+```
+
 ## Filas, Columnas y Dimensión | Número de Filas __`nrow()`__ 
 
 
 ```r
 # Usamos `nrow()`para recuperar el número de filas
 nrow(censo)
+```
+
+```
+## [1] 4
 ```
 
 
@@ -190,6 +236,10 @@ nrow(censo)
 ncol(censo)
 ```
 
+```
+## [1] 5
+```
+
 
 ##  Nombre de las Filas y Columnas | Nombre de las variables con __`names()`__
 
@@ -197,6 +247,11 @@ ncol(censo)
 ```r
 # Listamos los nombres de las variables (cabecera)
 names(censo)
+```
+
+```
+## [1] "nombre"           "apellido"         "fecha_nacimiento"
+## [4] "sexo"             "nro_hijos"
 ```
 
 ##  Nombre de las Filas y Columnas | Cambiar el Nombre de las variables con __`names()`__
@@ -207,6 +262,11 @@ names(censo)
 names(censo) <- c("Nombre", "Apellido", "Fecha_Nacimiento", 
                   "Sexo", "Numero_Hijos")
 names(censo)
+```
+
+```
+## [1] "Nombre"           "Apellido"         "Fecha_Nacimiento"
+## [4] "Sexo"             "Numero_Hijos"
 ```
 
 ##  Nombre de las Filas y Columnas | Uso de la función __`rownames()`__ y __`colnames()`__ {.smaller}
@@ -228,12 +288,26 @@ rownames(censo) <- c("ID1", "ID2", "ID3", "ID4")
 censo
 ```
 
+```
+##        Nombre Apellido Fecha_Nacimiento   Sexo Numero_Hijos
+## ID1      Juan  Sanchez       1976-06-14 HOMBRE            1
+## ID2 Margarita   Garcia       1974-05-07  MUJER            2
+## ID3     Ruben   Sancho       1958-12-25 HOMBRE            3
+## ID4    Daniel   Alfara       1983-09-19 HOMBRE            4
+```
+
 ## Attach y Detach
 
 
 ```r
 # Calculamos la tabla de frecuencias
 table(censo$Sexo)
+```
+
+```
+## 
+## HOMBRE  MUJER 
+##      3      1
 ```
 
 ## 
@@ -244,12 +318,18 @@ table(censo$Sexo)
 barplot(table(sexo))
 ```
 
+![plot of chunk unnamed-chunk-16](figure/unnamed-chunk-16-1.png)
+
 ## {.build}
 
 
 ```r
 # Calculamos la media de `nro_hijos`
 mean(censo$Numero_Hijos)
+```
+
+```
+## [1] 2.5
 ```
 
 
@@ -259,11 +339,19 @@ mean(censo$Numero_Hijos)
 median(censo$Numero_Hijos)
 ```
 
+```
+## [1] 2.5
+```
+
 
 
 ```r
 # Calculamos la varianza de `nro_hijos`
 var(censo$Numero_Hijos)
+```
+
+```
+## [1] 1.666667
 ```
 
 
@@ -281,6 +369,12 @@ attach(censo)
 cbind(table(sexo))
 ```
 
+```
+##        [,1]
+## HOMBRE    3
+## MUJER     1
+```
+
 ## 
 
 
@@ -289,11 +383,17 @@ cbind(table(sexo))
 barplot(table(sexo))
 ```
 
+![plot of chunk unnamed-chunk-22](figure/unnamed-chunk-22-1.png)
+
 ## {.smaller .build}
 
 ```r
 # Calculamos la media de `nro_hijos`
 mean(nro_hijos)
+```
+
+```
+## [1] 2.5
 ```
 
 
@@ -303,11 +403,19 @@ mean(nro_hijos)
 median(nro_hijos)
 ```
 
+```
+## [1] 2.5
+```
+
 
 
 ```r
 # Calculamos la varianza de `nro_hijos`
 var(nro_hijos)
+```
+
+```
+## [1] 1.666667
 ```
 
 
@@ -328,6 +436,14 @@ censo$nacionalidad <- c("ES", "FR", "RU","IT" )
 censo
 ```
 
+```
+##        Nombre Apellido Fecha_Nacimiento   Sexo Numero_Hijos nacionalidad
+## ID1      Juan  Sanchez       1976-06-14 HOMBRE            1           ES
+## ID2 Margarita   Garcia       1974-05-07  MUJER            2           FR
+## ID3     Ruben   Sancho       1958-12-25 HOMBRE            3           RU
+## ID4    Daniel   Alfara       1983-09-19 HOMBRE            4           IT
+```
+
 ## Añadir Filas y Columnas | Añadir filas con __`rbind()`__
 
 
@@ -339,6 +455,15 @@ fila_nueva <- c("Oscar", "Gonzalez", "1989-07-15", "HOMBRE", 0, "ES")
 censo <- rbind(censo, fila_nueva)
 # Mostramos por pantalla `censo`
 censo
+```
+
+```
+##        Nombre Apellido Fecha_Nacimiento   Sexo Numero_Hijos nacionalidad
+## ID1      Juan  Sanchez       1976-06-14 HOMBRE            1           ES
+## ID2 Margarita   Garcia       1974-05-07  MUJER            2           FR
+## ID3     Ruben   Sancho       1958-12-25 HOMBRE            3           RU
+## ID4    Daniel   Alfara       1983-09-19 HOMBRE            4           IT
+## 5       Oscar Gonzalez       1989-07-15 HOMBRE            0           ES
 ```
 
 
@@ -355,6 +480,15 @@ censo$nacionalidad <- NULL
 censo
 ```
 
+```
+##        Nombre Apellido Fecha_Nacimiento   Sexo Numero_Hijos
+## ID1      Juan  Sanchez       1976-06-14 HOMBRE         <NA>
+## ID2 Margarita   Garcia       1974-05-07  MUJER            2
+## ID3     Ruben   Sancho       1958-12-25 HOMBRE            3
+## ID4    Daniel   Alfara       1983-09-19 HOMBRE            4
+## 5       Oscar Gonzalez       1989-07-15 HOMBRE            0
+```
+
 
 
 ## Eliminar Columnas y Filas | Eliminar filas
@@ -367,6 +501,14 @@ filas_a_conservar <- c(TRUE, TRUE, TRUE, TRUE, FALSE)
 censo[filas_a_conservar,]
 ```
 
+```
+##        Nombre Apellido Fecha_Nacimiento   Sexo Numero_Hijos
+## ID1      Juan  Sanchez       1976-06-14 HOMBRE         <NA>
+## ID2 Margarita   Garcia       1974-05-07  MUJER            2
+## ID3     Ruben   Sancho       1958-12-25 HOMBRE            3
+## ID4    Daniel   Alfara       1983-09-19 HOMBRE            4
+```
+
 
 ## Ordenación de DataFrames | Función __`order()`__
 
@@ -376,11 +518,27 @@ censo[filas_a_conservar,]
 censo[order(nombre), ]
 ```
 
+```
+##        Nombre Apellido Fecha_Nacimiento   Sexo Numero_Hijos
+## ID4    Daniel   Alfara       1983-09-19 HOMBRE            4
+## ID1      Juan  Sanchez       1976-06-14 HOMBRE         <NA>
+## ID2 Margarita   Garcia       1974-05-07  MUJER            2
+## ID3     Ruben   Sancho       1958-12-25 HOMBRE            3
+```
+
 ## Ordenación de DataFrames | Ordenar de forma decreciente con __`decreasing`__
 
 
 ```r
 censo[order(nro_hijos, decreasing = TRUE), ]
+```
+
+```
+##        Nombre Apellido Fecha_Nacimiento   Sexo Numero_Hijos
+## ID4    Daniel   Alfara       1983-09-19 HOMBRE            4
+## ID3     Ruben   Sancho       1958-12-25 HOMBRE            3
+## ID2 Margarita   Garcia       1974-05-07  MUJER            2
+## ID1      Juan  Sanchez       1976-06-14 HOMBRE         <NA>
 ```
 
 ## Filtrar Resultados
@@ -390,6 +548,12 @@ censo[order(nro_hijos, decreasing = TRUE), ]
 ```r
 subconjunto_censo <- censo[censo$nro_hijos > 2, ]
 subconjunto_censo
+```
+
+```
+## [1] Nombre           Apellido         Fecha_Nacimiento Sexo            
+## [5] Numero_Hijos    
+## <0 rows> (or 0-length row.names)
 ```
 
 ## Formato `wide` y `long` 
@@ -527,6 +691,13 @@ df <- data.frame(x = 1:3, y = I(c("a","b", "c")))
 df
 ```
 
+```
+##   x y
+## 1 1 a
+## 2 2 b
+## 3 3 c
+```
+
 
 ## Selección de elementos | Como en una __matriz__
 
@@ -535,6 +706,10 @@ Podemos seleccionar una __columna__ de un __`dataframe`__ como:
 
 ```r
 df[, 2]
+```
+
+```
+## [1] "a" "b" "c"
 ```
 
 
@@ -548,6 +723,11 @@ Podemos seleccionar una __fila__ de un __`dataframe`__ como:
 df[2, ]
 ```
 
+```
+##   x y
+## 2 2 b
+```
+
 ## Selección de elementos | Como en una __matriz__
 
 Podemos seleccionar __elementos__ de un __`dataframe`__ como:
@@ -555,6 +735,10 @@ Podemos seleccionar __elementos__ de un __`dataframe`__ como:
 
 ```r
 df[2, 2]
+```
+
+```
+## [1] "b"
 ```
 
 ## Selección de elementos | Como en una __lista__
@@ -566,6 +750,10 @@ Podemos seleccionar una __columna__ (variable) de un __`dataframe`__ como:
 df$x
 ```
 
+```
+## [1] 1 2 3
+```
+
 ## Selección de elementos | Como en una __lista__
 
 También, podemos seleccionar una __columna__ de un __`dataframe`__ como:
@@ -573,6 +761,10 @@ También, podemos seleccionar una __columna__ de un __`dataframe`__ como:
 
 ```r
 df[["x"]]
+```
+
+```
+## [1] 1 2 3
 ```
 
 

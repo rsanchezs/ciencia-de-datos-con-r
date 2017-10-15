@@ -1,0 +1,130 @@
+
+
+
+<!-- ```{r, include=FALSE} -->
+<!-- tutorial::go_interactive() -->
+<!-- ``` -->
+
+
+# Lectura de Bases de Datos
+
+Una fuente común dónde podemos encontrar datos es en las bases de datos relacionales. Actualmente existen multitud de Sistemas Gestores de Bases de datos (SGBD) para trabajar con bases de datos relacionales, y R puede conectarse a la gran mayoría de los mismos. El paquete [DBI](https://cran.r-project.org/web/packages/DBI/index.html) proporciona una sintaxis para el acceso a varios SGBD. Actualmente soporta SQLite, MySQL, MariaDB, PostgreSQL, y Oracle, además de un __wrapper__ (del inglés, envoltorio) para el API Java DataBase Connectivity (JBDC).
+
+
+Para conectarnos en una base de datos, necesitamos dos paquetes:
+
+- El paquete `DBI`, que consiste en la definición de una interface para la comunicación entre R y SGBDR.
+- El paquete `R<nombre_SGBDR>` que consiste en la implementación del driver R/SGBDR.
+
+### Conexión a SQLite
+
+Para conectarnos a una base de datos SQLite, en primer lugar debemos instalar y cargar el los paquetes `DBI` y `RSQLite`
+
+
+```r
+# Instalamos el paquetes
+install.packages(c("DBI","RSQLite"))
+```
+
+
+
+```r
+# Cargamos los paquetes
+library(DBI)
+library(RSQLite)
+```
+
+Después definimos la conexión a la base de datos, en la que especificaremos el driver para que sea de tipo "SQLite" y que pasaremos a la función `dbConnect()` a la que además le pasaremos como argumento la ruta del archivo de la base de datos
+
+
+```r
+# Definimos el driver
+driver <- dbDriver("SQLite")
+# Definimos la ruta al archivo de la bd
+archivo_bd <- system.file("data/database.sqlite")
+# Establecemos la conexión
+con <- dbConnect(driver, archivo_bd)
+```
+
+### Conexión a MySQL
+
+La única diferencia para la conexión a una base de datos MySQL es cargar el paquete `RMySQL`, establecer el driver a "MYSQL" y por último, proporcionar el usuario y contraseña:
+
+
+```r
+# Instalamos el paquetes
+install.packages(c("DBI","RMySQL"))
+# Cargamos los paquetes
+library(DBI)
+library(RMySQL)
+```
+
+
+
+
+
+
+```r
+# Definimos el driver
+driver <- dbDriver("MySQL")
+# Establecemos la conexión
+conn <- dbConnect(driver,
+                  user = "ruben",
+                  password = "1234",
+                  db = "sakila")
+```
+
+
+
+### Conexión a PostgreSQL, Oracle y JDBC 
+
+Para establecer la conexión a PostgreSQL, Oracle y JDBC procederíamos como en el apartado anterior, pero en estos casos requieren de los paquetes `RPostgreSQL`, `ROracle` y `RJDBC` respectivamente. 
+
+### Listar y recuperar datos
+
+Para listar las tablas de una base de datos haremos uso de la función `dbListTables()`:
+
+
+```
+Error in dbWriteTable(con, "mtcars", mtcars): object 'con' not found
+```
+
+
+
+```r
+# Mostramos las tablas de la bd
+dbListTables(con)
+```
+
+Por otro lado, para recuperar los datos de una base de datos escribiremos una consulta, que consiste en un string que contiene una instrucción SQL, y la enviaremos a la base de datos con la ayuda de la función `dbGetQuery`. En el siguiente ejemplo, `SELECT * FROM mtcars` significa "muestra cada columna de la tabla con nombre `mtcars`":
+
+
+```r
+# Creamos una consulta
+consulta <- "SELECT * FROM mtcars"
+# Enviamos la consulta al SGBDR
+datos <- dbGetQuery(con, consulta)
+# Mostramos por pantalla un subconjunto de los datos
+datos[1:10, 1:5]
+```
+
+Para aquellos que no conocen el lenguaje SQL, el paquete `DBI` proporciona multitud de funciones para la manipulación de base de datos. A modo de ejemplo, 
+mediante la función `dbReadTable` conseguiremos el mismo resultado que en código anterior:
+
+
+```r
+# Consultamos la tabla `mtcars`
+dbReadTable(con, "mtcars")
+```
+
+
+### Desconexión de la base de datos
+
+Por último, una vez hemos manipulado la base de datos, es necesario desconectarse y descargar el driver:
+
+
+```r
+# Cerramos la conexión
+dbDisconnect(con)
+```
+

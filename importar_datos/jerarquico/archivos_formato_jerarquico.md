@@ -1,7 +1,4 @@
-```{r knitsetup, echo=FALSE, results='hide', warning=FALSE, message=FALSE, cache=FALSE}
-opts_knit$set(base.dir='./', fig.path='', out.format='md')
-opts_chunk$set(prompt=FALSE, comment='', results='markup', eval=TRUE, echo=TRUE)
-```
+
 
 
 <!-- ```{r, include=FALSE} -->
@@ -20,7 +17,8 @@ Para importar archivos [JSON](http://json.org/), primero necesitamos instalar y/
 
 Podemos instalar `jsonlite`desde CRAN:
 
-```{r eval=FALSE}
+
+```r
 # Instalamos el paquete
 install.packages("jsonlite")
 ```
@@ -30,20 +28,23 @@ install.packages("jsonlite")
 Para importar archivos JSON haremos uso de la función `fromJSON()`:
 
 
-```{r message=FALSE}
+
+```r
 # Cargamos `rjson`
 library(jsonlite)
 ```
 
 
-```{r}
+
+```r
 # Importamos los datos a un dataframe desde  Github en un archivo json
 datos <- fromJSON("https://api.github.com/users/rsanchezs/repos")
 # Mostramos las variables de ´datos´
 names(datos)
 ```
 
-```{r}
+
+```r
 # Accedemos a los nombres de mis repositorios
 datos$name
 ```
@@ -57,13 +58,15 @@ Si deseamos importar archivos [XML](https://es.wikipedia.org/wiki/Extensible_Mar
 
 Podemos installar `xml2`desde CRAN:
 
-```{r eval=FALSE}
+
+```r
 install.packages("xml2")
 ```
 
 o podemos instalar la versión en desarrollo en GitHub, con la ayuda de `devtools`:
 
-```{r eval=FALSE}
+
+```r
 install_github("r-lib/xml2")
 ```
 
@@ -71,7 +74,8 @@ install_github("r-lib/xml2")
 
 Mediante la función `read_xml()` podemos importar archivos XML:
 
-```{r eval = FALSE}
+
+```r
 # Cargamos el paquete
 library(xml2)
 # Importamos los datos XML 
@@ -88,13 +92,15 @@ Para importar tablas HTML necesitaremos del paquete [`rvest`](https://www.rdocum
 
 Para conseguir la última versión desde CRAN
 
-```{r eval=FALSE}
+
+```r
 install.packages("rvest")
 ```
 
 Para descargar la versión en desarrollo desde su repositorio en GitHub:
 
-```{r}
+
+```r
 # install.packages("devtools")
 devtools::install_github("hadley/rvest")
 ```
@@ -104,26 +110,30 @@ devtools::install_github("hadley/rvest")
 
 Cargamos la libreria `rvest`:
 
-```{r message=FALSE}
+
+```r
 library(rvest)
 ```
 
 Para el ejemplo, además haremos uso del paquete `xml2` para descargar una tabla de la siguiente [página]("https://es.wikipedia.org/wiki/Anexo:Países_y_territorios_dependientes_por_población) de la Wikipedia:
 
-```{r message=FALSE}
+
+```r
 library(xml2)
 ```
 
 Descargamos la página mediante `xml2::read_html()` y con la ayuda de `xml2::xml_find_first()` encontramos el nodo que coincide con `xpath = "//table"`:
 
-```{r}
+
+```r
 html <- read_html("https://es.wikipedia.org/wiki/Anexo:Países_y_territorios_dependientes_por_población")
 tabla <- xml_find_first(html, xpath = "//table")
 ```
 
 Por último, mediante `rvest::html_table` analizamos sintácticamente la tabla html y la transformamos en un `dataframe`:
 
-```{r}
+
+```r
 head(df <- html_table(tabla))
 ```
 
