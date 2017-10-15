@@ -1,12 +1,4 @@
-```{r knitsetup, echo=FALSE, results='markup', warning=FALSE, message=FALSE, cache=FALSE}
-opts_knit$set(base.dir='./', fig.path='', out.format='md')
-opts_chunk$set(prompt=TRUE, comment='', results='markup')
-# See yihui.name/knitr/options for more Knitr options.
-##### Put other setup R code here
 
-
-# end setup chunk
-```
 
 
 
@@ -19,35 +11,39 @@ Podemos entender una _lista_ como un contenedor de objetos que pueden ser de cua
 Podemos crear listas con la función `list()`, que acepta un número arbitrario de 
 argumentos. Los elementos de la lista pueden ser cualquier tipo de objeto:
 
-```{r}
-lista <- list(1:3, 
-              "Ruben",
-              pi,
-              list(c(-1,-2), -5))
-lista
+
+```r
+> lista <- list(1:3, 
++               "Ruben",
++               pi,
++               list(c(-1,-2), -5))
+> lista
 ```
 
 Como con los vectores, podemos dar nombre a los elementos en su construcción, o 
 posteriormente con la ayuda de la función `names()`:
 
-```{r}
-names(lista) <- c("a", "b", "c", "d")
-lista
+
+```r
+> names(lista) <- c("a", "b", "c", "d")
+> lista
 ```
 
-```{r}
-la_misma_lista <- list(a = 1:3, 
-                       b = "Ruben", 
-                       c = pi, 
-                       d = list(c(-1,-2), -5))
-la_misma_lista
+
+```r
+> la_misma_lista <- list(a = 1:3, 
++                        b = "Ruben", 
++                        c = pi, 
++                        d = list(c(-1,-2), -5))
+> la_misma_lista
 ```
 
 Un herramienta muy útil para el trabajo con listas es la función `str()` que nos muestra
 su estructura:
 
-```{r}
-str(lista)
+
+```r
+> str(lista)
 ```
 
 
@@ -56,18 +52,21 @@ str(lista)
 Disponemos de tres métodos para seleccionar elementos de una lista, que examinaremos
 a partir de `lista`:
 
-```{r}
-lista <- list(a = 1:3, b = "Ruben", c = pi, d = list(c(-1,-2), -5))
+
+```r
+> lista <- list(a = 1:3, b = "Ruben", c = pi, d = list(c(-1,-2), -5))
 ```
 
 - La notación `[]` extrae una sublista. El resultado será siempre una lista:
 
-```{r}
-str(lista[1:2])
+
+```r
+> str(lista[1:2])
 ```
 
-```{r}
-str(lista[4])
+
+```r
+> str(lista[4])
 ```
 
 
@@ -77,32 +76,38 @@ Como con los vectores, podemos seleccionar elementos con un vector de tipo `logi
 - La notación `[[]]` extrae un único componente de la lista. Esto es, elimina un nivel
 en la jerarquía de la lista:
 
-```{r}
-str(lista[[1]])
+
+```r
+> str(lista[[1]])
 ```
 
 
-```{r}
-str(lista[[4]])
+
+```r
+> str(lista[[4]])
 ```
 
-```{r}
-str(lista[[4]][1])
+
+```r
+> str(lista[[4]][1])
 ```
 
-```{r}
-str(lista[[4]][[1]])
+
+```r
+> str(lista[[4]][[1]])
 ```
 
 - El operador `$` extrae elementos de una lista por medio de su nombre. El funcionamiento es el mismo que con el
 operador `[[]]` excepto que no tenemos que utilizar comillas (`""`):
 
-```{r}
-str(lista$a)
+
+```r
+> str(lista$a)
 ```
 
-```{r}
-str(lista[["a"]])
+
+```r
+> str(lista[["a"]])
 ```
 
 

@@ -1,12 +1,4 @@
-```{r knitsetup, echo=FALSE, results='markup', warning=FALSE, message=FALSE, cache=FALSE}
-opts_knit$set(base.dir='./', fig.path='', out.format='md')
-opts_chunk$set(prompt=TRUE, comment='', results='markup')
-# See yihui.name/knitr/options for more Knitr options.
-##### Put other setup R code here
 
-
-# end setup chunk
-```
 
 # Paquetes
 
@@ -35,9 +27,10 @@ No sólo encontraremos el archivo DESCRIPTION en repositorios como CRAN sino tam
 
 Por ejemplo, para acceder a la documentación del paquete `stats` lo haríamos del siguiente modo:
 
-```{r}
-packageDescription("stats")
-help(package = "stats")
+
+```r
+> packageDescription("stats")
+> help(package = "stats")
 ```
 
 ## ¿Qué son los Repositorios? {#que-son-los-repositorios}
@@ -57,8 +50,9 @@ Un repositorio es el lugar dónde están alojados los paquetes y desde el cuál 
 
 La forma de instalar un paquete R depende de dónde este localizado. Con esto queremos decir que, dependerá del repositorio en dónde este publicado. La forma mas común es usar el repositorio CRAN, sirva de ejemplo la siguiente instrucción para la instalación del paquete `vioplot`:
 
-```{r}
-install.packages("vioplot")
+
+```r
+> install.packages("vioplot")
 ```
 
 Después de ejecutar la instrucción anterior recibiremos una serie de mensajes en nuestra pantalla. Esto depende del sistema operativo que usemos, las dependencias y si el paquete es instalado correctamente.
@@ -75,8 +69,9 @@ La última pieza de información nos indica en que directorio se encuentran los 
 
 Hay que mencionar, además que si deseamos instalar mas de un paquete a la vez, tan sólo tenemos que pasar como primer argumento a la función`install.packages()` un vector de caracteres:
 
-```{r eval=FALSE}
-install.packages("vioplot", "MASS")
+
+```r
+> install.packages("vioplot", "MASS")
 ```
 
 ### Instalación de Paquetes desde Servidores Espejo de CRAN
@@ -91,28 +86,32 @@ Spanish National Research Network, Madrid
 
 El siguiente ejemplo sirve para usar el mirror de la Red Nacional Española de Investigación (Madrid):
 
-```{r eval=FALSE}
-install.packages("vioplot", repos = "https://cran.rediris.es/")
+
+```r
+> install.packages("vioplot", repos = "https://cran.rediris.es/")
 ```
 
 ### Instalación de Paquetes Bioconductor
 
 En el caso de Bioconductor, el modo estandard de instalar un paquete es ejecutar el siguiente script:
 
-```{r eval=FALSE}
-source("https://bioconductor.org/biocLite.R")
+
+```r
+> source("https://bioconductor.org/biocLite.R")
 ```
 
 La instrucción anterior instalará en nuestro equipo las funciones necesarias para la instalación de paquetes bioconductor, como por ejemplo la función `biocLite()`. Si deseamos instalar los paquetes básicos de Biocondutor, podemos hacerlo de la manera siguiente:
 
-```{r echo=FALSE}
-biocLite()
+
+```
+Error in eval(expr, envir, enclos): could not find function "biocLite"
 ```
 
 No obstante, si solamente estamos interesados en uno o varios paquetes en particular, podemos hacerlo como se muestra a continuación:
 
-```{r eval=FALSE}
-biocLite(c("GenomicFeatures", "AnnotationDbi"))
+
+```r
+> biocLite(c("GenomicFeatures", "AnnotationDbi"))
 ```
 
 
@@ -122,8 +121,9 @@ Como hemos visto hasta ahora, cada repositorio tiene su forma particular de inst
 
 En primer lugar, tendremos que instalar el paquete `devtools` como hemos visto en un apartado anterior:
 
-```{r eval=FALSE}
-install.packages("devtools")
+
+```r
+> install.packages("devtools")
 ```
 
 Una vez que tenemos instalado `devtools`, haremos uso de las funciones para la instalación de otros paquetes. Las opciones son las siguientes:
@@ -140,8 +140,9 @@ Una vez que tenemos instalado `devtools`, haremos uso de las funciones para la i
 
 Por ejemplo, para instalar el [paquete babynames](https://github.com/hadley/babynames) desde su repositorio github podemos hacerlo como mostramos a continuación:
 
-```{r eval=FALSE}
-devtools::install_github("hadley/babynames")
+
+```r
+> devtools::install_github("hadley/babynames")
 ```
 
 
@@ -151,32 +152,37 @@ En esta sección, encontraremos unas pocas funciones que nos permitirán la gest
 
 - Para comprobar que paquetes tenemos instalados en nuestro equipo, usaremos:
 
-```{r eval=FALSE}
-installed.packages()
+
+```r
+> installed.packages()
 ```
 
 - Si nuesto objetivo es eliminar un paquete, podemos hacerlo como en el siguiente ejemplo:
 
-```{r eval=FALSE}
-remove.packages("vioplot")
+
+```r
+> remove.packages("vioplot")
 ```
 
 - Para comprobar que paquetes necesitan ser actualizados usaremos:
 
-```{r eval=FALSE}
-old.packages()
+
+```r
+> old.packages()
 ```
 
 - A su vez para actualizar todos los paquetes lo haremos mediante una llamada a la función:
 
-```{r eval=FALSE}
-update.packages()
+
+```r
+> update.packages()
 ```
 
 - Sin embargo, para actualizar un solo paquete, usaremos de nuevo la instrucción:
 
-```{r eval=FALSE}
-install.packages("vioplot")
+
+```r
+> install.packages("vioplot")
 ```
 
 
@@ -191,14 +197,16 @@ En RStudio en Tools -> Install Package se nos abrirá un cuadro de dialogo para 
 
 Una vez tenemos instalado un paquete, estamos en disposición de hacer uso de sus funciones. Si tan solo necesitamos hacer un uso esporádico de unas pocas funciones o datos del paquete podemos acceder con la notación `nombrepaquete::nombrefuncion()`. Por ejemplo, siguiendo con el ejemplo anterior del paquete `babynames`, para explorar uno de sus datasets podemos hacer uso de la siguiente instrucción:
 
-```{r}
-babynames::births
+
+```r
+> babynames::births
 ```
 
 __RECUERDA__ que para acceder a las funciones y conjuntos de datos que contiene un paquete, podemos hacerlo mediante:
 
-```{r}
-help(package = "babynames")
+
+```r
+> help(package = "babynames")
 ```
 
 
@@ -206,8 +214,9 @@ Por otro lado, si hacemos un uso intensivo de un paquete, la forma mas eficiente
 
 Después de cargar el paquete en memoria, ya no será necesario hacer uso de la notación `nombrepaquete::funcion()`, y podremos hacer uso de sus funciones y datos como cualquier paquete base de R:
 
-```{r}
-births
+
+```r
+> births
 ```
 
 __NOTA:__ que el argumento de la función `install.packages()` es un vector de tipo caracte y requiere de los nombres de los paquetes entrecomillados, mientras que la función `library()` accepta tanto un vector de tipo caracter como el nombre sin comillas.
@@ -223,8 +232,9 @@ A pesar de que podemos pasar como argumento un vector de caracteres a la funció
 
 Para descargar de la memoria un cierto paquete podemos hacer uso de la función `detach`. Su uso es el siguiente:
 
-```{r}
-detach("babynames", unload = TRUE)
+
+```r
+> detach("babynames", unload = TRUE)
 ```
 
 
@@ -240,8 +250,9 @@ Dicho de otra manera, y en palabras de [Hadley Wickham](#http://hadley.nz/), cie
 
 De igual manera, para recordar la diferencia es ejecutar la función `library()` sin argumentos. Esto nos proporcionará una lista de paquetes instalados en diferentes librerias en nuestro ordenador:
 
-```{r eval=FALSE}
-library()
+
+```r
+> library()
 ```
 
 

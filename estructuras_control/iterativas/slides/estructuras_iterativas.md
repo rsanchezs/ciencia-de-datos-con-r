@@ -160,10 +160,6 @@ for(i in seq_along(observaciones)) {
 media
 ```
 
-```
-## [1] 17.4
-```
-
 
 ## Bucles __`for`__ Anidados {.build .smaller}
 
@@ -195,13 +191,6 @@ for(i in 1:nrow(m1)) {
 suma
 ```
 
-```
-##      [,1] [,2] [,3]
-## [1,]  100  126  198
-## [2,]   94  151  126
-## [3,]  108   90   82
-```
-
 
 ## Bucle __`while`__
 
@@ -216,14 +205,6 @@ while(n <= 5) {
   print(n)
   n = n + 1
 }
-```
-
-```
-## [1] 1
-## [1] 2
-## [1] 3
-## [1] 4
-## [1] 5
 ```
 
 ## Bucle __`repeat`__ {.smaller}
@@ -242,14 +223,6 @@ repeat {
     break
   }
 }
-```
-
-```
-## [1] 1
-## [1] 2
-## [1] 3
-## [1] 4
-## [1] 5
 ```
 
 ## Cláusula __`break`__  | Calcular la Matriz Triangular Superior y la Diagonal Principal de una Matriz. {.build .smaller} 
@@ -272,16 +245,6 @@ m <-matrix(data = sample(x = 10, size = 36, replace = TRUE),
 m
 ```
 
-```
-##      [,1] [,2] [,3] [,4] [,5] [,6]
-## [1,]    2    3    9    3    7   10
-## [2,]   10    7    5   10    5   10
-## [3,]    4    3    1    4    8    8
-## [4,]    1   10    4    1    3    1
-## [5,]    9    9    4    6    3    7
-## [6,]    7    7    7    1    7    5
-```
-
 ## Cláusula __`break`__  | Calcular la Matriz Triangular Superior y la Diagonal Principal de una Matriz. {.build .smaller} 
 
 
@@ -298,10 +261,6 @@ diagonal_principal <- vector(mode = "integer", length = nrow(m))
 ```r
 # Diagonal principal inicializado con todos sus valores a cero
 diagonal_principal
-```
-
-```
-## [1] 0 0 0 0 0 0
 ```
 
 
@@ -333,25 +292,11 @@ for (i in 1:nrow(m)) {
 diagonal_principal
 ```
 
-```
-## [1] 2 7 1 1 3 5
-```
-
 
 
 ```r
 # Mostramos por pantalla matriz inferior de m
 m
-```
-
-```
-##      [,1] [,2] [,3] [,4] [,5] [,6]
-## [1,]    2    3    9    3    7   10
-## [2,]    0    7    5   10    5   10
-## [3,]    0    0    1    4    8    8
-## [4,]    0    0    0    1    3    1
-## [5,]    0    0    0    0    3    7
-## [6,]    0    0    0    0    0    5
 ```
 
 
@@ -368,14 +313,6 @@ for (i in 1:10) {
     next
     print(i)
 }
-```
-
-```
-## [1] 2
-## [1] 4
-## [1] 6
-## [1] 8
-## [1] 10
 ```
 
 ## Alternativas al Uso de Bucles en R 
@@ -413,10 +350,6 @@ for (i in 1:n) {
 v3
 ```
 
-```
-## [1]  6  8 10 12
-```
-
 
 
 ## Alternativas al Uso de Bucles en R | Vectorización 
@@ -429,10 +362,6 @@ Si bien, podemos usar como alternativa la vectorización nativa de R:
 ```r
 v3 = v1 + v2
 v3
-```
-
-```
-## [1]  6  8 10 12
 ```
 
 
@@ -491,10 +420,6 @@ for (i in seq_len(n)) {
 res
 ```
 
-```
-## [1]  1  4  9 16 25
-```
-
 ## Alternativas al Uso de Bucles en R | Ejemplo:
 
 La segunda opción es por medio de la vectorización:
@@ -505,10 +430,6 @@ La segunda opción es por medio de la vectorización:
 # en una secuencia de enteros del 1 a `n`
 n <- 5
 seq_len(n) ^ 2
-```
-
-```
-## [1]  1  4  9 16 25
 ```
 
 
@@ -523,10 +444,6 @@ En tercer lugar, mediante `sapply`:
 # en una secuencia de enteros del 1 a `n`
 n <- 5
 sapply(1:n, function(x) x^2)
-```
-
-```
-## [1]  1  4  9 16 25
 ```
 
 
@@ -544,10 +461,6 @@ Por último, mediante `purrr::map()`:
 # en una secuencia de enteros del 1 a `n`
 n <- 5
 map_dbl(1:n,  function(x) x ^ 2)
-```
-
-```
-## [1]  1  4  9 16 25
 ```
 
 

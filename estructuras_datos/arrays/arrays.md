@@ -1,12 +1,4 @@
-```{r knitsetup, echo=FALSE, results='markup', warning=FALSE, message=FALSE, cache=FALSE}
-opts_knit$set(base.dir='./', fig.path='', out.format='md')
-opts_chunk$set(prompt=TRUE, comment='', results='markup')
-# See yihui.name/knitr/options for more Knitr options.
-##### Put other setup R code here
 
-
-# end setup chunk
-```
 
 # Arrays
 
@@ -23,29 +15,32 @@ Para crear un _array_ utilizaremos la función `array()`, a la que pasaremos
 un vector atómico con los valores y un vector de dimensiones. Opcionalmente, 
 podemos proporcionar nombres para cada dimensión:
 
-```{r}
-array_3_D <- array(
-  1:24, 
-  dim=c(4, 3, 2),
-  dimnames = list(
-    c("uno", "dos", "tres", "cuatro"),
-    c("five", "six", "seven"),
-    c("un", "deux")
-  ))
-array_3_D
+
+```r
+> array_3_D <- array(
++   1:24, 
++   dim=c(4, 3, 2),
++   dimnames = list(
++     c("uno", "dos", "tres", "cuatro"),
++     c("five", "six", "seven"),
++     c("un", "deux")
++   ))
+> array_3_D
 ```
 
 
 Podemos comprobar si un objeto es un array mediante la función `is.array)`:
 
-```{r}
-is.array(array_3_D)
+
+```r
+> is.array(array_3_D)
 ```
 
 Finalmente, podemos conocer su dimensión con la ayuda de la función `dim()`:
 
-```{r}
-dim(array_3_D)
+
+```r
+> dim(array_3_D)
 ```
 
 

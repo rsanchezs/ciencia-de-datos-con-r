@@ -75,39 +75,11 @@ lista <- list(1:3,
 lista
 ```
 
-```
-## [[1]]
-## [1] 1 2 3
-## 
-## [[2]]
-## [1] "Ruben"
-## 
-## [[3]]
-## [1] 3.141593
-## 
-## [[4]]
-## [[4]][[1]]
-## [1] -1 -2
-## 
-## [[4]][[2]]
-## [1] -5
-```
-
 ## Función __`str()`__ para mostrar estructura
 
 
 ```r
 str(lista)
-```
-
-```
-## List of 4
-##  $ : int [1:3] 1 2 3
-##  $ : chr "Ruben"
-##  $ : num 3.14
-##  $ :List of 2
-##   ..$ : num [1:2] -1 -2
-##   ..$ : num -5
 ```
 
 
@@ -122,48 +94,12 @@ la_misma_lista <- list(a = 1:3,
 la_misma_lista
 ```
 
-```
-## $a
-## [1] 1 2 3
-## 
-## $b
-## [1] "Ruben"
-## 
-## $c
-## [1] 3.141593
-## 
-## $d
-## $d[[1]]
-## [1] -1 -2
-## 
-## $d[[2]]
-## [1] -5
-```
-
 ## Nombres de los Elementos | Función __`names()`__ {.smaller}
 
 
 ```r
 names(lista) <- c("a", "b", "c", "d")
 lista
-```
-
-```
-## $a
-## [1] 1 2 3
-## 
-## $b
-## [1] "Ruben"
-## 
-## $c
-## [1] 3.141593
-## 
-## $d
-## $d[[1]]
-## [1] -1 -2
-## 
-## $d[[2]]
-## [1] -5
 ```
 
 
@@ -206,12 +142,6 @@ Como con los vectores, podemos seleccionar elementos con un vector de tipo:
 str(lista[1:2])
 ```
 
-```
-## List of 2
-##  $ a: int [1:3] 1 2 3
-##  $ b: chr "Ruben"
-```
-
 ## Selección de Elementos | Notación __`[]`__ {.smaller}
 
 - La notación `[]` extrae una sublista. El resultado será siempre una lista:
@@ -219,13 +149,6 @@ str(lista[1:2])
 
 ```r
 str(lista[4])
-```
-
-```
-## List of 1
-##  $ d:List of 2
-##   ..$ : num [1:2] -1 -2
-##   ..$ : num -5
 ```
 
 
@@ -239,10 +162,6 @@ en la jerarquía de la lista:
 str(lista[[1]])
 ```
 
-```
-##  int [1:3] 1 2 3
-```
-
 ## Selección de Elementos | Notación __`[[]]`__ {.smaller}
 
 - La notación `[[]]` extrae un único componente de la lista. Esto es, elimina un nivel
@@ -251,12 +170,6 @@ en la jerarquía de la lista:
 
 ```r
 str(lista[[4]])
-```
-
-```
-## List of 2
-##  $ : num [1:2] -1 -2
-##  $ : num -5
 ```
 
 ## Selección de Elementos | Distinción entre __`[]`__ y __`[[]]`__ 
@@ -275,21 +188,12 @@ La distinción entre `[]` y `[[]]` es importante en las listas, puesto que:
 str(lista[[4]][1])
 ```
 
-```
-## List of 1
-##  $ : num [1:2] -1 -2
-```
-
 ## Selección de Elementos | Distinción entre __`[]`__ y __`[[]]`__ {.smaller}
 
 
 
 ```r
 str(lista[[4]][[1]])
-```
-
-```
-##  num [1:2] -1 -2
 ```
 
 
@@ -302,10 +206,6 @@ str(lista[[4]][[1]])
 str(lista$a)
 ```
 
-```
-##  int [1:3] 1 2 3
-```
-
 ## Selección de Elementos | Operador __`$`__ {.smaller}
 
 - El funcionamiento es el mismo que con el operador `[[]]` excepto que no tenemos 
@@ -315,10 +215,6 @@ que utilizar comillas (`""`):
 ```r
 # Mismo efecto que `lista$a`
 str(lista[["a"]])
-```
-
-```
-##  int [1:3] 1 2 3
 ```
 
 

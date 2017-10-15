@@ -1,12 +1,4 @@
-```{r knitsetup, echo=FALSE, results='markup', warning=FALSE, message=FALSE, cache=FALSE}
-opts_knit$set(base.dir='./', fig.path='', out.format='md')
-opts_chunk$set(prompt=TRUE, comment='', results='markup')
-# See yihui.name/knitr/options for more Knitr options.
-##### Put other setup R code here
 
-
-# end setup chunk
-```
 
 
 
@@ -26,33 +18,37 @@ A continuación, mostramos el [diagrama](https://i.imgur.com/oGa0PW0.png) de flu
 La instrucción __`if`__ toma un valor lógico (en realidad, un vector lógico de longitud uno)
 y ejecuta la siguiente instrucción sólo si el valor es __`TRUE`__:
 
-```{r}
-if (TRUE) {
-  message("Es verdadero, se ejecutara la instruccion.")
-}
+
+```r
+> if (TRUE) {
++   message("Es verdadero, se ejecutara la instruccion.")
++ }
 ```
 
-```{r}
-if (FALSE) {
-  message("Es falso, no se ejecutara la instruccion.")
-}  
+
+```r
+> if (FALSE) {
++   message("Es falso, no se ejecutara la instruccion.")
++ }  
 ```
 
 
 En el caso que pasemos valores desconocidos (`NA`) a `if`, R lanzará un error:
 
-```{r}
-if (NA) {
-  message("Los valores desconocidos lanzan un error")
-}
+
+```r
+> if (NA) {
++   message("Los valores desconocidos lanzan un error")
++ }
 ```
 
 Si nos encontramos ante esta situación, deberíamos comprobarlo mediante la función `is.na()`:
 
-```{r}
-if (is.na(NA)) {
-  message("El valor es desconocido.")
-}  
+
+```r
+> if (is.na(NA)) {
++   message("El valor es desconocido.")
++ }  
 ```
 
 Desde luego, en nuestro código en pocas ocasiones pasaremos los valores
@@ -60,21 +56,23 @@ Desde luego, en nuestro código en pocas ocasiones pasaremos los valores
 expresión. En el siguiente ejemplo, `runif(1)` genera un número de forma aleatoria
 entre 0 y 1. Si el valor es mayor que `0.5`, entonces el mensaje será mostrado:
 
-```{r}
-if (runif(1) > 0.5) {
-  message("Este mensaje aparece con un 50% de probabilidad.")
-}
+
+```r
+> if (runif(1) > 0.5) {
++   message("Este mensaje aparece con un 50% de probabilidad.")
++ }
 ```
 
 
 Si pretendemos ejecutar un bloque de instrucciones, podemos envolverlo entre paréntesis:
 
-```{r}
-x <- 3
-if (x < 2) {
-  y <- 2 * x
-  z <- 3 * y
-}
+
+```r
+> x <- 3
+> if (x < 2) {
++   y <- 2 * x
++   z <- 3 * y
++ }
 ```
 
 
@@ -90,12 +88,13 @@ El siguiente paso en complejidad en la sintaxis de `if` es incluir la cláusula 
 El código después de un `else` se ejecuta sólo si la condición en `if` es `FALSE`:
 
 
-```{r}
-if (FALSE) {
-  message("Este bloque no se ejecuta...")
-} else {
-  message("pero este si lo hará")
-}
+
+```r
+> if (FALSE) {
++   message("Este bloque no se ejecuta...")
++ } else {
++   message("pero este si lo hará")
++ }
 ```
 
 
@@ -108,37 +107,35 @@ A continuación se muestra el [diagrama de flujo]((https://i.imgur.com/9dn41o5.p
 El siguiente ejemplo nos sirve para mostrar el anidamiento de instrucciones `if-else`. Pongamos el caso que deseamos crear un algoritmo que nos calcule la [medida de tendencia central](https://es.wikipedia.org/wiki/Medidas_de_tendencia_central) que deseemos, el siguiente fragmento de código podría ser una posible solución:
 
 
-```{r echo=FALSE, message=FALSE}
-library(modeest)
-```
 
 
-```{r}
-# Creamos una muestra de 20 observaciones del 1 al 100 en
-# el que se pueden repetir hasta 2 observaciones
-(muestra <- sample(1:100, 20, 2))
-
-## Creamos una variable indicando la medida de tendencia central
-## que queremos calcular
-centralizacion <- "moda"
 
 
-## Creamos un algoritmo para calcular la tendencia central que
-## deseemos
-if (centralizacion == "moda") {
-   media = mean(muestra)
-   message("La media es ", as.character(media))
-} else if (centralizacion == "mediana") {
-   mediana = median(muestra)
-   message("La mediana es ", as.character(mediana))
-} else if (centralizacion == "moda") {
-   moda = mlv(muestra, method = "mfv")
-   message("La moda es ", as.character(moda))
-} else {
-  message("Este algoritmo sola calcula la media,
-          mediana, moda")
-}
-
+```r
+> # Creamos una muestra de 20 observaciones del 1 al 100 en
+> # el que se pueden repetir hasta 2 observaciones
+> (muestra <- sample(1:100, 20, 2))
+> 
+> ## Creamos una variable indicando la medida de tendencia central
+> ## que queremos calcular
+> centralizacion <- "moda"
+> 
+> 
+> ## Creamos un algoritmo para calcular la tendencia central que
+> ## deseemos
+> if (centralizacion == "moda") {
++    media = mean(muestra)
++    message("La media es ", as.character(media))
++ } else if (centralizacion == "mediana") {
++    mediana = median(muestra)
++    message("La mediana es ", as.character(mediana))
++ } else if (centralizacion == "moda") {
++    moda = mlv(muestra, method = "mfv")
++    message("La moda es ", as.character(moda))
++ } else {
++   message("Este algoritmo sola calcula la media,
++           mediana, moda")
++ }
 ```
 
 ## __`If`__ Vectorizado
@@ -147,10 +144,11 @@ La instrucción `if` estándar acepta en la condición lógica un único valor l
 mayor que uno, R nos lo indicará mediante un __warning__ indicándonos que hemos introducido múltiples opciones, pero que 
 únicamente la primera será utilizada:
 
-```{r}
-if (c(TRUE, FALSE)) {
-  message("dos condiciones")
-}
+
+```r
+> if (c(TRUE, FALSE)) {
++   message("dos condiciones")
++ }
 ```
 
 Puesto que muchas de las operaciones en R son vectorizadas, R nos proporciona la función `ifelse`. La función `ifelse` toma tres argumentos. El primer argumento es un vector lógico de condiciones. El segundo es un vector que contiene los valores que
@@ -159,8 +157,9 @@ es `FALSE`.
 
 #### Uso
 
-```{r}
-str(ifelse)
+
+```r
+> str(ifelse)
 ```
 
 
@@ -176,9 +175,10 @@ En el siguiente ejemplo, la función `rbinom` genera
 números aleatorios de un distribución binomial simulando el lanzamiento de una moneda:
 
 
-```{r}
-ifelse(rbinom(n = 10, size = 1, prob = 0.5),
-       "cara", "cruz")
+
+```r
+> ifelse(rbinom(n = 10, size = 1, prob = 0.5),
++        "cara", "cruz")
 ```
 
 No obstante, `if(test) yes else no` es mucho mas eficiente y preferible a `ifelse(test, yes, no)` cuando `test` es decir, la
@@ -201,8 +201,9 @@ El caso más común toma como primer argumento una expresión que devuelve un st
 
 #### Uso
 
-```{r}
-str(switch)
+
+```r
+> str(switch)
 ```
 
 #### Argumentos
@@ -216,51 +217,50 @@ excepto a aquella que sea usada como valor por defecto.
 
 Una alternativa al ejemplo presentado en el apartado anterior mediante la función `swith()` es la siguiente:
 
-```{r echo=FALSE, message=FALSE}
-library(modeest)
-```
 
 
-```{r}
-
-# Creamos una muestra de 20 observaciones del 1 al 100 en
-# el que se pueden repetir hasta 2 observaciones
-(muestra <- sample(1:100, 20, 2))
 
 
-#Calculamos la media de la muestra
-(switch(
-  "media",
-  media = mean(muestra),
-  mediana = median(muestra),
-  moda = mlv(muestra, method = "mfv")
-))
-
+```r
+> # Creamos una muestra de 20 observaciones del 1 al 100 en
+> # el que se pueden repetir hasta 2 observaciones
+> (muestra <- sample(1:100, 20, 2))
+> 
+> 
+> #Calculamos la media de la muestra
+> (switch(
++   "media",
++   media = mean(muestra),
++   mediana = median(muestra),
++   moda = mlv(muestra, method = "mfv")
++ ))
 ```
 
 Si ningún nombre coincide, entonces `switch` devuelve `NULL`:
 
-```{r}
-# Intentamos calcular la desviación típica
-(switch(
-  "desviacion_tipica",
-  media = mean(x),
-  mediana = median(x),
-  moda = mlv(x, method = "mfv")
-  ))
+
+```r
+> # Intentamos calcular la desviación típica
+> (switch(
++   "desviacion_tipica",
++   media = mean(x),
++   mediana = median(x),
++   moda = mlv(x, method = "mfv")
++   ))
 ```
 
 En este escenario, podemos proporcionar un argumento por defecto sin nombre que `switch()` devolverá cuando no coincida ningún otro:
 
-```{r}
-# Intentamos calcular la desviación típica
-(switch(
-  "desviacion_tipica",
-  media = mean(x),
-  mediana = median(x),
-  moda = mlv(x, method = "mfv"),
-  "Solo se puede calcular la media, mediana y moda"
-  ))
+
+```r
+> # Intentamos calcular la desviación típica
+> (switch(
++   "desviacion_tipica",
++   media = mean(x),
++   mediana = median(x),
++   moda = mlv(x, method = "mfv"),
++   "Solo se puede calcular la media, mediana y moda"
++   ))
 ```
 
 [if]:https://i.imgur.com/KhwkQbf.png

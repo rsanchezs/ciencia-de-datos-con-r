@@ -1,12 +1,4 @@
-```{r knitsetup, echo=FALSE, results='markup', warning=FALSE, message=FALSE, cache=FALSE}
-opts_knit$set(base.dir='./', fig.path='', out.format='md')
-opts_chunk$set(prompt=TRUE, comment='', results='markup')
-# See yihui.name/knitr/options for more Knitr options.
-##### Put other setup R code here
 
-
-# end setup chunk
-```
 
 
 
@@ -22,47 +14,54 @@ Cuando llamamos a una función con un argumento de un tipo erróneo, R intentar�
 
 
 
-```{r}
-v <- c(1, 2, 3, 4, 5)
-v
+
+```r
+> v <- c(1, 2, 3, 4, 5)
+> v
 ```
 
 
 
-```{r}
-typeof(v)
+
+```r
+> typeof(v)
 ```
 
 
-```{r}
-class(v)
+
+```r
+> class(v)
 ```
 
 Si cambiamos el segundo elemento del vector con la palabra "coercion". R cambiará la clase del objeto a `character` y todos los elementos del vector a `char` como podemos ver en el siguiente ejemplo:
 
 
 
-```{r}
-v[2] <- "coercion"
+
+```r
+> v[2] <- "coercion"
 ```
 
 
-```{r}
-typeof(v)
+
+```r
+> typeof(v)
 ```
 
 
-```{r}
-class(v)
+
+```r
+> class(v)
 ```
 
 
 Cuando un vector lógico es convertido a un integer o double, `TRUE` es cambiado a
 1 y `FALSE` a 0:
 
-```{r collapse=TRUE}
-v <- c(FALSE, TRUE, FALSE)
-as.numeric(v)
+
+```r
+> v <- c(FALSE, TRUE, FALSE)
+> as.numeric(v)
 ```
 
 
@@ -88,19 +87,22 @@ de la función `as.()*`
 __Ejemplos__
 
 
-```{r}
-v <- c(1, 2, 3, 4, 5)
-class(v)
+
+```r
+> v <- c(1, 2, 3, 4, 5)
+> class(v)
 ```
 
 
-```{r}
-as.logical(v)
+
+```r
+> as.logical(v)
 ```
 
 
-```{r}
-as.character(v)
+
+```r
+> as.character(v)
 ```
 
 
@@ -108,14 +110,16 @@ as.character(v)
 En ocasiones, la conversión no puede ser llevada a cabo, en este caso R devuelve [_NA_.](#na)
 
 
-```{r warning=TRUE}
-v <- c("a", "b", "c")
-as.numeric(v)
+
+```r
+> v <- c("a", "b", "c")
+> as.numeric(v)
 ```
 
 
-```{r}
-as.logical(v)
+
+```r
+> as.logical(v)
 ```
 
 
@@ -154,14 +158,16 @@ _ Tabla 1: Comprobación y coerción de los tipos más importantes_
 
 Podemos ver una lista completa de todas las funciones `is.()` en el paquete `base` mediante:
 
-```{r eval=FALSE}
-ls(pattern = "^is", baseenv())
+
+```r
+> ls(pattern = "^is", baseenv())
 ```
 
 
 Asimismo, para obtener las funciones `as.*()` podemos hacerlo mediante la siguiente instrucción:
 
-```{r eval=FALSE}
-ls(pattern = "^as", baseenv())
+
+```r
+> ls(pattern = "^as", baseenv())
 ```
 

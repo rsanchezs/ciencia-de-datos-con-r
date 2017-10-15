@@ -1,4 +1,4 @@
-```{r knitsetup, echo=TRUE, message=FALSE, warning=FALSE, cache=FALSE, results='hide'}
+```{r knitsetup, echo=FALSE, results='markup', warning=FALSE, message=FALSE, cache=FALSE}
 opts_knit$set(base.dir='./', fig.path='', out.format='md')
 opts_chunk$set(prompt=TRUE, comment='', results='markup')
 # See yihui.name/knitr/options for more Knitr options.
@@ -7,4 +7,6 @@ opts_chunk$set(prompt=TRUE, comment='', results='markup')
 
 # end setup chunk
 ```
+
+
 # Visualización de Datos

@@ -1,12 +1,4 @@
-```{r knitsetup, echo=FALSE, results='markup', warning=FALSE, message=FALSE, cache=FALSE}
-opts_knit$set(base.dir='./', fig.path='', out.format='md')
-opts_chunk$set(prompt=TRUE, comment='', results='markup')
-# See yihui.name/knitr/options for more Knitr options.
-##### Put other setup R code here
 
-
-# end setup chunk
-```
 
 
 
@@ -40,44 +32,46 @@ Si la condición se verifica, una instrucción o bloque de instrucciones es ejec
 
 Por ejemplo, en el siguiente fragmento de código calculamos la media de un conjunto de observaciones, que se obtiene dividiendo la suma de todas las observaciones por el número de individuos:
 
-```{r}
-# Creamos un vector aleaotorio de 10 observaciones
-observaciones <- sample(1:50, 100, replace = TRUE)
 
-# Inicializamos `suma` de todas las observaciones
-suma <- 0
-
-# Creamos un bucle for que calcula la media
-for(i in seq_along(observaciones)) {
-  suma <-  observaciones[i] + suma
-  media <- suma / length(observaciones)
-}
-
-# Mostramos por pantalla la media
-media
+```r
+> # Creamos un vector aleaotorio de 10 observaciones
+> observaciones <- sample(1:50, 100, replace = TRUE)
+> 
+> # Inicializamos `suma` de todas las observaciones
+> suma <- 0
+> 
+> # Creamos un bucle for que calcula la media
+> for(i in seq_along(observaciones)) {
++   suma <-  observaciones[i] + suma
++   media <- suma / length(observaciones)
++ }
+> 
+> # Mostramos por pantalla la media
+> media
 ```
 
 ### Bucles __`for`__ Anidados
 
 Los bucles `for` pueden ser anidados. En el siguiente fragmento de código creamos un algoritmo que calcula la suma de dos matrices cuadradas:
 
-```{r}
-# Creamos dos matrices cuadradas
-m1 <- matrix(sample(1:100, 9, replace = TRUE), nrow = 3)
-m2 <- matrix(sample(1:100, 9, replace = TRUE), nrow = 3)
 
-# Inicializamos la matriz que contendra m1+m2
-suma <- matrix(nrow = 3, ncol = 3)
-
-# Para cada fila y cada columna, realizamos la suma elemento a elemento 
-for(i in 1:nrow(m1)) {
-  for(j in 1:ncol(m1)) {
-    suma[i, j] <- m1[i, j] + m2[i, j]
-  }
-}
-
-# Mostramos por pantalla la suma de m1+m2
-suma
+```r
+> # Creamos dos matrices cuadradas
+> m1 <- matrix(sample(1:100, 9, replace = TRUE), nrow = 3)
+> m2 <- matrix(sample(1:100, 9, replace = TRUE), nrow = 3)
+> 
+> # Inicializamos la matriz que contendra m1+m2
+> suma <- matrix(nrow = 3, ncol = 3)
+> 
+> # Para cada fila y cada columna, realizamos la suma elemento a elemento 
+> for(i in 1:nrow(m1)) {
++   for(j in 1:ncol(m1)) {
++     suma[i, j] <- m1[i, j] + m2[i, j]
++   }
++ }
+> 
+> # Mostramos por pantalla la suma de m1+m2
+> suma
 ```
 
 El siguiente ejemplo sirve para ejemplificar el anidamiento de bucles `for`. Cada uno con su propio bloque de instrucciones y manejado con su propio índice. Es decir, `i` controla las filas de las matrices y `j` las columnas.
@@ -99,15 +93,14 @@ Por otro lado, si el resultado es `TRUE` (T), la instrucción o bloque de instru
 
 El siguiente ejemplo es un ejemplo de utilización de la estructura `while`:
 
-```{r}
-# Algoritmo que muestra por pantalla los 10 primeros números naturales
-n = 1
-while(n <= 5) {
-  print(n)
-  n = n + 1
-}
 
-
+```r
+> # Algoritmo que muestra por pantalla los 10 primeros números naturales
+> n = 1
+> while(n <= 5) {
++   print(n)
++   n = n + 1
++ }
 ```
 
 ## Bucle __`repeat`__
@@ -120,17 +113,18 @@ A continuación, como en los apartados anteriores mostramos el [diagrama de fluj
 
 Como alternativa al ejemplo anterior, podríamos codificar el algoritmo como:
 
-```{r}
-# Algoritmo que muestra por pantalla los 10 primeros números naturales
-n = 1
-repeat {
-  if(n <= 10) {
-    print(n)
-    n = n +1
-  } else {
-    break
-  }
-}
+
+```r
+> # Algoritmo que muestra por pantalla los 10 primeros números naturales
+> n = 1
+> repeat {
++   if(n <= 10) {
++     print(n)
++     n = n +1
++   } else {
++     break
++   }
++ }
 ```
 
 En el ejemplo de la estructura `repeat` podemos observar que el bloque de código es ejecutado al menos una vez y que finaliza cuando la función `if` es verificada.
@@ -153,40 +147,39 @@ Como podemos ver en el diagrama de flujo, la instrucción `break` finaliza la ej
 Para ilustrar mejor el uso de `break` crearemos un algoritmo que define una [matriz cuadrada](https://es.wikipedia.org/wiki/Matriz_cuadrada)  y que utiliza dos bucles `for` anidados para calcular la [diagonal principal](https://es.wikipedia.org/wiki/Diagonal_principal) y su [matriz triangular superior](https://es.wikipedia.org/wiki/Matriz_triangular):
 
 
-```{r}
 
-
-# Creamos una matriz cuadrada de 6 x 6
-m <-
-  matrix(
-    data = sample(x = 10, size = 36, replace = TRUE),
-                  nrow = 6,
-                  ncol = 6
-  )
-# Mostramos por pantalla `m`
-m
-
-# Creamos un vector para la diagonal principal
-diagonal_principal <- vector(mode = "integer", length = nrow(m))
-diagonal_principal
-
-# Algoritmo que calcula la matriz triangular inferior y su diagonal principal
-for (i in 1:nrow(m)) {
-  for (j in 1:ncol(m)) {
-    if (i == j) {
-      break
-    } else {
-      m [i, j] <- 0
-    }
-    
-  }
-  diagonal_principal[j] <- m[i, j]
-}
-
-# Mostramos por pantalla diagonal principal
-diagonal_principal
-# Mostraamos por pantalla matriz inferior de m
-m
+```r
+> # Creamos una matriz cuadrada de 6 x 6
+> m <-
++   matrix(
++     data = sample(x = 10, size = 36, replace = TRUE),
++                   nrow = 6,
++                   ncol = 6
++   )
+> # Mostramos por pantalla `m`
+> m
+> 
+> # Creamos un vector para la diagonal principal
+> diagonal_principal <- vector(mode = "integer", length = nrow(m))
+> diagonal_principal
+> 
+> # Algoritmo que calcula la matriz triangular inferior y su diagonal principal
+> for (i in 1:nrow(m)) {
++   for (j in 1:ncol(m)) {
++     if (i == j) {
++       break
++     } else {
++       m [i, j] <- 0
++     }
++     
++   }
++   diagonal_principal[j] <- m[i, j]
++ }
+> 
+> # Mostramos por pantalla diagonal principal
+> diagonal_principal
+> # Mostraamos por pantalla matriz inferior de m
+> m
 ```
 
 Examinaremos brevemente ahora el código anterior, como se puede observar en primer lugar se define una matriz cuadrada de 6 x 6 y creamos un vector de tipo entero con una longitud de 6 que en el momento de su inicialización contiene todos sus valores igual a cero.
@@ -218,12 +211,13 @@ Como hemos comentado con anterioridad `break` fuerza la transferencia del contro
 
 Pongamos por caso que queremos mostrar por pantalla los números pares de una secuencia de enteros:
 
-```{r}
-for (i in 1:10) {
-  if(i %% 2)
-    next
-    print(i)
-}
+
+```r
+> for (i in 1:10) {
++   if(i %% 2)
++     next
++     print(i)
++ }
 ```
 
 Este algoritmo utiliza el [teorema del resto](https://es.wikipedia.org/wiki/Teorema_del_resto) para calcular si un número es par o impar. Si el resto de dividir el número entre dos es igual a cero entonces se trata de un número par y es mostrado por pantalla.
@@ -260,24 +254,25 @@ De ahí que, la mayoría de las construcciones iterativas que hemos visto en los
 Sirva de ejemplo la suma de dos vectores `v1` y `v1` en un vector `v3`, la cual puede realizarse elemento a elemento mediante un bucle `for` como:
 
 
-```{r}
 
-n <- 4
-v1 <- c(1, 2, 3, 4)
-v2 <- c(5, 6, 7, 8)
-v3 <- vector(mode = "integer", length = length(n))
-
-for (i in 1:n) { 
-	v3[i] <- v1[i] + v2[i] 
-}
-v3
+```r
+> n <- 4
+> v1 <- c(1, 2, 3, 4)
+> v2 <- c(5, 6, 7, 8)
+> v3 <- vector(mode = "integer", length = length(n))
+> 
+> for (i in 1:n) { 
++ 	v3[i] <- v1[i] + v2[i] 
++ }
+> v3
 ```
 
 Si bien, podemos usar como alternativa la vectorización nativa de R:
 
-```{r}
-v3 = v1 + v2
-v3
+
+```r
+> v3 = v1 + v2
+> v3
 ```
 
 ### El Conjunto de Funciones __`apply`__ {#familia-apply}
@@ -303,12 +298,13 @@ El paquete [purr](http://purrr.tidyverse.org/) forma parte del ecosistema [tidyv
 
 #### Instalación
 
-```{r eval=FALSE}
-# La manera mas facil de conseguir `purrr` es instalar el ecosistema tidyverse
-install.packages("tidyverse")
 
-# Alternativamente, podemos instalar solo purrr:
-install.packages("purrr")
+```r
+> # La manera mas facil de conseguir `purrr` es instalar el ecosistema tidyverse
+> install.packages("tidyverse")
+> 
+> # Alternativamente, podemos instalar solo purrr:
+> install.packages("purrr")
 ```
 
 El patrón de iterar por un vector, realizando una operación en cada elemento y calcular el resultado es tan común que el paquete `purrr` proporciona una familia de funciones para llevar a cabo esta tarea. Existe una función para cada tipo de salida:
@@ -330,35 +326,39 @@ El siguiente ejemplo sirve para demostrar las diferentes alternativas que dispon
 
 Consideremos que queremos calcular el cuadrado de cada elemento en una secuencia de enteros del 1 a `n`. La primera solución pasa por utilizar una construcción iterativa:
 
-```{r}
-n <- 5
-res <- rep(NA_integer_, n) 
-for (i in seq_len(n)) {
-  res[i] <- i ^ 2
-}
-res
+
+```r
+> n <- 5
+> res <- rep(NA_integer_, n) 
+> for (i in seq_len(n)) {
++   res[i] <- i ^ 2
++ }
+> res
 ```
 
 La segunda opción es por medio de la vectorización:
 
-```{r}
-n <- 5
-seq_len(n) ^ 2
+
+```r
+> n <- 5
+> seq_len(n) ^ 2
 ```
 
 En tercer lugar, mediante `sapply`:
 
-```{r}
-n <- 5
-sapply(1:n, function(x) x^2)
+
+```r
+> n <- 5
+> sapply(1:n, function(x) x^2)
 ```
 
 
 Por último, mediante `purrr::map()`:
 
-```{r}
-n <- 5
-map_dbl(1:n,  function(x) x ^ 2)
+
+```r
+> n <- 5
+> map_dbl(1:n,  function(x) x ^ 2)
 ```
 
 En este ejemplo por la sencillez del caso las dos últimas alternativas no son necesarias y la correcta sería hacerlo mediante vectorización. Pero en estructuras de datos y funciones mas complejas optaríamos por cualquiera de las dos últimas opciones.

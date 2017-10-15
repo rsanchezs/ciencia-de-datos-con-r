@@ -1,12 +1,4 @@
-```{r knitsetup, echo=FALSE, results='markup', warning=FALSE, message=FALSE, cache=FALSE}
-opts_knit$set(base.dir='./', fig.path='', out.format='md')
-opts_chunk$set(prompt=TRUE, comment='', results='markup')
-# See yihui.name/knitr/options for more Knitr options.
-##### Put other setup R code here
 
-
-# end setup chunk
-```
 
 # Vectores
 
@@ -24,59 +16,65 @@ debe ser conocido en tiempo de ejecución o compilación.
 Los vectores atómicos pueden ser creados con la función `c()`, que corresponde
 a la sigla de _combinar_:
 
-```{r}
-vector_double <- c(1, 2.5, 4.5)
-# Con el sufijo L, conseguimos un integer en lugar de un double
-vector_integer <- c(1L, 6L, 10L)
-# Usamos TRUE y FALSE (o T y F) para crear vectores lógicos
-vector_logical <- c(TRUE, FALSE, T, F)
-vector_character <- c("Hola", "Mundo!")
+
+```r
+> vector_double <- c(1, 2.5, 4.5)
+> # Con el sufijo L, conseguimos un integer en lugar de un double
+> vector_integer <- c(1L, 6L, 10L)
+> # Usamos TRUE y FALSE (o T y F) para crear vectores lógicos
+> vector_logical <- c(TRUE, FALSE, T, F)
+> vector_character <- c("Hola", "Mundo!")
 ```
 
 
 La función `vector()` crea un vector de un tipo y longitud que debemos especificar
 en el momento de su declaración:
 
-```{r}
-vector_double <- vector(mode = "double", length = 3)
-vector_integer <- vector(mode = "integer", length = 3)
-vector_logical <- vector(mode = "logical", length = 4)
-vector_character <- vector(mode = "character", length = 2)
+
+```r
+> vector_double <- vector(mode = "double", length = 3)
+> vector_integer <- vector(mode = "integer", length = 3)
+> vector_logical <- vector(mode = "logical", length = 4)
+> vector_character <- vector(mode = "character", length = 2)
 ```
 
 Otra posibilidad es hacer uso de las funciones _wrapper_ (del inglés, envoltorio) que
 existen para cada tipo de datos. Las siguientes instrucciones son equivalentes a
 las anteriores:
 
-```{r}
-vector_double <- double(3)
-vector_integer <- integer(3)
-vector_logical <- logical(4)
-vector_character <- character(2)
+
+```r
+> vector_double <- double(3)
+> vector_integer <- integer(3)
+> vector_logical <- logical(4)
+> vector_character <- character(2)
 ```
 
 
 Además, mediante el operador `:` podemos generar sucesiones de números:
 
-```{r collapse=TRUE}
-1:10
-15:11
-1:10 - 1
-1:(10 - 1)
+
+```r
+> 1:10
+> 15:11
+> 1:10 - 1
+> 1:(10 - 1)
 ```
 
 También podemos usar las funciones `seq()` y `rep()`:
 
-```{r collapse=TRUE}
-seq(10) # mismo efecto que 1:10
-seq(3, 10) # mismo efecto que 3:10
-seq(1, 10, by=3) #saltando de 3 en 3
+
+```r
+> seq(10) # mismo efecto que 1:10
+> seq(3, 10) # mismo efecto que 3:10
+> seq(1, 10, by=3) #saltando de 3 en 3
 ```
 
 
-```{r collapse=TRUE}
-rep(1:4, 2) #repetimos 1:4 dos veces
-rep(1:4, each=2) #repetimos 1:4 dos veces, intercalando resultado
+
+```r
+> rep(1:4, 2) #repetimos 1:4 dos veces
+> rep(1:4, each=2) #repetimos 1:4 dos veces, intercalando resultado
 ```
 
 
@@ -86,19 +84,21 @@ Todos los vectores tienen dos propiedades:
 
 - Un _tipo_, que se puede determinar con la función `typeof()`:
 
-```{r collapse=TRUE}
-typeof(letters)
-typeof(1:10)
+
+```r
+> typeof(letters)
+> typeof(1:10)
 ```
 
 - Una _longitud_, que nos dice cuantos elementos contiene el vector. Podemos
 conocer este valor mediante la función `length()`:
 
-```{r collapse=TRUE}
-v <- c(1, 2, 3)
-length(v)
-length(c(TRUE, FALSE, NA))
 
+```r
+> v <- c(1, 2, 3)
+> length(v)
+> length(c(TRUE, FALSE, NA))
+> 
 ```
 
 
@@ -106,10 +106,11 @@ Una posible fuente de confusión es cuando trabajamos con vectores de tipo chara
 Con este tipo de vector, la longitud es el número de strings, no el número de caracteres
 en cada string. Para esto último, utilizaremos la función `nchar()`:
 
-```{r}
-alumnos <- c("Juan", "Pepe", "Maria", "Dolores")
-length(alumnos)
-nchar(alumnos)
+
+```r
+> alumnos <- c("Juan", "Pepe", "Maria", "Dolores")
+> length(alumnos)
+> nchar(alumnos)
 ```
 
 
@@ -132,18 +133,20 @@ utilizados en el análisis de datos, es por eso que no los trataremos en este te
 Los vectores lógicos son  el tipo más simple de vector atómico puesto que sólo pueden
 tomar tres posibles valores `TRUE`, `FALSE` y `NA`. Los vectores lógicos usualmente
 son el resultado de expresiones con los operadores lógicos y de comparación. 
-```{r collapse=TRUE}
-1 : 10 %% 3 == 0
+
+```r
+> 1 : 10 %% 3 == 0
 ```
 
 Para mas información sobre la sintaxis de los operadores y su precedencia consultar la
 documentación R: 
 
-```{r}
-# Sintaxis de los operadores y su precedéncia
-help("Syntax", "base")
-# Operadores lógicos
-help("Logic", "base")
+
+```r
+> # Sintaxis de los operadores y su precedéncia
+> help("Syntax", "base")
+> # Operadores lógicos
+> help("Logic", "base")
 ```
 
 
@@ -153,10 +156,11 @@ Los vectores de tipo integer y double son en R vectores de tipo numeric.
 En R, los números son double por defecto. Si queremos un integer, añadiremos la letra
 `L` después del número:
 
-```{r collapse=TRUE}
-typeof(1)
-typeof(1L)
-1.5L
+
+```r
+> typeof(1)
+> typeof(1L)
+> 1.5L
 ```
 
 ### Character {#character}
@@ -164,8 +168,9 @@ typeof(1L)
 Los vectores de tipo character son aquellos en los que cada elemento del vector es un 
 _string_ (cadena de caracteres):
 
-```{r}
-titulo <- "Ciencia de datos en R"
+
+```r
+> titulo <- "Ciencia de datos en R"
 ```
 
 ## Manipulación de Vectores Atómicos {#manipulacion}
@@ -189,19 +194,21 @@ opción es usar la función `typeof()`. Otra es usar las funciones que realizan 
 comprobación de tipo y devuelven `TRUE` o `FALSE`, como `is.character()`, `is.double()`, 
 `is.integer()`, `is.logical()` o, de forma más general mediante `is.atomic()`:
 
-```{r collapse=TRUE}
-vector_integer <- c(1L, 2L, 3L)
-typeof(vector_integer)
-is.integer(vector_integer)
-is.atomic(vector_integer)
+
+```r
+> vector_integer <- c(1L, 2L, 3L)
+> typeof(vector_integer)
+> is.integer(vector_integer)
+> is.atomic(vector_integer)
 ```
 
 
-```{r collapse= TRUE}
-vector_double <- c(1, 2.5, 4.5)
-typeof(vector_double)
-is.double(vector_double)
-is.atomic(vector_double)
+
+```r
+> vector_double <- c(1, 2.5, 4.5)
+> typeof(vector_double)
+> is.double(vector_double)
+> is.atomic(vector_double)
 ```
 
 
@@ -209,9 +216,10 @@ Es importante subrayar que la función `is.numeric()` comprueba si un objeto es 
 tipo numeric y devuelve `TRUE` tanto para vectores de tipo integer como de tipo 
 double. 
 
-```{r collapse=TRUE}
-is.numeric(vector_integer)
-is.numeric(vector_double)
+
+```r
+> is.numeric(vector_integer)
+> is.numeric(vector_double)
 ```
 
 
@@ -242,21 +250,23 @@ siguiente:
     
 Por ejemplo, mezclar un character y un integer producirá un character:
 
-```{r collapse=TRUE}
-v <- c("a", 1)
-v
-typeof(v)
-class(v)
 
+```r
+> v <- c("a", 1)
+> v
+> typeof(v)
+> class(v)
+> 
 ```
 
 
 Cuando un vector lógico es convertido a un integer o double, `TRUE` es cambiado a
 1 y `FALSE` a 0:
 
-```{r collapse=TRUE}
-v <- c(FALSE, FALSE, FALSE)
-as.numeric(v)
+
+```r
+> v <- c(FALSE, FALSE, FALSE)
+> as.numeric(v)
 ```
 
  
@@ -271,29 +281,33 @@ Una gran característica de los vectores en R es que podemos asignar a cada elem
 nombre. Etiquetar los elementos hace nuestro código mas legible. Podemos especificar
 los nombres cuando creamos un vector con la forma `nombre = valor`: 
 
-```{r}
-c(manzana = 1, platano = 2, kiwi = 3)
+
+```r
+> c(manzana = 1, platano = 2, kiwi = 3)
 ```
 
 Podemos añadir nombres a los elementos de un vector después de su creación con la 
 ayuda de la función `names()`:
 
-```{r}
-frutas <- 1:4
-names(frutas) <- c("manzana", "platano", "kiwi")
-frutas
+
+```r
+> frutas <- 1:4
+> names(frutas) <- c("manzana", "platano", "kiwi")
+> frutas
 ```
 
 Gracias a la función `names()` podemos conocer los nombres de un vector:
 
-```{r}
-names(frutas)
+
+```r
+> names(frutas)
 ```
 
 Por último, si un vector no tiene nombres, la función `names()` devuelve `NULL`:
 
-```{r}
-names(1:4)
+
+```r
+> names(1:4)
 ```
 
 ### Operaciones Vectorizadas {#operaciones-vectorizadas}
@@ -305,11 +319,12 @@ eficiente, conciso y mas legible que en otros lenguajes de programación.
 
 El ejemplo mas simple es cuando sumamos dos vectores:
 
-```{r collapse=TRUE}
-v1 <- 1:4
-v2 <- 5:8
-v3<- v1 + v2
-v3
+
+```r
+> v1 <- 1:4
+> v2 <- 5:8
+> v3<- v1 + v2
+> v3
 ```
 
 
@@ -330,38 +345,42 @@ longitud que los anteriores, como muestra la [Figura 1]().
 Sin la vectorización tendríamos que realizar la suma mediante el uso de una estructura
 iterativa, como por ejemplo:
 
-```{r}
-v3 <- numeric(length(v1))
-for(i in seq_along(v1)) {
-  v3[i] <- v1[i] + v2[i]
-}
-v3
+
+```r
+> v3 <- numeric(length(v1))
+> for(i in seq_along(v1)) {
++   v3[i] <- v1[i] + v2[i]
++ }
+> v3
 ```
 
 Otro tipo de operaciones que podemos realizar de forma vectorizada son las comparaciones
 lógicas. Supongamos que queremos saber que elementos en un vector son mas grandes que 2.
 Podríamos hacer lo siguiente:
 
-```{r collapse=TRUE}
-v1 <- 1:4
-v1 > 2
+
+```r
+> v1 <- 1:4
+> v1 > 2
 ```
 
 A continuación, mostramos otros ejemplos de operaciones vectorizadas de tipo lógico:
 
-```{r collapse=TRUE}
-v1 <- 1:4
-v1 >= 2
-v2 < 3
-v3 == 8
+
+```r
+> v1 <- 1:4
+> v1 >= 2
+> v2 < 3
+> v3 == 8
 ```
 
 Desde luego, la resta, multiplicación y división son también operaciones vectorizadas:
 
-```{r collapse=TRUE}
-v1 - v2
-v1 * v2
-v1 / v2
+
+```r
+> v1 - v2
+> v1 * v2
+> v1 / v2
 ```
 
 ### Reciclado de Vectores y Repetición {#reciclado-de-vectores-y-repeticion}
@@ -374,8 +393,9 @@ intentamos realizar operaciones en vectores de diferente longitud?".
 Si intentamos realizar la suma de un único número (escalar) a un vector, entonces el número
 es sumado a cada elemento en el vector, como muestra la [Figura 2]():
 
-```{r}
-1:5 + 1
+
+```r
+> 1:5 + 1
 ```
 
 ![Vectorización con un escalar](http://i.imgur.com/977D3ug.png)
@@ -384,8 +404,9 @@ es sumado a cada elemento en el vector, como muestra la [Figura 2]():
 Cuando sumamos dos vectores de diferente longitud, R reciclará los elementos del vector 
 más pequeño para que coincida con el más grande, como podemos ver en la [Figura 3]():
 
-```{r}
-1:2 + 1:4
+
+```r
+> 1:2 + 1:4
 ```
 
 ![Vectorización vectores diferente longitud](http://i.imgur.com/bDKyVRP.png)
@@ -394,8 +415,9 @@ más pequeño para que coincida con el más grande, como podemos ver en la [Figu
 Si la longitud del vector más grande no es múltiple con la longitud del vector más
 pequeño, R nos lo hará saber mediante un mensaje:
 
-```{r}
-1:5 + 1:7
+
+```r
+> 1:5 + 1:7
 ```
 
 
@@ -408,17 +430,19 @@ vectores de la misma longitud antes de operar con ellos.
 La función `rep()` es muy útil para esta tarea, permitiéndonos crear un vector con 
 elementos repetidos:
 
-```{r collapse=TRUE}
-rep(1:5, 3)
-rep(1:5, each = 3)
-rep(1:5, times = 1:5)
 
+```r
+> rep(1:5, 3)
+> rep(1:5, each = 3)
+> rep(1:5, times = 1:5)
+> 
 ```
 
-```{r collapse=TRUE}
-rep(1:5, length.out = 7)
-# Alternativamente podemos hacerlo mediante rep_len (desde v3.0.0)
-rep_len(1:5, 7)
+
+```r
+> rep(1:5, length.out = 7)
+> # Alternativamente podemos hacerlo mediante rep_len (desde v3.0.0)
+> rep_len(1:5, 7)
 ```
 
 ### Selección de Elementos {#seleccion-de-elementos}
@@ -434,25 +458,28 @@ todos negativos, o cero.
 
  Seleccionar los elementos con integers positivos extrae los elementos de las posiciones indicadas:
   
-```{r collapse=TRUE}
-v <- c("uno", "dos", "tres", "cuatro", "cinco")
-v[c(3, 2, 5)]
+
+```r
+> v <- c("uno", "dos", "tres", "cuatro", "cinco")
+> v[c(3, 2, 5)]
 ```
 
   Repitiendo una posición, podemos obtener un vector de una longitud más grande que
 el vector original:
   
   
-```{r collapse=TRUE}
-v[c(1, 1, 5, 5, 5, 2)]
+
+```r
+> v[c(1, 1, 5, 5, 5, 2)]
 ```
 
   
   Los valores negativos eliminan los elementos en las posiciones especificadas:
   
     
-```{r}
-v[c(-1, -3, -5)]
+
+```r
+> v[c(-1, -3, -5)]
 ```
 
   
@@ -460,39 +487,44 @@ v[c(-1, -3, -5)]
   
 
   
-```{r warning=TRUE, eval=FALSE}
-v[c(1, -1)]
+
+```r
+> v[c(1, -1)]
 ```
 
 
 - Por medio de un vector lógico obtenemos todos los valores correspondientes
 al valor `TRUE`. Este tipo es útil en conjunción con la funciones de comparación:
 
-```{r collapse=TRUE}
-v <- c(10, 3, NA, 5, 8, 1, NA)
-# Devuelve todos los valores que no son NA en x
-v[!is.na(v)]
+
+```r
+> v <- c(10, 3, NA, 5, 8, 1, NA)
+> # Devuelve todos los valores que no son NA en x
+> v[!is.na(v)]
 ```
 
-```{r}
-# Todos los valores pares (o desconocidos) en x
-v[v %% 2 == 0]
+
+```r
+> # Todos los valores pares (o desconocidos) en x
+> v[v %% 2 == 0]
 ```
 
 
 - Si hemos dado nombres a los elementos de nuestro vector, podemos seleccionar
 sus elementos con un vector de tipo character:
 
-```{r}
-frutas <- c(manzana = 1, platano= 2, kiwi=3, pera=4, naranja=5)
-frutas[c("platano", "naranja")]
+
+```r
+> frutas <- c(manzana = 1, platano= 2, kiwi=3, pera=4, naranja=5)
+> frutas[c("platano", "naranja")]
 ```
 
 - Mediante `v[]`, obtendremos el vector completo:
 
-```{r}
-v <- c(10, 3, NA, 5, 8, 1, NA)
-v[]
+
+```r
+> v <- c(10, 3, NA, 5, 8, 1, NA)
+> v[]
 ```
  
  Esta notación no es muy útil para acceder a vectores, sin embargo nos será de 

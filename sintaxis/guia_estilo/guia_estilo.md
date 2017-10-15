@@ -1,12 +1,4 @@
-```{r knitsetup, echo=FALSE, results='markup', warning=FALSE, message=FALSE, cache=FALSE}
-opts_knit$set(base.dir='./', fig.path='', out.format='md')
-opts_chunk$set(prompt=TRUE, comment='', results='markup')
-# See yihui.name/knitr/options for more Knitr options.
-##### Put other setup R code here
 
-
-# end setup chunk
-```
 
 
 
@@ -72,9 +64,10 @@ hipotenusa <- sqrt( a ^ 2 + b ^ 2)
 v <- c(1, 2, 3)
 ```
 
-```{r eval=FALSE}
-hipotenusa<-sqrt(a^2+b^2)
-v <- c(1,2,3)
+
+```r
+> hipotenusa<-sqrt(a^2+b^2)
+> v <- c(1,2,3)
 ```
 
 

@@ -1,35 +1,29 @@
-```{r knitsetup, echo=FALSE, results='markup', warning=FALSE, message=FALSE, cache=FALSE}
-opts_knit$set(base.dir='./', fig.path='', out.format='md')
-opts_chunk$set(prompt=TRUE, comment='', results='markup')
-# See yihui.name/knitr/options for more Knitr options.
-##### Put other setup R code here
 
-
-# end setup chunk
-```
 
 # Objetos
 
 Todo el código R manipula objetos. El _objeto_, es el concepto principal sobre el cual se fundamenta la tecnología orientada a objetos. Un objeto puede ser visto como una entidad que posee atributos y efectúa acciones. Ejemplos de objetos en R incluyen las funciones, [symbols](#symbols) (nombre objetos) e incluso las expresiones. A continuación se muestran algunos ejemplos de objetos:
 
 
-```{r}
-# Una función es un objeto
-function() {x <- 1; y <- 2; x + y}
 
+```r
+> # Una función es un objeto
+> function() {x <- 1; y <- 2; x + y}
 ```
 
 
-```{r}
-#también su nombre (symbol)
-f <- function(x, y){x + y}
-f(1, 2)
+
+```r
+> #también su nombre (symbol)
+> f <- function(x, y){x + y}
+> f(1, 2)
 ```
 
 
-```{r}
-# incluso las expresiones 
-{x <- 1; y <- 2; x + y}
+
+```r
+> # incluso las expresiones 
+> {x <- 1; y <- 2; x + y}
 ```
 
 
@@ -38,8 +32,9 @@ f(1, 2)
 Formalmente, los nombres de las variables en R se designan como _symbol_. Cuando realizamos una asignación de un objeto al nombre de una variable, estamos en realidad asignando el objeto a un symbol. Por ejemplo, la instrucción:
 
 
-```{r}
-x <- 1
+
+```r
+> x <- 1
 ```
 
 asigna el symbol __"x"__ al objeto __"1"__ en el entorno actual.
@@ -51,9 +46,10 @@ Todos los objetos en R tienen una clase, la cual define que información contien
 Podemos encontrar la clase de un objeto mediante la función `class(objeto)`:
 
 
-```{r}
-vector_numerico <- c(1, 2, 3, 4, 5)
-class(vector_numerico)
+
+```r
+> vector_numerico <- c(1, 2, 3, 4, 5)
+> class(vector_numerico)
 ```
 
 ## Cada Objeto tiene un Tipo {#tipo}
@@ -63,9 +59,10 @@ Cada objeto en R tiene un tipo. El tipo define como es almacenado el objeto en R
 Podemos conocer el tipo de objeto con la función `typeof(objeto)`:
 
 
-```{r}
-vector_numerico <- c(1, 2, 3, 4, 5)
-typeof(vector_numerico)
+
+```r
+> vector_numerico <- c(1, 2, 3, 4, 5)
+> typeof(vector_numerico)
 ```
 
 ### Comprobar la Clase de un Objeto en **_scripts_**
@@ -74,27 +71,29 @@ El uso de la función `class()` es útil para examinar nuestros objetos en un tr
 
 
 
-```{r eval=FALSE, tut=FALSE}
-if(!is(x, "alguna_clase")) {
-  
-  # alguna acción correctiva
-}
 
+```r
+> if(!is(x, "alguna_clase")) {
++   
++   # alguna acción correctiva
++ }
 ```
 
 
 La mayoría de las clases tienen su propia función `is.*()`, utilizar esta función es mas efectivo que el uso de la función general `is()`. Por ejemplo:
 
 
-```{r}
-is.character("Ciencia de Datos con R")
+
+```r
+> is.character("Ciencia de Datos con R")
 ```
 
 Podemos ver una lista completa de las funciones `is()` en el paquete `base` mediante la siguiente instrucción:
 
 
-```{r eval=FALSE}
-ls(pattern = "^is", baseenv())
+
+```r
+> ls(pattern = "^is", baseenv())
 ```
 
 

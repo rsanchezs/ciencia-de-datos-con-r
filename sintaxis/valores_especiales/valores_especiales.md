@@ -1,12 +1,4 @@
-```{r knitsetup, echo=FALSE, results='markup', warning=FALSE, message=FALSE, cache=FALSE}
-opts_knit$set(base.dir='./', fig.path='', out.format='md')
-opts_chunk$set(prompt=TRUE, comment='', results='markup')
-# See yihui.name/knitr/options for more Knitr options.
-##### Put other setup R code here
 
-
-# end setup chunk
-```
 
 
 
@@ -26,20 +18,23 @@ Los dos primeros, son la forma positiva y negativa para valores infinitos. __NaN
 Si una computación resulta en un número que es demasiado grande, R devolverá `Inf` para un numero positivo y `-Inf` para un número negativo (esto es un valor infinito positivo y infinito negativo, respectivamente):
 
 
-```{r}
-2 ^ 1024
+
+```r
+> 2 ^ 1024
 ```
 
 
-```{r}
-- 2 ^ 1024
+
+```r
+> - 2 ^ 1024
 ```
 
 Esto es también cierto cuando hacemos la división entre 0:
 
 
-```{r}
-1 / 0
+
+```r
+> 1 / 0
 ```
 
 ## NaN {#nan}
@@ -48,13 +43,15 @@ Esto es también cierto cuando hacemos la división entre 0:
 En ocasiones, una computación producirá un resultado que no tiene sentido. En estos casos, R devolverá `NaN` (del inglés, "not a number"):
 
 
-```{r}
-Inf - Inf
+
+```r
+> Inf - Inf
 ```
 
 
-```{r}
-0 / 0
+
+```r
+> 0 / 0
 ```
 
 
@@ -64,21 +61,24 @@ En R, los valores `NA` son usados para representar valores desconocidos. (NA es 
 
 A modo de ejemplo, si el vector `peso` recoge los pesos de 5 personas, habiéndose perdido el cuarto valor, se codificaría como:
 
-```{r}
-peso <- c(77, 68, 85, NA, 73)
+
+```r
+> peso <- c(77, 68, 85, NA, 73)
 ```
 
 Si pretendemos calcular el peso medio, obtendremos como resultado un valor perdido:
 
-```{r}
-mean(peso)
+
+```r
+> mean(peso)
 ```
 
 Si, en cualquier caso, deseamos calcular la media de los pesos efectivamente disponibles,
 utilizaríamos la opción de _eliminar valores perdidos_ (del inglés, NA remove) que se declara
 como `na.rm=TRUE`:
 
-```{r}
-mean(peso, na.rm = TRUE)
+
+```r
+> mean(peso, na.rm = TRUE)
 ```
 

@@ -1,12 +1,4 @@
-```{r knitsetup, echo=FALSE, results='markup', warning=FALSE, message=FALSE, cache=FALSE}
-opts_knit$set(base.dir='./', fig.path='', out.format='md')
-opts_chunk$set(prompt=TRUE, comment='', results='markup')
-# See yihui.name/knitr/options for more Knitr options.
-##### Put other setup R code here
 
-
-# end setup chunk
-```
 
 
 # Expresiones y Asignación
@@ -16,21 +8,24 @@ El código R está compuesto por una serie de _expresiones_. Ejemplo de expresio
 
 
 
-```{r}
-#  Expresión aritmética
-127 %% 10
+
+```r
+> #  Expresión aritmética
+> 127 %% 10
 ```
 
 
-```{r}
-# Instrucción condicional
-if (1 > 2) "mayor" else "menor"
+
+```r
+> # Instrucción condicional
+> if (1 > 2) "mayor" else "menor"
 ```
 
 
-```{r}
-# Instrucción asignación
-x <- 1
+
+```r
+> # Instrucción asignación
+> x <- 1
 ```
 
 ## Instrucciones de Asignación {#asignacion}
@@ -55,17 +50,19 @@ R proporciona diferentes construcciones para agrupar expresiones:
 Podemos escribir una serie de expresiones en líneas separadas:
 
 
-```{r}
-x <- 1
-y <- 2
-z <- 3
+
+```r
+> x <- 1
+> y <- 2
+> z <- 3
 ```
 
 Alternativamente, podemos colocarlas en la misma línea, separadas por punto y coma:
 
 
-```{r}
-x <- 1; y <- 2; z <- 3
+
+```r
+> x <- 1; y <- 2; z <- 3
 ```
 
 ### Paréntesis
@@ -73,29 +70,33 @@ x <- 1; y <- 2; z <- 3
 La notación con paréntesis devuelve el resultado de evaluar la expresión dentro del paréntesis:
 
 
-```{r}
-(x <- 1)
+
+```r
+> (x <- 1)
 ```
 
 
-```{r}
-# es equivalente
-x <- 1
-x 
+
+```r
+> # es equivalente
+> x <- 1
+> x 
 ```
 
 Agrupar expresiones con paréntesis puede ser usado para modificar la prioridad  en los operadores:
 
 
-```{r}
-# La multiplicación tiene prioridad sobre la suma
-2 * 5 + 1
+
+```r
+> # La multiplicación tiene prioridad sobre la suma
+> 2 * 5 + 1
 ```
 
 
-```{r}
-# En este caso, se calculará primero la suma y después se multiplicará
-2 * (5 + 1)
+
+```r
+> # En este caso, se calculará primero la suma y después se multiplicará
+> 2 * (5 + 1)
 ```
 
 
@@ -106,15 +107,17 @@ Las llaves son usadas para evaluar una serie de expresiones (separadas por nueva
 
 
 
-```{r}
-{x <- 1; y <- 2; x + y}
+
+```r
+> {x <- 1; y <- 2; x + y}
 ```
 
 Usado para agrupar un conjunto de expresiones en el cuerpo de una función:
 
 
-```{r}
-f <- function() {x <- 1; y <- 2; x + y}
-f()
+
+```r
+> f <- function() {x <- 1; y <- 2; x + y}
+> f()
 ```
 
