@@ -14,11 +14,19 @@ El código R está compuesto por una serie de _expresiones_. Ejemplo de expresio
 > 127 %% 10
 ```
 
+```
+[1] 7
+```
+
 
 
 ```r
 > # Instrucción condicional
 > if (1 > 2) "mayor" else "menor"
+```
+
+```
+[1] "menor"
 ```
 
 
@@ -75,12 +83,20 @@ La notación con paréntesis devuelve el resultado de evaluar la expresión dent
 > (x <- 1)
 ```
 
+```
+[1] 1
+```
+
 
 
 ```r
 > # es equivalente
 > x <- 1
 > x 
+```
+
+```
+[1] 1
 ```
 
 Agrupar expresiones con paréntesis puede ser usado para modificar la prioridad  en los operadores:
@@ -92,11 +108,19 @@ Agrupar expresiones con paréntesis puede ser usado para modificar la prioridad 
 > 2 * 5 + 1
 ```
 
+```
+[1] 11
+```
+
 
 
 ```r
 > # En este caso, se calculará primero la suma y después se multiplicará
 > 2 * (5 + 1)
+```
+
+```
+[1] 12
 ```
 
 
@@ -112,6 +136,10 @@ Las llaves son usadas para evaluar una serie de expresiones (separadas por nueva
 > {x <- 1; y <- 2; x + y}
 ```
 
+```
+[1] 3
+```
+
 Usado para agrupar un conjunto de expresiones en el cuerpo de una función:
 
 
@@ -119,5 +147,9 @@ Usado para agrupar un conjunto de expresiones en el cuerpo de una función:
 ```r
 > f <- function() {x <- 1; y <- 2; x + y}
 > f()
+```
+
+```
+[1] 3
 ```
 

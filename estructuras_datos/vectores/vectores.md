@@ -56,9 +56,13 @@ Además, mediante el operador `:` podemos generar sucesiones de números:
 
 ```r
 > 1:10
+ [1]  1  2  3  4  5  6  7  8  9 10
 > 15:11
+[1] 15 14 13 12 11
 > 1:10 - 1
+ [1] 0 1 2 3 4 5 6 7 8 9
 > 1:(10 - 1)
+[1] 1 2 3 4 5 6 7 8 9
 ```
 
 También podemos usar las funciones `seq()` y `rep()`:
@@ -66,15 +70,20 @@ También podemos usar las funciones `seq()` y `rep()`:
 
 ```r
 > seq(10) # mismo efecto que 1:10
+ [1]  1  2  3  4  5  6  7  8  9 10
 > seq(3, 10) # mismo efecto que 3:10
+[1]  3  4  5  6  7  8  9 10
 > seq(1, 10, by=3) #saltando de 3 en 3
+[1]  1  4  7 10
 ```
 
 
 
 ```r
 > rep(1:4, 2) #repetimos 1:4 dos veces
+[1] 1 2 3 4 1 2 3 4
 > rep(1:4, each=2) #repetimos 1:4 dos veces, intercalando resultado
+[1] 1 1 2 2 3 3 4 4
 ```
 
 
@@ -87,7 +96,9 @@ Todos los vectores tienen dos propiedades:
 
 ```r
 > typeof(letters)
+[1] "character"
 > typeof(1:10)
+[1] "integer"
 ```
 
 - Una _longitud_, que nos dice cuantos elementos contiene el vector. Podemos
@@ -97,8 +108,9 @@ conocer este valor mediante la función `length()`:
 ```r
 > v <- c(1, 2, 3)
 > length(v)
+[1] 3
 > length(c(TRUE, FALSE, NA))
-> 
+[1] 3
 ```
 
 
@@ -110,7 +122,18 @@ en cada string. Para esto último, utilizaremos la función `nchar()`:
 ```r
 > alumnos <- c("Juan", "Pepe", "Maria", "Dolores")
 > length(alumnos)
+```
+
+```
+[1] 4
+```
+
+```r
 > nchar(alumnos)
+```
+
+```
+[1] 4 4 5 7
 ```
 
 
@@ -136,6 +159,7 @@ son el resultado de expresiones con los operadores lógicos y de comparación.
 
 ```r
 > 1 : 10 %% 3 == 0
+ [1] FALSE FALSE  TRUE FALSE FALSE  TRUE FALSE FALSE  TRUE FALSE
 ```
 
 Para mas información sobre la sintaxis de los operadores y su precedencia consultar la
@@ -159,8 +183,11 @@ En R, los números son double por defecto. Si queremos un integer, añadiremos l
 
 ```r
 > typeof(1)
+[1] "double"
 > typeof(1L)
+[1] "integer"
 > 1.5L
+[1] 1.5
 ```
 
 ### Character {#character}
@@ -198,8 +225,11 @@ comprobación de tipo y devuelven `TRUE` o `FALSE`, como `is.character()`, `is.d
 ```r
 > vector_integer <- c(1L, 2L, 3L)
 > typeof(vector_integer)
+[1] "integer"
 > is.integer(vector_integer)
+[1] TRUE
 > is.atomic(vector_integer)
+[1] TRUE
 ```
 
 
@@ -207,8 +237,11 @@ comprobación de tipo y devuelven `TRUE` o `FALSE`, como `is.character()`, `is.d
 ```r
 > vector_double <- c(1, 2.5, 4.5)
 > typeof(vector_double)
+[1] "double"
 > is.double(vector_double)
+[1] TRUE
 > is.atomic(vector_double)
+[1] TRUE
 ```
 
 
@@ -219,7 +252,9 @@ double.
 
 ```r
 > is.numeric(vector_integer)
+[1] TRUE
 > is.numeric(vector_double)
+[1] TRUE
 ```
 
 
@@ -254,9 +289,11 @@ Por ejemplo, mezclar un character y un integer producirá un character:
 ```r
 > v <- c("a", 1)
 > v
+[1] "a" "1"
 > typeof(v)
+[1] "character"
 > class(v)
-> 
+[1] "character"
 ```
 
 
@@ -267,6 +304,7 @@ Cuando un vector lógico es convertido a un integer o double, `TRUE` es cambiado
 ```r
 > v <- c(FALSE, FALSE, FALSE)
 > as.numeric(v)
+[1] 0 0 0
 ```
 
  
@@ -286,6 +324,11 @@ los nombres cuando creamos un vector con la forma `nombre = valor`:
 > c(manzana = 1, platano = 2, kiwi = 3)
 ```
 
+```
+manzana platano    kiwi 
+      1       2       3 
+```
+
 Podemos añadir nombres a los elementos de un vector después de su creación con la 
 ayuda de la función `names()`:
 
@@ -296,6 +339,11 @@ ayuda de la función `names()`:
 > frutas
 ```
 
+```
+manzana platano    kiwi    <NA> 
+      1       2       3       4 
+```
+
 Gracias a la función `names()` podemos conocer los nombres de un vector:
 
 
@@ -303,11 +351,19 @@ Gracias a la función `names()` podemos conocer los nombres de un vector:
 > names(frutas)
 ```
 
+```
+[1] "manzana" "platano" "kiwi"    NA       
+```
+
 Por último, si un vector no tiene nombres, la función `names()` devuelve `NULL`:
 
 
 ```r
 > names(1:4)
+```
+
+```
+NULL
 ```
 
 ### Operaciones Vectorizadas {#operaciones-vectorizadas}
@@ -325,6 +381,7 @@ El ejemplo mas simple es cuando sumamos dos vectores:
 > v2 <- 5:8
 > v3<- v1 + v2
 > v3
+[1]  6  8 10 12
 ```
 
 
@@ -354,6 +411,10 @@ iterativa, como por ejemplo:
 > v3
 ```
 
+```
+[1]  6  8 10 12
+```
+
 Otro tipo de operaciones que podemos realizar de forma vectorizada son las comparaciones
 lógicas. Supongamos que queremos saber que elementos en un vector son mas grandes que 2.
 Podríamos hacer lo siguiente:
@@ -362,6 +423,7 @@ Podríamos hacer lo siguiente:
 ```r
 > v1 <- 1:4
 > v1 > 2
+[1] FALSE FALSE  TRUE  TRUE
 ```
 
 A continuación, mostramos otros ejemplos de operaciones vectorizadas de tipo lógico:
@@ -370,8 +432,11 @@ A continuación, mostramos otros ejemplos de operaciones vectorizadas de tipo l�
 ```r
 > v1 <- 1:4
 > v1 >= 2
+[1] FALSE  TRUE  TRUE  TRUE
 > v2 < 3
+[1] FALSE FALSE FALSE FALSE
 > v3 == 8
+[1] FALSE  TRUE FALSE FALSE
 ```
 
 Desde luego, la resta, multiplicación y división son también operaciones vectorizadas:
@@ -379,8 +444,11 @@ Desde luego, la resta, multiplicación y división son también operaciones vect
 
 ```r
 > v1 - v2
+[1] -4 -4 -4 -4
 > v1 * v2
+[1]  5 12 21 32
 > v1 / v2
+[1] 0.2000000 0.3333333 0.4285714 0.5000000
 ```
 
 ### Reciclado de Vectores y Repetición {#reciclado-de-vectores-y-repeticion}
@@ -398,6 +466,10 @@ es sumado a cada elemento en el vector, como muestra la [Figura 2]():
 > 1:5 + 1
 ```
 
+```
+[1] 2 3 4 5 6
+```
+
 ![Vectorización con un escalar](http://i.imgur.com/977D3ug.png)
 
 
@@ -409,6 +481,10 @@ más pequeño para que coincida con el más grande, como podemos ver en la [Figu
 > 1:2 + 1:4
 ```
 
+```
+[1] 2 4 4 6
+```
+
 ![Vectorización vectores diferente longitud](http://i.imgur.com/bDKyVRP.png)
 
 
@@ -418,6 +494,15 @@ pequeño, R nos lo hará saber mediante un mensaje:
 
 ```r
 > 1:5 + 1:7
+```
+
+```
+Warning in 1:5 + 1:7: longer object length is not a multiple of shorter
+object length
+```
+
+```
+[1]  2  4  6  8 10  7  9
 ```
 
 
@@ -433,16 +518,20 @@ elementos repetidos:
 
 ```r
 > rep(1:5, 3)
+ [1] 1 2 3 4 5 1 2 3 4 5 1 2 3 4 5
 > rep(1:5, each = 3)
+ [1] 1 1 1 2 2 2 3 3 3 4 4 4 5 5 5
 > rep(1:5, times = 1:5)
-> 
+ [1] 1 2 2 3 3 3 4 4 4 4 5 5 5 5 5
 ```
 
 
 ```r
 > rep(1:5, length.out = 7)
+[1] 1 2 3 4 5 1 2
 > # Alternativamente podemos hacerlo mediante rep_len (desde v3.0.0)
 > rep_len(1:5, 7)
+[1] 1 2 3 4 5 1 2
 ```
 
 ### Selección de Elementos {#seleccion-de-elementos}
@@ -462,6 +551,7 @@ todos negativos, o cero.
 ```r
 > v <- c("uno", "dos", "tres", "cuatro", "cinco")
 > v[c(3, 2, 5)]
+[1] "tres"  "dos"   "cinco"
 ```
 
   Repitiendo una posición, podemos obtener un vector de una longitud más grande que
@@ -471,6 +561,7 @@ el vector original:
 
 ```r
 > v[c(1, 1, 5, 5, 5, 2)]
+[1] "uno"   "uno"   "cinco" "cinco" "cinco" "dos"  
 ```
 
   
@@ -480,6 +571,10 @@ el vector original:
 
 ```r
 > v[c(-1, -3, -5)]
+```
+
+```
+[1] "dos"    "cuatro"
 ```
 
   
@@ -501,12 +596,17 @@ al valor `TRUE`. Este tipo es útil en conjunción con la funciones de comparaci
 > v <- c(10, 3, NA, 5, 8, 1, NA)
 > # Devuelve todos los valores que no son NA en x
 > v[!is.na(v)]
+[1] 10  3  5  8  1
 ```
 
 
 ```r
 > # Todos los valores pares (o desconocidos) en x
 > v[v %% 2 == 0]
+```
+
+```
+[1] 10 NA  8 NA
 ```
 
 
@@ -519,12 +619,21 @@ sus elementos con un vector de tipo character:
 > frutas[c("platano", "naranja")]
 ```
 
+```
+platano naranja 
+      2       5 
+```
+
 - Mediante `v[]`, obtendremos el vector completo:
 
 
 ```r
 > v <- c(10, 3, NA, 5, 8, 1, NA)
 > v[]
+```
+
+```
+[1] 10  3 NA  5  8  1 NA
 ```
  
  Esta notación no es muy útil para acceder a vectores, sin embargo nos será de 

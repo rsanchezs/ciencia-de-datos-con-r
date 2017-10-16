@@ -25,6 +25,10 @@ y ejecuta la siguiente instrucción sólo si el valor es __`TRUE`__:
 + }
 ```
 
+```
+Es verdadero, se ejecutara la instruccion.
+```
+
 
 ```r
 > if (FALSE) {
@@ -42,6 +46,10 @@ En el caso que pasemos valores desconocidos (`NA`) a `if`, R lanzará un error:
 + }
 ```
 
+```
+Error in if (NA) {: missing value where TRUE/FALSE needed
+```
+
 Si nos encontramos ante esta situación, deberíamos comprobarlo mediante la función `is.na()`:
 
 
@@ -49,6 +57,10 @@ Si nos encontramos ante esta situación, deberíamos comprobarlo mediante la fun
 > if (is.na(NA)) {
 +   message("El valor es desconocido.")
 + }  
+```
+
+```
+El valor es desconocido.
 ```
 
 Desde luego, en nuestro código en pocas ocasiones pasaremos los valores
@@ -97,6 +109,10 @@ El código después de un `else` se ejecuta sólo si la condición en `if` es `F
 + }
 ```
 
+```
+pero este si lo hará
+```
+
 
 Podemos definir múltiples condiciones combinando `if` y `else` repetidamente, este tipo de estructura se utiliza para probar __condiciones mutuamente excluyentes__. 
 
@@ -115,7 +131,13 @@ El siguiente ejemplo nos sirve para mostrar el anidamiento de instrucciones `if-
 > # Creamos una muestra de 20 observaciones del 1 al 100 en
 > # el que se pueden repetir hasta 2 observaciones
 > (muestra <- sample(1:100, 20, 2))
-> 
+```
+
+```
+ [1] 58 99 61 45 92 64 27 99 38 88  3 56 49 17 29 85 53 68 44 29
+```
+
+```r
 > ## Creamos una variable indicando la medida de tendencia central
 > ## que queremos calcular
 > centralizacion <- "moda"
@@ -138,6 +160,10 @@ El siguiente ejemplo nos sirve para mostrar el anidamiento de instrucciones `if-
 + }
 ```
 
+```
+La media es 55.2
+```
+
 ## __`If`__ Vectorizado
 
 La instrucción `if` estándar acepta en la condición lógica un único valor lógico. Si pasamos un vector lógico con una longitud
@@ -151,6 +177,15 @@ mayor que uno, R nos lo indicará mediante un __warning__ indicándonos que hemo
 + }
 ```
 
+```
+Warning in if (c(TRUE, FALSE)) {: the condition has length > 1 and only the
+first element will be used
+```
+
+```
+dos condiciones
+```
+
 Puesto que muchas de las operaciones en R son vectorizadas, R nos proporciona la función `ifelse`. La función `ifelse` toma tres argumentos. El primer argumento es un vector lógico de condiciones. El segundo es un vector que contiene los valores que
 serán devueltos cuando el primer vector es `TRUE`. El tercero contiene los valores que serán devueltos cuando el primer vector
 es `FALSE`.
@@ -160,6 +195,10 @@ es `FALSE`.
 
 ```r
 > str(ifelse)
+```
+
+```
+function (test, yes, no)  
 ```
 
 
@@ -179,6 +218,10 @@ números aleatorios de un distribución binomial simulando el lanzamiento de una
 ```r
 > ifelse(rbinom(n = 10, size = 1, prob = 0.5),
 +        "cara", "cruz")
+```
+
+```
+ [1] "cara" "cruz" "cara" "cara" "cruz" "cara" "cara" "cara" "cara" "cruz"
 ```
 
 No obstante, `if(test) yes else no` es mucho mas eficiente y preferible a `ifelse(test, yes, no)` cuando `test` es decir, la
@@ -206,6 +249,10 @@ El caso más común toma como primer argumento una expresión que devuelve un st
 > str(switch)
 ```
 
+```
+function (EXPR, ...)  
+```
+
 #### Argumentos
 
 ```{}
@@ -225,8 +272,13 @@ Una alternativa al ejemplo presentado en el apartado anterior mediante la funci�
 > # Creamos una muestra de 20 observaciones del 1 al 100 en
 > # el que se pueden repetir hasta 2 observaciones
 > (muestra <- sample(1:100, 20, 2))
-> 
-> 
+```
+
+```
+ [1] 95 20 58 97 67 27 49 14 26  5 95 14 37 67 97 49 13 59 10 30
+```
+
+```r
 > #Calculamos la media de la muestra
 > (switch(
 +   "media",
@@ -234,6 +286,10 @@ Una alternativa al ejemplo presentado en el apartado anterior mediante la funci�
 +   mediana = median(muestra),
 +   moda = mlv(muestra, method = "mfv")
 + ))
+```
+
+```
+[1] 46.45
 ```
 
 Si ningún nombre coincide, entonces `switch` devuelve `NULL`:
@@ -249,6 +305,10 @@ Si ningún nombre coincide, entonces `switch` devuelve `NULL`:
 +   ))
 ```
 
+```
+NULL
+```
+
 En este escenario, podemos proporcionar un argumento por defecto sin nombre que `switch()` devolverá cuando no coincida ningún otro:
 
 
@@ -261,6 +321,10 @@ En este escenario, podemos proporcionar un argumento por defecto sin nombre que 
 +   moda = mlv(x, method = "mfv"),
 +   "Solo se puede calcular la media, mediana y moda"
 +   ))
+```
+
+```
+[1] "Solo se puede calcular la media, mediana y moda"
 ```
 
 [if]:https://i.imgur.com/KhwkQbf.png

@@ -11,6 +11,11 @@ Todo el código R manipula objetos. El _objeto_, es el concepto principal sobre 
 > function() {x <- 1; y <- 2; x + y}
 ```
 
+```
+function() {x <- 1; y <- 2; x + y}
+<environment: 0x000000001705c1b8>
+```
+
 
 
 ```r
@@ -19,11 +24,19 @@ Todo el código R manipula objetos. El _objeto_, es el concepto principal sobre 
 > f(1, 2)
 ```
 
+```
+[1] 3
+```
+
 
 
 ```r
 > # incluso las expresiones 
 > {x <- 1; y <- 2; x + y}
+```
+
+```
+[1] 3
 ```
 
 
@@ -52,6 +65,10 @@ Podemos encontrar la clase de un objeto mediante la función `class(objeto)`:
 > class(vector_numerico)
 ```
 
+```
+[1] "numeric"
+```
+
 ## Cada Objeto tiene un Tipo {#tipo}
 
 Cada objeto en R tiene un tipo. El tipo define como es almacenado el objeto en R. 
@@ -63,6 +80,10 @@ Podemos conocer el tipo de objeto con la función `typeof(objeto)`:
 ```r
 > vector_numerico <- c(1, 2, 3, 4, 5)
 > typeof(vector_numerico)
+```
+
+```
+[1] "double"
 ```
 
 ### Comprobar la Clase de un Objeto en **_scripts_**
@@ -86,6 +107,10 @@ La mayoría de las clases tienen su propia función `is.*()`, utilizar esta func
 
 ```r
 > is.character("Ciencia de Datos con R")
+```
+
+```
+[1] TRUE
 ```
 
 Podemos ver una lista completa de las funciones `is()` en el paquete `base` mediante la siguiente instrucción:

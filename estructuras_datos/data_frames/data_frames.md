@@ -20,6 +20,16 @@ columnas `wool`y `tension` contienen caracteres que son almacenados como `factor
 > head(warpbreaks)
 ```
 
+```
+  breaks wool tension
+1     26    A       L
+2     30    A       L
+3     54    A       L
+4     25    A       L
+5     70    A       L
+6     52    A       L
+```
+
 La estructura de un `data.frame` es muy similar a la de una matriz. La diferencia es que
 las filas de un `data.frame` pueden contener valores de diferentes tipos de datos. 
  
@@ -50,6 +60,14 @@ Podemos crear data frames con la función `data.frame()`:
 > censo
 ```
 
+```
+     nombre apellido fecha_nacimiento   sexo nro_hijos
+1      Juan  Sanchez       1976-06-14 HOMBRE         1
+2 Margarita   Garcia       1974-05-07  MUJER         2
+3     Ruben   Sancho       1958-12-25 HOMBRE         3
+4    Daniel   Alfara       1983-09-19 HOMBRE         4
+```
+
 
 __Recordemos__ que los data frames requieren que las variables sean de la 
 misma longitud. Por este motivo, tenemos que asegurarnos que el número de
@@ -68,12 +86,29 @@ podemos hacer uso de las funciones `head()` y `tail()`, respectivamente:
 > head(censo)
 ```
 
+```
+     nombre apellido fecha_nacimiento   sexo nro_hijos
+1      Juan  Sanchez       1976-06-14 HOMBRE         1
+2 Margarita   Garcia       1974-05-07  MUJER         2
+3     Ruben   Sancho       1958-12-25 HOMBRE         3
+4    Daniel   Alfara       1983-09-19 HOMBRE         4
+```
+
 
 Por otro lado, podemos usar la función `str()` para conocer la estructura del data frame:
 
 
 ```r
 > str(censo)
+```
+
+```
+'data.frame':	4 obs. of  5 variables:
+ $ nombre          : Factor w/ 4 levels "Daniel","Juan",..: 2 3 4 1
+ $ apellido        : Factor w/ 4 levels "Alfara","Garcia",..: 3 2 4 1
+ $ fecha_nacimiento: Factor w/ 4 levels "1958-12-25","1974-05-07",..: 3 2 1 4
+ $ sexo            : Factor w/ 2 levels "HOMBRE","MUJER": 1 2 1 1
+ $ nro_hijos       : num  1 2 3 4
 ```
 
 
@@ -107,6 +142,15 @@ valores.
 > str(censo)
 ```
 
+```
+'data.frame':	4 obs. of  5 variables:
+ $ nombre          :Class 'AsIs'  chr [1:4] "Juan" "Margarita" "Ruben" "Daniel"
+ $ apellido        :Class 'AsIs'  chr [1:4] "Sanchez" "Garcia" "Sancho" "Alfara"
+ $ fecha_nacimiento: Date, format: "1976-06-14" "1974-05-07" ...
+ $ sexo            : Factor w/ 2 levels "HOMBRE","MUJER": 1 2 1 1
+ $ nro_hijos       : num  1 2 3 4
+```
+
 ## Filas, Columnas y Dimensión {#filas-columnas-y-dimension}
 
 Como las matrices, el `data.frame` dispone del atributo dimensión determinado por el
@@ -117,10 +161,28 @@ podemos hacer uso de la función `dim()`:
 ```r
 > # Devuelve el número de filas y columnas
 > dim(censo)
+```
+
+```
+[1] 4 5
+```
+
+```r
 > # Recupera el número de filas
 > dim(censo)[1]
+```
+
+```
+[1] 4
+```
+
+```r
 > # Recupera el número de columnas
 > dim(censo)[2]
+```
+
+```
+[1] 5
 ```
 
 También podemos recuperar el número de filas y columnas en `censo` con la ayuda 
@@ -130,10 +192,28 @@ de las funciones `nrow()` y `ncol()`:
 ```r
 > # Usamos `nrow()`para recuperar el número de filas
 > nrow(censo)
+```
+
+```
+[1] 4
+```
+
+```r
 > # Usamos `ncol()` para recuperar el número de columnas
 > ncol(censo)
+```
+
+```
+[1] 5
+```
+
+```r
 > # Usamos `length()`para recuperar el número de columnas
 > length(censo)
+```
+
+```
+[1] 5
 ```
 
 Observemos que, puesto que la estructura de un `data.frame` es similar a una lista, podemos
@@ -156,6 +236,11 @@ cabecera.
 > names(censo)
 ```
 
+```
+[1] "nombre"           "apellido"         "fecha_nacimiento"
+[4] "sexo"             "nro_hijos"       
+```
+
 Para cambiar los nombres, podemos hacer uso de la función `names()`:
 
 
@@ -163,6 +248,11 @@ Para cambiar los nombres, podemos hacer uso de la función `names()`:
 > # Asignamos diferentes nombres a las columas de `censo`
 > names(censo) <- c("Nombre", "Apellido", "Fecha_Nacimiento", "Sexo", "Numero_Hijos")
 > names(censo)
+```
+
+```
+[1] "Nombre"           "Apellido"         "Fecha_Nacimiento"
+[4] "Sexo"             "Numero_Hijos"    
 ```
 
 
@@ -175,6 +265,14 @@ funciones `rownames()` y `colnames()`, respectivamente:
 > colnames(censo) <- c("Nombre", "Apellido", "Fecha_Nacimiento", "Sexo", "Numero_Hijos")
 > rownames(censo) <- c("ID1", "ID2", "ID3", "ID4")
 > censo
+```
+
+```
+       Nombre Apellido Fecha_Nacimiento   Sexo Numero_Hijos
+ID1      Juan  Sanchez       1976-06-14 HOMBRE            1
+ID2 Margarita   Garcia       1974-05-07  MUJER            2
+ID3     Ruben   Sancho       1958-12-25 HOMBRE            3
+ID4    Daniel   Alfara       1983-09-19 HOMBRE            4
 ```
 
 
@@ -191,11 +289,22 @@ El acceso a los elementos que se encuentran en un `data.frame` es muy similar al
 > censo[2:4,]
 ```
 
+```
+       Nombre Apellido Fecha_Nacimiento   Sexo Numero_Hijos
+ID2 Margarita   Garcia       1974-05-07  MUJER            2
+ID3     Ruben   Sancho       1958-12-25 HOMBRE            3
+ID4    Daniel   Alfara       1983-09-19 HOMBRE            4
+```
+
 Si queremos acceder a la variable `nombre`(primera columna), podemos tratar a `censo` igual que si fuese una matriz:
 
 
 ```r
 > censo[, 1]
+```
+
+```
+[1] "Juan"      "Margarita" "Ruben"     "Daniel"   
 ```
 
 Aunque también podemos referirnos a la columna por su nombre:
@@ -205,6 +314,10 @@ Aunque también podemos referirnos a la columna por su nombre:
 > censo$Nombre
 ```
 
+```
+[1] "Juan"      "Margarita" "Ruben"     "Daniel"   
+```
+
 Nótese que en este caso hemos de utilizar el nombre del data.frame `censo` seguido del operador `$` y del nombre de la variable que nos interesa (`Nombre`). De manera equivalente, la selección de esa variable puede realizarse mediante:
 
 
@@ -212,11 +325,19 @@ Nótese que en este caso hemos de utilizar el nombre del data.frame `censo` segu
 > censo[, "Nombre"]
 ```
 
+```
+[1] "Juan"      "Margarita" "Ruben"     "Daniel"   
+```
+
 o poniendo el nombre de la variable entre dobles corchetes y entre comillas:
 
 
 ```r
 > censo[["Nombre"]]
+```
+
+```
+[1] "Juan"      "Margarita" "Ruben"     "Daniel"   
 ```
 
 ## Attach y Detach {#attach-y-detach}
@@ -231,14 +352,29 @@ La sintaxis a utilizar sería la siguiente:
 ```r
 > # Calculamos la tabla de frecuencias
 > table(censo$Sexo)
+```
+
+```
+
+HOMBRE  MUJER 
+     3      1 
+```
+
+```r
 > # Diagrama de barras variable `sexo`
 > barplot(table(censo$Sexo))
 ```
+
+![Diagrama de barras variable `sexo`](figure/unnamed-chunk-18-1.png)
 
 
 ```r
 > # Calculamos la media de `nro_hijos`
 > mean(censo$Numero_Hijos)
+```
+
+```
+[1] 2.5
 ```
 
 
@@ -248,11 +384,19 @@ La sintaxis a utilizar sería la siguiente:
 > median(censo$Numero_Hijos)
 ```
 
+```
+[1] 2.5
+```
+
 
 
 ```r
 > # Calculamos la varianza de `nro_hijos`
 > var(censo$Numero_Hijos)
+```
+
+```
+[1] 1.666667
 ```
 
 
@@ -270,6 +414,12 @@ su nombre:
 > cbind(table(sexo))
 ```
 
+```
+       [,1]
+HOMBRE    3
+MUJER     1
+```
+
 
 
 ```r
@@ -277,10 +427,16 @@ su nombre:
 > barplot(table(sexo))
 ```
 
+![Diagramas de barras variable `sexo`](figure/unnamed-chunk-23-1.png)
+
 
 ```r
 > # Calculamos la media de `nro_hijos`
 > mean(nro_hijos)
+```
+
+```
+[1] 2.5
 ```
 
 
@@ -290,11 +446,19 @@ su nombre:
 > median(nro_hijos)
 ```
 
+```
+[1] 2.5
+```
+
 
 
 ```r
 > # Calculamos la varianza de `nro_hijos`
 > var(nro_hijos)
+```
+
+```
+[1] 1.666667
 ```
 
 
@@ -330,9 +494,20 @@ unidad deseada:
 > 
 > valor_eliminado <- copia_censo$Numero_Hijos
 > valor_eliminado
-> 
+```
+
+```
+[1] 1 2 3 4
+```
+
+```r
 > # Mostramos por pantalla variables `copia_censo`
 > names(copia_censo)
+```
+
+```
+[1] "Nombre"           "Apellido"         "Fecha_Nacimiento"
+[4] "Sexo"             "Numero_Hijos"    
 ```
 
 
@@ -357,6 +532,12 @@ cada fila si será eliminada o no:
 > subconjunto_censo
 ```
 
+```
+  nombre apellido fecha_nacimiento   sexo nro_hijos
+1   Juan  Sanchez       1976-06-14 HOMBRE         1
+3  Ruben   Sancho       1958-12-25 HOMBRE         3
+```
+
 Otro modo de eliminar las filas es haciendo lo contrario añadiendo el operador
 lógico de negación (`!`), a modo de ejemplo utilizaremos el código anterior:
 
@@ -372,6 +553,12 @@ lógico de negación (`!`), a modo de ejemplo utilizaremos el código anterior:
 > subconjunto_censo
 ```
 
+```
+     nombre apellido fecha_nacimiento   sexo nro_hijos
+2 Margarita   Garcia       1974-05-07  MUJER         2
+4    Daniel   Alfara       1983-09-19 HOMBRE         4
+```
+
 
 Por último, destacar que podemos definir condiciones lógicas para filtrar nuestros
 resultados. Por ejemplo, si deseamos mostrar los sujetos de `censo` que tienen mas de dos hijos 
@@ -381,6 +568,12 @@ lo haríamos del siguiente modo:
 ```r
 > subconjunto_censo <- censo[censo$nro_hijos > 2, ]
 > subconjunto_censo
+```
+
+```
+  nombre apellido fecha_nacimiento   sexo nro_hijos
+3  Ruben   Sancho       1958-12-25 HOMBRE         3
+4 Daniel   Alfara       1983-09-19 HOMBRE         4
 ```
 
 
@@ -397,6 +590,14 @@ podemos añadir columnas en `censo` del siguiente modo:
 > 
 > # Mostramos `censo` `por pantalla
 > censo
+```
+
+```
+     nombre apellido fecha_nacimiento   sexo nro_hijos nacionalidad
+1      Juan  Sanchez       1976-06-14 HOMBRE         1           ES
+2 Margarita   Garcia       1974-05-07  MUJER         2           FR
+3     Ruben   Sancho       1958-12-25 HOMBRE         3           RU
+4    Daniel   Alfara       1983-09-19 HOMBRE         4           IT
 ```
 
 Para añadir filas a un `dataframe` existente, definiremos un nuevo vector respetando las variables
@@ -420,6 +621,15 @@ mediante la función `rbind()` (acrónimo de _rowbind_, pegar por filas):
 > censo
 ```
 
+```
+     nombre apellido fecha_nacimiento   sexo nro_hijos
+1      Juan  Sanchez       1976-06-14 HOMBRE         1
+2 Margarita   Garcia       1974-05-07  MUJER         2
+3     Ruben   Sancho       1958-12-25 HOMBRE         3
+4    Daniel   Alfara       1983-09-19 HOMBRE         4
+5     Oscar Gonzalez       1989-07-15 HOMBRE         0
+```
+
 ## Ordenación de DataFrames {#ordenacion-de-dataframes}
 
 Para ordenar un `data.frame` hemos de aplicar la función `order()` a la variable por la que queramos
@@ -431,6 +641,14 @@ ordenar. Por ejemplo, si queremos ordenar el dataframe `censo` por orden alfabé
 > censo[order(nombre), ]
 ```
 
+```
+     nombre apellido fecha_nacimiento   sexo nro_hijos
+4    Daniel   Alfara       1983-09-19 HOMBRE         4
+1      Juan  Sanchez       1976-06-14 HOMBRE         1
+2 Margarita   Garcia       1974-05-07  MUJER         2
+3     Ruben   Sancho       1958-12-25 HOMBRE         3
+```
+
 También podemos controlar la forma de ordenación mediante el argumento `decreasing`, el cual
 acepta los valores lógicos `TRUE` y `FALSE`. Por ejemplo, si deseamos ordenar los sujetos
 por el mayor número de hijos, lo haríamos:
@@ -438,6 +656,14 @@ por el mayor número de hijos, lo haríamos:
 
 ```r
 > censo[order(nro_hijos, decreasing = TRUE), ]
+```
+
+```
+     nombre apellido fecha_nacimiento   sexo nro_hijos
+4    Daniel   Alfara       1983-09-19 HOMBRE         4
+3     Ruben   Sancho       1958-12-25 HOMBRE         3
+2 Margarita   Garcia       1974-05-07  MUJER         2
+1      Juan  Sanchez       1976-06-14 HOMBRE         1
 ```
 
 
@@ -467,6 +693,16 @@ formato `long` cuando los colacamos del siguiente modo:
 > observaciones_formato_long
 ```
 
+```
+  alumno sexo  asignatura nota
+1      1    M Matematicas   10
+2      2    F    Ciencias    4
+3      1    M    Ciencias    8
+4      2    F  Literatura    6
+5      2    F Matematicas    7
+6      1    M  Literatura    7
+```
+
 Como podemos observar, existe una fila para cada variable que hemos definido. Este formato
 es muy útil en la gran mayoría de funciones estadísticas.
 
@@ -487,6 +723,12 @@ siguiente modo:
 > 
 > # Mostramos por pantalla `formato_wide`
 > observaciones_formato_wide
+```
+
+```
+  alumno sexo matematicas ciencias literatura
+1      1    M          10        8          7
+2      2    F           7        4          6
 ```
 
 Como podemos observar cada columna (variable) representa un valor para cada instancia.
@@ -511,6 +753,16 @@ columnas `matematicas`, `ciencias` y `literatura` en una sola:
 > formato_long
 ```
 
+```
+  values         ind
+1     10 matematicas
+2      7 matematicas
+3      8    ciencias
+4      4    ciencias
+5      7  literatura
+6      6  literatura
+```
+
 
 Para pasar de formato `long` a `wide`, necesitamos desagrupar nuestros datos con 
 el objetivo de obtener una fila por instancia, en la que cada valor se corresponde a una
@@ -526,6 +778,12 @@ en el siguiente ejemplo:
 >                       
 > # Devuelve `formato_wide`
 > formato_wide
+```
+
+```
+  Ciencias Literatura Matematicas
+1        4          6          10
+2        8          7           7
 ```
 
 

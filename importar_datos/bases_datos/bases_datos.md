@@ -56,6 +56,16 @@ library(RMySQL)
 ```
 
 
+```
+
+Attaching package: 'RMySQL'
+```
+
+```
+The following object is masked from 'package:RSQLite':
+
+    isIdCurrent
+```
 
 
 
@@ -81,15 +91,16 @@ Para establecer la conexión a PostgreSQL, Oracle y JDBC procederíamos como en 
 Para listar las tablas de una base de datos haremos uso de la función `dbListTables()`:
 
 
-```
-Error in (function (classes, fdef, mtable) : unable to find an inherited method for function 'dbWriteTable' for signature '"MySQL", "character", "data.frame"'
-```
 
 
 
 ```r
 # Mostramos las tablas de la bd
 dbListTables(con)
+```
+
+```
+[1] "mtcars"
 ```
 
 Por otro lado, para recuperar los datos de una base de datos escribiremos una consulta, que consiste en un string que contiene una instrucción SQL, y la enviaremos a la base de datos con la ayuda de la función `dbGetQuery`. En el siguiente ejemplo, `SELECT * FROM mtcars` significa "muestra cada columna de la tabla con nombre `mtcars`":
@@ -102,6 +113,20 @@ consulta <- "SELECT * FROM mtcars"
 datos <- dbGetQuery(con, consulta)
 # Mostramos por pantalla un subconjunto de los datos
 datos[1:10, 1:5]
+```
+
+```
+    mpg cyl  disp  hp drat
+1  21.0   6 160.0 110 3.90
+2  21.0   6 160.0 110 3.90
+3  22.8   4 108.0  93 3.85
+4  21.4   6 258.0 110 3.08
+5  18.7   8 360.0 175 3.15
+6  18.1   6 225.0 105 2.76
+7  14.3   8 360.0 245 3.21
+8  24.4   4 146.7  62 3.69
+9  22.8   4 140.8  95 3.92
+10 19.2   6 167.6 123 3.92
 ```
 
 Para aquellos que no conocen el lenguaje SQL, el paquete `DBI` proporciona multitud de funciones para la manipulación de base de datos. A modo de ejemplo, 

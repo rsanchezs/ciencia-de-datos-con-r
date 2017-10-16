@@ -1,7 +1,6 @@
 
 
 
-
 # Valores Especiales
 
 Para ayudarnos con los cálculos aritméticos R, soporta cuatro valores numéricos especiales:
@@ -20,13 +19,15 @@ Si una computación resulta en un número que es demasiado grande, R devolverá 
 
 
 ```r
-> 2 ^ 1024
+2 ^ 1024
+# [1] Inf
 ```
 
 
 
 ```r
-> - 2 ^ 1024
+- 2 ^ 1024
+# [1] -Inf
 ```
 
 Esto es también cierto cuando hacemos la división entre 0:
@@ -34,7 +35,8 @@ Esto es también cierto cuando hacemos la división entre 0:
 
 
 ```r
-> 1 / 0
+1 / 0
+# [1] Inf
 ```
 
 ## NaN {#nan}
@@ -45,13 +47,15 @@ En ocasiones, una computación producirá un resultado que no tiene sentido. En 
 
 
 ```r
-> Inf - Inf
+Inf - Inf
+# [1] NaN
 ```
 
 
 
 ```r
-> 0 / 0
+0 / 0
+# [1] NaN
 ```
 
 
@@ -63,14 +67,15 @@ A modo de ejemplo, si el vector `peso` recoge los pesos de 5 personas, habiéndo
 
 
 ```r
-> peso <- c(77, 68, 85, NA, 73)
+peso <- c(77, 68, 85, NA, 73)
 ```
 
 Si pretendemos calcular el peso medio, obtendremos como resultado un valor perdido:
 
 
 ```r
-> mean(peso)
+mean(peso)
+# [1] NA
 ```
 
 Si, en cualquier caso, deseamos calcular la media de los pesos efectivamente disponibles,
@@ -79,6 +84,7 @@ como `na.rm=TRUE`:
 
 
 ```r
-> mean(peso, na.rm = TRUE)
+mean(peso, na.rm = TRUE)
+# [1] 75.75
 ```
 

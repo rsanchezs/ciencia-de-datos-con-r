@@ -136,10 +136,33 @@ table.rmdtable td, table th {
 library(EDAWR)
 ```
 
+```
+## 
+## Attaching package: 'EDAWR'
+```
+
+```
+## The following objects are masked _by_ '.GlobalEnv':
+## 
+##     a, b
+```
+
 
 
 ```r
 storms
+```
+
+```
+## # A tibble: 6 × 4
+##     storm  wind pressure       date
+##     <chr> <int>    <int>     <date>
+## 1 Alberto   110     1007 2000-08-03
+## 2    Alex    45     1009 1998-07-27
+## 3 Allison    65     1005 1995-06-03
+## 4     Ana    40     1013 1997-06-30
+## 5  Arlene    50     1010 1999-06-11
+## 6  Arthur    45     1010 1996-06-17
 ```
 
 
