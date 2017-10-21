@@ -47,7 +47,7 @@ Lo primero que haremos será cargar el ecosistema `tidyverse`:
 library(tidyverse)
 ```
 
-O alternativamente cargar únicamente el paquete `haven`:
+También tenemos la opción de cargar únicamente el paquete `haven`:
 
 ```{r}
 library(haven)
