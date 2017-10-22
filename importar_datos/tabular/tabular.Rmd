@@ -7,7 +7,7 @@ opts_chunk$set(prompt=FALSE, comment='', results='markup', eval=TRUE, echo=TRUE)
 
 # Lectura de Archivos en Formato Tabular
 
-En este apartado veremos como importar datos en R en formato tabular.
+En este apartado, veremos como importar archivos de texto y Excel a R con el paquete `readr`, el cual es parte del ecosistema `tidyverse`:
 
 
 ```{r message=FALSE}
@@ -85,8 +85,39 @@ Otro argumento de gran utilidad es `na`, que especifica el valor (o valores) que
 read_csv("a,b,c\n1,2,#N/A", na = "#N/A")
 ```
 
-Esto es todo lo que necesitamos saber para importar ~75% de archivos csv que nos encontraremos en la práctica. Además, podemos fácilmente adaptar lo que hemos aprendido en esta sección para leer archivos separados por tabulados con `read_tsv()` y archivos con un ancho fijo con `read_fwf()`.
-  
+Esto es todo lo que necesitamos saber para importar ~75% de archivos csv que nos encontraremos en la práctica. Además, podemos fácilmente adaptar lo que hemos aprendido en esta sección para leer archivos separados por tabuladores con `read_tsv()` y archivos con un ancho fijo con `read_fwf()`.
+
+Por otro lado, cabe mencionar que `readr` proporciona un conjunto de funciones para realizar la tarea inversa, es decir disponemos de un grupo de funciones que nos permiten escribir nuestros datos a archivos.
+
+Escribiremos un objeto `x` a una ruta específica por medio del argumenot `path` como:
+
+
+__Archivos CSV__
+
+```{r eval=FALSE}
+write_csv(x, path, na = "NA", append = FALSE, col_names = !append)
+```
+
+
+__Archivos con Delimitadores Arbitrarios__
+
+```{r eval=FALSE}
+write_delim(x, path, delim = "", na = "NA", append = FALSE, col_names = !append)
+```
+
+__CSV para Excel__
+
+```{r eval=FALSE}
+write_excel_csv(x, path, na = "NA", append = FALSE, col_names = !append)
+```
+
+
+__Archivos Delimitados por Tabuladores__
+
+```{r eval=FALSE}
+write_tsv(x, path, na = "NA", append = FALSE, col_names = !append)
+```
+
 
 
 ## Lectura Archivos Excel con `readxl` 
@@ -185,13 +216,6 @@ Por defecto, la función `read_excel` trata los campos vacíos como valores desc
 ```{r}
 read_excel(path = "data/datasets.xls", na = "setosa", n_max = 8)
 ```
-
-
-
-
-
-
-
 
 
 

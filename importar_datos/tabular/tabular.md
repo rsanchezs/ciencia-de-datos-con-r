@@ -4,7 +4,7 @@
 
 # Lectura de Archivos en Formato Tabular
 
-En este apartado veremos como importar datos en R en formato tabular.
+En este apartado, veremos como importar archivos de texto y Excel a R con el paquete `readr`, el cual es parte del ecosistema `tidyverse`:
 
 
 
@@ -66,7 +66,7 @@ read_csv("a,b,c
 ```
 
 ```
-# A tibble: 2 × 3
+# A tibble: 2 x 3
       a     b     c
   <int> <int> <int>
 1     1     2     3
@@ -88,7 +88,7 @@ read_csv("La primera linea de metadatos
 ```
 
 ```
-# A tibble: 1 × 3
+# A tibble: 1 x 3
       x     y     z
   <int> <int> <int>
 1     1     2     3
@@ -102,7 +102,7 @@ read_csv("# Un comentario que deseamos eliminar
 ```
 
 ```
-# A tibble: 1 × 3
+# A tibble: 1 x 3
       x     y     z
   <int> <int> <int>
 1     1     2     3
@@ -117,7 +117,7 @@ read_csv("1,2,3\n4,5,6", col_names = FALSE)
 ```
 
 ```
-# A tibble: 2 × 3
+# A tibble: 2 x 3
      X1    X2    X3
   <int> <int> <int>
 1     1     2     3
@@ -134,7 +134,7 @@ read_csv("1,2,3\n4,5,6", col_names = c("x", "y", "z"))
 ```
 
 ```
-# A tibble: 2 × 3
+# A tibble: 2 x 3
       x     y     z
   <int> <int> <int>
 1     1     2     3
@@ -150,14 +150,49 @@ read_csv("a,b,c\n1,2,#N/A", na = "#N/A")
 ```
 
 ```
-# A tibble: 1 × 3
+# A tibble: 1 x 3
       a     b     c
   <int> <int> <chr>
 1     1     2  <NA>
 ```
 
-Esto es todo lo que necesitamos saber para importar ~75% de archivos csv que nos encontraremos en la prÃ¡ctica. AdemÃ¡s, podemos fÃ¡cilmente adaptar lo que hemos aprendido en esta secciÃ³n para leer archivos separados por tabulados con `read_tsv()` y archivos con un ancho fijo con `read_fwf()`.
-  
+Esto es todo lo que necesitamos saber para importar ~75% de archivos csv que nos encontraremos en la prÃ¡ctica. AdemÃ¡s, podemos fÃ¡cilmente adaptar lo que hemos aprendido en esta secciÃ³n para leer archivos separados por tabuladores con `read_tsv()` y archivos con un ancho fijo con `read_fwf()`.
+
+Por otro lado, cabe mencionar que `readr` proporciona un conjunto de funciones para realizar la tarea inversa, es decir disponemos de un grupo de funciones que nos permiten escribir nuestros datos a archivos.
+
+Escribiremos un objeto `x` a una ruta especÃ­fica por medio del argumenot `path` como:
+
+
+__Archivos CSV__
+
+
+```r
+write_csv(x, path, na = "NA", append = FALSE, col_names = !append)
+```
+
+
+__Archivos con Delimitadores Arbitrarios__
+
+
+```r
+write_delim(x, path, delim = "", na = "NA", append = FALSE, col_names = !append)
+```
+
+__CSV para Excel__
+
+
+```r
+write_excel_csv(x, path, na = "NA", append = FALSE, col_names = !append)
+```
+
+
+__Archivos Delimitados por Tabuladores__
+
+
+```r
+write_tsv(x, path, na = "NA", append = FALSE, col_names = !append)
+```
+
 
 
 ## Lectura Archivos Excel con `readxl` 
@@ -213,7 +248,7 @@ hoja_calculo_xlsx
 ```
 
 ```
-# A tibble: 6 × 5
+# A tibble: 6 ? 5
   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
          <dbl>       <dbl>        <dbl>       <dbl>   <chr>
 1          5.1         3.5          1.4         0.2  setosa
@@ -236,7 +271,7 @@ hoja_calculo_xls
 ```
 
 ```
-# A tibble: 8 × 5
+# A tibble: 8 ? 5
   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
          <dbl>       <dbl>        <dbl>       <dbl>   <chr>
 1          5.1         3.5          1.4         0.2  setosa
@@ -278,7 +313,7 @@ read_excel(path = "data/datasets.xlsx", sheet = 1, n_max = 8)
 ```
 
 ```
-# A tibble: 8 × 5
+# A tibble: 8 ? 5
   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
          <dbl>       <dbl>        <dbl>       <dbl>   <chr>
 1          5.1         3.5          1.4         0.2  setosa
@@ -300,7 +335,7 @@ read_excel(path = "data/datasets.xls", range = "C1:E4")
 ```
 
 ```
-# A tibble: 3 × 3
+# A tibble: 3 ? 3
   Petal.Length Petal.Width Species
          <dbl>       <dbl>   <chr>
 1          1.4         0.2  setosa
@@ -316,7 +351,7 @@ read_excel(path = "data/datasets.xls", range = "iris!B1:D5")
 ```
 
 ```
-# A tibble: 4 × 3
+# A tibble: 4 ? 3
   Sepal.Width Petal.Length Petal.Width
         <dbl>        <dbl>       <dbl>
 1         3.5          1.4         0.2
@@ -333,7 +368,7 @@ read_excel(path = "data/datasets.xls", na = "setosa", n_max = 8)
 ```
 
 ```
-# A tibble: 8 × 5
+# A tibble: 8 ? 5
   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
          <dbl>       <dbl>        <dbl>       <dbl>   <lgl>
 1          5.1         3.5          1.4         0.2      NA
@@ -345,13 +380,6 @@ read_excel(path = "data/datasets.xls", na = "setosa", n_max = 8)
 7          4.6         3.4          1.4         0.3      NA
 8          5.0         3.4          1.5         0.2      NA
 ```
-
-
-
-
-
-
-
 
 
 
