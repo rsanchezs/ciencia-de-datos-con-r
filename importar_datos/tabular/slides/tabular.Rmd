@@ -139,18 +139,16 @@ install.packages("tidyverse")
 ```
 
 
-
-```{r eval=FALSE}
-# Alternativamente, podemos cargar unicamente `readr`
-library(readr)
-```
-
-
 ```{r eval=FALSE, message=FALSE}
 # Cargamos la libreria
 library(tidyverse)
 ```
 
+
+```{r eval=FALSE}
+# Alternativamente, podemos cargar unicamente `readr`
+library(readr)
+```
 
 
 

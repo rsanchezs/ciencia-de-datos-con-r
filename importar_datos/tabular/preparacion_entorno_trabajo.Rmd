@@ -1,0 +1,34 @@
+---
+title: "entorno_trabajo_preparacion"
+author: "Rubén Sánchez Sancho"
+date: "25 de octubre de 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_knit$set(root.dir = "./")
+```
+
+
+
+## Preparación del Espacio de Trabajo
+
+
+```{r}
+# Borramos todos los objetos del entorno
+rm(list = ls())
+```
+
+
+```{r eval=FALSE}
+# Conocemos el directorio de trabajo actual
+getwd()
+```
+
+
+```{r eval=FALSE}
+# Establecemos el directorio de trabajo
+setwd("../tabular/data/")
+```
+
