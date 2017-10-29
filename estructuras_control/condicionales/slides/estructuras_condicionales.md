@@ -250,7 +250,8 @@ __Ejemplo:__
 ```
 
 ```
-##  [1] 14 61 47  3 49 97 67 60 79 59 81 97 53 23 86 27 20 81 87 72
+##  [1]  35   9  39  64  56  87  13  58  69  41  37 100  19   5  81  54  14
+## [18]  57  57  36
 ```
 
 
@@ -266,6 +267,9 @@ centralizacion <- "moda"
 
 
 
+```
+## Error in library(modeest): there is no package called 'modeest'
+```
 
 __Ejemplo:__
 
@@ -294,12 +298,8 @@ if (centralizacion == "media") {
 
 
 ```
-## Mode (most frequent value): 81 97 
-## Bickel's modal skewness: -0.65 
-## Call: mlv.integer(x = muestra, type = "mfv")
+## Error in mlv(muestra, type = "mfv"): could not find function "mlv"
 ```
-
-![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11-1.png)
 
 ## If Vectorizado | Con la función __`ifelse`__
 
@@ -382,7 +382,7 @@ ifelse(rbinom(n = 10, size = 1, prob = 0.5), "cara", "cruz")
 ```
 
 ```
-##  [1] "cara" "cruz" "cruz" "cruz" "cara" "cara" "cruz" "cara" "cara" "cara"
+##  [1] "cara" "cara" "cruz" "cruz" "cruz" "cara" "cara" "cara" "cruz" "cruz"
 ```
 
 
@@ -414,6 +414,9 @@ excepto a aquella que sea usada como valor por defecto.
 
 
 
+```
+## Error in library(modeest): there is no package called 'modeest'
+```
 
 
 
@@ -432,9 +435,7 @@ muestra <- sample(1:100, 20, 5)
 ```
 
 ```
-## Mode (most frequent value): 5 
-## Bickel's modal skewness: 0.85 
-## Call: mlv.integer(x = muestra, method = "mfv")
+## Error in mlv(muestra, method = "mfv"): could not find function "mlv"
 ```
 
 ## Selección Múltiple con `swith()`

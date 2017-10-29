@@ -124,6 +124,9 @@ El siguiente ejemplo nos sirve para mostrar el anidamiento de instrucciones `if-
 
 
 
+```
+Error in library(modeest): there is no package called 'modeest'
+```
 
 
 
@@ -134,7 +137,7 @@ El siguiente ejemplo nos sirve para mostrar el anidamiento de instrucciones `if-
 ```
 
 ```
- [1] 58 99 61 45 92 64 27 99 38 88  3 56 49 17 29 85 53 68 44 29
+ [1] 92 96 28 29 49 66 66 39  1 44 90 19 97 44 93 37 75 99 20 12
 ```
 
 ```r
@@ -161,7 +164,7 @@ El siguiente ejemplo nos sirve para mostrar el anidamiento de instrucciones `if-
 ```
 
 ```
-La media es 55.2
+La media es 54.8
 ```
 
 ## __`If`__ Vectorizado
@@ -221,7 +224,7 @@ números aleatorios de un distribución binomial simulando el lanzamiento de una
 ```
 
 ```
- [1] "cara" "cruz" "cara" "cara" "cruz" "cara" "cara" "cara" "cara" "cruz"
+ [1] "cara" "cruz" "cara" "cruz" "cara" "cara" "cara" "cara" "cruz" "cara"
 ```
 
 No obstante, `if(test) yes else no` es mucho mas eficiente y preferible a `ifelse(test, yes, no)` cuando `test` es decir, la
@@ -265,6 +268,9 @@ excepto a aquella que sea usada como valor por defecto.
 Una alternativa al ejemplo presentado en el apartado anterior mediante la función `swith()` es la siguiente:
 
 
+```
+Error in library(modeest): there is no package called 'modeest'
+```
 
 
 
@@ -275,7 +281,7 @@ Una alternativa al ejemplo presentado en el apartado anterior mediante la funci�
 ```
 
 ```
- [1] 95 20 58 97 67 27 49 14 26  5 95 14 37 67 97 49 13 59 10 30
+ [1] 28  2 59 12 61 54 86 38 15 65 56 77 61  5 32 24 73 42 79 99
 ```
 
 ```r
@@ -289,7 +295,7 @@ Una alternativa al ejemplo presentado en el apartado anterior mediante la funci�
 ```
 
 ```
-[1] 46.45
+[1] 48.4
 ```
 
 Si ningún nombre coincide, entonces `switch` devuelve `NULL`:
