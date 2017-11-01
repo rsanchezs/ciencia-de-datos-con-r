@@ -22,7 +22,7 @@ La mayoría de las funciones del paquete [`readr`](http://readr.tidyverse.org/) 
 *`read_fwf()` lee archivos con un ancho fijo. Podemos especificar los campos o por su ancho con `fwf_widths()` o su posición mediante `fwf_positions()`.
 `read_table()` lee un tipo de variación de archivos con un ancho fijo donde las columnas están separadas por espacios en blanco.
   
-Estas funciones comparten la misma sintaxis: una vez hemos dominado una,  podemos hacer uso de las otras funciones sin dificultad. Para el resto de este capítulo nos centraremos en `read_csv`.  No sólo porque los archivos [csv](https://es.wikipedia.org/wiki/Valores_separados_por_comas) son una de las formas mas comunes de almacenamiento de datos, sino también porque una vez entendamos `read_csv()`, podremos con facilidad aplicar nuestros conocimientos al resto de las otras funciones del paquete `readr`.
+Estas funciones comparten la misma sintaxis: una vez hemos dominada una, podemos hacer uso de las otras funciones sin dificultad. Para el resto de este capítulo nos centraremos en `read_csv`.  No sólo porque los archivos [csv](https://es.wikipedia.org/wiki/Valores_separados_por_comas) son una de las formas mas comunes de almacenamiento de datos, sino también porque una vez entendamos `read_csv()`, podremos con facilidad aplicar nuestros conocimientos al resto de las otras funciones del paquete `readr`.
 
 El primer argumento en `read_csv()` es el mas importante, puesto que se trata de la localización del archivo que deseamos importar:
 
@@ -126,7 +126,7 @@ read_csv("1,2,3\n4,5,6", col_names = FALSE)
 
 __Nota__ que hemos usado `"\n"` para añadir una nueva linea.
 
-Alternativamente, podemos pasar a `col_names` un vector de caracteres que será      usado para los nombres de las columnas:
+Alternativamente, podemos pasar a `col_names` un vector de caracteres que serà usado para los nombres de las columnas:
   
 
 ```r
@@ -160,7 +160,7 @@ Esto es todo lo que necesitamos saber para importar ~75% de archivos csv que nos
 
 Por otro lado, cabe mencionar que `readr` proporciona un conjunto de funciones para realizar la tarea inversa, es decir disponemos de un grupo de funciones que nos permiten escribir nuestros datos a archivos.
 
-Escribiremos un objeto `x` a una ruta específica por medio del argumenot `path` como:
+Escribiremos un objeto `x` a una ruta específica por medio del argumento `path` como:
 
 
 __Archivos CSV__
@@ -248,7 +248,7 @@ hoja_calculo_xlsx
 ```
 
 ```
-# A tibble: 6 ? 5
+# A tibble: 6 x 5
   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
          <dbl>       <dbl>        <dbl>       <dbl>   <chr>
 1          5.1         3.5          1.4         0.2  setosa
@@ -271,7 +271,7 @@ hoja_calculo_xls
 ```
 
 ```
-# A tibble: 8 ? 5
+# A tibble: 8 x 5
   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
          <dbl>       <dbl>        <dbl>       <dbl>   <chr>
 1          5.1         3.5          1.4         0.2  setosa
@@ -313,7 +313,7 @@ read_excel(path = "data/datasets.xlsx", sheet = 1, n_max = 8)
 ```
 
 ```
-# A tibble: 8 ? 5
+# A tibble: 8 x 5
   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
          <dbl>       <dbl>        <dbl>       <dbl>   <chr>
 1          5.1         3.5          1.4         0.2  setosa
@@ -335,7 +335,7 @@ read_excel(path = "data/datasets.xls", range = "C1:E4")
 ```
 
 ```
-# A tibble: 3 ? 3
+# A tibble: 3 x 3
   Petal.Length Petal.Width Species
          <dbl>       <dbl>   <chr>
 1          1.4         0.2  setosa
@@ -351,7 +351,7 @@ read_excel(path = "data/datasets.xls", range = "iris!B1:D5")
 ```
 
 ```
-# A tibble: 4 ? 3
+# A tibble: 4 x 3
   Sepal.Width Petal.Length Petal.Width
         <dbl>        <dbl>       <dbl>
 1         3.5          1.4         0.2
@@ -368,7 +368,7 @@ read_excel(path = "data/datasets.xls", na = "setosa", n_max = 8)
 ```
 
 ```
-# A tibble: 8 ? 5
+# A tibble: 8 x 5
   Sepal.Length Sepal.Width Petal.Length Petal.Width Species
          <dbl>       <dbl>        <dbl>       <dbl>   <lgl>
 1          5.1         3.5          1.4         0.2      NA

@@ -59,8 +59,9 @@ names(datos)
 [55] "stargazers_count"  "watchers_count"    "language"         
 [58] "has_issues"        "has_projects"      "has_downloads"    
 [61] "has_wiki"          "has_pages"         "forks_count"      
-[64] "mirror_url"        "open_issues_count" "forks"            
-[67] "open_issues"       "watchers"          "default_branch"   
+[64] "mirror_url"        "archived"          "open_issues_count"
+[67] "forks"             "open_issues"       "watchers"         
+[70] "default_branch"   
 ```
 
 
@@ -153,8 +154,23 @@ devtools::install_github("hadley/rvest")
 ```
 
 ```
-Skipping install of 'rvest' from a github remote, the SHA1 (9a51a5d3) has not changed since last install.
-  Use `force = TRUE` to force installation
+Downloading GitHub repo hadley/rvest@master
+from URL https://api.github.com/repos/hadley/rvest/zipball/master
+```
+
+```
+Installing rvest
+```
+
+```
+"D:/Ruben/Documents/R-3.4.2/bin/x64/R" --no-site-file --no-environ  \
+  --no-save --no-restore --quiet CMD INSTALL  \
+  "C:/Users/Ruben/AppData/Local/Temp/RtmpczMppM/devtools38606706552b/hadley-rvest-9a51a5d"  \
+  --library="C:/Users/Ruben/Documents/R/win-library/3.4" --install-tests 
+```
+
+```
+
 ```
 
 
@@ -165,6 +181,11 @@ Cargamos la libreria `rvest`:
 
 ```r
 library(rvest)
+```
+
+```
+Error in value[[3L]](cond): Package 'rvest' version 0.3.2 cannot be unloaded:
+ Error in unloadNamespace(package) : namespace 'rvest' is imported by 'tidyverse' so cannot be unloaded
 ```
 
 Para el ejemplo, además haremos uso del paquete `xml2` para descargar una tabla de la siguiente [página]("https://es.wikipedia.org/wiki/Anexo:Países_y_territorios_dependientes_por_población) de la Wikipedia:
@@ -190,7 +211,7 @@ tabla <- xml_find_first(html, xpath = "//table")
 ```
 
 ```
-Error in UseMethod("xml_find_first"): no applicable method for 'xml_find_first' applied to an object of class "function"
+Error in xml_find_first(html, xpath = "//table"): object 'html' not found
 ```
 
 Por último, mediante `rvest::html_table` analizamos sintácticamente la tabla html y la transformamos en un `dataframe`:
@@ -201,7 +222,7 @@ head(df <- html_table(tabla))
 ```
 
 ```
-Error in html_table(tabla): object 'tabla' not found
+Error in html_table(tabla): could not find function "html_table"
 ```
 
 

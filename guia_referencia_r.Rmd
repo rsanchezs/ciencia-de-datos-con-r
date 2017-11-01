@@ -7,6 +7,7 @@ opts_chunk$set(prompt = TRUE, comment='', results='markup')
 
 
 # Guía Referencia R
+
 ![Vectores](https://i.imgur.com/86lRAJ3.png)
 
 ## 

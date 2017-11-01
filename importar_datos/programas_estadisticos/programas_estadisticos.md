@@ -2,11 +2,11 @@
 
 
 
-# Lectura de Archivos de Programas Estadísticos en R
+# Lectura Archivos de Programas Estadísticos en R
 
 Como ya sabemos, R es un lenguaje de programación y un entorno de computación para computación estadística. Su naturaleza de código fuente abierto ha hecho que en los últimos años prolifere ante alternativas a programas estadísticos de tipo comercial, como SPSS, SAS, etc.
 
-En esta sección, veremos como podemos importar datos desde programas estadísticos avanzados. Así mismo, examinaremos los paquetes que necesitamos instalar para leer nuestros datos en R, de igual manera que hemos hechos con los datos almacenados en archivos Excel o JSON.
+En esta sección, veremos como podemos importar datos desde programas estadísticos avanzados. Así mismo, examinaremos los paquetes que necesitamos instalar para leer nuestros datos en R, de igual manera que hemos hechos con los datos almacenados en archivos de texto o Excel.
 
 ## Lectura de Archivos SPSS en R
 
@@ -48,7 +48,7 @@ Lo primero que haremos será cargar el ecosistema `tidyverse`:
 library(tidyverse)
 ```
 
-O alternativamente cargar únicamente el paquete `haven`:
+También tenemos la opción de cargar únicamente el paquete `haven`:
 
 
 ```r
@@ -61,21 +61,26 @@ Para leer archivos SPSS desde R haremos uso de la función `read_sav()`:
 
 ```r
 # Lectura de los datos SPSS
-spss <- read_sav("data/Child_Data.sav")
-# Mostramos las 6 primeras filas
-head(spss)
+spss <- read_sav("data/mtcars.sav")
+# El objeto de salida es un tibble
+spss
 ```
 
 ```
-# A tibble: 6 � 4
-    AGE MEM_SPAN    IQ READ_AB
-  <dbl>    <dbl> <dbl>   <dbl>
-1   6.7      4.4    95     7.2
-2   5.9      4.0    90     6.0
-3   5.5      4.1   105     6.0
-4   6.2      4.8    98     6.6
-5   6.4      5.0   106     7.0
-6   7.3      5.5   100     7.2
+# A tibble: 32 x 11
+     mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb
+   <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
+ 1  21.0     6 160.0   110  3.90 2.620 16.46     0     1     4     4
+ 2  21.0     6 160.0   110  3.90 2.875 17.02     0     1     4     4
+ 3  22.8     4 108.0    93  3.85 2.320 18.61     1     1     4     1
+ 4  21.4     6 258.0   110  3.08 3.215 19.44     1     0     3     1
+ 5  18.7     8 360.0   175  3.15 3.440 17.02     0     0     3     2
+ 6  18.1     6 225.0   105  2.76 3.460 20.22     1     0     3     1
+ 7  14.3     8 360.0   245  3.21 3.570 15.84     0     0     3     4
+ 8  24.4     4 146.7    62  3.69 3.190 20.00     1     0     4     2
+ 9  22.8     4 140.8    95  3.92 3.150 22.90     1     0     4     2
+10  19.2     6 167.6   123  3.92 3.440 18.30     1     0     4     4
+# ... with 22 more rows
 ```
 
 Por supuesto `haven` nos permite gravar nuestros datos en un archivo SPSS con la ayuda de la función `write_sas`:
@@ -95,21 +100,26 @@ Como en el caso anterior utilizaremos el paquete `haven` y pero en este caso uti
 
 ```r
 # Lectura de los datos STATA
-stata <-read_dta("data/Milk_Production.dta")
+stata <- read_dta("data/mtcars.dta")
 # Mostramos las 6 primeras filas
-head(stata)
+stata
 ```
 
 ```
-# A tibble: 6 � 7
-  currentm previous   fat protein  days lactatio   i79
-     <dbl>    <dbl> <dbl>   <dbl> <dbl>    <dbl> <dbl>
-1       45       45   5.5     8.9    21        5     0
-2       86       86   4.4     4.1    25        4     0
-3       50       50   6.5     4.0    25        7     0
-4       42       42   7.4     4.1    25        2     0
-5       61       61   3.8     3.8    33        2     0
-6       93       93   4.2     3.0    45        3     0
+# A tibble: 32 x 11
+     mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb
+   <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
+ 1  21.0     6 160.0   110  3.90 2.620 16.46     0     1     4     4
+ 2  21.0     6 160.0   110  3.90 2.875 17.02     0     1     4     4
+ 3  22.8     4 108.0    93  3.85 2.320 18.61     1     1     4     1
+ 4  21.4     6 258.0   110  3.08 3.215 19.44     1     0     3     1
+ 5  18.7     8 360.0   175  3.15 3.440 17.02     0     0     3     2
+ 6  18.1     6 225.0   105  2.76 3.460 20.22     1     0     3     1
+ 7  14.3     8 360.0   245  3.21 3.570 15.84     0     0     3     4
+ 8  24.4     4 146.7    62  3.69 3.190 20.00     1     0     4     2
+ 9  22.8     4 140.8    95  3.92 3.150 22.90     1     0     4     2
+10  19.2     6 167.6   123  3.92 3.440 18.30     1     0     4     4
+# ... with 22 more rows
 ```
 
 De igual manera que en el caso anterior podemos exportar nuestros datos a STATA sin embargo, para archivos Stata utilizaremos la función  `write_dta()`:
@@ -127,23 +137,31 @@ write_dta(mtcars, "data/mtcars.dta")
 De la misma forma que en los dos casos anteriores utilizaremos el paquete `haven`, pero en este caso utilizaremos la función `read_sas()` para leer nuestros datos SAS dentro de R:
 
 
+
+
+
 ```r
 # Lectura de los datos STATA
-sas <- read_sas("data/iris.sas7bdat")
-# Mostramos las 6 primeras filas
-head(sas)
+sas <- read_sas("data/mtcars.sas7bdat")
+# Mostramos los datos por pantalla
+sas
 ```
 
 ```
-# A tibble: 6 � 5
-  Sepal_Length Sepal_Width Petal_Length Petal_Width Species
-         <dbl>       <dbl>        <dbl>       <dbl>   <chr>
-1          5.1         3.5          1.4         0.2  setosa
-2          4.9         3.0          1.4         0.2  setosa
-3          4.7         3.2          1.3         0.2  setosa
-4          4.6         3.1          1.5         0.2  setosa
-5          5.0         3.6          1.4         0.2  setosa
-6          5.4         3.9          1.7         0.4  setosa
+# A tibble: 32 x 11
+     mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb
+   <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
+ 1  21.0     6 160.0   110  3.90 2.620 16.46     0     1     4     4
+ 2  21.0     6 160.0   110  3.90 2.875 17.02     0     1     4     4
+ 3  22.8     4 108.0    93  3.85 2.320 18.61     1     1     4     1
+ 4  21.4     6 258.0   110  3.08 3.215 19.44     1     0     3     1
+ 5  18.7     8 360.0   175  3.15 3.440 17.02     0     0     3     2
+ 6  18.1     6 225.0   105  2.76 3.460 20.22     1     0     3     1
+ 7  14.3     8 360.0   245  3.21 3.570 15.84     0     0     3     4
+ 8  24.4     4 146.7    62  3.69 3.190 20.00     1     0     4     2
+ 9  22.8     4 140.8    95  3.92 3.150 22.90     1     0     4     2
+10  19.2     6 167.6   123  3.92 3.440 18.30     1     0     4     4
+# ... with 22 more rows
 ```
 
 De manera semejante podemos exportar nuestros datos a STATA, aunque en esta ocasión utilizaremos la función `write_sas()`:

@@ -1,6 +1,6 @@
 ```{r knitsetup, echo=FALSE, results='hide', warning=FALSE, message=FALSE, cache=FALSE}
-opts_knit$set(base.dir='./', fig.path='', out.format='md', encoding= 'UTF-8')
-opts_chunk$set(prompt=FALSE, comment='', results='markup', eval=TRUE, echo=TRUE)
+opts_knit$set(base.dir = './', fig.path = '', out.format = 'md', encoding = 'UTF-8')
+opts_chunk$set(prompt = FALSE, comment = '', results = 'markup', eval = TRUE, echo = TRUE)
 ```
 
 
@@ -9,7 +9,7 @@ opts_chunk$set(prompt=FALSE, comment='', results='markup', eval=TRUE, echo=TRUE)
 
 Como ya sabemos, R es un lenguaje de programación y un entorno de computación para computación estadística. Su naturaleza de código fuente abierto ha hecho que en los últimos años prolifere ante alternativas a programas estadísticos de tipo comercial, como SPSS, SAS, etc.
 
-En esta sección, veremos como podemos importar datos desde programas estadísticos avanzados. Así mismo, examinaremos los paquetes que necesitamos instalar para leer nuestros datos en R, de igual manera que hemos hechos con los datos almacenados en archivos Excel o JSON.
+En esta sección, veremos como podemos importar datos desde programas estadísticos avanzados. Así mismo, examinaremos los paquetes que necesitamos instalar para leer nuestros datos en R, de igual manera que hemos hechos con los datos almacenados en archivos de texto o Excel.
 
 ## Lectura de Archivos SPSS en R
 
@@ -43,7 +43,7 @@ __Nota__ que la última opción requiere de la instalación del paquete `devtool
 
 Lo primero que haremos será cargar el ecosistema `tidyverse`:
 
-```{r eval=FALSE}
+```{r message=FALSE}
 library(tidyverse)
 ```
 
@@ -58,9 +58,9 @@ Para leer archivos SPSS desde R haremos uso de la función `read_sav()`:
 
 ```{r}
 # Lectura de los datos SPSS
-spss <- read_sav("data/Child_Data.sav")
-# Mostramos las 6 primeras filas
-head(spss)
+spss <- read_sav("data/mtcars.sav")
+# El objeto de salida es un tibble
+spss
 ```
 
 Por supuesto `haven` nos permite gravar nuestros datos en un archivo SPSS con la ayuda de la función `write_sas`:
@@ -78,9 +78,9 @@ Como en el caso anterior utilizaremos el paquete `haven` y pero en este caso uti
 
 ```{r}
 # Lectura de los datos STATA
-stata <-read_dta("data/Milk_Production.dta")
+stata <- read_dta("data/mtcars.dta")
 # Mostramos las 6 primeras filas
-head(stata)
+stata
 ```
 
 De igual manera que en el caso anterior podemos exportar nuestros datos a STATA sin embargo, para archivos Stata utilizaremos la función  `write_dta()`:
@@ -96,11 +96,16 @@ write_dta(mtcars, "data/mtcars.dta")
 
 De la misma forma que en los dos casos anteriores utilizaremos el paquete `haven`, pero en este caso utilizaremos la función `read_sas()` para leer nuestros datos SAS dentro de R:
 
+```{r echo=FALSE}
+library(haven)
+```
+
+
 ```{r}
 # Lectura de los datos STATA
-sas <- read_sas("data/iris.sas7bdat")
-# Mostramos las 6 primeras filas
-head(sas)
+sas <- read_sas("data/mtcars.sas7bdat")
+# Mostramos los datos por pantalla
+sas
 ```
 
 De manera semejante podemos exportar nuestros datos a STATA, aunque en esta ocasión utilizaremos la función `write_sas()`:

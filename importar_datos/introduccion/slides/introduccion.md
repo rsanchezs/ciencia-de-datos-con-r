@@ -137,14 +137,7 @@ library(EDAWR)
 ```
 
 ```
-## 
-## Attaching package: 'EDAWR'
-```
-
-```
-## The following objects are masked _by_ '.GlobalEnv':
-## 
-##     a, b
+## Error in library(EDAWR): there is no package called 'EDAWR'
 ```
 
 
@@ -154,15 +147,21 @@ storms
 ```
 
 ```
-## # A tibble: 6 × 4
-##     storm  wind pressure       date
-##     <chr> <int>    <int>     <date>
-## 1 Alberto   110     1007 2000-08-03
-## 2    Alex    45     1009 1998-07-27
-## 3 Allison    65     1005 1995-06-03
-## 4     Ana    40     1013 1997-06-30
-## 5  Arlene    50     1010 1999-06-11
-## 6  Arthur    45     1010 1996-06-17
+## # A tibble: 10,010 x 13
+##     name  year month   day  hour   lat  long              status category
+##    <chr> <dbl> <dbl> <int> <dbl> <dbl> <dbl>               <chr>    <ord>
+##  1   Amy  1975     6    27     0  27.5 -79.0 tropical depression       -1
+##  2   Amy  1975     6    27     6  28.5 -79.0 tropical depression       -1
+##  3   Amy  1975     6    27    12  29.5 -79.0 tropical depression       -1
+##  4   Amy  1975     6    27    18  30.5 -79.0 tropical depression       -1
+##  5   Amy  1975     6    28     0  31.5 -78.8 tropical depression       -1
+##  6   Amy  1975     6    28     6  32.4 -78.7 tropical depression       -1
+##  7   Amy  1975     6    28    12  33.3 -78.0 tropical depression       -1
+##  8   Amy  1975     6    28    18  34.0 -77.0 tropical depression       -1
+##  9   Amy  1975     6    29     0  34.4 -75.8      tropical storm        0
+## 10   Amy  1975     6    29     6  34.0 -74.8      tropical storm        0
+## # ... with 10,000 more rows, and 4 more variables: wind <int>,
+## #   pressure <int>, ts_diameter <dbl>, hu_diameter <dbl>
 ```
 
 
