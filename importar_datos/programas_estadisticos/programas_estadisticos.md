@@ -66,23 +66,6 @@ spss <- read_sav("data/mtcars.sav")
 spss
 ```
 
-```
-# A tibble: 32 x 11
-     mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb
-   <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
- 1  21.0     6 160.0   110  3.90 2.620 16.46     0     1     4     4
- 2  21.0     6 160.0   110  3.90 2.875 17.02     0     1     4     4
- 3  22.8     4 108.0    93  3.85 2.320 18.61     1     1     4     1
- 4  21.4     6 258.0   110  3.08 3.215 19.44     1     0     3     1
- 5  18.7     8 360.0   175  3.15 3.440 17.02     0     0     3     2
- 6  18.1     6 225.0   105  2.76 3.460 20.22     1     0     3     1
- 7  14.3     8 360.0   245  3.21 3.570 15.84     0     0     3     4
- 8  24.4     4 146.7    62  3.69 3.190 20.00     1     0     4     2
- 9  22.8     4 140.8    95  3.92 3.150 22.90     1     0     4     2
-10  19.2     6 167.6   123  3.92 3.440 18.30     1     0     4     4
-# ... with 22 more rows
-```
-
 Por supuesto `haven` nos permite gravar nuestros datos en un archivo SPSS con la ayuda de la función `write_sas`:
 
 
@@ -103,23 +86,6 @@ Como en el caso anterior utilizaremos el paquete `haven` y pero en este caso uti
 stata <- read_dta("data/mtcars.dta")
 # Mostramos las 6 primeras filas
 stata
-```
-
-```
-# A tibble: 32 x 11
-     mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb
-   <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
- 1  21.0     6 160.0   110  3.90 2.620 16.46     0     1     4     4
- 2  21.0     6 160.0   110  3.90 2.875 17.02     0     1     4     4
- 3  22.8     4 108.0    93  3.85 2.320 18.61     1     1     4     1
- 4  21.4     6 258.0   110  3.08 3.215 19.44     1     0     3     1
- 5  18.7     8 360.0   175  3.15 3.440 17.02     0     0     3     2
- 6  18.1     6 225.0   105  2.76 3.460 20.22     1     0     3     1
- 7  14.3     8 360.0   245  3.21 3.570 15.84     0     0     3     4
- 8  24.4     4 146.7    62  3.69 3.190 20.00     1     0     4     2
- 9  22.8     4 140.8    95  3.92 3.150 22.90     1     0     4     2
-10  19.2     6 167.6   123  3.92 3.440 18.30     1     0     4     4
-# ... with 22 more rows
 ```
 
 De igual manera que en el caso anterior podemos exportar nuestros datos a STATA sin embargo, para archivos Stata utilizaremos la función  `write_dta()`:
@@ -145,23 +111,6 @@ De la misma forma que en los dos casos anteriores utilizaremos el paquete `haven
 sas <- read_sas("data/mtcars.sas7bdat")
 # Mostramos los datos por pantalla
 sas
-```
-
-```
-# A tibble: 32 x 11
-     mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb
-   <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>
- 1  21.0     6 160.0   110  3.90 2.620 16.46     0     1     4     4
- 2  21.0     6 160.0   110  3.90 2.875 17.02     0     1     4     4
- 3  22.8     4 108.0    93  3.85 2.320 18.61     1     1     4     1
- 4  21.4     6 258.0   110  3.08 3.215 19.44     1     0     3     1
- 5  18.7     8 360.0   175  3.15 3.440 17.02     0     0     3     2
- 6  18.1     6 225.0   105  2.76 3.460 20.22     1     0     3     1
- 7  14.3     8 360.0   245  3.21 3.570 15.84     0     0     3     4
- 8  24.4     4 146.7    62  3.69 3.190 20.00     1     0     4     2
- 9  22.8     4 140.8    95  3.92 3.150 22.90     1     0     4     2
-10  19.2     6 167.6   123  3.92 3.440 18.30     1     0     4     4
-# ... with 22 more rows
 ```
 
 De manera semejante podemos exportar nuestros datos a STATA, aunque en esta ocasión utilizaremos la función `write_sas()`:

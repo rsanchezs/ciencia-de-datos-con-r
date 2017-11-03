@@ -7,36 +7,24 @@ Todo el código R manipula objetos. El _objeto_, es el concepto principal sobre 
 
 
 ```r
-> # Una función es un objeto
-> function() {x <- 1; y <- 2; x + y}
-```
-
-```
+# Una función es un objeto
 function() {x <- 1; y <- 2; x + y}
-<environment: 0x000000001705c1b8>
+
 ```
 
 
 
 ```r
-> #también su nombre (symbol)
-> f <- function(x, y){x + y}
-> f(1, 2)
-```
-
-```
-[1] 3
+#también su nombre (symbol)
+f <- function(x, y){x + y}
+f(1, 2)
 ```
 
 
 
 ```r
-> # incluso las expresiones 
-> {x <- 1; y <- 2; x + y}
-```
-
-```
-[1] 3
+# incluso las expresiones 
+{x <- 1; y <- 2; x + y}
 ```
 
 
@@ -47,7 +35,7 @@ Formalmente, los nombres de las variables en R se designan como _symbol_. Cuando
 
 
 ```r
-> x <- 1
+x <- 1
 ```
 
 asigna el symbol __"x"__ al objeto __"1"__ en el entorno actual.
@@ -61,12 +49,8 @@ Podemos encontrar la clase de un objeto mediante la función `class(objeto)`:
 
 
 ```r
-> vector_numerico <- c(1, 2, 3, 4, 5)
-> class(vector_numerico)
-```
-
-```
-[1] "numeric"
+vector_numerico <- c(1, 2, 3, 4, 5)
+class(vector_numerico)
 ```
 
 ## Cada Objeto tiene un Tipo {#tipo}
@@ -78,12 +62,8 @@ Podemos conocer el tipo de objeto con la función `typeof(objeto)`:
 
 
 ```r
-> vector_numerico <- c(1, 2, 3, 4, 5)
-> typeof(vector_numerico)
-```
-
-```
-[1] "double"
+vector_numerico <- c(1, 2, 3, 4, 5)
+typeof(vector_numerico)
 ```
 
 ### Comprobar la Clase de un Objeto en **_scripts_**
@@ -94,10 +74,11 @@ El uso de la función `class()` es útil para examinar nuestros objetos en un tr
 
 
 ```r
-> if(!is(x, "alguna_clase")) {
-+   
-+   # alguna acción correctiva
-+ }
+if(!is(x, "alguna_clase")) {
+  
+  # alguna acción correctiva
+}
+
 ```
 
 
@@ -106,11 +87,7 @@ La mayoría de las clases tienen su propia función `is.*()`, utilizar esta func
 
 
 ```r
-> is.character("Ciencia de Datos con R")
-```
-
-```
-[1] TRUE
+is.character("Ciencia de Datos con R")
 ```
 
 Podemos ver una lista completa de las funciones `is()` en el paquete `base` mediante la siguiente instrucción:
@@ -118,7 +95,7 @@ Podemos ver una lista completa de las funciones `is()` en el paquete `base` medi
 
 
 ```r
-> ls(pattern = "^is", baseenv())
+ls(pattern = "^is", baseenv())
 ```
 
 

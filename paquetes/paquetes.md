@@ -30,27 +30,6 @@ Por ejemplo, para acceder a la documentación del paquete `stats` lo haríamos d
 
 ```r
 > packageDescription("stats")
-```
-
-```
-Package: stats
-Version: 3.3.3
-Priority: base
-Title: The R Stats Package
-Author: R Core Team and contributors worldwide
-Maintainer: R Core Team <R-core@r-project.org>
-Description: R statistical functions.
-License: Part of R 3.3.3
-Imports: utils, grDevices, graphics
-Suggests: MASS, Matrix, SuppDists, methods, stats4
-NeedsCompilation: yes
-Built: R 3.3.3; x86_64-w64-mingw32; 2017-03-06 14:13:39 UTC;
-       windows
-
--- File: C:/Program Files/R/R-3.3.3/library/stats/Meta/package.rds 
-```
-
-```r
 > help(package = "stats")
 ```
 
@@ -74,23 +53,6 @@ La forma de instalar un paquete R depende de dónde este localizado. Con esto qu
 
 ```r
 > install.packages("vioplot")
-```
-
-```
-Installing package into 'C:/Users/Ruben/Documents/R/win-library/3.3'
-(as 'lib' is unspecified)
-```
-
-```
-also installing the dependency 'sm'
-```
-
-```
-package 'sm' successfully unpacked and MD5 sums checked
-package 'vioplot' successfully unpacked and MD5 sums checked
-
-The downloaded binary packages are in
-	C:\Users\Ruben\AppData\Local\Temp\RtmpGaMS8N\downloaded_packages
 ```
 
 Después de ejecutar la instrucción anterior recibiremos una serie de mensajes en nuestra pantalla. Esto depende del sistema operativo que usemos, las dependencias y si el paquete es instalado correctamente.
@@ -142,7 +104,7 @@ La instrucción anterior instalará en nuestro equipo las funciones necesarias p
 
 
 ```
-Error in eval(expr, envir, enclos): could not find function "biocLite"
+Error in biocLite(): could not find function "biocLite"
 ```
 
 No obstante, si solamente estamos interesados en uno o varios paquetes en particular, podemos hacerlo como se muestra a continuación:
@@ -240,23 +202,6 @@ Una vez tenemos instalado un paquete, estamos en disposición de hacer uso de su
 > babynames::births
 ```
 
-```
-# A tibble: 119 � 2
-    year  births
-   <int>   <int>
-1   1909 2718000
-2   1910 2777000
-3   1911 2809000
-4   1912 2840000
-5   1913 2869000
-6   1914 2966000
-7   1915 2965000
-8   1916 2964000
-9   1917 2944000
-10  1918 2948000
-# ... with 109 more rows
-```
-
 __RECUERDA__ que para acceder a las funciones y conjuntos de datos que contiene un paquete, podemos hacerlo mediante:
 
 
@@ -272,10 +217,6 @@ Después de cargar el paquete en memoria, ya no será necesario hacer uso de la 
 
 ```r
 > births
-```
-
-```
-Error in eval(expr, envir, enclos): object 'births' not found
 ```
 
 __NOTA:__ que el argumento de la función `install.packages()` es un vector de tipo caracte y requiere de los nombres de los paquetes entrecomillados, mientras que la función `library()` accepta tanto un vector de tipo caracter como el nombre sin comillas.
@@ -294,10 +235,6 @@ Para descargar de la memoria un cierto paquete podemos hacer uso de la función 
 
 ```r
 > detach("babynames", unload = TRUE)
-```
-
-```
-Error in detach("babynames", unload = TRUE): invalid 'name' argument
 ```
 
 

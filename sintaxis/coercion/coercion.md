@@ -20,10 +20,6 @@ Cuando llamamos a una función con un argumento de un tipo erróneo, R intentar�
 > v
 ```
 
-```
-[1] 1 2 3 4 5
-```
-
 
 
 
@@ -31,18 +27,10 @@ Cuando llamamos a una función con un argumento de un tipo erróneo, R intentar�
 > typeof(v)
 ```
 
-```
-[1] "double"
-```
-
 
 
 ```r
 > class(v)
-```
-
-```
-[1] "numeric"
 ```
 
 Si cambiamos el segundo elemento del vector con la palabra "coercion". R cambiará la clase del objeto a `character` y todos los elementos del vector a `char` como podemos ver en el siguiente ejemplo:
@@ -60,18 +48,10 @@ Si cambiamos el segundo elemento del vector con la palabra "coercion". R cambiar
 > typeof(v)
 ```
 
-```
-[1] "character"
-```
-
 
 
 ```r
 > class(v)
-```
-
-```
-[1] "character"
 ```
 
 
@@ -82,7 +62,6 @@ Cuando un vector lógico es convertido a un integer o double, `TRUE` es cambiado
 ```r
 > v <- c(FALSE, TRUE, FALSE)
 > as.numeric(v)
-[1] 0 1 0
 ```
 
 
@@ -114,28 +93,16 @@ __Ejemplos__
 > class(v)
 ```
 
-```
-[1] "numeric"
-```
-
 
 
 ```r
 > as.logical(v)
 ```
 
-```
-[1] TRUE TRUE TRUE TRUE TRUE
-```
-
 
 
 ```r
 > as.character(v)
-```
-
-```
-[1] "1" "2" "3" "4" "5"
 ```
 
 
@@ -149,22 +116,10 @@ En ocasiones, la conversión no puede ser llevada a cabo, en este caso R devuelv
 > as.numeric(v)
 ```
 
-```
-Warning: NAs introduced by coercion
-```
-
-```
-[1] NA NA NA
-```
-
 
 
 ```r
 > as.logical(v)
-```
-
-```
-[1] NA NA NA
 ```
 
 

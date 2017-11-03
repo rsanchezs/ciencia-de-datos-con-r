@@ -27,18 +27,7 @@ install.packages(c("DBI","RSQLite"))
 ```r
 # Cargamos los paquetes
 library(DBI)
-```
-
-```
-Error in library(DBI): there is no package called 'DBI'
-```
-
-```r
 library(RSQLite)
-```
-
-```
-Error in library(RSQLite): there is no package called 'RSQLite'
 ```
 
 Después definimos la conexión a la base de datos, en la que especificaremos el driver para que sea de tipo "SQLite" y que pasaremos a la función `dbConnect()` a la que además le pasaremos como argumento la ruta del archivo de la base de datos
@@ -47,21 +36,10 @@ Después definimos la conexión a la base de datos, en la que especificaremos el
 ```r
 # Definimos el driver
 driver <- dbDriver("SQLite")
-```
-
-```
-Error in dbDriver("SQLite"): could not find function "dbDriver"
-```
-
-```r
 # Definimos la ruta al archivo de la bd
 archivo_bd <- system.file("data/database.sqlite")
 # Establecemos la conexión
 con <- dbConnect(driver, archivo_bd)
-```
-
-```
-Error in dbConnect(driver, archivo_bd): could not find function "dbConnect"
 ```
 
 ### Conexión a MySQL
@@ -121,10 +99,6 @@ Error in dbWriteTable(con, "mtcars", mtcars): could not find function "dbWriteTa
 dbListTables(con)
 ```
 
-```
-Error in dbListTables(con): could not find function "dbListTables"
-```
-
 Por otro lado, para recuperar los datos de una base de datos escribiremos una consulta, que consiste en un string que contiene una instrucción SQL, y la enviaremos a la base de datos con la ayuda de la función `dbGetQuery`. En el siguiente ejemplo, `SELECT * FROM mtcars` significa "muestra cada columna de la tabla con nombre `mtcars`":
 
 
@@ -133,19 +107,8 @@ Por otro lado, para recuperar los datos de una base de datos escribiremos una co
 consulta <- "SELECT * FROM mtcars"
 # Enviamos la consulta al SGBDR
 datos <- dbGetQuery(con, consulta)
-```
-
-```
-Error in dbGetQuery(con, consulta): could not find function "dbGetQuery"
-```
-
-```r
 # Mostramos por pantalla un subconjunto de los datos
 datos[1:10, 1:5]
-```
-
-```
-Error in eval(expr, envir, enclos): object 'datos' not found
 ```
 
 Para aquellos que no conocen el lenguaje SQL, el paquete `DBI` proporciona multitud de funciones para la manipulación de base de datos. A modo de ejemplo, 
@@ -166,9 +129,5 @@ Por último, una vez hemos manipulado la base de datos, es necesario desconectar
 ```r
 # Cerramos la conexión
 dbDisconnect(con)
-```
-
-```
-Error in dbDisconnect(con): could not find function "dbDisconnect"
 ```
 

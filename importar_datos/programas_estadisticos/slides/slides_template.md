@@ -1,7 +1,7 @@
 ---
-title: "Estructuras iterativas"
+title: "Importar Datos Estadísticos"
 author: "Rubén Sánchez Sancho"
-date: "01 de Octubre de 2017"
+date: "01 de Noviembre de 2017"
 output: ioslides_presentation
 logo: ./logo.png
 highlight: TRUE
@@ -14,6 +14,7 @@ h2 {
    line-height: 65px; 
    letter-spacing: -2px; 
    color: #FFFFFF;
+   padding: 15px 0px 0px 0px;
 } 
 </style>
 
@@ -24,7 +25,6 @@ h3 {
   line-height: 2;
   font-weight: inherit;
   color: #797979;
-  padding: 0px;
 }
 </style>
 
@@ -49,7 +49,7 @@ slides > slide {
 
 <style>
 pre {
-  width : 100%;
+  width : 75%;
   padding: 10px 15px 10px 15px;
   left: 0px;
   background-color: #2A3137;
@@ -123,38 +123,84 @@ table.rmdtable td, table th {
 </style>
 
 
+## Lectura de Archivos  {.build}
 
 
-
-## Objetivos
-
-> - Bullet 1
-> - Bullet 2
-> - Bullet 3
-
-## Slide with R Output
+Lo primero que haremos será cargar el ecosistema 
 
 
 ```r
-summary(cars)
+library(tidyverse)
 ```
 
-```
-##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00
-```
-
-## Slide with Plot
+También tenemos la opción de cargar únicamente el paquete 
 
 
 ```r
-plot(pressure)
+library(haven)
 ```
 
-![plot of chunk pressure](figure/pressure-1.png)
+
+## Lectura de Archivos  | Función `read_sav()` {.smaller .build}
+
+
+
+```r
+# Lectura de los datos SPSS
+(spss <- read_sav("data/mtcars.sav"))
+```
+
+
+## Escritura de Archivos  | Función `write_sas()`
+
+ 
+
+
+```r
+# Escritura del dataframe `mtcars` a un archivo SPSS
+write_sav(mtcars, "data/mtcars.sav")
+```
+
+
+## Lectura de Archivos  | Función `read_stata()` {.smaller .build}
+
+
+
+
+```r
+# Lectura de los datos STATA
+(stata <- read_dta("data/mtcars.dta"))
+```
+
+
+
+## Escritura de Archivos  | Función `write_dta()`
+
+
+```r
+# Escritura del dataframe `mtcars` a un archivo STATA
+write_dta(mtcars, "data/mtcars.dta")
+```
+
+
+## Lectura de Archivos  | Función `read_sas()` {.smaller .build}
+
+
+```r
+# Lectura de los datos STATA
+(sas <- read_sas("data/mtcars.sas7bdat"))
+```
+
+
+
+## Escritura de Archivos  | Función `write_sas()`
+
+
+```r
+# Escritura del dataframe `mtcars` a un archivo SAS
+write_sas(mtcars, "data/mtcars.sas7bdat")
+```
+
+
+
 

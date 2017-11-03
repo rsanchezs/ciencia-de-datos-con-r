@@ -69,7 +69,7 @@ Mediante la función `read_xml()` podemos importar archivos XML:
 # Cargamos el paquete
 library(xml2)
 # Importamos los datos XML 
-xml <- read_xml("data/Water_Right_Applications.xml")
+(xml <- read_xml("data/Water_Right_Applications.xml"))
 ```
 
 
@@ -88,7 +88,7 @@ install.packages("rvest")
 
 Para descargar la versión en desarrollo desde su repositorio en GitHub:
 
-```{r}
+```{r eval=FALSE}
 # install.packages("devtools")
 devtools::install_github("hadley/rvest")
 ```
@@ -118,7 +118,7 @@ tabla <- xml_find_first(html, xpath = "//table")
 Por último, mediante `rvest::html_table` analizamos sintácticamente la tabla html y la transformamos en un `dataframe`:
 
 ```{r}
-head(df <- html_table(tabla))
+(df <- html_table(tabla))
 ```
 
 

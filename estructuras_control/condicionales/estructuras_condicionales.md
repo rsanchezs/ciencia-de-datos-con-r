@@ -137,7 +137,7 @@ Error in library(modeest): there is no package called 'modeest'
 ```
 
 ```
- [1] 92 96 28 29 49 66 66 39  1 44 90 19 97 44 93 37 75 99 20 12
+ [1]  5  6 28 88 36 93 32 43 94 81 98 17 63  4 95 34 34 92 10  5
 ```
 
 ```r
@@ -164,7 +164,7 @@ Error in library(modeest): there is no package called 'modeest'
 ```
 
 ```
-La media es 54.8
+La media es 47.9
 ```
 
 ## __`If`__ Vectorizado
@@ -224,7 +224,7 @@ números aleatorios de un distribución binomial simulando el lanzamiento de una
 ```
 
 ```
- [1] "cara" "cruz" "cara" "cruz" "cara" "cara" "cara" "cara" "cruz" "cara"
+ [1] "cara" "cara" "cruz" "cruz" "cruz" "cara" "cara" "cruz" "cruz" "cruz"
 ```
 
 No obstante, `if(test) yes else no` es mucho mas eficiente y preferible a `ifelse(test, yes, no)` cuando `test` es decir, la
@@ -281,7 +281,7 @@ Error in library(modeest): there is no package called 'modeest'
 ```
 
 ```
- [1] 28  2 59 12 61 54 86 38 15 65 56 77 61  5 32 24 73 42 79 99
+ [1] 15 57 96 70 55 99 59 78  9 59 41 95 30 86 73 58 94 80 42 67
 ```
 
 ```r
@@ -295,7 +295,7 @@ Error in library(modeest): there is no package called 'modeest'
 ```
 
 ```
-[1] 48.4
+[1] 63.15
 ```
 
 Si ningún nombre coincide, entonces `switch` devuelve `NULL`:

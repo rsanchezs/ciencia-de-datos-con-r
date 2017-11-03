@@ -8,6 +8,15 @@ opts_chunk$set(prompt=TRUE, comment='', results='markup')
 # end setup chunk
 ```
 
+```{r include=FALSE}
+tutorial::go_interactive()
+```
+
+
+
+
+
+
 
 # Expresiones y Asignación
 
