@@ -1,3 +1,5 @@
+<script src="https://cdn.datacamp.com/datacamp-light-latest.min.js"></script>
+
 
 
 
@@ -8,33 +10,13 @@ El código R está compuesto por una serie de _expresiones_. Ejemplo de expresio
 
 
 
-
-```r
-> #  Expresión aritmética
-> 127 %% 10
-```
-
-```
-[1] 7
-```
+<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjICBFeHByZXNpXHUwMGYzbiBhcml0bVx1MDBlOXRpY2FcbjEyNyAlJSAxMCJ9</div>
 
 
-
-```r
-> # Instrucción condicional
-> if (1 > 2) "mayor" else "menor"
-```
-
-```
-[1] "menor"
-```
+<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIEluc3RydWNjaVx1MDBmM24gY29uZGljaW9uYWxcbmlmICgxID4gMikgXCJtYXlvclwiIGVsc2UgXCJtZW5vclwiIn0=</div>
 
 
-
-```r
-> # Instrucción asignación
-> x <- 1
-```
+<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIEluc3RydWNjaVx1MDBmM24gYXNpZ25hY2lcdTAwZjNuXG54IDwtIDEifQ==</div>
 
 ## Instrucciones de Asignación {#asignacion}
 
@@ -58,70 +40,30 @@ R proporciona diferentes construcciones para agrupar expresiones:
 Podemos escribir una serie de expresiones en líneas separadas:
 
 
-
-```r
-> x <- 1
-> y <- 2
-> z <- 3
-```
+<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ4IDwtIDFcbnkgPC0gMlxueiA8LSAzIn0=</div>
 
 Alternativamente, podemos colocarlas en la misma línea, separadas por punto y coma:
 
 
-
-```r
-> x <- 1; y <- 2; z <- 3
-```
+<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ4IDwtIDE7IHkgPC0gMjsgeiA8LSAzIn0=</div>
 
 ### Paréntesis
 
 La notación con paréntesis devuelve el resultado de evaluar la expresión dentro del paréntesis:
 
 
-
-```r
-> (x <- 1)
-```
-
-```
-[1] 1
-```
+<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIoeCA8LSAxKSJ9</div>
 
 
-
-```r
-> # es equivalente
-> x <- 1
-> x 
-```
-
-```
-[1] 1
-```
+<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIGVzIGVxdWl2YWxlbnRlXG54IDwtIDFcbnggIn0=</div>
 
 Agrupar expresiones con paréntesis puede ser usado para modificar la prioridad  en los operadores:
 
 
-
-```r
-> # La multiplicación tiene prioridad sobre la suma
-> 2 * 5 + 1
-```
-
-```
-[1] 11
-```
+<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIExhIG11bHRpcGxpY2FjaVx1MDBmM24gdGllbmUgcHJpb3JpZGFkIHNvYnJlIGxhIHN1bWFcbjIgKiA1ICsgMSJ9</div>
 
 
-
-```r
-> # En este caso, se calculará primero la suma y después se multiplicará
-> 2 * (5 + 1)
-```
-
-```
-[1] 12
-```
+<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiIjIEVuIGVzdGUgY2Fzbywgc2UgY2FsY3VsYXJcdTAwZTEgcHJpbWVybyBsYSBzdW1hIHkgZGVzcHVcdTAwZTlzIHNlIG11bHRpcGxpY2FyXHUwMGUxXG4yICogKDUgKyAxKSJ9</div>
 
 
 ### Llaves
@@ -131,25 +73,10 @@ Las llaves son usadas para evaluar una serie de expresiones (separadas por nueva
 
 
 
-
-```r
-> {x <- 1; y <- 2; x + y}
-```
-
-```
-[1] 3
-```
+<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJ7eCA8LSAxOyB5IDwtIDI7IHggKyB5fSJ9</div>
 
 Usado para agrupar un conjunto de expresiones en el cuerpo de una función:
 
 
-
-```r
-> f <- function() {x <- 1; y <- 2; x + y}
-> f()
-```
-
-```
-[1] 3
-```
+<div data-datacamp-exercise data-height="300" data-encoded="true">eyJsYW5ndWFnZSI6InIiLCJzYW1wbGUiOiJmIDwtIGZ1bmN0aW9uKCkge3ggPC0gMTsgeSA8LSAyOyB4ICsgeX1cbmYoKSJ9</div>
 
