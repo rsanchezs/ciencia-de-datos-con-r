@@ -4,16 +4,16 @@
         "alerts",
         "collapsible-menu",
         "katex",
-        "addcssjs"
+        "custom-js-css"
     ],
     "pluginsConfig": {
       "image-captions": {
           "caption": "Figura_PAGE_IMAGE_NUMBER_ - _CAPTION_"
          
       },
-      "addcssjs": { 
-        "js": ["../../js/custom.js"], 
-        "css": ["css/custom.css"] }
+      "custom-js-css": { 
+        "js": ["./js/custom.js"], 
+        "css": ["./css/custom.css"] }
       
   }
 
