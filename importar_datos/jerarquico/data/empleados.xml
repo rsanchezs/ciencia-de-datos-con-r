@@ -1,0 +1,65 @@
+<PLANTILLA>
+   <EMPLEADO>
+      <ID>1</ID>
+      <NOMBRE>Ruben</NOMBRE>
+      <SALARIO>623.3</SALARIO>
+      <ALTA>1/1/2012</ALTA>
+      <DEPT>IT</DEPT>
+   </EMPLEADO>
+	
+   <EMPLEADO>
+      <ID>2</ID>
+      <NOMBRE>Ramon</NOMBRE>
+      <SALARIO>515.2</SALARIO>
+      <ALTA>9/23/2013</ALTA>
+      <DEPT>Produccion</DEPT>
+   </EMPLEADO>
+   
+   <EMPLEADO>
+      <ID>3</ID>
+      <NOMBRE>Tomas</NOMBRE>
+      <SALARIO>611</SALARIO>
+      <ALTA>11/15/2014</ALTA>
+      <DEPT>IT</DEPT>
+   </EMPLEADO>
+   
+   <EMPLEADO>
+      <ID>4</ID>
+      <NOMBRE>Marga</NOMBRE>
+      <SALARIO>729</SALARIO>
+      <ALTA>5/11/2014</ALTA>
+      <DEPT>HR</DEPT>
+   </EMPLEADO>
+   
+   <EMPLEADO>
+      <ID>5</ID>
+      <NOMBRE>Miguel</NOMBRE>
+      <SALARIO>843.25</SALARIO>
+      <ALTA>3/27/2015</ALTA>
+      <DEPT>Finanzas</DEPT>
+   </EMPLEADO>
+   
+   <EMPLEADO>
+      <ID>6</ID>
+      <NOMBRE>Nuria</NOMBRE>
+      <SALARIO>578</SALARIO>
+      <ALTA>5/21/2013</ALTA>
+      <DEPT>Limpieza</DEPT>
+   </EMPLEADO>
+   
+   <EMPLEADO>
+      <ID>7</ID>
+      <NOMBRE>Jaime</NOMBRE>
+      <SALARIO>632.8</SALARIO>
+      <ALTA>7/30/2013</ALTA>
+      <DEPT>I+D</DEPT>
+   </EMPLEADO>
+   
+   <EMPLEADO>
+      <ID>8</ID>
+      <NOMBRE>Dani</NOMBRE>
+      <SALARIO>722.5</SALARIO>
+      <ALTA>6/17/2014</ALTA>
+      <DEPT>Produccion</DEPT>
+   </EMPLEADO>
+</PLANTILLA>

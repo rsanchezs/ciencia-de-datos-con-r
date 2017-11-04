@@ -1,5 +1,5 @@
 var datacamp = document.getElementByClassName("powered-by-datacamp");
 
-while(datacamp[0]) {
+while(datacamp.length > 0) {
   datacamp[0].parentNode.removeChild(datacamp[0]);
 }

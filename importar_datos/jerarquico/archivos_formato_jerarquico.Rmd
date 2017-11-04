@@ -1,16 +1,22 @@
 ```{r knitsetup, echo=FALSE, results='hide', warning=FALSE, message=FALSE, cache=FALSE}
 opts_knit$set(base.dir='./', fig.path='', out.format='md')
-opts_chunk$set(prompt=FALSE, comment='', results='markup', eval=TRUE, echo=TRUE)
+opts_chunk$set(prompt=FALSE, comment='', results='markup', eval=TRUE, echo=TRUE )
 ```
 
 
+# Lectura de Archivos Jerarquizados
 
+En ocasiones necesitaremos importar datos de sitios web. La mayoría de proveedores 
+proporcionan los datos en formato XML y JSON. En esta sección, aprenderemos como leer
+datos de archivos JSON y XML.
 
-# Lectura de archivos JSON en R
+Además, en el último apartado veremos como importar tablas HTML alojadas en sitios web.
+
+## Lectura de archivos JSON en R
 
 Para importar archivos [JSON](http://json.org/), primero necesitamos instalar y/o cargar el paquete [jsonlite](https://cran.r-project.org/web/packages/jsonlite/vignettes/json-aaquickstart.html).
 
-## Instalación
+### Instalación
 
 Podemos instalar `jsonlite`desde CRAN:
 
@@ -19,7 +25,7 @@ Podemos instalar `jsonlite`desde CRAN:
 install.packages("jsonlite")
 ```
 
-## Uso
+### Uso
 
 Para importar archivos JSON haremos uso de la función `fromJSON()`:
 
@@ -43,35 +49,87 @@ datos$name
 ```
 
 
-# Lectura de archivos XML en R
+
+## Lectura de archivos XML en R
 
 Si deseamos importar archivos [XML](https://es.wikipedia.org/wiki/Extensible_Markup_Language), una de los métodos más fáciles es mediante el uso del paquete [XML2](https://www.rdocumentation.org/packages/xml2/versions/1.1.1).
 
-## Instalación
+### Instalación
 
 Podemos installar `xml2`desde CRAN:
 
 ```{r eval=FALSE}
+# Instalación de `xml2` desde CRAN
 install.packages("xml2")
 ```
 
 o podemos instalar la versión en desarrollo en GitHub, con la ayuda de `devtools`:
 
 ```{r eval=FALSE}
+# Instalación desde el repositorio de GitHub
 install_github("r-lib/xml2")
 ```
 
-## Uso
+### Uso
 
 Mediante la función `read_xml()` podemos importar archivos XML:
 
-```{r eval = FALSE}
+```{r}
 # Cargamos el paquete
 library(xml2)
 # Importamos los datos XML 
-(xml <- read_xml("data/Water_Right_Applications.xml"))
+archivo_xml <- read_xml("data/empleados.xml")
+archivo_xml
 ```
 
+En primer lugar, podríamos estar interesados en el número de nodos que contienen el
+archivo y que podemos conocer como se muestra a continuación:
+
+```{r}
+# Mostramos el número de nodos del archivo
+xml_length(archivo_xml)
+```
+
+Podemos acceder a un nodo con la ayuda de la función `xml_child()` como se muestra 
+en el siguiente fragmento de código:
+
+```{r}
+# Accedemos al primer nodo
+xml_child(archivo_xml, 1)
+```
+
+Para conocer todos los valores de un nodo que coinciden con una expresión [xpath](https://www.w3schools.com/xml/xpath_intro.asp) podemos hacerlo como se 
+muestra a continuación:
+
+```{r}
+# Conocer todos los valores que coinciden con un elemento
+nombre <- xml_find_all(archivo_xml, ".//NOMBRE")
+nombre
+```
+
+Con la ayuda de la función `xml_text()`, `xml_double` y `xml_integer` obtendremos un vector de caracteres, reales o enteros respectivamente del documento, nodo o conjunto de nodos:
+
+```{r}
+# Convertir un documento, nodo o conjunto de nodo a vectores
+nombres <- xml_text(nombre)
+nombres
+```
+ 
+Con lo visto hasta ahora podemos pasar el documento XML a un dataframe para nuestro
+análisis como se muestra a continuación:
+
+```{r}
+# Obtenemos los valores de cado nodo en un vector
+id <- xml_integer(xml_find_all(archivo_xml, ".//ID"))
+nombre <- xml_text(xml_find_all(archivo_xml, ".//NOMBRE"))
+salario <- xml_double(xml_find_all(archivo_xml, ".//SALARIO"))
+alta <- xml_text(xml_find_all(archivo_xml, ".//ALTA"))
+dept <- xml_text(xml_find_all(archivo_xml, ".//DEPT"))
+
+# Creamos un dataframe a partir de los vectores
+plantilla <- data.frame(id, nombre, salario, alta, dept)
+plantilla
+```
 
 
 # Lectura de tablas HTML en R
@@ -83,6 +141,7 @@ Para importar tablas HTML necesitaremos del paquete [`rvest`](https://www.rdocum
 Para conseguir la última versión desde CRAN
 
 ```{r eval=FALSE}
+# Instalación de `rvest`desde CRAN
 install.packages("rvest")
 ```
 
@@ -99,27 +158,34 @@ devtools::install_github("hadley/rvest")
 Cargamos la libreria `rvest`:
 
 ```{r message=FALSE}
+# Cargamos la libreria `rvest`
 library(rvest)
 ```
 
-Para el ejemplo, además haremos uso del paquete `xml2` para descargar una tabla de la siguiente [página]("https://es.wikipedia.org/wiki/Anexo:Países_y_territorios_dependientes_por_población) de la Wikipedia:
+Para el ejemplo, además haremos uso del paquete `xml2` para descargar una tabla de la siguiente [página]("http://www.enterat.com/servicios/nombres-nino-nina.php") con los nombres de niño y niña más comunes en 2017:
 
 ```{r message=FALSE}
+# Cargamos la libreria `xml2`
 library(xml2)
 ```
 
 Descargamos la página mediante `xml2::read_html()` y con la ayuda de `xml2::xml_find_first()` encontramos el nodo que coincide con `xpath = "//table"`:
 
-```{r}
-html <- read_html("https://es.wikipedia.org/wiki/Anexo:Países_y_territorios_dependientes_por_población")
+```{r message = FALSE}
+# Descargamos la página
+html <- read_html("http://www.enterat.com/servicios/nombres-nino-nina.php")
+# Encontramos el elemento que coincide con la clase `table`
 tabla <- xml_find_first(html, xpath = "//table")
 ```
 
 Por último, mediante `rvest::html_table` analizamos sintácticamente la tabla html y la transformamos en un `dataframe`:
 
 ```{r}
-(df <- html_table(tabla))
+# Pasamos la tabla HTML a un dataframe
+df <- html_table(tabla)
+head(df)
 ```
+
 
 
 
