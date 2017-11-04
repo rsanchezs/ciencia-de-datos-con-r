@@ -12,8 +12,8 @@
          
       },
       "custom-js-css": { 
-        "js": ["./js/custom.js"], 
-        "css": ["./css/custom.css"] }
+        "js": ["js/custom.js"], 
+        "css": ["css/custom.css"] }
       
   }
 
