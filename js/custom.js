@@ -1,5 +1,6 @@
-var datacamp = document.getElementById("powered-by-datacamp");
+var parent_node = document.getElementById("normal markdown-section");
+var child_node = document.getElementById("powered-by-datacamp");
+parent_node.removeChild(child_node);
 
-while(datacamp.length > 0) {
-  datacamp[0].parentNode.removeChild(datacamp[0]);
-}
+
+
