@@ -322,6 +322,10 @@ Una posibilidad es navegar por las categorías de los paquetes en CRAN, con la a
 
 ![Cran Task View](https://i.imgur.com/3G3Vfdt.jpg)
 
+![Imgur](https://i.imgur.com/W6OAEbA.jpg)
+
+
+
 Volviendo al ejemplo del texto en Coreano, podemos con facilidad encontrar el paquete que necesitamos navegando al enlace Natural Language Processing. Desde este enlace, podemos buscar en la página hasta encontrar el paquete para realizar el procesamiento de lenguaje coreano, o bien mediante el atajo de teclado CTRL + F introduciendo un criterio de búsqueda en la barra que nos aparecerá.
 
 Otra alternativa es utilizar la [RDocumentation](https://www.rdocumentation.org/), un agregador para documentación de paquetes R de fuentes como CRAN, BioConductor y GitHub, el cual nos ofrece un barra de búsqueda directamente el la página principal.
