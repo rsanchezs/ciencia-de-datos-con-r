@@ -203,12 +203,28 @@ En RStudio en Tools -> Install Package se nos abrirá un cuadro de dialogo para 
 Una vez tenemos instalado un paquete, estamos en disposición de hacer uso de sus funciones. Si tan solo necesitamos hacer un uso esporádico de unas pocas funciones o datos del paquete podemos acceder con la notación `nombrepaquete::nombrefuncion()`. Por ejemplo, siguiendo con el ejemplo anterior del paquete `babynames`, para explorar uno de sus datasets podemos hacer uso de la siguiente instrucción:
 
 
+
+
+
 ```r
 > babynames::births
 ```
 
 ```
-Error in loadNamespace(name): there is no package called 'babynames'
+# A tibble: 119 x 2
+    year  births
+   <int>   <int>
+ 1  1909 2718000
+ 2  1910 2777000
+ 3  1911 2809000
+ 4  1912 2840000
+ 5  1913 2869000
+ 6  1914 2966000
+ 7  1915 2965000
+ 8  1916 2964000
+ 9  1917 2944000
+10  1918 2948000
+# ... with 109 more rows
 ```
 
 __RECUERDA__ que para acceder a las funciones y conjuntos de datos que contiene un paquete, podemos hacerlo mediante:
@@ -229,7 +245,20 @@ Después de cargar el paquete en memoria, ya no será necesario hacer uso de la 
 ```
 
 ```
-Error in eval(expr, envir, enclos): object 'births' not found
+# A tibble: 119 x 2
+    year  births
+   <int>   <int>
+ 1  1909 2718000
+ 2  1910 2777000
+ 3  1911 2809000
+ 4  1912 2840000
+ 5  1913 2869000
+ 6  1914 2966000
+ 7  1915 2965000
+ 8  1916 2964000
+ 9  1917 2944000
+10  1918 2948000
+# ... with 109 more rows
 ```
 
 __NOTA:__ que el argumento de la función `install.packages()` es un vector de tipo carácter y requiere de los nombres de los paquetes entrecomillados, mientras que la función `library()` acepta tanto un vector de tipo carácter como el nombre sin comillas.
@@ -248,10 +277,6 @@ Para descargar de la memoria un cierto paquete podemos hacer uso de la función 
 
 ```r
 > detach("babynames", unload = TRUE)
-```
-
-```
-Error in detach("babynames", unload = TRUE): invalid 'name' argument
 ```
 
 
@@ -298,18 +323,11 @@ con la ayuda de la función `ls()` como se muestra a continuación:
 
 ```r
 > library(babynames)
-```
-
-```
-Error in library(babynames): there is no package called 'babynames'
-```
-
-```r
 > ls("package:babynames")
 ```
 
 ```
-Error in as.environment(pos): no item called "package:babynames" on the search list
+[1] "applicants" "babynames"  "births"     "lifetables"
 ```
 
 
@@ -358,10 +376,8 @@ Lo anterior no quiere decir que no dispongamos de otros medios para buscar nuest
 Una posibilidad es navegar por las categorías de los paquetes en CRAN, con la ayuda de 
 [CRAN task views](https://cran.r-project.org/web/views/). En esta vista podremos navegar por los paquetes agrupados por temas o categorías basado en su funcionalidad.
 
-![Cran Task View](https://i.imgur.com/3G3Vfdt.jpg)
 
-![Imgur](https://i.imgur.com/W6OAEbA.jpg)
-
+![CRAN Task Views](https://i.imgur.com/3G3Vfdt.jpg?1)
 
 
 Volviendo al ejemplo del texto en Coreano, podemos con facilidad encontrar el paquete que necesitamos navegando al enlace Natural Language Processing. Desde este enlace, podemos buscar en la página hasta encontrar el paquete para realizar el procesamiento de lenguaje coreano, o bien mediante el atajo de teclado CTRL + F introduciendo un criterio de búsqueda en la barra que nos aparecerá.
@@ -370,16 +386,17 @@ Otra alternativa es utilizar la [RDocumentation](https://www.rdocumentation.org/
 
 Siguiendo con el ejemplo del texto en Coreano, a medida que vamos introduciendo texto en el cuadro de texto se nos muestran algunos resultados:
 
-![RDocumentation](https://i.imgur.com/E7ux8bd.jpg)
+![RDocumentation](https://i.imgur.com/gxPhLW7.jpg)
+
 
 
 Pero introduzcamos la palabra "korean" para realizar una búsqueda completa y presionemos en el botón "Search". Podemos observar que se nos mostrara dos columnas con los resultados: los paquetes en la izquierda y las funciones en la derecha.
 
-[Resultados búsqueda](https://i.imgur.com/h2KUIAV.jpg)
+![Resultado de la búsqueda](https://i.imgur.com/gj5dkrW.jpg)
 
 Centrándonos en la columna de paquetes, para cada resultado obtendremos el nombre de el paquete, junto a un enlace para una información mas detallada, el nombre del autor, al que también podemos acceder mediante el enlace para obtener otros paquetes del mismo autor, una descripción de el paquete con el criterio de búsqueda resaltado e información sobre la popularidad del paquete.
 
-[Columnas paquetes](https://i.imgur.com/NukWx4u.jpg)
+![Columna paquetes](https://i.imgur.com/iPNevMg.jpg)
 
 Respecto a la popularidad del paquete, es un indicador relevante puesto que la búsqueda ordena los paquetes por descarga, de un modo que mejora la relevancia de los resultados.
 
@@ -392,20 +409,15 @@ Dado que, parece ser que el paquete `KoNLP` cubre nuestras necesidades, después
 - Los detalles del paquete con la información del archivo DESCRIPTION.  
 
 
-[![Rdoc](http://www.rdocumentation.org/badges/version/KoNLP)](http://www.rdocumentation.org/packages/KoNLP) 
-
-
 Hay que mencionar, además que RDocumentation no es únicamente un motor de búsqueda, puesto que nos ofrece una serie de características para buscar y aprender sobre paquetes y funciones R:
 
 - De igual manera que las task views de CRAN, RDocumentation nos ofrece sus propias [task views](https://www.rdocumentation.org/taskviews#Bayesian) que como hemos visto en apartados anteriores, es otro método para explorar paquetes R por temas.
 
 
-![RDocumentation Task View](https://i.imgur.com/qpHy4qn.jpg)
-
 
 - [Leaderboard](https://www.rdocumentation.org/trends). Esta página nos muestra información sobre los paquetes y desarrolladores mas populares, los paquetes mas recientes y actualizaciones, y tres gráficos con la distribución de paquetes descargados, las palabras claves mas populares y un gráfico de dependencias, en el que podemos comprobar como los paquetes mas populares están relacionados.
 
-![Gráfico de Dependencias](https://i.imgur.com/zdaln8Z.jpg)
+![Gráfico de dependencias](https://i.imgur.com/JZTa7WX.jpg)
 
 
 - El [paquete RDocumentation](https://github.com/datacamp/Rdocumentation). RDocumentation no sólo es una página web sino también un paquete R. Este paquete nos permite incorporar la potencia de RDocumentation en nuestra flujo de trabajo, Una vez esta paquete es cargado, la función `help()` abrirá un ventana en RStudio con acceso a la documentación de RDocumentation.
@@ -419,41 +431,21 @@ A modo de ejemplo, comprobemos el paquete `vioplot` que hemos instalado en un ap
 
 ```r
 > install.packages("RDocumentation")
-```
-
-```
-Installing package into 'C:/Users/Ruben/Documents/R/win-library/3.4'
-(as 'lib' is unspecified)
-```
-
-```
-Warning: package 'RDocumentation' is not available (for R version 3.4.2)
-```
-
-```r
 > library(RDocumentation)
 > help(package = "vioplot")
 ```
 
-![RDocumentation en RStudio](https://i.imgur.com/rHEtNFg.png)
+![Paquete RDocumentation](https://i.imgur.com/JZTa7WX.jpg)
 
 - Además de proporcionarnos la habilidad de instalar y actualizar paquetes directamente desde el panel de ayuda. Por ejemplo, eliminemos el paquete `vioplot` de nuestro equipo y probemos a instalar el paquete desde el panel de ayuda mediante el botón que nos proporciona RDocumentation:
 
 
 ```r
 > remove.packages("vioplot")
-```
-
-```
-Removing package from 'C:/Users/Ruben/Documents/R/win-library/3.4'
-(as 'lib' is unspecified)
-```
-
-```r
 > help(package = "vioplot")
 ```
 
-![Instalación paquetes con RStudio](https://i.imgur.com/3j5KIT6.png)
+![Instalación paquetes con RDocumentation](https://i.imgur.com/3j5KIT6.png)
 
 
 - Ejecutar y proponer ejemplos. El panel de ayuda de las funciones de un paquete proporciona la opción de ejecutar ejemplos con un solo clic en un botón. Además tenemos la posibilidad de incorporar ejemplos en la página de ayuda para que sean utilizados por otros usuarios de R.
@@ -461,30 +453,10 @@ Removing package from 'C:/Users/Ruben/Documents/R/win-library/3.4'
 
 ```r
 > install.packages("vioplot")
-```
-
-```
-Installing package into 'C:/Users/Ruben/Documents/R/win-library/3.4'
-(as 'lib' is unspecified)
-```
-
-```
-package 'vioplot' successfully unpacked and MD5 sums checked
-
-The downloaded binary packages are in
-	C:\Users\Ruben\AppData\Local\Temp\RtmpoJGtYM\downloaded_packages
-```
-
-```r
 > help(vioplot)
 ```
 
-```
-No documentation for 'vioplot' in specified packages and libraries:
-you could try '??vioplot'
-```
-
-![Ejecutar ejemplos](https://i.imgur.com/L5gWsau.jpg)
+![Ejecutar ejemplos](https://i.imgur.com/NwtNlIF.jpg)
 
 
 
