@@ -383,7 +383,7 @@ library(RDocumentation)
 help(package = "vioplot")
 ```
 
-![Paquete RDocumentation](https://i.imgur.com/JZTa7WX.jpg)
+![RDocumentation en RStudio](https://i.imgur.com/rHEtNFg.png)
 
 - Además de proporcionarnos la habilidad de instalar y actualizar paquetes directamente desde el panel de ayuda. Por ejemplo, eliminemos el paquete `vioplot` de nuestro equipo y probemos a instalar el paquete desde el panel de ayuda mediante el botón que nos proporciona RDocumentation:
 

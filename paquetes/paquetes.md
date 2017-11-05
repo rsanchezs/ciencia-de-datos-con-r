@@ -210,23 +210,6 @@ Una vez tenemos instalado un paquete, estamos en disposición de hacer uso de su
 > babynames::births
 ```
 
-```
-# A tibble: 119 x 2
-    year  births
-   <int>   <int>
- 1  1909 2718000
- 2  1910 2777000
- 3  1911 2809000
- 4  1912 2840000
- 5  1913 2869000
- 6  1914 2966000
- 7  1915 2965000
- 8  1916 2964000
- 9  1917 2944000
-10  1918 2948000
-# ... with 109 more rows
-```
-
 __RECUERDA__ que para acceder a las funciones y conjuntos de datos que contiene un paquete, podemos hacerlo mediante:
 
 
@@ -242,23 +225,6 @@ Después de cargar el paquete en memoria, ya no será necesario hacer uso de la 
 
 ```r
 > births
-```
-
-```
-# A tibble: 119 x 2
-    year  births
-   <int>   <int>
- 1  1909 2718000
- 2  1910 2777000
- 3  1911 2809000
- 4  1912 2840000
- 5  1913 2869000
- 6  1914 2966000
- 7  1915 2965000
- 8  1916 2964000
- 9  1917 2944000
-10  1918 2948000
-# ... with 109 more rows
 ```
 
 __NOTA:__ que el argumento de la función `install.packages()` es un vector de tipo carácter y requiere de los nombres de los paquetes entrecomillados, mientras que la función `library()` acepta tanto un vector de tipo carácter como el nombre sin comillas.
@@ -324,10 +290,6 @@ con la ayuda de la función `ls()` como se muestra a continuación:
 ```r
 > library(babynames)
 > ls("package:babynames")
-```
-
-```
-[1] "applicants" "babynames"  "births"     "lifetables"
 ```
 
 
@@ -435,7 +397,7 @@ A modo de ejemplo, comprobemos el paquete `vioplot` que hemos instalado en un ap
 > help(package = "vioplot")
 ```
 
-![Paquete RDocumentation](https://i.imgur.com/JZTa7WX.jpg)
+![RDocumentation en RStudio](https://i.imgur.com/rHEtNFg.png)
 
 - Además de proporcionarnos la habilidad de instalar y actualizar paquetes directamente desde el panel de ayuda. Por ejemplo, eliminemos el paquete `vioplot` de nuestro equipo y probemos a instalar el paquete desde el panel de ayuda mediante el botón que nos proporciona RDocumentation:
 

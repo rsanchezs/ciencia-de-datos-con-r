@@ -51,7 +51,7 @@ Por ejemplo, en el siguiente fragmento de código calculamos la media de un conj
 ```
 
 ```
-[1] 24.6
+[1] 24.94
 ```
 
 ### Bucles __`for`__ Anidados
@@ -80,9 +80,9 @@ Los bucles `for` pueden ser anidados. En el siguiente fragmento de código cream
 
 ```
      [,1] [,2] [,3]
-[1,]   54  157   69
-[2,]  112  103   78
-[3,]  174  124  123
+[1,]  102  110  108
+[2,]  107  142  144
+[3,]  111   70   90
 ```
 
 El siguiente ejemplo sirve para ejemplificar el anidamiento de bucles `for`. Cada uno con su propio bloque de instrucciones y manejado con su propio índice. Es decir, `i` controla las filas de las matrices y `j` las columnas.
@@ -194,12 +194,12 @@ Para ilustrar mejor el uso de `break` crearemos un algoritmo que define una [mat
 
 ```
      [,1] [,2] [,3] [,4] [,5] [,6]
-[1,]    6   10    8    8    8   10
-[2,]    8    9   10    3    3    8
-[3,]    6    8    6    8    9    2
-[4,]    5    7    3    3    4    8
-[5,]   10    1    2    9    1   10
-[6,]    5    7    2    4    3    1
+[1,]    6    5    6    9    8   10
+[2,]    8   10    5    5    9    8
+[3,]    3    8    2    8    7    5
+[4,]    9    4    7    8    1    6
+[5,]    4    9    2    2    4    2
+[6,]    7    9    1    5    5    6
 ```
 
 ```r
@@ -231,7 +231,7 @@ Para ilustrar mejor el uso de `break` crearemos un algoritmo que define una [mat
 ```
 
 ```
-[1] 6 9 6 3 1 1
+[1]  6 10  2  8  4  6
 ```
 
 ```r
@@ -241,12 +241,12 @@ Para ilustrar mejor el uso de `break` crearemos un algoritmo que define una [mat
 
 ```
      [,1] [,2] [,3] [,4] [,5] [,6]
-[1,]    6   10    8    8    8   10
-[2,]    0    9   10    3    3    8
-[3,]    0    0    6    8    9    2
-[4,]    0    0    0    3    4    8
-[5,]    0    0    0    0    1   10
-[6,]    0    0    0    0    0    1
+[1,]    6    5    6    9    8   10
+[2,]    0   10    5    5    9    8
+[3,]    0    0    2    8    7    5
+[4,]    0    0    0    8    1    6
+[5,]    0    0    0    0    4    2
+[6,]    0    0    0    0    0    6
 ```
 
 Examinaremos brevemente ahora el código anterior, como se puede observar en primer lugar se define una matriz cuadrada de 6 x 6 y creamos un vector de tipo entero con una longitud de 6 que en el momento de su inicialización contiene todos sus valores igual a cero.
