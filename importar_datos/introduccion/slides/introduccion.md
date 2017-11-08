@@ -136,10 +136,18 @@ table.rmdtable td, table th {
 library(EDAWR)
 ```
 
+```
+## Error in library(EDAWR): there is no package called 'EDAWR'
+```
+
 
 
 ```r
 storms
+```
+
+```
+## Error in eval(expr, envir, enclos): object 'storms' not found
 ```
 
 

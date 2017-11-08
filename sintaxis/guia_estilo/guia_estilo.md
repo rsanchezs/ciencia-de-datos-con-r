@@ -66,8 +66,8 @@ v <- c(1, 2, 3)
 
 
 ```r
-> hipotenusa<-sqrt(a^2+b^2)
-> v <- c(1,2,3)
+hipotenusa <- sqrt(a^2 + b^2)
+v <- c(1, 2, 3)
 ```
 
 

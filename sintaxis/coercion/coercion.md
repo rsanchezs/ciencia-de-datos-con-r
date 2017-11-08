@@ -16,21 +16,24 @@ Cuando llamamos a una función con un argumento de un tipo erróneo, R intentar�
 
 
 ```r
-> v <- c(1, 2, 3, 4, 5)
-> v
+v <- c(1, 2, 3, 4, 5)
+v
+## [1] 1 2 3 4 5
 ```
 
 
 
 
 ```r
-> typeof(v)
+typeof(v)
+## [1] "double"
 ```
 
 
 
 ```r
-> class(v)
+class(v)
+## [1] "numeric"
 ```
 
 Si cambiamos el segundo elemento del vector con la palabra "coercion". R cambiará la clase del objeto a `character` y todos los elementos del vector a `char` como podemos ver en el siguiente ejemplo:
@@ -39,19 +42,21 @@ Si cambiamos el segundo elemento del vector con la palabra "coercion". R cambiar
 
 
 ```r
-> v[2] <- "coercion"
+v[2] <- "coercion"
 ```
 
 
 
 ```r
-> typeof(v)
+typeof(v)
+## [1] "character"
 ```
 
 
 
 ```r
-> class(v)
+class(v)
+## [1] "character"
 ```
 
 
@@ -60,8 +65,9 @@ Cuando un vector lógico es convertido a un integer o double, `TRUE` es cambiado
 
 
 ```r
-> v <- c(FALSE, TRUE, FALSE)
-> as.numeric(v)
+v <- c(FALSE, TRUE, FALSE)
+as.numeric(v)
+## [1] 0 1 0
 ```
 
 
@@ -89,20 +95,23 @@ __Ejemplos__
 
 
 ```r
-> v <- c(1, 2, 3, 4, 5)
-> class(v)
+v <- c(1, 2, 3, 4, 5)
+class(v)
+## [1] "numeric"
 ```
 
 
 
 ```r
-> as.logical(v)
+as.logical(v)
+## [1] TRUE TRUE TRUE TRUE TRUE
 ```
 
 
 
 ```r
-> as.character(v)
+as.character(v)
+## [1] "1" "2" "3" "4" "5"
 ```
 
 
@@ -112,14 +121,17 @@ En ocasiones, la conversión no puede ser llevada a cabo, en este caso R devuelv
 
 
 ```r
-> v <- c("a", "b", "c")
-> as.numeric(v)
+v <- c("a", "b", "c")
+as.numeric(v)
+## Warning: NAs introduced by coercion
+## [1] NA NA NA
 ```
 
 
 
 ```r
-> as.logical(v)
+as.logical(v)
+## [1] NA NA NA
 ```
 
 
@@ -160,7 +172,7 @@ Podemos ver una lista completa de todas las funciones `is.()` en el paquete `bas
 
 
 ```r
-> ls(pattern = "^is", baseenv())
+ls(pattern = "^is", baseenv())
 ```
 
 
@@ -168,6 +180,6 @@ Asimismo, para obtener las funciones `as.*()` podemos hacerlo mediante la siguie
 
 
 ```r
-> ls(pattern = "^as", baseenv())
+ls(pattern = "^as", baseenv())
 ```
 

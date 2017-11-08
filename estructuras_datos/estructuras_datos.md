@@ -1,5 +1,6 @@
 
 
+
 # Estructuras de Datos
 
 Este capítulo resume las estructuras de datos más importantes en R. Las colecciones

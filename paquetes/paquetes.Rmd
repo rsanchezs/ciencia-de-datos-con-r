@@ -1,11 +1,6 @@
 ```{r knitsetup, echo=FALSE, results='markup', warning=FALSE, message=FALSE, cache=FALSE}
-opts_knit$set(base.dir='./', fig.path='', out.format='md')
-opts_chunk$set(prompt=TRUE, comment='', results='markup')
-# See yihui.name/knitr/options for more Knitr options.
-##### Put other setup R code here
-
-
-# end setup chunk
+opts_knit$set(base.dir = './', fig.path = 'figure/figura-', out.format = 'md', unnamed.chunk.label = "Ejemplo", upload.fun = imgur_upload, base.url = "https://rsanchezs.imgur.com/all/")
+opts_chunk$set(prompt = FALSE, comment = '##', results = 'markup', collapse = TRUE, eval = TRUE, echo = TRUE, tidy = TRUE)
 ```
 
 # Paquetes
@@ -27,7 +22,7 @@ Después de leer este capítulo, deberíamos:
 
 ## ¿Qué es un Paquete? {#que-es-un-paquete}
 
-Antes de examinar que son los paquetes, permitidme introducir algunas definiciones. Un paquete es el modo apropiado de organizar nuestro trabajo, si lo que deseamos, es compartirlo con otros usuarios. Típicamente, un paquete incluye código (no solamente código R), documentación para el uso del paquete y funciones que incluye y conjunto de datos.
+Antes de examinar que son los paquetes, permitidme introducir algunas definiciones. Un paquete es el modo apropiado de organizar nuestro trabajo, si lo que deseamos es compartirlo con otros usuarios. Típicamente, un paquete incluye código (no solamente código R), documentación para el uso del paquete y funciones, y conjuntos de datos.
 
 La información básica sobre un paquete es proporcionada en el archivo [DESCRIPTION](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#The-DESCRIPTION-file), en el que encontraremos que utilidad tiene el paquete, el autor, la versión, fecha, tipo de licencia y las dependencias del paquete.
 
@@ -42,11 +37,11 @@ help(package = "stats")
 
 ## ¿Qué son los Repositorios? {#que-son-los-repositorios}
 
-Un repositorio es el lugar dónde están alojados los paquetes y desde el cuál podemos descargarlos. Aunque nosotros o nuestra organización disponga de un repositorio local, usualmente los paquetes son accesible online para todo el mundo. Los repositorios mas populares de paquete R son:
+Un repositorio es el lugar dónde están alojados los paquetes y desde el cuál podemos descargarlos. Aunque nosotros o nuestra organización disponga de un repositorio local, usualmente los paquetes son accesible online para todo el mundo. Los repositorios mas populares de paquetes R son:
 
 - [CRAN](https://cran.r-project.org/): el cual es el repositorio oficial compuesto de un conjunto de servidores web y ftp mantenidos por la comunidad R a lo largo de todo el mundo. Está coordinado por la fundación R, y para que un paquete pueda ser publicado en el mismo, necesita pasar por diferentes pruebas para asegurar que el paquete cumple con las políticas de CRAN. Podemos encontrar mas detalles al respecto en el siguiente [enlace](https://cran.r-project.org/web/packages/policies.html).
 
-- [Bioconductor](https://www.bioconductor.org/): se trata de un repositorio específico para bioinformática. Como CRAN, tiene sus propias [políticas de publicacions y procesos de revisión](https://www.bioconductor.org/developers/package-submission/), disponiendo de una comunidad muy activa que proporciona numerosas conferencias y encuentros a lo largo del año.
+- [Bioconductor](https://www.bioconductor.org/): se trata de un repositorio específico para bioinformática. Como CRAN, tiene sus propias [políticas de publicaciones y procesos de revisión](https://www.bioconductor.org/developers/package-submission/), disponiendo de una comunidad muy activa que proporciona numerosas conferencias y encuentros a lo largo del año.
 
 - [Github](https://github.com/): a pesar que no es específico para R, github es con toda seguridad el repositorio mas popular para la publicación de proyectos __open source__ (del inglés, código abierto). Su popularidad procede del espacio ilimitado que proporciona para el alojamiento de proyectos open source, la integración con git (un software de control de versiones) y, la facilidad de compartir y colaborar con otras personas. Se podría objetar que a pesar de que no proporciona procesos de control, sin embargo, será uno de los repositorios que utilicemos con más frecuencia siempre y cuándo conozcamos la persona/s que publica el paquete. 
 
@@ -69,7 +64,7 @@ Pasemos a analizar la salida por pantalla de la instalación de `vioplot`, algun
 
 El mensaje anterior nos indica el directorio donde será instalado nuestro paquete, podemos indicar un directorio diferente mediante el parámetro `lib`.
 
-![Origen y tamaño del paquete](https://i.imgur.com/CNDuvDB.png))
+![Origen y tamaño del paquete](https://i.imgur.com/CNDuvDB.png)
 
 La información previa nos indica el origen y el tamaño del paquete. Obviamente dependerá del servidor espejo CRAN que hayamos seleccionado.
 
@@ -141,7 +136,7 @@ Una vez que tenemos instalado `devtools`, haremos uso de las funciones para la i
 - `install_local()` desde un archivo alojado en nuestro equipo,
 - `install_svn()` desde un repositorio [SVN](https://subversion.apache.org/),
 - `install_url()` desde una URL, y
-- `install_version()` para una versión específica del un paquete de CRAN.
+- `install_version()` para una versión específica de un paquete de CRAN.
 
 Por ejemplo, para instalar el [paquete babynames](https://github.com/hadley/babynames) desde su repositorio github podemos hacerlo como mostramos a continuación:
 
@@ -255,7 +250,7 @@ library()
 ```
 
 
-## Diferentes Fuentes de Documentación y Ayuda 
+## Diferentes Fuentes de Documentación y Ayuda {#diferentes-fuentes-de-documentacion-y-ayuda}
 
 Como ya sabemos de secciones anteriores, el archivo DESCRIPTION contiene información
 básica del paquete, y a pesar de que esta información es de gran utilidad, es probable
@@ -312,7 +307,7 @@ En este [enlace](https://www.r-project.org/help.html), podemos encontrar mas opc
 
 
 
-## Escoger el Paquete Correcto para Nuestro Análisis 
+## Escoger el Paquete Correcto para Nuestro Análisis {#escoger-el-paquete-correcto-para-nuestro-analisis}
 
 En conclusión, hasta el momento aprendido las herramientas para instalar y obtener la mayoría de paquetes para R, sin embargo todavía queda una cuestión en el aire: dónde podemos encontrar los paquetes que necesitamos.
 

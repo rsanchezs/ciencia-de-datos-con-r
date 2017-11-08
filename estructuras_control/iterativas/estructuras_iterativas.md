@@ -34,24 +34,21 @@ Por ejemplo, en el siguiente fragmento de código calculamos la media de un conj
 
 
 ```r
-> # Creamos un vector aleaotorio de 10 observaciones
-> observaciones <- sample(1:50, 100, replace = TRUE)
-> 
-> # Inicializamos `suma` de todas las observaciones
-> suma <- 0
-> 
-> # Creamos un bucle for que calcula la media
-> for(i in seq_along(observaciones)) {
-+   suma <-  observaciones[i] + suma
-+   media <- suma / length(observaciones)
-+ }
-> 
-> # Mostramos por pantalla la media
-> media
-```
+# Creamos un vector aleaotorio de 10 observaciones
+observaciones <- sample(1:50, 100, replace = TRUE)
 
-```
-[1] 24.94
+# Inicializamos `suma` de todas las observaciones
+suma <- 0
+
+# Creamos un bucle for que calcula la media
+for (i in seq_along(observaciones)) {
+    suma <- observaciones[i] + suma
+    media <- suma/length(observaciones)
+}
+
+# Mostramos por pantalla la media
+media
+## [1] 23.61
 ```
 
 ### Bucles __`for`__ Anidados
@@ -60,29 +57,26 @@ Los bucles `for` pueden ser anidados. En el siguiente fragmento de código cream
 
 
 ```r
-> # Creamos dos matrices cuadradas
-> m1 <- matrix(sample(1:100, 9, replace = TRUE), nrow = 3)
-> m2 <- matrix(sample(1:100, 9, replace = TRUE), nrow = 3)
-> 
-> # Inicializamos la matriz que contendra m1+m2
-> suma <- matrix(nrow = 3, ncol = 3)
-> 
-> # Para cada fila y cada columna, realizamos la suma elemento a elemento 
-> for(i in 1:nrow(m1)) {
-+   for(j in 1:ncol(m1)) {
-+     suma[i, j] <- m1[i, j] + m2[i, j]
-+   }
-+ }
-> 
-> # Mostramos por pantalla la suma de m1+m2
-> suma
-```
+# Creamos dos matrices cuadradas
+m1 <- matrix(sample(1:100, 9, replace = TRUE), nrow = 3)
+m2 <- matrix(sample(1:100, 9, replace = TRUE), nrow = 3)
 
-```
-     [,1] [,2] [,3]
-[1,]  102  110  108
-[2,]  107  142  144
-[3,]  111   70   90
+# Inicializamos la matriz que contendra m1+m2
+suma <- matrix(nrow = 3, ncol = 3)
+
+# Para cada fila y cada columna, realizamos la suma elemento a elemento
+for (i in 1:nrow(m1)) {
+    for (j in 1:ncol(m1)) {
+        suma[i, j] <- m1[i, j] + m2[i, j]
+    }
+}
+
+# Mostramos por pantalla la suma de m1+m2
+suma
+##      [,1] [,2] [,3]
+## [1,]  121   61  122
+## [2,]  135  112  178
+## [3,]  114  148   92
 ```
 
 El siguiente ejemplo sirve para ejemplificar el anidamiento de bucles `for`. Cada uno con su propio bloque de instrucciones y manejado con su propio índice. Es decir, `i` controla las filas de las matrices y `j` las columnas.
@@ -106,20 +100,17 @@ El siguiente ejemplo es un ejemplo de utilización de la estructura `while`:
 
 
 ```r
-> # Algoritmo que muestra por pantalla los 10 primeros números naturales
-> n = 1
-> while(n <= 5) {
-+   print(n)
-+   n = n + 1
-+ }
-```
-
-```
-[1] 1
-[1] 2
-[1] 3
-[1] 4
-[1] 5
+# Algoritmo que muestra por pantalla los 10 primeros números naturales
+n = 1
+while (n <= 5) {
+    print(n)
+    n = n + 1
+}
+## [1] 1
+## [1] 2
+## [1] 3
+## [1] 4
+## [1] 5
 ```
 
 ## Bucle __`repeat`__
@@ -134,29 +125,26 @@ Como alternativa al ejemplo anterior, podríamos codificar el algoritmo como:
 
 
 ```r
-> # Algoritmo que muestra por pantalla los 10 primeros números naturales
-> n = 1
-> repeat {
-+   if(n <= 10) {
-+     print(n)
-+     n = n +1
-+   } else {
-+     break
-+   }
-+ }
-```
-
-```
-[1] 1
-[1] 2
-[1] 3
-[1] 4
-[1] 5
-[1] 6
-[1] 7
-[1] 8
-[1] 9
-[1] 10
+# Algoritmo que muestra por pantalla los 10 primeros números naturales
+n = 1
+repeat {
+    if (n <= 10) {
+        print(n)
+        n = n + 1
+    } else {
+        break
+    }
+}
+## [1] 1
+## [1] 2
+## [1] 3
+## [1] 4
+## [1] 5
+## [1] 6
+## [1] 7
+## [1] 8
+## [1] 9
+## [1] 10
 ```
 
 En el ejemplo de la estructura `repeat` podemos observar que el bloque de código es ejecutado al menos una vez y que finaliza cuando la función `if` es verificada.
@@ -181,72 +169,51 @@ Para ilustrar mejor el uso de `break` crearemos un algoritmo que define una [mat
 
 
 ```r
-> # Creamos una matriz cuadrada de 6 x 6
-> m <-
-+   matrix(
-+     data = sample(x = 10, size = 36, replace = TRUE),
-+                   nrow = 6,
-+                   ncol = 6
-+   )
-> # Mostramos por pantalla `m`
-> m
-```
 
-```
-     [,1] [,2] [,3] [,4] [,5] [,6]
-[1,]    6    5    6    9    8   10
-[2,]    8   10    5    5    9    8
-[3,]    3    8    2    8    7    5
-[4,]    9    4    7    8    1    6
-[5,]    4    9    2    2    4    2
-[6,]    7    9    1    5    5    6
-```
 
-```r
-> # Creamos un vector para la diagonal principal
-> diagonal_principal <- vector(mode = "integer", length = nrow(m))
-> diagonal_principal
-```
+# Creamos una matriz cuadrada de 6 x 6
+m <- matrix(data = sample(x = 10, size = 36, replace = TRUE), nrow = 6, ncol = 6)
+# Mostramos por pantalla `m`
+m
+##      [,1] [,2] [,3] [,4] [,5] [,6]
+## [1,]   10    5    7    2    7    8
+## [2,]    1    1    1    8    4    6
+## [3,]    4    4    8    5    7    9
+## [4,]    5    4    8    2    7   10
+## [5,]    7    5    1   10    9    7
+## [6,]    8    9    1   10    2    3
 
-```
-[1] 0 0 0 0 0 0
-```
+# Creamos un vector para la diagonal principal
+diagonal_principal <- vector(mode = "integer", length = nrow(m))
+diagonal_principal
+## [1] 0 0 0 0 0 0
 
-```r
-> # Algoritmo que calcula la matriz triangular inferior y su diagonal principal
-> for (i in 1:nrow(m)) {
-+   for (j in 1:ncol(m)) {
-+     if (i == j) {
-+       break
-+     } else {
-+       m [i, j] <- 0
-+     }
-+     
-+   }
-+   diagonal_principal[j] <- m[i, j]
-+ }
-> 
-> # Mostramos por pantalla diagonal principal
-> diagonal_principal
-```
+# Algoritmo que calcula la matriz triangular inferior y su diagonal
+# principal
+for (i in 1:nrow(m)) {
+    for (j in 1:ncol(m)) {
+        if (i == j) {
+            break
+        } else {
+            m[i, j] <- 0
+        }
+        
+    }
+    diagonal_principal[j] <- m[i, j]
+}
 
-```
-[1]  6 10  2  8  4  6
-```
-
-```r
-> # Mostraamos por pantalla matriz inferior de m
-> m
-```
-
-```
-     [,1] [,2] [,3] [,4] [,5] [,6]
-[1,]    6    5    6    9    8   10
-[2,]    0   10    5    5    9    8
-[3,]    0    0    2    8    7    5
-[4,]    0    0    0    8    1    6
-[5,]    0    0    0    0    4    2
-[6,]    0    0    0    0    0    6
+# Mostramos por pantalla diagonal principal
+diagonal_principal
+## [1] 10  1  8  2  9  3
+# Mostraamos por pantalla matriz inferior de m
+m
+##      [,1] [,2] [,3] [,4] [,5] [,6]
+## [1,]   10    5    7    2    7    8
+## [2,]    0    1    1    8    4    6
+## [3,]    0    0    8    5    7    9
+## [4,]    0    0    0    2    7   10
+## [5,]    0    0    0    0    9    7
+## [6,]    0    0    0    0    0    3
 ```
 
 Examinaremos brevemente ahora el código anterior, como se puede observar en primer lugar se define una matriz cuadrada de 6 x 6 y creamos un vector de tipo entero con una longitud de 6 que en el momento de su inicialización contiene todos sus valores igual a cero.
@@ -280,19 +247,16 @@ Pongamos por caso que queremos mostrar por pantalla los números pares de una se
 
 
 ```r
-> for (i in 1:10) {
-+   if(i %% 2)
-+     next
-+     print(i)
-+ }
-```
-
-```
-[1] 2
-[1] 4
-[1] 6
-[1] 8
-[1] 10
+for (i in 1:10) {
+    if (i%%2) 
+        next
+    print(i)
+}
+## [1] 2
+## [1] 4
+## [1] 6
+## [1] 8
+## [1] 10
 ```
 
 Este algoritmo utiliza el [teorema del resto](https://es.wikipedia.org/wiki/Teorema_del_resto) para calcular si un número es par o impar. Si el resto de dividir el número entre dos es igual a cero entonces se trata de un número par y es mostrado por pantalla.
@@ -331,31 +295,26 @@ Sirva de ejemplo la suma de dos vectores `v1` y `v1` en un vector `v3`, la cual 
 
 
 ```r
-> n <- 4
-> v1 <- c(1, 2, 3, 4)
-> v2 <- c(5, 6, 7, 8)
-> v3 <- vector(mode = "integer", length = length(n))
-> 
-> for (i in 1:n) { 
-+ 	v3[i] <- v1[i] + v2[i] 
-+ }
-> v3
-```
 
-```
-[1]  6  8 10 12
+n <- 4
+v1 <- c(1, 2, 3, 4)
+v2 <- c(5, 6, 7, 8)
+v3 <- vector(mode = "integer", length = length(n))
+
+for (i in 1:n) {
+    v3[i] <- v1[i] + v2[i]
+}
+v3
+## [1]  6  8 10 12
 ```
 
 Si bien, podemos usar como alternativa la vectorización nativa de R:
 
 
 ```r
-> v3 = v1 + v2
-> v3
-```
-
-```
-[1]  6  8 10 12
+v3 = v1 + v2
+v3
+## [1]  6  8 10 12
 ```
 
 ### El Conjunto de Funciones __`apply`__ {#familia-apply}
@@ -383,11 +342,12 @@ El paquete [purr](http://purrr.tidyverse.org/) forma parte del ecosistema [tidyv
 
 
 ```r
-> # La manera mas facil de conseguir `purrr` es instalar el ecosistema tidyverse
-> install.packages("tidyverse")
-> 
-> # Alternativamente, podemos instalar solo purrr:
-> install.packages("purrr")
+# La manera mas facil de conseguir `purrr` es instalar el ecosistema
+# tidyverse
+install.packages("tidyverse")
+
+# Alternativamente, podemos instalar solo purrr:
+install.packages("purrr")
 ```
 
 El patrón de iterar por un vector, realizando una operación en cada elemento y calcular el resultado es tan común que el paquete `purrr` proporciona una familia de funciones para llevar a cabo esta tarea. Existe una función para cada tipo de salida:
@@ -411,40 +371,31 @@ Consideremos que queremos calcular el cuadrado de cada elemento en una secuencia
 
 
 ```r
-> n <- 5
-> res <- rep(NA_integer_, n) 
-> for (i in seq_len(n)) {
-+   res[i] <- i ^ 2
-+ }
-> res
-```
-
-```
-[1]  1  4  9 16 25
+n <- 5
+res <- rep(NA_integer_, n)
+for (i in seq_len(n)) {
+    res[i] <- i^2
+}
+res
+## [1]  1  4  9 16 25
 ```
 
 La segunda opción es por medio de la vectorización:
 
 
 ```r
-> n <- 5
-> seq_len(n) ^ 2
-```
-
-```
-[1]  1  4  9 16 25
+n <- 5
+seq_len(n)^2
+## [1]  1  4  9 16 25
 ```
 
 En tercer lugar, mediante `sapply`:
 
 
 ```r
-> n <- 5
-> sapply(1:n, function(x) x^2)
-```
-
-```
-[1]  1  4  9 16 25
+n <- 5
+sapply(1:n, function(x) x^2)
+## [1]  1  4  9 16 25
 ```
 
 
@@ -452,12 +403,9 @@ Por último, mediante `purrr::map()`:
 
 
 ```r
-> n <- 5
-> map_dbl(1:n,  function(x) x ^ 2)
-```
-
-```
-Error in map_dbl(1:n, function(x) x^2): could not find function "map_dbl"
+n <- 5
+map_dbl(1:n, function(x) x^2)
+## [1]  1  4  9 16 25
 ```
 
 En este ejemplo por la sencillez del caso las dos últimas alternativas no son necesarias y la correcta sería hacerlo mediante vectorización. Pero en estructuras de datos y funciones mas complejas optaríamos por cualquiera de las dos últimas opciones.

@@ -53,10 +53,6 @@
 
 ### Apéndice 
 
-* [Guía Referencia R](guia_referencia_r.md)
-* [Guía Referencia Importar Datos](importar_datos.md)
-* [Guía Referencia Visualización Datos](visualizacion_datos.md)
-* [Ejercicio Interactivo](example.md)
 
 
 

@@ -4,7 +4,6 @@
 
 
 
-
 # Sintaxis R
 
 Aprender un lenguaje de programación es como aprender un segundo idioma (sólo

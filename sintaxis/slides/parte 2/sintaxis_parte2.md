@@ -79,16 +79,19 @@ __Ejemplo:__
 ```r
 v <- c(1, 2, 3, 4, 5)
 v
+## [1] 1 2 3 4 5
 ```
 
 
 ```r
 typeof(v)
+## [1] "double"
 ```
 
 
 ```r
 class(v)
+## [1] "numeric"
 ```
 
 
@@ -106,6 +109,7 @@ __Ejemplo:__
 ```r
 v <- c(1, 2, 3, 4, 5)
 v
+## [1] 1 2 3 4 5
 ```
 
 
@@ -116,11 +120,13 @@ v[2] <- "coercion"
 
 ```r
 typeof(v)
+## [1] "character"
 ```
 
 
 ```r
 class(v)
+## [1] "character"
 ```
 
 
@@ -140,16 +146,19 @@ v <- c(FALSE, TRUE, FALSE)
 
 ```r
 typeof(v)
+## [1] "logical"
 ```
 
 
 ```r
 class(v)
+## [1] "logical"
 ```
 
 
 ```r
 as.numeric(v)
+## [1] 0 1 0
 ```
 
 ## Resumen Reglas Coerción Implícita
@@ -179,17 +188,20 @@ __Ejemplos__
 ```r
 v <- c(1, 2, 3, 4, 5)
 class(v)
+## [1] "numeric"
 ```
 
 
 
 ```r
 as.logical(v)
+## [1] TRUE TRUE TRUE TRUE TRUE
 ```
 
 
 ```r
 as.character(v)
+## [1] "1" "2" "3" "4" "5"
 ```
 
 ## Coerción Explícita
@@ -210,9 +222,21 @@ v <- c("a", "b", "c")
 as.numeric(v)
 ```
 
+```
+## Warning: NAs introduced by coercion
+```
+
+```
+## [1] NA NA NA
+```
+
 
 ```r
 as.logical(v)
+```
+
+```
+## [1] NA NA NA
 ```
 
 
@@ -272,14 +296,26 @@ Para ayudarnos con los cálculos aritméticos R, soporta cuatro valores numéric
 2 ^ 1024
 ```
 
+```
+## [1] Inf
+```
+
 
 ```r
 - 2 ^ 1024
 ```
 
+```
+## [1] -Inf
+```
+
 
 ```r
 1 / 0
+```
+
+```
+## [1] Inf
 ```
 
 
@@ -296,9 +332,17 @@ Para ayudarnos con los cálculos aritméticos R, soporta cuatro valores numéric
 Inf - Inf
 ```
 
+```
+## [1] NaN
+```
+
 
 ```r
 0 / 0
+```
+
+```
+## [1] NaN
 ```
 
 
@@ -324,10 +368,18 @@ peso <- c(77, 68, 85, NA, 73)
 mean(peso)
 ```
 
+```
+## [1] NA
+```
+
 
 
 ```r
 mean(peso, na.rm = TRUE)
+```
+
+```
+## [1] 75.75
 ```
 
 ## Guía de estilo R

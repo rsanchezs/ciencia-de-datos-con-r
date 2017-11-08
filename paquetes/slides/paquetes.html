@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Importar Datos Estadísticos</title>
+  <title>Paquetes</title>
 
   <meta charset="utf-8">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -20,12 +20,12 @@
     var SLIDE_CONFIG = {
       // Slide settings
       settings: {
-                title: 'Importar Datos Estadísticos',
+                title: 'Paquetes',
                         useBuilds: true,
         usePrettify: true,
         enableSlideAreas: true,
         enableTouch: true,
-                        favIcon: './logo.png',
+                        favIcon: 'logo.png',
               },
 
       // Author information
@@ -85,7 +85,7 @@
       position: absolute;
       bottom: 20px;
       left: 60px;
-      background: url(./logo.png) no-repeat 0 50%;
+      background: url(logo.png) no-repeat 0 50%;
       -webkit-background-size: 30px 30px;
       -moz-background-size: 30px 30px;
       -o-background-size: 30px 30px;
@@ -110,7 +110,7 @@
       <h1 data-config-title><!-- populated from slide_config.json --></h1>
       <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
       <p data-config-presenter><!-- populated from slide_config.json --></p>
-            <p style="margin-top: 6px; margin-left: -2px;">01 de Noviembre de 2017</p>
+            <p style="margin-top: 6px; margin-left: -2px;">06 de Noviembre de 2017</p>
           </hgroup>
   </slide>
 
@@ -120,7 +120,6 @@ h2 {
    line-height: 65px; 
    letter-spacing: -2px; 
    color: #FFFFFF;
-   padding: 15px 0px 0px 0px;
 } 
 </style>
 
@@ -131,6 +130,7 @@ h3 {
   line-height: 2;
   font-weight: inherit;
   color: #797979;
+  padding: 0px;
 }
 </style>
 
@@ -155,7 +155,7 @@ slides > slide {
 
 <style>
 pre {
-  width : 75%;
+  width : 60%;
   padding: 10px 15px 10px 15px;
   left: 0px;
   background-color: #2A3137;
@@ -201,16 +201,25 @@ slides > slide:not(.nobackground):before {
 }
 </style>
 
-<style>
-table.rmdtable th { 
-   color: #515151; 
-   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(40%, #CED815), color-stop(80%, #989e1d)) no-repeat; 
-   background: -webkit-linear-gradient(top, #CED815 40%, #989e1d 80%) no-repeat; 
-   background: -moz-linear-gradient(top, #CED815 40%, #989e1d 80%) no-repeat; 
-   background: -o-linear-gradient(top, #CED815 40%, #989e1d 80%) no-repeat; 
-   background: linear-gradient(top, #CED815 40%, #989e1d 80%) no-repeat; 
- } 
-</style>
+<!-- <style> -->
+
+<!-- table.rmdtable th {  -->
+
+<!--    color: #515151;  -->
+
+<!--    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(40%, #CED815), color-stop(80%, #989e1d)) no-repeat;  -->
+
+<!--    background: -webkit-linear-gradient(top, #CED815 40%, #989e1d 80%) no-repeat;  -->
+
+<!--    background: -moz-linear-gradient(top, #CED815 40%, #989e1d 80%) no-repeat;  -->
+
+<!--    background: -o-linear-gradient(top, #CED815 40%, #989e1d 80%) no-repeat;  -->
+
+<!--    background: linear-gradient(top, #CED815 40%, #989e1d 80%) no-repeat;  -->
+
+<!--  }  -->
+
+<!-- </style> -->
 
 <style>
 table.rmdtable {
@@ -236,90 +245,73 @@ table.rmdtable td, table th {
 }
 </style>
 
-<slide class=''><hgroup><h2>Lectura de Archivos</h2></hgroup><article  id="lectura-de-archivos" class="build">
+<slide class=''><hgroup><h2>¿Qué són los paquetes? </h2><h3> Acceder a <code>DESCRIPTION</code> con <code>packageDescription(&quot;package&quot;)</code></h3></hgroup><article  id="que-son-los-paquetes-acceder-a-description-con-packagedescriptionpackage" class="build">
 
-<p>Lo primero que haremos será cargar el ecosistema</p>
+<pre class = 'prettyprint lang-r'>packageDescription(&quot;stats&quot;)</pre>
 
-<pre class = 'prettyprint lang-r'>library(tidyverse)</pre>
+<pre >## Package: stats
+## Version: 3.4.2
+## Priority: base
+## Title: The R Stats Package
+## Author: R Core Team and contributors worldwide
+## Maintainer: R Core Team &lt;R-core@r-project.org&gt;
+## Description: R statistical functions.
+## License: Part of R 3.4.2
+## Imports: utils, grDevices, graphics
+## Suggests: MASS, Matrix, SuppDists, methods, stats4
+## NeedsCompilation: yes
+## Built: R 3.4.2; x86_64-w64-mingw32; 2017-09-28 09:43:01 UTC;
+##        windows
+## 
+## -- File: D:/Ruben/Documents/R-3.4.2/library/stats/Meta/package.rds</pre>
 
-<p>También tenemos la opción de cargar únicamente el paquete</p>
+</article></slide><slide class=''><hgroup><h2>¿Qué són los paquetes? </h2><h3> Acceder a la documentación con <code>help(package = &quot;package&quot;)</code></h3></hgroup><article  id="que-son-los-paquetes-acceder-a-la-documentacion-con-helppackage-package">
 
-<pre class = 'prettyprint lang-r'>library(haven)</pre>
+<pre class = 'prettyprint lang-r'>help(package = &quot;stats&quot;)</pre>
 
-</article></slide><slide class=''><hgroup><h2>Lectura de Archivos </h2><h3> Función <code>read_sav()</code></h3></hgroup><article  id="lectura-de-archivos-funcion-read_sav" class="smaller build">
+</article></slide><slide class=''><hgroup><h2>¿Cómo Instalar un Paquete R? </h2><h3> Instalación de Paquetes desde CRAN</h3></hgroup><article  id="como-instalar-un-paquete-r-instalacion-de-paquetes-desde-cran" class="build">
 
-<pre class = 'prettyprint lang-r'># Lectura de los datos SPSS
-(spss &lt;- read_sav(&quot;data/mtcars.sav&quot;))</pre>
+<pre class = 'prettyprint lang-r'>install.packages(&quot;tidyverse&quot;)</pre>
 
-<pre >## # A tibble: 32 x 11
-##      mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb
-##    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-##  1  21.0     6 160.0   110  3.90 2.620 16.46     0     1     4     4
-##  2  21.0     6 160.0   110  3.90 2.875 17.02     0     1     4     4
-##  3  22.8     4 108.0    93  3.85 2.320 18.61     1     1     4     1
-##  4  21.4     6 258.0   110  3.08 3.215 19.44     1     0     3     1
-##  5  18.7     8 360.0   175  3.15 3.440 17.02     0     0     3     2
-##  6  18.1     6 225.0   105  2.76 3.460 20.22     1     0     3     1
-##  7  14.3     8 360.0   245  3.21 3.570 15.84     0     0     3     4
-##  8  24.4     4 146.7    62  3.69 3.190 20.00     1     0     4     2
-##  9  22.8     4 140.8    95  3.92 3.150 22.90     1     0     4     2
-## 10  19.2     6 167.6   123  3.92 3.440 18.30     1     0     4     4
-## # ... with 22 more rows</pre>
+<pre >## Installing package into &#39;C:/Users/Ruben/Documents/R/win-library/3.4&#39;
+## (as &#39;lib&#39; is unspecified)</pre>
 
-</article></slide><slide class=''><hgroup><h2>Escritura de Archivos </h2><h3> Función <code>write_sas()</code></h3></hgroup><article  id="escritura-de-archivos-funcion-write_sas">
+<pre >## package &#39;tidyverse&#39; successfully unpacked and MD5 sums checked
+## 
+## The downloaded binary packages are in
+##  C:\Users\Ruben\AppData\Local\Temp\RtmpOKlNbx\downloaded_packages</pre>
 
-<pre class = 'prettyprint lang-r'># Escritura del dataframe `mtcars` a un archivo SPSS
-write_sav(mtcars, &quot;data/mtcars.sav&quot;)</pre>
+</article></slide><slide class=''><hgroup><h2>¿Cómo Instalar un Paquete R? </h2><h3> Instalación de Varios Paquetes a la vez</h3></hgroup><article  id="como-instalar-un-paquete-r-instalacion-de-varios-paquetes-a-la-vez">
 
-</article></slide><slide class=''><hgroup><h2>Lectura de Archivos </h2><h3> Función <code>read_stata()</code></h3></hgroup><article  id="lectura-de-archivos-funcion-read_stata" class="smaller build">
+<pre class = 'prettyprint lang-r'>install.packages(c(&quot;tidyverse&quot;, &quot;nycflights13&quot;, &quot;gapminder&quot;, &quot;Lahman&quot;))</pre>
 
-<pre class = 'prettyprint lang-r'># Lectura de los datos STATA
-(stata &lt;- read_dta(&quot;data/mtcars.dta&quot;))</pre>
+</article></slide><slide class=''><hgroup><h2>Instalación de Paquetes con</h2></hgroup><article  id="instalacion-de-paquetes-con">
 
-<pre >## # A tibble: 32 x 11
-##      mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb
-##    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-##  1  21.0     6 160.0   110  3.90 2.620 16.46     0     1     4     4
-##  2  21.0     6 160.0   110  3.90 2.875 17.02     0     1     4     4
-##  3  22.8     4 108.0    93  3.85 2.320 18.61     1     1     4     1
-##  4  21.4     6 258.0   110  3.08 3.215 19.44     1     0     3     1
-##  5  18.7     8 360.0   175  3.15 3.440 17.02     0     0     3     2
-##  6  18.1     6 225.0   105  2.76 3.460 20.22     1     0     3     1
-##  7  14.3     8 360.0   245  3.21 3.570 15.84     0     0     3     4
-##  8  24.4     4 146.7    62  3.69 3.190 20.00     1     0     4     2
-##  9  22.8     4 140.8    95  3.92 3.150 22.90     1     0     4     2
-## 10  19.2     6 167.6   123  3.92 3.440 18.30     1     0     4     4
-## # ... with 22 more rows</pre>
+<pre class = 'prettyprint lang-r'># Instalación del paquete `devtools`
+install.packages(&quot;devtools&quot;)</pre>
 
-</article></slide><slide class=''><hgroup><h2>Escritura de Archivos </h2><h3> Función <code>write_dta()</code></h3></hgroup><article  id="escritura-de-archivos-funcion-write_dta">
+</article></slide><slide class=''><hgroup><h2>Instalación de Paquetes con </h2><h3> Funciones de Instalación</h3></hgroup><article  id="instalacion-de-paquetes-con-funciones-de-instalacion">
 
-<pre class = 'prettyprint lang-r'># Escritura del dataframe `mtcars` a un archivo STATA
-write_dta(mtcars, &quot;data/mtcars.dta&quot;)</pre>
+<ul class = 'build'>
+<li><code>install_bioc()</code> desde <a href='https://www.bioconductor.org/' title=''>Bioconductor</a>,</li>
+<li><code>install_bitbucket()</code> desde <a href='https://bitbucket.org/' title=''>Bitbucket</a>,</li>
+<li><code>install_cran()</code> desde <a href='https://cran.r-project.org/index.html' title=''>CRAN</a>,</li>
+<li><code>install_git()</code>desde un repositorio <a href='https://git-scm.com/' title=''>git</a>,</li>
+<li><code>install_github()</code> desde <a href='https://github.com/' title=''>GitHub</a>,</li>
+<li><code>install_local()</code> desde un archivo alojado en nuestro equipo,</li>
+<li><code>install_svn()</code> desde un repositorio <a href='https://subversion.apache.org/' title=''>SVN</a>,</li>
+<li><code>install_url()</code> desde una URL, y</li>
+<li><code>install_version()</code> para una versión específica de un paquete de CRAN.</li>
+</ul>
 
-</article></slide><slide class=''><hgroup><h2>Lectura de Archivos </h2><h3> Función <code>read_sas()</code></h3></hgroup><article  id="lectura-de-archivos-funcion-read_sas" class="smaller build">
+</article></slide><slide class=''><hgroup><h2>Instalación de Paquetes con </h2><h3> Funciones de Instalación</h3></hgroup><article  id="instalacion-de-paquetes-con-funciones-de-instalacion-1">
 
-<pre class = 'prettyprint lang-r'># Lectura de los datos STATA
-(sas &lt;- read_sas(&quot;data/mtcars.sas7bdat&quot;))</pre>
+<p><strong>Ejemplo:</strong></p>
 
-<pre >## # A tibble: 32 x 11
-##      mpg   cyl  disp    hp  drat    wt  qsec    vs    am  gear  carb
-##    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-##  1  21.0     6 160.0   110  3.90 2.620 16.46     0     1     4     4
-##  2  21.0     6 160.0   110  3.90 2.875 17.02     0     1     4     4
-##  3  22.8     4 108.0    93  3.85 2.320 18.61     1     1     4     1
-##  4  21.4     6 258.0   110  3.08 3.215 19.44     1     0     3     1
-##  5  18.7     8 360.0   175  3.15 3.440 17.02     0     0     3     2
-##  6  18.1     6 225.0   105  2.76 3.460 20.22     1     0     3     1
-##  7  14.3     8 360.0   245  3.21 3.570 15.84     0     0     3     4
-##  8  24.4     4 146.7    62  3.69 3.190 20.00     1     0     4     2
-##  9  22.8     4 140.8    95  3.92 3.150 22.90     1     0     4     2
-## 10  19.2     6 167.6   123  3.92 3.440 18.30     1     0     4     4
-## # ... with 22 more rows</pre>
-
-</article></slide><slide class=''><hgroup><h2>Escritura de Archivos </h2><h3> Función <code>write_sas()</code></h3></hgroup><article  id="escritura-de-archivos-funcion-write_sas-1">
-
-<pre class = 'prettyprint lang-r'># Escritura del dataframe `mtcars` a un archivo SAS
-write_sas(mtcars, &quot;data/mtcars.sas7bdat&quot;)</pre></article></slide>
+<pre class = 'prettyprint lang-r'># Cargamos libreria `devtools`
+library(devtools)
+# Instalamos la version en desarrollo de`tidyverse` desde GitHub
+install_github(&quot;hadley/tidyverse&quot;)</pre></article></slide>
 
 
   <slide class="backdrop"></slide>

@@ -23,3 +23,7 @@ library(haven)
 mtcars <- read_sas("mtcars.sas7bdat")
 ```
 
+```
+## Error: 'mtcars.sas7bdat' does not exist in current working directory ('C:/Users/Ruben/Documents/RStudioProjects/ciencia-de-datos-con-r/importar_datos/programas_estadisticos').
+```
+

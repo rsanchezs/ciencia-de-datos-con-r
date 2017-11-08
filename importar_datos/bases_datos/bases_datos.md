@@ -19,7 +19,7 @@ Para conectarnos a una base de datos SQLite, en primer lugar debemos instalar y 
 
 ```r
 # Instalamos el paquetes
-install.packages(c("DBI","RSQLite"))
+install.packages(c("DBI", "RSQLite"))
 ```
 
 
@@ -28,6 +28,7 @@ install.packages(c("DBI","RSQLite"))
 # Cargamos los paquetes
 library(DBI)
 library(RSQLite)
+## Error in library(RSQLite): there is no package called 'RSQLite'
 ```
 
 Después definimos la conexión a la base de datos, en la que especificaremos el driver para que sea de tipo "SQLite" y que pasaremos a la función `dbConnect()` a la que además le pasaremos como argumento la ruta del archivo de la base de datos
@@ -36,10 +37,15 @@ Después definimos la conexión a la base de datos, en la que especificaremos el
 ```r
 # Definimos el driver
 driver <- dbDriver("SQLite")
+## Error: Couldn't find driver SQLite. Looked in:
+## * global namespace
+## * in package called SQLite
+## * in package called RSQLite
 # Definimos la ruta al archivo de la bd
 archivo_bd <- system.file("data/database.sqlite")
 # Establecemos la conexión
 con <- dbConnect(driver, archivo_bd)
+## Error in dbConnect(driver, archivo_bd): object 'driver' not found
 ```
 
 ### Conexión a MySQL
@@ -49,7 +55,7 @@ La única diferencia para la conexión a una base de datos MySQL es cargar el pa
 
 ```r
 # Instalamos el paquetes
-install.packages(c("DBI","RMySQL"))
+install.packages(c("DBI", "RMySQL"))
 # Cargamos los paquetes
 library(DBI)
 library(RMySQL)
@@ -57,11 +63,7 @@ library(RMySQL)
 
 
 ```
-Error in library(DBI): there is no package called 'DBI'
-```
-
-```
-Error in library(RMySQL): there is no package called 'RMySQL'
+## Error in library(RMySQL): there is no package called 'RMySQL'
 ```
 
 
@@ -71,10 +73,7 @@ Error in library(RMySQL): there is no package called 'RMySQL'
 # Definimos el driver
 driver <- dbDriver("MySQL")
 # Establecemos la conexión
-conn <- dbConnect(driver,
-                  user = "ruben",
-                  password = "1234",
-                  db = "sakila")
+conn <- dbConnect(driver, user = "ruben", password = "1234", db = "sakila")
 ```
 
 
@@ -89,7 +88,7 @@ Para listar las tablas de una base de datos haremos uso de la función `dbListTa
 
 
 ```
-Error in dbWriteTable(con, "mtcars", mtcars): could not find function "dbWriteTable"
+## Error in dbWriteTable(con, "mtcars", mtcars): object 'con' not found
 ```
 
 
@@ -97,6 +96,7 @@ Error in dbWriteTable(con, "mtcars", mtcars): could not find function "dbWriteTa
 ```r
 # Mostramos las tablas de la bd
 dbListTables(con)
+## Error in dbListTables(con): object 'con' not found
 ```
 
 Por otro lado, para recuperar los datos de una base de datos escribiremos una consulta, que consiste en un string que contiene una instrucción SQL, y la enviaremos a la base de datos con la ayuda de la función `dbGetQuery`. En el siguiente ejemplo, `SELECT * FROM mtcars` significa "muestra cada columna de la tabla con nombre `mtcars`":
@@ -107,8 +107,10 @@ Por otro lado, para recuperar los datos de una base de datos escribiremos una co
 consulta <- "SELECT * FROM mtcars"
 # Enviamos la consulta al SGBDR
 datos <- dbGetQuery(con, consulta)
+## Error in dbGetQuery(con, consulta): object 'con' not found
 # Mostramos por pantalla un subconjunto de los datos
 datos[1:10, 1:5]
+## Error in eval(expr, envir, enclos): object 'datos' not found
 ```
 
 Para aquellos que no conocen el lenguaje SQL, el paquete `DBI` proporciona multitud de funciones para la manipulación de base de datos. A modo de ejemplo, 
@@ -129,5 +131,6 @@ Por último, una vez hemos manipulado la base de datos, es necesario desconectar
 ```r
 # Cerramos la conexión
 dbDisconnect(con)
+## Error in dbDisconnect(con): object 'con' not found
 ```
 

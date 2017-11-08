@@ -19,7 +19,7 @@ Después de leer este capítulo, deberíamos:
 
 ## ¿Qué es un Paquete? {#que-es-un-paquete}
 
-Antes de examinar que son los paquetes, permitidme introducir algunas definiciones. Un paquete es el modo apropiado de organizar nuestro trabajo, si lo que deseamos, es compartirlo con otros usuarios. Típicamente, un paquete incluye código (no solamente código R), documentación para el uso del paquete y funciones que incluye y conjunto de datos.
+Antes de examinar que son los paquetes, permitidme introducir algunas definiciones. Un paquete es el modo apropiado de organizar nuestro trabajo, si lo que deseamos es compartirlo con otros usuarios. Típicamente, un paquete incluye código (no solamente código R), documentación para el uso del paquete y funciones, y conjuntos de datos.
 
 La información básica sobre un paquete es proporcionada en el archivo [DESCRIPTION](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#The-DESCRIPTION-file), en el que encontraremos que utilidad tiene el paquete, el autor, la versión, fecha, tipo de licencia y las dependencias del paquete.
 
@@ -29,17 +29,17 @@ Por ejemplo, para acceder a la documentación del paquete `stats` lo haríamos d
 
 
 ```r
-> packageDescription("stats")
-> help(package = "stats")
+packageDescription("stats")
+help(package = "stats")
 ```
 
 ## ¿Qué son los Repositorios? {#que-son-los-repositorios}
 
-Un repositorio es el lugar dónde están alojados los paquetes y desde el cuál podemos descargarlos. Aunque nosotros o nuestra organización disponga de un repositorio local, usualmente los paquetes son accesible online para todo el mundo. Los repositorios mas populares de paquete R son:
+Un repositorio es el lugar dónde están alojados los paquetes y desde el cuál podemos descargarlos. Aunque nosotros o nuestra organización disponga de un repositorio local, usualmente los paquetes son accesible online para todo el mundo. Los repositorios mas populares de paquetes R son:
 
 - [CRAN](https://cran.r-project.org/): el cual es el repositorio oficial compuesto de un conjunto de servidores web y ftp mantenidos por la comunidad R a lo largo de todo el mundo. Está coordinado por la fundación R, y para que un paquete pueda ser publicado en el mismo, necesita pasar por diferentes pruebas para asegurar que el paquete cumple con las políticas de CRAN. Podemos encontrar mas detalles al respecto en el siguiente [enlace](https://cran.r-project.org/web/packages/policies.html).
 
-- [Bioconductor](https://www.bioconductor.org/): se trata de un repositorio específico para bioinformática. Como CRAN, tiene sus propias [políticas de publicacions y procesos de revisión](https://www.bioconductor.org/developers/package-submission/), disponiendo de una comunidad muy activa que proporciona numerosas conferencias y encuentros a lo largo del año.
+- [Bioconductor](https://www.bioconductor.org/): se trata de un repositorio específico para bioinformática. Como CRAN, tiene sus propias [políticas de publicaciones y procesos de revisión](https://www.bioconductor.org/developers/package-submission/), disponiendo de una comunidad muy activa que proporciona numerosas conferencias y encuentros a lo largo del año.
 
 - [Github](https://github.com/): a pesar que no es específico para R, github es con toda seguridad el repositorio mas popular para la publicación de proyectos __open source__ (del inglés, código abierto). Su popularidad procede del espacio ilimitado que proporciona para el alojamiento de proyectos open source, la integración con git (un software de control de versiones) y, la facilidad de compartir y colaborar con otras personas. Se podría objetar que a pesar de que no proporciona procesos de control, sin embargo, será uno de los repositorios que utilicemos con más frecuencia siempre y cuándo conozcamos la persona/s que publica el paquete. 
 
@@ -52,7 +52,7 @@ La forma de instalar un paquete R depende de dónde este localizado. Con esto qu
 
 
 ```r
-> install.packages("vioplot")
+install.packages("vioplot")
 ```
 
 Después de ejecutar la instrucción anterior recibiremos una serie de mensajes en nuestra pantalla. Esto depende del sistema operativo que usemos, las dependencias y si el paquete es instalado correctamente.
@@ -63,7 +63,7 @@ Pasemos a analizar la salida por pantalla de la instalación de `vioplot`, algun
 
 El mensaje anterior nos indica el directorio donde será instalado nuestro paquete, podemos indicar un directorio diferente mediante el parámetro `lib`.
 
-![Origen y tamaño del paquete](https://i.imgur.com/CNDuvDB.png))
+![Origen y tamaño del paquete](https://i.imgur.com/CNDuvDB.png)
 
 La información previa nos indica el origen y el tamaño del paquete. Obviamente dependerá del servidor espejo CRAN que hayamos seleccionado.
 
@@ -79,7 +79,7 @@ Hay que mencionar, además que si deseamos instalar mas de un paquete a la vez, 
 
 
 ```r
-> install.packages("vioplot", "MASS")
+install.packages("vioplot", "MASS")
 ```
 
 ### Instalación de Paquetes desde Servidores Espejo de CRAN
@@ -93,7 +93,7 @@ El siguiente ejemplo sirve para usar el mirror de la Red Nacional Española de I
 
 
 ```r
-> install.packages("vioplot", repos = "https://cran.rediris.es/")
+install.packages("vioplot", repos = "https://cran.rediris.es/")
 ```
 
 ### Instalación de Paquetes Bioconductor
@@ -102,21 +102,21 @@ En el caso de Bioconductor, el modo estandar de instalar un paquete es ejecutar 
 
 
 ```r
-> source("https://bioconductor.org/biocLite.R")
+source("https://bioconductor.org/biocLite.R")
 ```
 
 La instrucción anterior instalará en nuestro equipo las funciones necesarias para la instalación de paquetes bioconductor, como por ejemplo la función `biocLite()`. Si deseamos instalar los paquetes básicos de Biocondutor, podemos hacerlo de la manera siguiente:
 
 
 ```r
-> biocLite()
+biocLite()
 ```
 
 No obstante, si solamente estamos interesados en uno o varios paquetes en particular, podemos hacerlo como se muestra a continuación:
 
 
 ```r
-> biocLite(c("GenomicFeatures", "AnnotationDbi"))
+biocLite(c("GenomicFeatures", "AnnotationDbi"))
 ```
 
 
@@ -128,7 +128,7 @@ En primer lugar, tendremos que instalar el paquete `devtools` como hemos visto e
 
 
 ```r
-> install.packages("devtools")
+install.packages("devtools")
 ```
 
 Una vez que tenemos instalado `devtools`, haremos uso de las funciones para la instalación de otros paquetes. Las opciones son las siguientes:
@@ -141,13 +141,13 @@ Una vez que tenemos instalado `devtools`, haremos uso de las funciones para la i
 - `install_local()` desde un archivo alojado en nuestro equipo,
 - `install_svn()` desde un repositorio [SVN](https://subversion.apache.org/),
 - `install_url()` desde una URL, y
-- `install_version()` para una versión específica del un paquete de CRAN.
+- `install_version()` para una versión específica de un paquete de CRAN.
 
 Por ejemplo, para instalar el [paquete babynames](https://github.com/hadley/babynames) desde su repositorio github podemos hacerlo como mostramos a continuación:
 
 
 ```r
-> devtools::install_github("hadley/babynames")
+devtools::install_github("hadley/babynames")
 ```
 
 
@@ -159,35 +159,35 @@ En esta sección, encontraremos unas pocas funciones que nos permitirán la gest
 
 
 ```r
-> installed.packages()
+installed.packages()
 ```
 
 - Si nuestro objetivo es eliminar un paquete, podemos hacerlo como en el siguiente ejemplo:
 
 
 ```r
-> remove.packages("vioplot")
+remove.packages("vioplot")
 ```
 
 - Para comprobar que paquetes necesitan ser actualizados usaremos:
 
 
 ```r
-> old.packages()
+old.packages()
 ```
 
 - A su vez para actualizar todos los paquetes lo haremos mediante una llamada a la función:
 
 
 ```r
-> update.packages()
+update.packages()
 ```
 
 - Sin embargo, para actualizar un solo paquete, usaremos de nuevo la instrucción:
 
 
 ```r
-> install.packages("vioplot")
+install.packages("vioplot")
 ```
 
 
@@ -207,14 +207,28 @@ Una vez tenemos instalado un paquete, estamos en disposición de hacer uso de su
 
 
 ```r
-> babynames::births
+babynames::births
+## # A tibble: 119 x 2
+##     year  births
+##    <int>   <int>
+##  1  1909 2718000
+##  2  1910 2777000
+##  3  1911 2809000
+##  4  1912 2840000
+##  5  1913 2869000
+##  6  1914 2966000
+##  7  1915 2965000
+##  8  1916 2964000
+##  9  1917 2944000
+## 10  1918 2948000
+## # ... with 109 more rows
 ```
 
 __RECUERDA__ que para acceder a las funciones y conjuntos de datos que contiene un paquete, podemos hacerlo mediante:
 
 
 ```r
-> help(package = "babynames")
+help(package = "babynames")
 ```
 
 
@@ -224,7 +238,21 @@ Después de cargar el paquete en memoria, ya no será necesario hacer uso de la 
 
 
 ```r
-> births
+births
+## # A tibble: 119 x 2
+##     year  births
+##    <int>   <int>
+##  1  1909 2718000
+##  2  1910 2777000
+##  3  1911 2809000
+##  4  1912 2840000
+##  5  1913 2869000
+##  6  1914 2966000
+##  7  1915 2965000
+##  8  1916 2964000
+##  9  1917 2944000
+## 10  1918 2948000
+## # ... with 109 more rows
 ```
 
 __NOTA:__ que el argumento de la función `install.packages()` es un vector de tipo carácter y requiere de los nombres de los paquetes entrecomillados, mientras que la función `library()` acepta tanto un vector de tipo carácter como el nombre sin comillas.
@@ -242,7 +270,7 @@ Para descargar de la memoria un cierto paquete podemos hacer uso de la función 
 
 
 ```r
-> detach("babynames", unload = TRUE)
+detach("babynames", unload = TRUE)
 ```
 
 
@@ -260,11 +288,11 @@ De igual manera, para recordar la diferencia es ejecutar la función `library()`
 
 
 ```r
-> library()
+library()
 ```
 
 
-## Diferentes Fuentes de Documentación y Ayuda 
+## Diferentes Fuentes de Documentación y Ayuda {#diferentes-fuentes-de-documentacion-y-ayuda}
 
 Como ya sabemos de secciones anteriores, el archivo DESCRIPTION contiene información
 básica del paquete, y a pesar de que esta información es de gran utilidad, es probable
@@ -280,7 +308,7 @@ Por ejemplo, para obtener el archivo de ayuda de la función `vioplot` del paque
 
 
 ```r
-> help(vioplot, package = "vioplot")
+help(vioplot, package = "vioplot")
 ```
 
 __Nota:__ Podemos utilizar otra alternativa para inspeccionar un paquete cargado y es
@@ -288,8 +316,9 @@ con la ayuda de la función `ls()` como se muestra a continuación:
 
 
 ```r
-> library(babynames)
-> ls("package:babynames")
+library(babynames)
+ls("package:babynames")
+## [1] "applicants" "babynames"  "births"     "lifetables"
 ```
 
 
@@ -307,14 +336,14 @@ Asumiendo que ya disponemos del paquete `ggplot2` instalado, podemos consultar l
 
 
 ```r
-> vignette(package = "ggplot2")
+vignette(package = "ggplot2")
 ```
 
 Si ejecutamos la instrucción anterior podemos comprobar que existen dos vignettes disponibles para `ggplot2`, "ggplot2-specs" y "extending-ggplot2". Podemos explorar la primera mediante la siguiente instrucción:
 
 
 ```r
-> vignette("ggplot2-specs")
+vignette("ggplot2-specs")
 ```
 
 
@@ -325,7 +354,7 @@ En este [enlace](https://www.r-project.org/help.html), podemos encontrar mas opc
 
 
 
-## Escoger el Paquete Correcto para Nuestro Análisis 
+## Escoger el Paquete Correcto para Nuestro Análisis {#escoger-el-paquete-correcto-para-nuestro-analisis}
 
 En conclusión, hasta el momento aprendido las herramientas para instalar y obtener la mayoría de paquetes para R, sin embargo todavía queda una cuestión en el aire: dónde podemos encontrar los paquetes que necesitamos.
 
@@ -392,9 +421,9 @@ A modo de ejemplo, comprobemos el paquete `vioplot` que hemos instalado en un ap
 
 
 ```r
-> install.packages("RDocumentation")
-> library(RDocumentation)
-> help(package = "vioplot")
+install.packages("RDocumentation")
+library(RDocumentation)
+help(package = "vioplot")
 ```
 
 ![RDocumentation en RStudio](https://i.imgur.com/rHEtNFg.png)
@@ -403,8 +432,8 @@ A modo de ejemplo, comprobemos el paquete `vioplot` que hemos instalado en un ap
 
 
 ```r
-> remove.packages("vioplot")
-> help(package = "vioplot")
+remove.packages("vioplot")
+help(package = "vioplot")
 ```
 
 ![Instalación paquetes con RDocumentation](https://i.imgur.com/3j5KIT6.png)
@@ -414,8 +443,8 @@ A modo de ejemplo, comprobemos el paquete `vioplot` que hemos instalado en un ap
 
 
 ```r
-> install.packages("vioplot")
-> help(vioplot)
+install.packages("vioplot")
+help(vioplot)
 ```
 
 ![Ejecutar ejemplos](https://i.imgur.com/NwtNlIF.jpg)

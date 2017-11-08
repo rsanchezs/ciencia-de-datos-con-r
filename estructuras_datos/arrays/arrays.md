@@ -1,5 +1,6 @@
 
 
+
 # Arrays
 
 
@@ -17,33 +18,24 @@ podemos proporcionar nombres para cada dimensión:
 
 
 ```r
-> array_3_D <- array(
-+   1:24, 
-+   dim=c(4, 3, 2),
-+   dimnames = list(
-+     c("uno", "dos", "tres", "cuatro"),
-+     c("five", "six", "seven"),
-+     c("un", "deux")
-+   ))
-> array_3_D
-```
-
-```
-, , un
-
-       five six seven
-uno       1   5     9
-dos       2   6    10
-tres      3   7    11
-cuatro    4   8    12
-
-, , deux
-
-       five six seven
-uno      13  17    21
-dos      14  18    22
-tres     15  19    23
-cuatro   16  20    24
+array_3_D <- array(1:24, dim = c(4, 3, 2), dimnames = list(c("uno", "dos", "tres", 
+    "cuatro"), c("five", "six", "seven"), c("un", "deux")))
+array_3_D
+## , , un
+## 
+##        five six seven
+## uno       1   5     9
+## dos       2   6    10
+## tres      3   7    11
+## cuatro    4   8    12
+## 
+## , , deux
+## 
+##        five six seven
+## uno      13  17    21
+## dos      14  18    22
+## tres     15  19    23
+## cuatro   16  20    24
 ```
 
 
@@ -51,22 +43,16 @@ Podemos comprobar si un objeto es un array mediante la función `is.array)`:
 
 
 ```r
-> is.array(array_3_D)
-```
-
-```
-[1] TRUE
+is.array(array_3_D)
+## [1] TRUE
 ```
 
 Finalmente, podemos conocer su dimensión con la ayuda de la función `dim()`:
 
 
 ```r
-> dim(array_3_D)
-```
-
-```
-[1] 4 3 2
+dim(array_3_D)
+## [1] 4 3 2
 ```
 
 

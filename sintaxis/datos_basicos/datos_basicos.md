@@ -16,18 +16,21 @@ El tipo _logical_ es la forma que tiene R para los datos binarios. Usados en tes
 
 
 ```r
-> 3 < 4
+3 < 4
+## [1] TRUE
 ```
 
 
 ```r
-> class(TRUE)
+class(TRUE)
+## [1] "logical"
 ```
 
 
 
 ```r
-> class(T)
+class(T)
+## [1] "logical"
 ```
 
 
@@ -35,27 +38,31 @@ Es posible construir condiciones lógicas utilizando los operadores `&`, `|` y `
 
 
 ```r
-> a <- 2
-> b <- 4
-> a == b # ¿es igual a b?
+a <- 2
+b <- 4
+a == b  # ¿es igual a b?
+## [1] FALSE
 ```
 
 
 
 
 ```r
-> a != b # ¿es a distindo de b?
+a != b  # ¿es a distindo de b?
+## [1] TRUE
 ```
 
 
 ```r
-> (a <3) & (b < 5)  # ¿es a menor que 3 y b menor que 3?
+(a < 3) & (b < 5)  # ¿es a menor que 3 y b menor que 3?
+## [1] TRUE
 ```
 
 
 
 ```r
-> (a < 1) | (b < 3)  # ¿es a menor que 1 o b menor que 3?
+(a < 1) | (b < 3)  # ¿es a menor que 1 o b menor que 3?
+## [1] FALSE
 ```
 
 A continuación se muestran los operadores de comparación y lógicos en R:
@@ -88,10 +95,10 @@ documentación R:
 
 
 ```r
-> # Sintaxis de comparación
-> ?Comparison
-> # Operadores lógicos
-> ?base::Logic
+# Sintaxis de comparación
+`?`(Comparison)
+# Operadores lógicos
+`?`(base::Logic)
 ```
 
 
@@ -103,28 +110,32 @@ Para representar los números reales R proporciona el tipo _numeric_. Podemos re
 
 
 ```r
-> mi_altura_en_cm <- 180
-> mi_altura_en_cm
+mi_altura_en_cm <- 180
+mi_altura_en_cm
+## [1] 180
 ```
 
 
 
 ```r
-> mi_peso <- 79.5
-> mi_peso
+mi_peso <- 79.5
+mi_peso
+## [1] 79.5
 ```
 
 
 
 ```r
-> IMC <- mi_peso / mi_altura_en_cm ^ 2
-> IMC
+IMC <- mi_peso/mi_altura_en_cm^2
+IMC
+## [1] 0.002453704
 ```
 
 
 
 ```r
-> round(mi_peso)
+round(mi_peso)
+## [1] 80
 ```
 
 ## Integer {#integer}
@@ -134,8 +145,9 @@ Un tipo especial de numeric es el _integer_. Este es el modo de representar los 
 
 
 ```r
-> mi_edad <- 40L
-> mi_edad
+mi_edad <- 40L
+mi_edad
+## [1] 40
 ```
 
 En el ejemplo anterior, no podemos apreciar la diferencia entre el número real y el número entero.Sin embargo, con la función `class()` podemos comprobar esta diferencia:
@@ -144,13 +156,15 @@ En el ejemplo anterior, no podemos apreciar la diferencia entre el número real 
 
 
 ```r
-> class(40)
+class(40)
+## [1] "numeric"
 ```
 
 
 
 ```r
-> class(40L)
+class(40L)
+## [1] "integer"
 ```
 
 En lugar de preguntar por la clase de una variable mediante la función `class()`, podemos utilizar las funciones `is.*()` para comprobar si un objeto es realmente de un cierto tipo. Por ejemplo, para comprobar si una variable es numeric, usaremos la función `is.numeric()`:
@@ -158,13 +172,15 @@ En lugar de preguntar por la clase de una variable mediante la función `class()
 
 
 ```r
-> is.numeric(40)
+is.numeric(40)
+## [1] TRUE
 ```
 
 
 
 ```r
-> is.numeric(40L)
+is.numeric(40L)
+## [1] TRUE
 ```
 
 Para comprobar si una variable es integer, usaremos la función `is.integer()`:
@@ -172,13 +188,15 @@ Para comprobar si una variable es integer, usaremos la función `is.integer()`:
 
 
 ```r
-> is.integer(40)
+is.integer(40)
+## [1] FALSE
 ```
 
 
 
 ```r
-> is.integer(40L)
+is.integer(40L)
+## [1] TRUE
 ```
 
 Como podemos ver en el ejemplo anterior los números reales son numeric, pero no todos los numeric son enteros.
@@ -191,7 +209,8 @@ interpretado por R como _character_. Por ejemplo:
 
 
 ```r
-> "Ciencia de Datos con R"
+"Ciencia de Datos con R"
+## [1] "Ciencia de Datos con R"
 ```
 
 

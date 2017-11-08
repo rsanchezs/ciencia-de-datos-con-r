@@ -20,20 +20,17 @@ y ejecuta la siguiente instrucción sólo si el valor es __`TRUE`__:
 
 
 ```r
-> if (TRUE) {
-+   message("Es verdadero, se ejecutara la instruccion.")
-+ }
-```
-
-```
-Es verdadero, se ejecutara la instruccion.
+if (TRUE) {
+    message("Es verdadero, se ejecutara la instruccion.")
+}
+## Es verdadero, se ejecutara la instruccion.
 ```
 
 
 ```r
-> if (FALSE) {
-+   message("Es falso, no se ejecutara la instruccion.")
-+ }  
+if (FALSE) {
+    message("Es falso, no se ejecutara la instruccion.")
+}
 ```
 
 
@@ -41,26 +38,20 @@ En el caso que pasemos valores desconocidos (`NA`) a `if`, R lanzará un error:
 
 
 ```r
-> if (NA) {
-+   message("Los valores desconocidos lanzan un error")
-+ }
-```
-
-```
-Error in if (NA) {: missing value where TRUE/FALSE needed
+if (NA) {
+    message("Los valores desconocidos lanzan un error")
+}
+## Error in if (NA) {: missing value where TRUE/FALSE needed
 ```
 
 Si nos encontramos ante esta situación, deberíamos comprobarlo mediante la función `is.na()`:
 
 
 ```r
-> if (is.na(NA)) {
-+   message("El valor es desconocido.")
-+ }  
-```
-
-```
-El valor es desconocido.
+if (is.na(NA)) {
+    message("El valor es desconocido.")
+}
+## El valor es desconocido.
 ```
 
 Desde luego, en nuestro código en pocas ocasiones pasaremos los valores
@@ -70,9 +61,10 @@ entre 0 y 1. Si el valor es mayor que `0.5`, entonces el mensaje será mostrado:
 
 
 ```r
-> if (runif(1) > 0.5) {
-+   message("Este mensaje aparece con un 50% de probabilidad.")
-+ }
+if (runif(1) > 0.5) {
+    message("Este mensaje aparece con un 50% de probabilidad.")
+}
+## Este mensaje aparece con un 50% de probabilidad.
 ```
 
 
@@ -80,11 +72,11 @@ Si pretendemos ejecutar un bloque de instrucciones, podemos envolverlo entre par
 
 
 ```r
-> x <- 3
-> if (x < 2) {
-+   y <- 2 * x
-+   z <- 3 * y
-+ }
+x <- 3
+if (x < 2) {
+    y <- 2 * x
+    z <- 3 * y
+}
 ```
 
 
@@ -102,15 +94,12 @@ El código después de un `else` se ejecuta sólo si la condición en `if` es `F
 
 
 ```r
-> if (FALSE) {
-+   message("Este bloque no se ejecuta...")
-+ } else {
-+   message("pero este si lo hará")
-+ }
-```
-
-```
-pero este si lo hará
+if (FALSE) {
+    message("Este bloque no se ejecuta...")
+} else {
+    message("pero este si lo hará")
+}
+## pero este si lo hará
 ```
 
 
@@ -125,46 +114,37 @@ El siguiente ejemplo nos sirve para mostrar el anidamiento de instrucciones `if-
 
 
 ```
-Error in library(modeest): there is no package called 'modeest'
+## Error in library(modeest): there is no package called 'modeest'
 ```
 
 
 
 ```r
-> # Creamos una muestra de 20 observaciones del 1 al 100 en
-> # el que se pueden repetir hasta 2 observaciones
-> (muestra <- sample(1:100, 20, 2))
-```
+# Creamos una muestra de 20 observaciones del 1 al 100 en el que se pueden
+# repetir hasta 2 observaciones
+(muestra <- sample(1:100, 20, 2))
+##  [1] 70 92 59 96 85 15  6 22 90 10 54 45 82 59 86 46 66 51 36 89
 
-```
- [1] 43 76 41 38 54 70  5 18 57 51 92 44  3 28 82 85 18 98 76 48
-```
+## Creamos una variable indicando la medida de tendencia central que queremos
+## calcular
+centralizacion <- "moda"
 
-```r
-> ## Creamos una variable indicando la medida de tendencia central
-> ## que queremos calcular
-> centralizacion <- "moda"
-> 
-> 
-> ## Creamos un algoritmo para calcular la tendencia central que
-> ## deseemos
-> if (centralizacion == "moda") {
-+    media = mean(muestra)
-+    message("La media es ", as.character(media))
-+ } else if (centralizacion == "mediana") {
-+    mediana = median(muestra)
-+    message("La mediana es ", as.character(mediana))
-+ } else if (centralizacion == "moda") {
-+    moda = mlv(muestra, method = "mfv")
-+    message("La moda es ", as.character(moda))
-+ } else {
-+   message("Este algoritmo sola calcula la media,
-+           mediana, moda")
-+ }
-```
 
-```
-La media es 51.35
+## Creamos un algoritmo para calcular la tendencia central que deseemos
+if (centralizacion == "moda") {
+    media = mean(muestra)
+    message("La media es ", as.character(media))
+} else if (centralizacion == "mediana") {
+    mediana = median(muestra)
+    message("La mediana es ", as.character(mediana))
+} else if (centralizacion == "moda") {
+    moda = mlv(muestra, method = "mfv")
+    message("La moda es ", as.character(moda))
+} else {
+    message("Este algoritmo sola calcula la media,
+          mediana, moda")
+}
+## La media es 57.95
 ```
 
 ## __`If`__ Vectorizado
@@ -175,18 +155,12 @@ mayor que uno, R nos lo indicará mediante un __warning__ indicándonos que hemo
 
 
 ```r
-> if (c(TRUE, FALSE)) {
-+   message("dos condiciones")
-+ }
-```
-
-```
-Warning in if (c(TRUE, FALSE)) {: the condition has length > 1 and only the
-first element will be used
-```
-
-```
-dos condiciones
+if (c(TRUE, FALSE)) {
+    message("dos condiciones")
+}
+## Warning in if (c(TRUE, FALSE)) {: the condition has length > 1 and only the
+## first element will be used
+## dos condiciones
 ```
 
 Puesto que muchas de las operaciones en R son vectorizadas, R nos proporciona la función `ifelse`. La función `ifelse` toma tres argumentos. El primer argumento es un vector lógico de condiciones. El segundo es un vector que contiene los valores que
@@ -197,11 +171,8 @@ es `FALSE`.
 
 
 ```r
-> str(ifelse)
-```
-
-```
-function (test, yes, no)  
+str(ifelse)
+## function (test, yes, no)
 ```
 
 
@@ -219,12 +190,8 @@ números aleatorios de un distribución binomial simulando el lanzamiento de una
 
 
 ```r
-> ifelse(rbinom(n = 10, size = 1, prob = 0.5),
-+        "cara", "cruz")
-```
-
-```
- [1] "cruz" "cara" "cara" "cruz" "cruz" "cara" "cara" "cruz" "cara" "cruz"
+ifelse(rbinom(n = 10, size = 1, prob = 0.5), "cara", "cruz")
+##  [1] "cruz" "cara" "cara" "cruz" "cara" "cara" "cruz" "cara" "cara" "cara"
 ```
 
 No obstante, `if(test) yes else no` es mucho mas eficiente y preferible a `ifelse(test, yes, no)` cuando `test` es decir, la
@@ -249,11 +216,8 @@ El caso más común toma como primer argumento una expresión que devuelve un st
 
 
 ```r
-> str(switch)
-```
-
-```
-function (EXPR, ...)  
+str(switch)
+## function (EXPR, ...)
 ```
 
 #### Argumentos
@@ -269,68 +233,43 @@ Una alternativa al ejemplo presentado en el apartado anterior mediante la funci�
 
 
 ```
-Error in library(modeest): there is no package called 'modeest'
+## Error in library(modeest): there is no package called 'modeest'
 ```
 
 
 
 ```r
-> # Creamos una muestra de 20 observaciones del 1 al 100 en
-> # el que se pueden repetir hasta 2 observaciones
-> (muestra <- sample(1:100, 20, 2))
-```
 
-```
- [1] 92 36 68 57 80 20 65 88 34 28 97 72 63 32 64 29 35 56 31 96
-```
+# Creamos una muestra de 20 observaciones del 1 al 100 en el que se pueden
+# repetir hasta 2 observaciones
+(muestra <- sample(1:100, 20, 2))
+##  [1] 41 20 93  5 72 15  2 40 90 28 62  9 41 39 80 79 82 93 31 36
 
-```r
-> #Calculamos la media de la muestra
-> (switch(
-+   "media",
-+   media = mean(muestra),
-+   mediana = median(muestra),
-+   moda = mlv(muestra, method = "mfv")
-+ ))
-```
 
-```
-[1] 57.15
+# Calculamos la media de la muestra
+(switch("media", media = mean(muestra), mediana = median(muestra), moda = mlv(muestra, 
+    method = "mfv")))
+## [1] 47.9
 ```
 
 Si ningún nombre coincide, entonces `switch` devuelve `NULL`:
 
 
 ```r
-> # Intentamos calcular la desviación típica
-> (switch(
-+   "desviacion_tipica",
-+   media = mean(x),
-+   mediana = median(x),
-+   moda = mlv(x, method = "mfv")
-+   ))
-```
-
-```
-NULL
+# Intentamos calcular la desviación típica
+(switch("desviacion_tipica", media = mean(x), mediana = median(x), moda = mlv(x, 
+    method = "mfv")))
+## NULL
 ```
 
 En este escenario, podemos proporcionar un argumento por defecto sin nombre que `switch()` devolverá cuando no coincida ningún otro:
 
 
 ```r
-> # Intentamos calcular la desviación típica
-> (switch(
-+   "desviacion_tipica",
-+   media = mean(x),
-+   mediana = median(x),
-+   moda = mlv(x, method = "mfv"),
-+   "Solo se puede calcular la media, mediana y moda"
-+   ))
-```
-
-```
-[1] "Solo se puede calcular la media, mediana y moda"
+# Intentamos calcular la desviación típica
+(switch("desviacion_tipica", media = mean(x), mediana = median(x), moda = mlv(x, 
+    method = "mfv"), "Solo se puede calcular la media, mediana y moda"))
+## [1] "Solo se puede calcular la media, mediana y moda"
 ```
 
 [if]:https://i.imgur.com/KhwkQbf.png

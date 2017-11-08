@@ -79,6 +79,10 @@ Ejemplos:
 127 %% 10
 ```
 
+```
+## [1] 7
+```
+
 
 ## Expresiones
 
@@ -91,6 +95,10 @@ Ejemplos:
 ```r
 # Instrucción condicional
 if (1 > 2) "mayor" else "menor"
+```
+
+```
+## [1] "menor"
 ```
 
 ## Expresiones
@@ -156,11 +164,19 @@ La notación con paréntesis devuelve el resultado de evaluar la expresión dent
 (x <- 1)
 ```
 
+```
+## [1] 1
+```
+
 
 ```r
 # es equivalente
 x <- 1
 x 
+```
+
+```
+## [1] 1
 ```
 <div class="note">
 La notación con paréntesis devuelve el resultado de evaluar la expresión dentro del paréntesis:
@@ -176,9 +192,17 @@ Agrupar expresiones con paréntesis puede ser usado para modificar la prioridad 
 2 * 5 + 1
 ```
 
+```
+## [1] 11
+```
+
 
 ```r
 2 * (5 + 1)
+```
+
+```
+## [1] 12
 ```
 
 <div class="note">
@@ -213,6 +237,10 @@ factorial(3)
 factorial(3)
 ```
 
+```
+## [1] 6
+```
+
 
 ## Llaves
 
@@ -225,12 +253,20 @@ Las llaves son usadas para evaluar una serie de expresiones (separadas por nueva
 {x <- 1; y <- 2; x + y}
 ```
 
+```
+## [1] 3
+```
+
 Usado para agrupar un conjunto de expresiones en el cuerpo de una función:
 
 
 ```r
 f <- function() {x <- 1; y <- 2; x + y}
 f()
+```
+
+```
+## [1] 3
 ```
 
 <div class="note">
@@ -254,6 +290,11 @@ Ejemplos:
 function() {x <- 1; y <- 2; x + y}
 ```
 
+```
+## function() {x <- 1; y <- 2; x + y}
+## <environment: 0x00000000244a1c00>
+```
+
 
 ## Objetos
 
@@ -268,6 +309,10 @@ f <- function(x, y){x + y}
 f(1, 2)
 ```
 
+```
+## [1] 3
+```
+
 ## Objetos
 
 
@@ -279,6 +324,10 @@ Ejemplos:
 # incluso las expresiones 
 
 {x <- 1; y <- 2; x + y}
+```
+
+```
+## [1] 3
 ```
 
 
@@ -303,6 +352,10 @@ vector_numerico <- c(1, 2, 3, 4, 5)
 typeof(vector_numerico)
 ```
 
+```
+## [1] "double"
+```
+
 
 ## Cada objeto es miembro de una clase
 
@@ -318,6 +371,10 @@ Además, cada objeto es miembro de una clase.  Las clases definen que informaci�
 ```r
 vector_numerico <- c(1, 2, 3, 4, 5)
 class(vector_numerico)
+```
+
+```
+## [1] "numeric"
 ```
 
 ## Comprobar la clase de un objeto en nuestros scripts
@@ -349,6 +406,10 @@ Ejemplo:
 
 ```r
 is.character("Ciencia de Datos con R")
+```
+
+```
+## [1] TRUE
 ```
 
 
@@ -433,14 +494,26 @@ El tipo logical es la forma que tiene R para los datos binarios. Usados en test 
 3 < 4
 ```
 
+```
+## [1] TRUE
+```
+
 
 ```r
 class(TRUE)
 ```
 
+```
+## [1] "logical"
+```
+
 
 ```r
 class(T)
+```
+
+```
+## [1] "logical"
 ```
 
 ## Logical {.small}
@@ -457,10 +530,18 @@ b <- 4
 a == b # ¿es igual a b?
 ```
 
+```
+## [1] FALSE
+```
+
 
 
 ```r
 a != b # ¿es a distindo de b?
+```
+
+```
+## [1] TRUE
 ```
 
 
@@ -468,10 +549,18 @@ a != b # ¿es a distindo de b?
 (a <3) & (b < 5)  # ¿es a menor que 3 y b menor que 3?
 ```
 
+```
+## [1] TRUE
+```
+
 
 
 ```r
 (a < 1) | (b < 3)  # ¿es a menor que 1 o b menor que 3?
+```
+
+```
+## [1] FALSE
 ```
 
 ## Operadores de Comparación
@@ -531,10 +620,18 @@ mi_altura_en_cm <- 180
 mi_altura_en_cm
 ```
 
+```
+## [1] 180
+```
+
 
 ```r
 mi_peso <- 79.5
 mi_peso
+```
+
+```
+## [1] 79.5
 ```
 
 
@@ -553,6 +650,10 @@ mi_edad <- 40L
 mi_edad
 ```
 
+```
+## [1] 40
+```
+
 ## {.build}
 
 <div class="note">
@@ -566,9 +667,17 @@ En el siguiente ejemplo, podemos apreciar la diferencia entre el numero real y e
 class(40)
 ```
 
+```
+## [1] "numeric"
+```
+
 
 ```r
 class(40L)
+```
+
+```
+## [1] "integer"
 ```
 
 ## {.build}
@@ -583,9 +692,17 @@ En lugar de preguntar por la clase de una variable(mediante la función class), 
 is.numeric(40)
 ```
 
+```
+## [1] TRUE
+```
+
 
 ```r
 is.numeric(40L)
+```
+
+```
+## [1] TRUE
 ```
 
 
@@ -594,9 +711,17 @@ is.numeric(40L)
 is.integer(40)
 ```
 
+```
+## [1] FALSE
+```
+
 
 ```r
 is.integer(40L)
+```
+
+```
+## [1] TRUE
 ```
 
 </div>
@@ -624,6 +749,10 @@ Cualquier carácter/cadena de carácteres entre comillas sera interpretado por R
 "Ciencia de Datos con R"
 ```
 
+```
+## [1] "Ciencia de Datos con R"
+```
+
 ## Un unico valor = vector longitud 1 {.build}
 
 <div class="note"> Hay una cosa que me gustaria comentaros.R no proporciona ningun tipo de estructura de datos para almacenar un único valor o un unico caracter o cualquier otro tipo de dato básico: estos son en realidad vectores de longitud 1. Esto podemos verlo utilizando la función is.vector en las variables que hemos visto en los ejemplos:
@@ -635,6 +764,7 @@ Cualquier carácter/cadena de carácteres entre comillas sera interpretado por R
 ```r
 mi_edad <- 40
 is.vector(mi_edad)
+## [1] TRUE
 ```
 
 
@@ -642,6 +772,7 @@ is.vector(mi_edad)
 ```r
 mi_nombre <- "Ruben"
 is.vector(mi_nombre)
+## [1] TRUE
 ```
 </div>
 
@@ -656,11 +787,16 @@ Para demostraros que estas variables son vectores de longitud 1, usaremos la fun
 ```r
 mi_edad <- 40
 is.vector(mi_edad)
+## [1] TRUE
 ```
 
 
 ```r
 length(mi_edad)
+```
+
+```
+## [1] 1
 ```
 
 
@@ -670,11 +806,16 @@ length(mi_edad)
 ```r
 mi_nombre <- "Ruben"
 is.vector(mi_nombre)
+## [1] TRUE
 ```
 
 
 ```r
 length(mi_nombre)
+```
+
+```
+## [1] 1
 ```
 </div>
 
@@ -693,14 +834,26 @@ secuencia_fibonacci <- c(0, 1, 2, 3, 5, 8, 13)
 secuencia_fibonacci
 ```
 
+```
+## [1]  0  1  2  3  5  8 13
+```
+
 
 ```r
 class(secuencia_fibonacci)
 ```
 
+```
+## [1] "numeric"
+```
+
 
 ```r
 length(secuencia_fibonacci)
+```
+
+```
+## [1] 7
 ```
 
 
@@ -717,14 +870,26 @@ apellidos <- c("Sanchez","Sancho")
 apellidos
 ```
 
+```
+## [1] "Sanchez" "Sancho"
+```
+
 
 ```r
 class(apellidos)
 ```
 
+```
+## [1] "character"
+```
+
 
 ```r
 length(apellidos)
+```
+
+```
+## [1] 2
 ```
 
 
