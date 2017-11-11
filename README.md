@@ -1,1 +1,1 @@
-![Portada](https://i.imgur.com/C3Uw3VT.jpg)
+![](https://i.imgur.com/O06x8Av.jpg)
