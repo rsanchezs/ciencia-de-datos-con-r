@@ -250,7 +250,7 @@ __Ejemplo:__
 ```
 
 ```
-##  [1] 78 76 52 97 98 95 16  2 70 99 85 89 74 28 66 19 86 34 30 18
+##  [1] 17 69 56 59 46  4 41 51 12 16 57 86 86  1 68 14 86  5 83 45
 ```
 
 
@@ -381,7 +381,7 @@ ifelse(rbinom(n = 10, size = 1, prob = 0.5), "cara", "cruz")
 ```
 
 ```
-##  [1] "cara" "cara" "cara" "cruz" "cara" "cruz" "cara" "cruz" "cruz" "cara"
+##  [1] "cara" "cruz" "cruz" "cruz" "cara" "cruz" "cruz" "cara" "cara" "cara"
 ```
 
 

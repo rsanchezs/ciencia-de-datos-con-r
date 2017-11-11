@@ -234,6 +234,14 @@ help(package = "babynames")
 
 Por otro lado, si hacemos un uso intensivo de un paquete, la forma mas eficiente de trabajar es cargándolo en memoria. Esto lo conseguiremos mediante el uso de la función `library()`.
 
+
+
+```r
+library(babynames)
+```
+
+
+
 Después de cargar el paquete en memoria, ya no será necesario hacer uso de la notación `nombrepaquete::funcion()`, y podremos hacer uso de sus funciones y datos como cualquier paquete base de R:
 
 

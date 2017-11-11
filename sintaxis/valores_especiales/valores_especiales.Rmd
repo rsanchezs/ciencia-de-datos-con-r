@@ -1,6 +1,10 @@
 ```{r knitsetup, echo=FALSE, results='markup', warning=FALSE, message=FALSE, cache=FALSE}
-opts_knit$set(base.dir = './', fig.path = 'figure/figura-', out.format = 'md', unnamed.chunk.label = "Ejemplo", upload.fun = imgur_upload, base.url = "https://rsanchezs.imgur.com/all/")
+opts_knit$set(base.dir = './', fig.path = 'figure/figura-', out.format = 'md', unnamed.chunk.label = 'Ejemplo', upload.fun = imgur_upload, base.url = "https://rsanchezs.imgur.com/all/")
 opts_chunk$set(prompt = FALSE, comment = '##', results = 'markup', collapse = TRUE, eval = TRUE, echo = TRUE, tidy = TRUE)
+
+opts_knit$set(unnamed.chunk.label = 'Ejemplo')
+
+
 ```
 
 
@@ -26,7 +30,7 @@ Si una computación resulta en un número que es demasiado grande, R devolverá 
 
 
 ```{r}
-- 2 ^ 1024
+-2 ^ 1024
 ```
 
 Esto es también cierto cuando hacemos la división entre 0:

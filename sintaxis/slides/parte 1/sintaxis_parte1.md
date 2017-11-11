@@ -292,7 +292,7 @@ function() {x <- 1; y <- 2; x + y}
 
 ```
 ## function() {x <- 1; y <- 2; x + y}
-## <environment: 0x00000000244a1c00>
+## <environment: 0x00000000241a0b28>
 ```
 
 

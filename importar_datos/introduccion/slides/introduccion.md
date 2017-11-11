@@ -147,7 +147,21 @@ storms
 ```
 
 ```
-## Error in eval(expr, envir, enclos): object 'storms' not found
+## # A tibble: 10,010 x 13
+##     name  year month   day  hour   lat  long              status category
+##    <chr> <dbl> <dbl> <int> <dbl> <dbl> <dbl>               <chr>    <ord>
+##  1   Amy  1975     6    27     0  27.5 -79.0 tropical depression       -1
+##  2   Amy  1975     6    27     6  28.5 -79.0 tropical depression       -1
+##  3   Amy  1975     6    27    12  29.5 -79.0 tropical depression       -1
+##  4   Amy  1975     6    27    18  30.5 -79.0 tropical depression       -1
+##  5   Amy  1975     6    28     0  31.5 -78.8 tropical depression       -1
+##  6   Amy  1975     6    28     6  32.4 -78.7 tropical depression       -1
+##  7   Amy  1975     6    28    12  33.3 -78.0 tropical depression       -1
+##  8   Amy  1975     6    28    18  34.0 -77.0 tropical depression       -1
+##  9   Amy  1975     6    29     0  34.4 -75.8      tropical storm        0
+## 10   Amy  1975     6    29     6  34.0 -74.8      tropical storm        0
+## # ... with 10,000 more rows, and 4 more variables: wind <int>,
+## #   pressure <int>, ts_diameter <dbl>, hu_diameter <dbl>
 ```
 
 

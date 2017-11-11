@@ -1,5 +1,5 @@
 ```{r knitsetup, echo=FALSE, results='markup', warning=FALSE, message=FALSE, cache=FALSE}
-opts_knit$set(base.dir = './', fig.path = 'figure/figura-', out.format = 'md', unnamed.chunk.label = "Ejemplo", upload.fun = imgur_upload, base.url = "https://rsanchezs.imgur.com/all/")
+opts_knit$set(base.dir = './', fig.path = 'figure/figura-', out.format = 'md', unnamed.chunk.label = 'Ejemplo-', upload.fun = imgur_upload, base.url = "https://imgur.com/a/OBZig")
 opts_chunk$set(prompt = FALSE, comment = '##', results = 'markup', collapse = TRUE, eval = TRUE, echo = TRUE, tidy = TRUE)
 ```
 
@@ -208,6 +208,13 @@ help(package = "babynames")
 
 
 Por otro lado, si hacemos un uso intensivo de un paquete, la forma mas eficiente de trabajar es cargándolo en memoria. Esto lo conseguiremos mediante el uso de la función `library()`.
+
+
+```{r eval=FALSE}
+library(babynames)
+```
+
+
 
 Después de cargar el paquete en memoria, ya no será necesario hacer uso de la notación `nombrepaquete::funcion()`, y podremos hacer uso de sus funciones y datos como cualquier paquete base de R:
 

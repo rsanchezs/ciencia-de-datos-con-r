@@ -48,7 +48,7 @@ for (i in seq_along(observaciones)) {
 
 # Mostramos por pantalla la media
 media
-## [1] 23.61
+## [1] 25.99
 ```
 
 ### Bucles __`for`__ Anidados
@@ -74,9 +74,9 @@ for (i in 1:nrow(m1)) {
 # Mostramos por pantalla la suma de m1+m2
 suma
 ##      [,1] [,2] [,3]
-## [1,]  121   61  122
-## [2,]  135  112  178
-## [3,]  114  148   92
+## [1,]  113  162   42
+## [2,]  143   90  146
+## [3,]  119  109  110
 ```
 
 El siguiente ejemplo sirve para ejemplificar el anidamiento de bucles `for`. Cada uno con su propio bloque de instrucciones y manejado con su propio índice. Es decir, `i` controla las filas de las matrices y `j` las columnas.
@@ -176,12 +176,12 @@ m <- matrix(data = sample(x = 10, size = 36, replace = TRUE), nrow = 6, ncol = 6
 # Mostramos por pantalla `m`
 m
 ##      [,1] [,2] [,3] [,4] [,5] [,6]
-## [1,]   10    5    7    2    7    8
-## [2,]    1    1    1    8    4    6
-## [3,]    4    4    8    5    7    9
-## [4,]    5    4    8    2    7   10
-## [5,]    7    5    1   10    9    7
-## [6,]    8    9    1   10    2    3
+## [1,]   10    1    2    5    8    6
+## [2,]    8    8    3    9    8    7
+## [3,]    8    9    2    5    1    7
+## [4,]    4    3    3    4    4    1
+## [5,]    6    5    8    8    7    7
+## [6,]   10    3    1    2    2    3
 
 # Creamos un vector para la diagonal principal
 diagonal_principal <- vector(mode = "integer", length = nrow(m))
@@ -204,15 +204,15 @@ for (i in 1:nrow(m)) {
 
 # Mostramos por pantalla diagonal principal
 diagonal_principal
-## [1] 10  1  8  2  9  3
+## [1] 10  8  2  4  7  3
 # Mostraamos por pantalla matriz inferior de m
 m
 ##      [,1] [,2] [,3] [,4] [,5] [,6]
-## [1,]   10    5    7    2    7    8
-## [2,]    0    1    1    8    4    6
-## [3,]    0    0    8    5    7    9
-## [4,]    0    0    0    2    7   10
-## [5,]    0    0    0    0    9    7
+## [1,]   10    1    2    5    8    6
+## [2,]    0    8    3    9    8    7
+## [3,]    0    0    2    5    1    7
+## [4,]    0    0    0    4    4    1
+## [5,]    0    0    0    0    7    7
 ## [6,]    0    0    0    0    0    3
 ```
 

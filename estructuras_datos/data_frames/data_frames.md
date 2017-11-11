@@ -290,7 +290,7 @@ table(censo$Sexo)
 barplot(table(censo$Sexo))
 ```
 
-![Diagrama de barras variable `sexo`](https://rsanchezs.imgur.com/all/https://i.imgur.com/uEhNjHT.png)
+![Diagrama de barras variable `sexo`](https://rsanchezs.imgur.com/all/https://i.imgur.com/OmHGUsF.png)
 
 
 ```r
@@ -340,7 +340,7 @@ cbind(table(sexo))
 barplot(table(sexo))
 ```
 
-![Diagramas de barras variable `sexo`](https://rsanchezs.imgur.com/all/https://i.imgur.com/UInccsM.png)
+![Diagramas de barras variable `sexo`](https://rsanchezs.imgur.com/all/https://i.imgur.com/hmeui5H.png)
 
 
 ```r

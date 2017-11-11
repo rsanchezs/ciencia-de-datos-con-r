@@ -64,7 +64,6 @@ entre 0 y 1. Si el valor es mayor que `0.5`, entonces el mensaje será mostrado:
 if (runif(1) > 0.5) {
     message("Este mensaje aparece con un 50% de probabilidad.")
 }
-## Este mensaje aparece con un 50% de probabilidad.
 ```
 
 
@@ -123,7 +122,7 @@ El siguiente ejemplo nos sirve para mostrar el anidamiento de instrucciones `if-
 # Creamos una muestra de 20 observaciones del 1 al 100 en el que se pueden
 # repetir hasta 2 observaciones
 (muestra <- sample(1:100, 20, 2))
-##  [1] 70 92 59 96 85 15  6 22 90 10 54 45 82 59 86 46 66 51 36 89
+##  [1] 66 18 32 26 75 23 10 46 15 22  5 42 61 71 71  5 61 73 39 35
 
 ## Creamos una variable indicando la medida de tendencia central que queremos
 ## calcular
@@ -144,7 +143,7 @@ if (centralizacion == "moda") {
     message("Este algoritmo sola calcula la media,
           mediana, moda")
 }
-## La media es 57.95
+## La media es 39.8
 ```
 
 ## __`If`__ Vectorizado
@@ -191,7 +190,7 @@ números aleatorios de un distribución binomial simulando el lanzamiento de una
 
 ```r
 ifelse(rbinom(n = 10, size = 1, prob = 0.5), "cara", "cruz")
-##  [1] "cruz" "cara" "cara" "cruz" "cara" "cara" "cruz" "cara" "cara" "cara"
+##  [1] "cara" "cara" "cara" "cara" "cruz" "cara" "cara" "cruz" "cara" "cara"
 ```
 
 No obstante, `if(test) yes else no` es mucho mas eficiente y preferible a `ifelse(test, yes, no)` cuando `test` es decir, la
@@ -243,13 +242,13 @@ Una alternativa al ejemplo presentado en el apartado anterior mediante la funci�
 # Creamos una muestra de 20 observaciones del 1 al 100 en el que se pueden
 # repetir hasta 2 observaciones
 (muestra <- sample(1:100, 20, 2))
-##  [1] 41 20 93  5 72 15  2 40 90 28 62  9 41 39 80 79 82 93 31 36
+##  [1] 53 93 42 55 33  6 92 14 97 53 63 59 43 97 69 51 29 61 72 55
 
 
 # Calculamos la media de la muestra
 (switch("media", media = mean(muestra), mediana = median(muestra), moda = mlv(muestra, 
     method = "mfv")))
-## [1] 47.9
+## [1] 56.85
 ```
 
 Si ningún nombre coincide, entonces `switch` devuelve `NULL`:

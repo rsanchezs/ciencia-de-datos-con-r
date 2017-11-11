@@ -178,28 +178,11 @@ install.packages("tidyverse")
 ```
 
 ```
-## Warning in readRDS(dest): lzma decoding result 10
-```
-
-```
-## also installing the dependencies 'callr', 'clipr', 'cli', 'crayon', 'reprex'
-```
-
-```
 ## 
 ##   There is a binary version available but the source version is
 ##   later:
 ##           binary source needs_compilation
 ## tidyverse  1.1.1  1.2.0             FALSE
-## 
-## package 'callr' successfully unpacked and MD5 sums checked
-## package 'clipr' successfully unpacked and MD5 sums checked
-## package 'cli' successfully unpacked and MD5 sums checked
-## package 'crayon' successfully unpacked and MD5 sums checked
-## package 'reprex' successfully unpacked and MD5 sums checked
-## 
-## The downloaded binary packages are in
-## 	C:\Users\Ruben\AppData\Local\Temp\RtmpEztpcI\downloaded_packages
 ```
 
 ```
