@@ -316,7 +316,7 @@ En este [enlace](https://www.r-project.org/help.html), podemos encontrar mas opc
 
 ## Escoger el Paquete Correcto para Nuestro Análisis {#escoger-el-paquete-correcto-para-nuestro-analisis}
 
-En conclusión, hasta el momento aprendido las herramientas para instalar y obtener la mayoría de paquetes para R, sin embargo todavía queda una cuestión en el aire: dónde podemos encontrar los paquetes que necesitamos.
+En conclusión, hasta el momento hemos aprendido las herramientas para instalar y obtener la mayoría de paquetes para R, sin embargo todavía queda una cuestión en el aire: dónde podemos encontrar los paquetes que necesitamos.
 
 El modo habitual de conocer los paquetes es aprendiendo R, en la mayoría de tutoriales, libros y cursos los paquetes mas populares son mencionados. Este curso puede ser un buen ejemplo: el módulo de [importar datos](../importar_datos/importar_datos.md) te enseñara todo lo necesario en el uso de los paquetes `readr`, `readxl` y `haven`, el módulo de [visualización de datos](../) trata sobre `ggplot2`, y un largo etcétera.
 
@@ -371,7 +371,7 @@ Hay que mencionar, además que RDocumentation no es únicamente un motor de bús
 ![Gráfico de dependencias](https://i.imgur.com/JZTa7WX.jpg)
 
 
-- El [paquete RDocumentation](https://github.com/datacamp/Rdocumentation). RDocumentation no sólo es una página web sino también un paquete R. Este paquete nos permite incorporar la potencia de RDocumentation en nuestra flujo de trabajo, Una vez esta paquete es cargado, la función `help()` abrirá un ventana en RStudio con acceso a la documentación de RDocumentation.
+- El [paquete RDocumentation](https://github.com/datacamp/Rdocumentation). RDocumentation no sólo es una página web sino también un paquete R. Este paquete nos permite incorporar la potencia de RDocumentation en nuestra flujo de trabajo. Una vez este paquete es cargado, la función `help()` abrirá un ventana en RStudio con acceso a la documentación de RDocumentation.
 
 Disponer de RDocumentation en RStudio nos proporciona ventajas comparado al uso de la versión web, puesto que:
 

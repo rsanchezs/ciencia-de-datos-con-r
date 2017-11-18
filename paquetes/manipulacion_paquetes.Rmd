@@ -1,0 +1,128 @@
+
+# Instalación de Paquetes desde Cran
+
+
+```{r eval=FALSE}
+install.packages("tidyverse")
+```
+
+
+
+# Instalación de Varios Paquetes a la vez desde Cran
+
+
+```{r eval=FALSE}
+install.packages("tidyverse", "devtools")
+```
+
+
+
+
+# Instalación de Paquetes con `devtools`
+
+
+```{r eval=FALSE}
+# Instalación del paquete devtools
+install.packages("devtools")
+```
+
+```{r}
+# Carga del paquete en memoria
+library(devtools)
+```
+
+
+```{r eval=FALSE}
+# Instalación de la última versión en desarrollo de`tidyverse`
+# desde su repositorio github
+install_github("hadley/tidyverse")
+```
+
+
+# Carga de paquetes en la Sesión R
+
+```{r}
+library(devtools)
+```
+
+```{r}
+install_github("hadley/tidyverse")
+```
+
+
+# Descarga de Paquetes
+
+```{r}
+detach("devtools", unload = TRUE )
+```
+
+
+# Comprobar Paquetes Instalados
+
+```{r}
+installed.packages()
+```
+
+
+# Eliminar un Paquete
+
+```{r}
+remove.packages(pkgs = "devtools")
+```
+
+
+
+
+# Comprobar que Paquetes pueden ser Actualizados
+
+```{r}
+old.packages()
+```
+
+
+# Actualizar todos los Paquetes
+
+```{r}
+update.packages()
+```
+
+
+# Actualizar sólo un Paquete
+
+```{r}
+install.packages("tidyverse")
+```
+
+
+
+
+
+# Consultar Ayuda de un Paquete
+
+```{r}
+help("devtools")
+```
+
+
+# Consultar la Ayuda de la Funciones de un Paquete
+
+```{r}
+help(install_github, package = "devtools")
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
