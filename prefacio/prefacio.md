@@ -11,7 +11,7 @@ Y va ganando en popularidad en los últimos años debido sobre todo al desarroll
 
 Pero, si esto es tan sexy ¿qué hace el científico de datos? Y sobre todo, ¿qué tiene que ver esto con el Big Data y el Business Intelligence? Para responder a ello, a continuación mostramos la representación en formato de diagrama de Venn que hizo [Drew Conway en](http://drewconway.com/) 2010:
 
-![Diagrama de Venn de "Ciencia de Datos"](https://i.imgur.com/EsMnjbO.png)
+![Diagrama de Venn "Ciencia de Datos"](https://i.imgur.com/CUDp1ey.png)
 
 Como podemos apreciar, se trata de una agregación de tres disciplinas que se deben entender bien en este nuevo paradigma que ha traído el Big Data:
 
@@ -74,13 +74,5 @@ Para poder hacer uso de las funciones, objetos y archivos de ayuda del paquete n
 
 ```r
 library(tidyverse)
-## -- Attaching packages --------------------------------------- tidyverse 1.2.1 --
-## v ggplot2 2.2.1     v purrr   0.2.4
-## v tibble  1.3.4     v dplyr   0.7.4
-## v tidyr   0.7.2     v stringr 1.2.0
-## v readr   1.1.1     v forcats 0.2.0
-## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
-## x dplyr::filter() masks stats::filter()
-## x dplyr::lag()    masks stats::lag()
 ```
 

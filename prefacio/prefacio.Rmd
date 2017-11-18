@@ -14,7 +14,7 @@ Y va ganando en popularidad en los últimos años debido sobre todo al desarroll
 
 Pero, si esto es tan sexy ¿qué hace el científico de datos? Y sobre todo, ¿qué tiene que ver esto con el Big Data y el Business Intelligence? Para responder a ello, a continuación mostramos la representación en formato de diagrama de Venn que hizo [Drew Conway en](http://drewconway.com/) 2010:
 
-![Diagrama de Venn de "Ciencia de Datos"](https://i.imgur.com/EsMnjbO.png)
+![Diagrama de Venn "Ciencia de Datos"](https://i.imgur.com/CUDp1ey.png)
 
 Como podemos apreciar, se trata de una agregación de tres disciplinas que se deben entender bien en este nuevo paradigma que ha traído el Big Data:
 
