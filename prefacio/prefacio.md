@@ -27,7 +27,7 @@ Estas tres cuestiones (informática y computación, métodos estadísticos y ár
 
 El objetivo de este libro es proporcionarte unos fundamentos sólidos en la gran mayoría de herramientas. Nuestro modelo de herramientas necesarias en un proyecto típico de Ciencia de Datos es el que se muestra en la siguiente figura:
 
-![Fases Proyecto Ciencia de Datos](https://i.imgur.com/J7p0Keq.jpg)
+![Fases Proyecto en Ciencia de Datos](https://i.imgur.com/3B12lde.png)
 
 En primer lugar, será _importar_ nuestros datos a R. Con esto queremos decir, que nos encontraremos datos almacenados en archivos, bases de datos, o en una API web, y el objetivo de esta tarea será cargar los datos en un dataframe.
 
@@ -55,11 +55,13 @@ Para descargar R, lo haremos desde CRAN, un conjunto de servidores espejo distri
 
 RStudio es un entorno integrado de desarrollo, o IDE, para facilitarnos la tarea de programación. Podemos descargo e instalarlo desde http://www.rstudio.com/download.
 
+![RStudio el IDE para R](https://i.imgur.com/R4GE1R2.png)
+
 ## Instalacion del Ecosistema Tidyverse
 
 Además, también necesitamos instalar algunos paquetes R. Un _paquete_ R es una colección de funciones, datos y documentación que amplían las capacidades base de R. El uso de paquetes es una pieza clave para usar R satisfactoriamente. La mayoría de paquetes que aprenderemos en este texto son parte del ecosistema tidyverse. Los paquetes en tidyverse comparten la misma filosofía en el formato de datos y programación, y están diseñados para trabajar de forma conjunta cubriendo todas las tareas en el análisis de un proyecto típico en ciencia de datos.
 
-![Tidyverse para Proyecto Típico Ciencia de Datos](https://i.imgur.com/wwoD7BH.png)
+![Tidyverse para Proyecto Típico Ciencia de Datos](https://i.imgur.com/g07Xz3Z.png)
 
 Podemos instalar el ecosistema tidyverse al completo con tan sólo una única línea de código:
 
@@ -74,13 +76,5 @@ Para poder hacer uso de las funciones, objetos y archivos de ayuda del paquete n
 
 ```r
 library(tidyverse)
-## -- Attaching packages --------------------------------------- tidyverse 1.2.1 --
-## v ggplot2 2.2.1     v purrr   0.2.4
-## v tibble  1.3.4     v dplyr   0.7.4
-## v tidyr   0.7.2     v stringr 1.2.0
-## v readr   1.1.1     v forcats 0.2.0
-## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
-## x dplyr::filter() masks stats::filter()
-## x dplyr::lag()    masks stats::lag()
 ```
 
