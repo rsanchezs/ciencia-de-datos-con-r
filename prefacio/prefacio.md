@@ -15,10 +15,19 @@ Pero, si esto es tan sexy ¿qué hace el científico de datos? Y sobre todo, ¿q
 
 Como podemos apreciar, se trata de una agregación de tres disciplinas que se deben entender bien en este nuevo paradigma que ha traído el Big Data:
 
+__-Habilidades informáticas:__ Partiendo del hecho de que la mayor parte de los datos con los que deberá trabajar el Científico de Datos  provendrán de fuentes de datos heterogéneas, por lo tanto, deberá tener las habilidades necesarias para poder extraer, ordenar, analizar y manipular estosdatos utilizando distintos lenguajes de programación que le permitan crear los algoritmos necesarios en cada caso concreto.
 
-- __Competencias digitales con pensamiento computacional:__ estamos en una época constante de “algoritmización” de todo lo que nos rodea, el pensamiento computacional que ya hay países que han introducido desde preescolar, haga que las competencias digitales no pasen sólo por “saber de Ofimática” o de “sistemas de información”. Dicho de otra manera, trata más de tener una visión hacia lo que los ordenadores hacen, cómo procesan datos y cómo los utilizan para obtener conclusiones. Nosotros a esto lo llamamos “Pensamiento computacional”, que junto con las competencias digitales (entender lo que hacen las herramientas digitales y ponerlo en práctica), nos parecen fundamentales.
-- __Estadística y matemáticas:__ en primer lugar, la estadística, que es una herramienta crítica para la resolución de problemas. Nos dota de unos instrumentos de trabajo de enorme valor para los que trabajan con problemas de la empresa. Y las matemáticas,la ciencia formal por antonomasia que siguiendo razonamientos lógicos, nos permite estudiar propiedades y relaciones entre las variables que formarán parte de nuestro problema. Si bien las matemáticas se la ha venido a conocer como la ciencia exacta, en la estadística, nos gusta más jugar con intervalos de confianza  y la incertidumbre. Pero, por sus propias particularidades, se nutren mutuamente, y hace que para construir modelos analíticos que permitan resolver los problemas que las empresas y organizaciones nos planteen, necesitemos de ambas.
-- __Conocimiento del dominio:__ para poder explorar y analizar datos de multitud de orígenes diversos, a menudo inmensos y con estructuras heterogéneas, es necesario conocer el contexto. Los problemas se deben plantear acorde a estas características, para ser capaz de extraer y transmitir recomendaciones a los usuarios de negocio de su empresa. Podemos sostener, que la Ciencia de los Datos es más una cuestión de plantear bien los problemas que otra cosa, por lo que saber hacer las preguntas correctas con las personas que conocen bien el dominio de aplicación es fundamental.
+__-Estadística y matemáticas:__ Una vez extraídos los datos, el Científico de Datos deberá tener los conocimientos matemáticos necesarios para poder interpretarlos y procesarlos mediante las herramientas más adecuadas.
+
+__-Conocimiento del dominio:__ para poder explorar y analizar datos de multitud de orígenes diversos, a menudo inmensos y con estructuras heterogéneas, es necesario conocer el contexto. Los problemas se deben plantear acorde a estas características, para ser capaz de extraer y transmitir recomendaciones en la estrategia empresarial.  Podemos sostener, que la Ciencia de los Datos es más una cuestión de plantear bien los problemas que otra cosa, por lo que saber hacer las preguntas correctas con las personas que conocen bien el dominio de aplicación es fundamental.
+
+Como se ilustra en el diagrama de Venn, el Científico de Datos debe ser competente en las 3 áreas básicas descritas anteriormente. En los subconjuntos en los cuales sólo se tienen 2 habilidades de estas 3 áreas, no estaremos hablando de Ciencia de Datos:
+
+__-Aprendizaje Supervisado:__ Sin tener conocimiento del entorno de trabajo, es probable que no se acaben encontrando resultados útiles o adecuados para el proyecto. El objetivo del Científico de Datos no es demostrar su dominio de las herramientas de informáticas o habilidades en Estadística y matemáticas, sino en aplicar estos conocimientos para generar valor y beneficio a su entorno de trabajo. Es decir, un algoritmo de Machine Learning, por muy sofisticado y complejo que sea, no tiene ningún interés en sí mismo, lo importante es el resultado que se obtenga al utilizarlo con una finalidad concreta.
+
+__-Investigación Tradicional:__ La diferencia entre el científico tradicional y el Científico de Datos, radica en gran parte en las habilidades informáticas y conocimientos en lenguajes de programación que debe tener éste último, que le permitirán poder manejar mucha más información y procesarla más rápidamente.
+
+__-Zona Comprometida:__ Un pseudo-Científico de Datos que no tenga destreza en los campos de la estadísticas y las matemáticas, aunque tenga conocimiento del entorno y habilidades informáticas, es probable que procese los datos incorrectamente o los interprete de forma inadecuada, por lo que los resultados de la investigación no tendrán ninguna validez, lo que implicará obtener unas conclusiones erróneas, que incluso podrían perjudicar a futuros proyectos que se basaran en estos resultados.
 
 
 Estas tres cuestiones (informática y computación, métodos estadísticos y áreas de aplicación/dominio), también fueron citadas por William S. Cleveland en 2001 en su artículo [“Data Science: An Action Plan for Expanding the Technical Areas of the Field of Statistics“](http://onlinelibrary.wiley.com/doi/10.1111/j.1751-5823.2001.tb00477.x/abstract). Por lo tanto, no es una concepción nueva.
@@ -37,7 +46,7 @@ A continuación, una tarea común es _transformar_ nuestros datos. Transformar n
 
 Después, visualizaremos y modelaremos nuestros datos. En este libro únicamente trataremos la _visualización_.
 
-La visualización es fundamental el la actividad humana. Un visualización bien hecha nos muestra cosas que no esperábamos, o nos conduce a formularnos nuevas cuestiones en nuestros datos. Además, puede indicarnos que no estamos formulando las cuestiones correctas, o que necesitamos recoger  nuevos datos.
+La visualización es fundamental en la actividad humana. Un visualización bien hecha nos muestra cosas que no esperábamos, o nos conduce a formularnos nuevas cuestiones en nuestros datos. Además, puede indicarnos que no estamos formulando las cuestiones correctas, o que necesitamos recoger  nuevos datos.
 
 El último paso en la ciencia de datos es la _comunicación_, una parte absolutamente crítica en un proyecto de análisis de datos. Indiscutiblemente, no importa lo bien que hayamos modelado o visualizado nuestros datos, si posteriormente no somos capaces de comunicar nuestros resultados con los demás.
 
@@ -76,5 +85,13 @@ Para poder hacer uso de las funciones, objetos y archivos de ayuda del paquete n
 
 ```r
 library(tidyverse)
+## -- Attaching packages --------------------------------------- tidyverse 1.2.1 --
+## v ggplot2 2.2.1     v purrr   0.2.4
+## v tibble  1.3.4     v dplyr   0.7.4
+## v tidyr   0.7.2     v stringr 1.2.0
+## v readr   1.1.1     v forcats 0.2.0
+## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
 ```
 
