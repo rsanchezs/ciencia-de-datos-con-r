@@ -16,17 +16,12 @@ Dividido en cuatro partes con __presentaciones en video, [libro de texto](https:
 
 Es un curso innovador que utiliza herramientas avanzadas como [RStudio](https://www.rstudio.com/), un IDE que nos facilitará los procesos de trabajo en las diferentes tareas de un proyecto de Ciencia de Datos y [Tidyverse](https://www.tidyverse.org/) un conjunto de paquetes que abarcan todo el flujo de trabajo en el análisis de datos, fáciles de aprender y usar.
 
-No esperes más y descubre por qué la Ciencia de Datos es el __"trabajo mas sexy del siglo XXI"__, mejora tus conocimientos y da un salto adelante en tu carrera profesional.
-
-Haz clic en el siguiente cupón [__VOUCHER10__](https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10) para obtener el curso por tan sólo __10€__.
-
-
-[![VOUCHER10](https://i.imgur.com/zjjWEWV.png)](https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10)
 
 
 
 
-## ¿Que Aprenderás con este Libro?
+## ¿Que Aprenderás con este Curso?
+
 
 
 El objetivo de este libro es proporcionarte unos fundamentos sólidos en la gran mayoría de herramientas. Nuestro modelo de herramientas necesarias en un proyecto típico de Ciencia de Datos es el que se muestra en la siguiente figura:
@@ -48,6 +43,14 @@ Después, visualizaremos y modelaremos nuestros datos. En este curso únicamente
 La visualización es fundamental en la actividad humana. Un visualización bien hecha nos muestra cosas que no esperábamos, o nos conduce a formularnos nuevas cuestiones en nuestros datos. Además, puede indicarnos que no estamos formulando las cuestiones correctas, o que necesitamos recoger  nuevos datos.
 
 El último paso en la ciencia de datos es la _comunicación_, una parte absolutamente crítica en un proyecto de análisis de datos. Indiscutiblemente, no importa lo bien que hayamos modelado o visualizado nuestros datos, si posteriormente no somos capaces de comunicar nuestros resultados con los demás.
+
+
+No esperes más y descubre por qué la Ciencia de Datos es el __"trabajo mas sexy del siglo XXI"__, mejora tus conocimientos y da un salto adelante en tu carrera profesional.
+
+Haz clic en el siguiente cupón [__VOUCHER10__](https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10) para obtener el curso por tan sólo __10€__.
+
+
+[![VOUCHER10](https://i.imgur.com/zjjWEWV.png)](https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10)
 
 
 
