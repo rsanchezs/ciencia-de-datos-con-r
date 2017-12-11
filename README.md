@@ -16,7 +16,7 @@ Es un curso innovador que utiliza herramientas avanzadas como [RStudio](https://
 
 No esperes más y descubre por qué la Ciencia de Datos es el __"trabajo mas sexy del siglo XXI"__, mejora tus conocimientos y da un salto adelante en tu carrera profesional.
 
-Haz clic en el siguiente cupón ![__VOUCHER10__](https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10) para obtener el curso por tan sólo __10€__.
+Haz clic en el siguiente cupón [__VOUCHER10__](https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10) para obtener el curso por tan sólo __10€__.
 
 
 [![VOUCHER10](https://i.imgur.com/PX5xzOt.png)]https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10)
