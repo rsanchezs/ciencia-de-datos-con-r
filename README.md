@@ -3,7 +3,7 @@
 
 # Ciencia de Datos con R
 
-La __Ciencia de Datos__ en una disciplina apasionante que permite analizar datos para extraer conocimiento o un mejor entendimiento de datos en sus diferentes formas. El objetivo de <a href=https://www.udemy.com/ciencia-de-datos-con-r target="_blank">Ciencia de Datos con R</a>
+La __Ciencia de Datos__ en una disciplina apasionante que permite analizar datos para extraer conocimiento o un mejor entendimiento de datos en sus diferentes formas. El objetivo principal de <a href=https://www.udemy.com/ciencia-de-datos-con-r target="_blank">Ciencia de Datos con R</a>
  es ayudarte a aprender las herramientas mas importantes en R que te permitirán abordar un proyecto típico en Ciencia de Datos.
 Después de seguir este curso, dispondrás de los útiles necesarios para afrontar una amplia variedad de tareas en el análisis de datos, usando las mejores partes de R.
 
@@ -12,7 +12,7 @@ Este es el __curso en español más completo y exhaustivo__ que encontrarás sob
 
 Dividido en cuatro partes con <a href="https://www.youtube.com/playlist?list=PLwMc8F2IRi4U6ZFeMO0PPcypEogkJp2GL" target="_blank">presentaciones en video</a>, <a href=https://leanpub.com/ciencia-de-datos-con-r target="_blank">libro de texto</a>,    guías de referencia, <a href=https://github.com/rsanchezs/programacion-en-r target="_blank">ejercicio prácticos de programación</a>, <a href=https://github.com/rsanchezs/ciencia-datos-con-r-tareas target="_blank">tareas</a>, casos de estudio y un proyecto final.
 
-Es un curso innovador que utiliza herramientas avanzadas como [RStudio](https://www.rstudio.com/), un IDE que nos facilitará los procesos de trabajo en las diferentes tareas de un proyecto de Ciencia de Datos y [`Tidyverse`](https://www.tidyverse.org/) un conjunto de paquetes que abarcan todo el flujo de trabajo en el análisis de datos, fáciles de aprender y usar.
+En otras palabras, es un curso innovador que utiliza herramientas avanzadas como [RStudio](https://www.rstudio.com/), un IDE que nos facilitará los procesos de trabajo en las diferentes tareas de un proyecto de Ciencia de Datos y [`Tidyverse`](https://www.tidyverse.org/) un conjunto de paquetes que abarcan todo el flujo de trabajo en el análisis de datos, fáciles de aprender y usar.
 
 
 ## ¿Que Aprenderás con este Curso?
