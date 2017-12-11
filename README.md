@@ -5,7 +5,6 @@
 # Ciencia de Datos con R
 
 
-<a href="https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10" target="_blank"><img src="https://i.imgur.com/zjjWEWV.png" width="170" height="70"></a>
 
 La __Ciencia de Datos__ en una disciplina apasionante que permite analizar datos para extraer conocimiento o un mejor entendimiento de datos en sus diferentes formas. El objetivo principal de <a href=https://www.udemy.com/ciencia-de-datos-con-r target="_blank">Ciencia de Datos con R</a>
  es ayudarte a aprender las herramientas mas importantes en R que te permitirán abordar un proyecto típico en Ciencia de Datos.
