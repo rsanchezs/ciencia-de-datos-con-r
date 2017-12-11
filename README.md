@@ -36,7 +36,6 @@ El curso está organizado de acuerdo con las herramientas necesarias en un proye
 ### Programación en R
 
 En la primera parte del curso, aprenderemos el lenguaje de programación R:
-
 1. La Sintaxis de R.
 2. Estructuras de Datos en R.
 3. Estructuras de Control en R.
@@ -90,4 +89,4 @@ Haz clic en la siguiente imagen para obtener el libro por tan sólo __5€__:
 
 ## Contacto
 
-<a href="https://leanpub.com/ciencia-de-datos-con-r/c/CSI5qnSGUUkL" target="_blank"><img src="https://i.imgur.com/RbyW6Ez.png"></a>
+<a href="https://plus.google.com/+RubénSánchezSancho?hl=es" target="_blank"><img src="https://i.imgur.com/RbyW6Ez.png"></a>
