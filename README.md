@@ -1,5 +1,8 @@
 
-__CURSO DE UDEMY EN LÍNEA CON ACCESO PARA SIEMPRE__
+
+
+
+# CURSO DE UDEMY EN LÍNEA CON ACCESO PARA SIEMPRE
 
 
 La __Ciencia de Datos__ en una disciplina apasionante que permite analizar datos para extraer conocimiento o un mejor entendimiento de datos en sus diferentes formas. El objetivo de [Ciencia de Datos con R](https://www.udemy.com/ciencia-de-datos-con-r/)  es ayudarte a aprender las herramientas mas importantes en R que te permitirán abordar un proyecto típico en Ciencia de Datos.
@@ -22,4 +25,27 @@ Haz clic en el siguiente cupón [__VOUCHER10__](https://www.udemy.com/ciencia-de
 
 
 [![VOUCHER10](https://i.imgur.com/zjjWEWV.png)](https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10)
+
+
+
+
+## ¿Que Aprenderás con este Libro?
+
+El objetivo de este libro es proporcionarte unos fundamentos sólidos en la gran mayoría de herramientas. Nuestro modelo de herramientas necesarias en un proyecto típico de Ciencia de Datos es el que se muestra en la siguiente figura:
+
+![Fases Proyecto en Ciencia de Datos](https://i.imgur.com/3B12lde.png)
+
+En primer lugar, será _importar_ nuestros datos a R. Con esto queremos decir, que nos encontraremos datos almacenados en archivos, bases de datos, o en una API web, y el objetivo de esta tarea será cargar los datos en un dataframe.
+
+Una vez hemos importado nuestros datos, la siguiente tarea será _"tidy"_ nuestros datos. El objetivo de esta tarea es almacenar nuestros datos en un formato consistente en el que coincida la semántica del conjunto de datos con el medio en que están almacenados. En resumen, nuestros datos estarán en formato tidy cuando, cada variable se encuentre en una columna y cada observación en su propia fila.
+
+A continuación, una tarea común es _transformar_ nuestros datos. Transformar nuestros datos incluye filtrar las observaciones de nuestro interés (como por ejemplo, todo la gente en una ciudad, o todos los datos del último año), creación de nuevas variables resultado del cálculo de funciones de variables existentes (como por ejemplo, calcular la velocidad con la velocidad y tiempo) y, calcular un conjunto de indicadores estadísticos en un resumen (como medias o desviaciones típicas).
+
+Después, visualizaremos y modelaremos nuestros datos. En este libro únicamente trataremos la _visualización_.
+
+La visualización es fundamental en la actividad humana. Un visualización bien hecha nos muestra cosas que no esperábamos, o nos conduce a formularnos nuevas cuestiones en nuestros datos. Además, puede indicarnos que no estamos formulando las cuestiones correctas, o que necesitamos recoger  nuevos datos.
+
+El último paso en la ciencia de datos es la _comunicación_, una parte absolutamente crítica en un proyecto de análisis de datos. Indiscutiblemente, no importa lo bien que hayamos modelado o visualizado nuestros datos, si posteriormente no somos capaces de comunicar nuestros resultados con los demás.
+
+
 
