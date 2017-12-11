@@ -42,7 +42,6 @@ En la primera parte del curso, aprenderemos el lenguaje de programación R:
 4. Funciones en R.
 5. Paquetes en R.
 
-
 ### Importar Datos en 
 En la segunda parte del curso trataremos las dos tareas de la fase de importar datos.
 
@@ -90,7 +89,7 @@ Haz clic en la siguiente imagen para obtener el libro por tan sólo __5€__:
 <a href="https://plus.google.com/+RubénSánchezSancho?hl=es" target="_blank"><img src="https://i.imgur.com/nFk0c7l.png"></a>
 <a href="https://www.linkedin.com/in/ruben-sanchez-sancho-767993139/" target="_blank"><img src="https://i.imgur.com/ccAeFjJ.png"></a>
 <a href="https://twitter.com/rsanchezs76" target="_blank"><img src="https://i.imgur.com/DF48Oy0.png"></a>
-<a href="https://plus.google.com/+RubénSánchezSancho?hl=es" target="_blank"><img src="https://i.imgur.com/GqYvC8A.png"></a>
-<a href="https://plus.google.com/+RubénSánchezSancho?hl=es" target="_blank"><img src="https://i.imgur.com/NmPCBRQ.png"></a>
+<a href="https://datasciencesexy.wordpress.com/" target="_blank"><img src="https://i.imgur.com/GqYvC8A.png"></a>
+<a href="https://www.youtube.com/channel/UCmM75BqRDZ1_6Ug5fZjD-Dg?view_as=subscriber" target="_blank"><img src="https://i.imgur.com/NmPCBRQ.png"></a>
 
 
