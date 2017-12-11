@@ -76,7 +76,7 @@ Haz clic en el siguiente cupón [__VOUCHER10__](https://www.udemy.com/ciencia-de
 
 <a href="https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10" target="_blank"><img src="https://i.imgur.com/zjjWEWV.png" width="170" height="70"></a>
 
-<a href="https://www.udemy.com/ciencia-de-datos-con-r/?src=sac&kw=cien#instructor-1" target="_blank"><img src="https://imgur.com/Yi2ZFiu" width="170" height="70"></a>
+<a href="https://www.udemy.com/ciencia-de-datos-con-r/?src=sac&kw=cien#instructor-1" target="_blank"><img src="https://imgur.com/Yi2ZFiu.png" width="170" height="70"></a>
 
 
 
