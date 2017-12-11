@@ -43,8 +43,7 @@ En la primera parte del curso, aprenderemos el lenguaje de programación R:
 5. Paquetes en R.
 
 
-### Importar Datos en R
-
+### Importar Datos en 
 En la segunda parte del curso trataremos las dos tareas de la fase de importar datos.
 
 En primer lugar, veremos como _importar_ nuestros datos a R. Con esto queremos decir, que nos encontraremos datos almacenados en archivos, bases de datos, o en una API web, y el objetivo de esta tarea será cargar los datos en un dataframe.
@@ -90,7 +89,7 @@ Haz clic en la siguiente imagen para obtener el libro por tan sólo __5€__:
 
 <a href="https://plus.google.com/+RubénSánchezSancho?hl=es" target="_blank"><img src="https://i.imgur.com/nFk0c7l.png"></a>
 <a href="https://www.linkedin.com/in/ruben-sanchez-sancho-767993139/" target="_blank"><img src="https://i.imgur.com/ccAeFjJ.png"></a>
-<a href="https://plus.google.com/+RubénSánchezSancho?hl=es" target="_blank"><img src="https://i.imgur.com/DF48Oy0.png"></a>
+<a href="https://twitter.com/rsanchezs76" target="_blank"><img src="https://i.imgur.com/DF48Oy0.png"></a>
 <a href="https://plus.google.com/+RubénSánchezSancho?hl=es" target="_blank"><img src="https://i.imgur.com/GqYvC8A.png"></a>
 <a href="https://plus.google.com/+RubénSánchezSancho?hl=es" target="_blank"><img src="https://i.imgur.com/NmPCBRQ.png"></a>
 
