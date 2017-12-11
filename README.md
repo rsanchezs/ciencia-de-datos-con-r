@@ -1,10 +1,5 @@
 
 
-
-
-# CURSO DE UDEMY EN LÍNEA CON ACCESO PARA SIEMPRE
-
-
 La __Ciencia de Datos__ en una disciplina apasionante que permite analizar datos para extraer conocimiento o un mejor entendimiento de datos en sus diferentes formas. El objetivo de [Ciencia de Datos con R](https://www.udemy.com/ciencia-de-datos-con-r/)  es ayudarte a aprender las herramientas mas importantes en R que te permitirán abordar un proyecto típico en Ciencia de Datos.
 Después de seguir este curso, dispondrás de los útiles necesarios para afrontar una amplia variedad de tareas en el análisis de datos, usando las mejores partes de R.
 
