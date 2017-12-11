@@ -7,21 +7,12 @@ La __Ciencia de Datos__ en una disciplina apasionante que permite analizar datos
  es ayudarte a aprender las herramientas mas importantes en R que te permitirán abordar un proyecto típico en Ciencia de Datos.
 Después de seguir este curso, dispondrás de los útiles necesarios para afrontar una amplia variedad de tareas en el análisis de datos, usando las mejores partes de R.
 
-<a href=https://github.com/rsanchezs/programacion-en-r target="_blank">ejercicio prácticos de programación</a>
 
 Este es el __curso en español más completo y exhaustivo__ que encontrarás sobre <a href=https://www.udemy.com/ciencia-de-datos-con-r target="_blank">Ciencia de Datos con R en Udemy</a>. Perfectamente organizado y metódico, introduce todos los temas de forma sencilla, gradual y 100% práctica.
 
-Dividido en cuatro partes con <a href="https://www.youtube.com/playlist?list=PLwMc8F2IRi4U6ZFeMO0PPcypEogkJp2GL" target="_blank">presentaciones en video</a>, <a href=https://leanpub.com/ciencia-de-datos-con-r target="_blank">libro de texto</a>,    guías de referencia, <a href=https://github.com/rsanchezs/programacion-en-r target="_blank">ejercicio prácticos de programación</a>, <a href=https://github.com/rsanchezs/ciencia-datos-con-r-tareas target="_blank">tareas</a>, casos de estudio y un proyecto final:
-
-* Programación en R
-* Importar Datos en R
-* Explorar Datos en R
-* Comunicar Resultados
+Dividido en cuatro partes con <a href="https://www.youtube.com/playlist?list=PLwMc8F2IRi4U6ZFeMO0PPcypEogkJp2GL" target="_blank">presentaciones en video</a>, <a href=https://leanpub.com/ciencia-de-datos-con-r target="_blank">libro de texto</a>,    guías de referencia, <a href=https://github.com/rsanchezs/programacion-en-r target="_blank">ejercicio prácticos de programación</a>, <a href=https://github.com/rsanchezs/ciencia-datos-con-r-tareas target="_blank">tareas</a>, casos de estudio y un proyecto final.
 
 Es un curso innovador que utiliza herramientas avanzadas como [RStudio](https://www.rstudio.com/), un IDE que nos facilitará los procesos de trabajo en las diferentes tareas de un proyecto de Ciencia de Datos y [`Tidyverse`](https://www.tidyverse.org/) un conjunto de paquetes que abarcan todo el flujo de trabajo en el análisis de datos, fáciles de aprender y usar.
-
-
-
 
 
 ## ¿Que Aprenderás con este Curso?
@@ -37,7 +28,7 @@ El objetivo de este libro es proporcionarte unos fundamentos sólidos en la gran
 
 ## ¿Cómo esta organizado este curso?
 
-El curso está organizado de acuerdo con las herramientas necesarias en un proyecto típico de Ciencia de Datos, en el orden en el que las usaremos en nuestros análisis de datos:
+El curso está organizado de acuerdo con las herramientas necesarias en un proyecto típico de Ciencia de Datos, en el orden en que las usaremos en nuestros análisis de datos:
 
 
 ### Programación en R
