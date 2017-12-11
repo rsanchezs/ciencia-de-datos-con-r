@@ -28,8 +28,7 @@ El objetivo de este libro es proporcionarte unos fundamentos sólidos en la gran
 
 ## ¿Cómo esta organizado este curso?
 
-El curso está organizado de acuerdo con las herramientas necesarias en un proyecto típico de Ciencia de Datos, en el orden en que las usaremos en nuestros análisis de datos:
-
+El curso está organizado de acuerdo con las herramientas necesarias en un proyecto típico de Ciencia de Datos, en el orden en que las usaremos en nuestros análisis de datos.
 
 ### Programación en R
 
@@ -50,7 +49,7 @@ En primer lugar, veremos como _importar_ nuestros datos a R. Con esto queremos d
 
 Una vez hemos importado nuestros datos, la siguiente tarea será _"tidy"_ nuestros datos. El objetivo de esta tarea es almacenar nuestros datos en un formato consistente en el que coincida la semántica del conjunto de datos con el medio en que están almacenados. En resumen, nuestros datos estarán en formato tidy cuando, cada variable se encuentre en una columna y cada observación en su propia fila.
 
-### Exploraración de Datos
+### Exploración de Datos
 
 En la tercera parte del curso trataremos las tareas de la fase de exploración de nuestros datos, conocido en inglés como _data wrangling_.
 
