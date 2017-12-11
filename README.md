@@ -68,12 +68,22 @@ El último paso en la ciencia de datos es la _comunicación_, una parte absoluta
 
 ## Udemy
 
+No esperes más y descubre por qué la Ciencia de Datos es el __"trabajo mas sexy del siglo XXI"__, mejora tus conocimientos y da un salto adelante en tu carrera profesional.
+
+Haz clic en el siguiente cupón [__VOUCHER10__](https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10) o en la imagen para obtener el curso por tan sólo __10€__.
+
 
 <a href="https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10" target="_blank"><img src="https://i.imgur.com/zjjWEWV.png" width="170" height="70"></a>
 <a href="https://www.udemy.com/ciencia-de-datos-con-r/?src=sac&kw=cien#instructor-1" target="_blank"><img src="https://imgur.com/Yi2ZFiu.png" width="170" height="70"></a>
 
-No esperes más y descubre por qué la Ciencia de Datos es el __"trabajo mas sexy del siglo XXI"__, mejora tus conocimientos y da un salto adelante en tu carrera profesional.
 
-Haz clic en el siguiente cupón [__VOUCHER10__](https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10) para obtener el curso por tan sólo __10€__.
+
+
+## LeanPub
+
+Haz clic en la siguiente imagen para obtener el libro por tan sólo __5€__:
+
+
+<a href="https://leanpub.com/ciencia-de-datos-con-r/c/CSI5qnSGUUkL" target="_blank"><img src="https://i.imgur.com/VRMrT0I.png" width="200" height="90"></a>
 
 
