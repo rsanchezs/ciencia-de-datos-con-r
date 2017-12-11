@@ -14,7 +14,7 @@ Dividido en cuatro partes con __presentaciones en video, [libro de texto](https:
 * Explorar Datos en R
 * Comunicar resultados
 
-Es un curso innovador que utiliza herramientas avanzadas como [RStudio](https://www.rstudio.com/), un IDE que nos facilitará los procesos de trabajo en las diferentes tareas de un proyecto de Ciencia de Datos y [Tidyverse](https://www.tidyverse.org/) un conjunto de paquetes que abarcan todo el flujo de trabajo en el análisis de datos, fáciles de aprender y usar.
+Es un curso innovador que utiliza herramientas avanzadas como [RStudio](https://www.rstudio.com/), un IDE que nos facilitará los procesos de trabajo en las diferentes tareas de un proyecto de Ciencia de Datos y [`Tidyverse`](https://www.tidyverse.org/) un conjunto de paquetes que abarcan todo el flujo de trabajo en el análisis de datos, fáciles de aprender y usar.
 
 
 
