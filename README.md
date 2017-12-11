@@ -90,4 +90,4 @@ Haz clic en la siguiente imagen para obtener el libro por tan sólo __5€__:
 
 ## Contacto
 
-<a href="https://leanpub.com/ciencia-de-datos-con-r/c/CSI5qnSGUUkL" target="_blank"><img src="https://i.imgur.com/DnOxTXZ.png"></a>
+<a href="https://leanpub.com/ciencia-de-datos-con-r/c/CSI5qnSGUUkL" target="_blank"><img src="https://i.imgur.com/RbyW6Ez.png"></a>
