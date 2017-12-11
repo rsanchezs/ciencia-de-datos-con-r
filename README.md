@@ -68,7 +68,7 @@ La visualización es fundamental en la actividad humana. Un visualización bien 
 El último paso en la ciencia de datos es la _comunicación_, una parte absolutamente crítica en un proyecto de análisis de datos. Indiscutiblemente, no importa lo bien que hayamos modelado o visualizado nuestros datos, si posteriormente no somos capaces de comunicar nuestros resultados con los demás.
 
 
-
+## Udemy
 
 No esperes más y descubre por qué la Ciencia de Datos es el __"trabajo mas sexy del siglo XXI"__, mejora tus conocimientos y da un salto adelante en tu carrera profesional.
 
