@@ -28,7 +28,7 @@ El objetivo de este libro es proporcionarte unos fundamentos sólidos en la gran
 
 
 
-![Fases Proyecto en Ciencia de Datos](https://i.imgur.com/CK7JxNv.png)
+![Fases Proyecto en Ciencia de Datos](https://i.imgur.com/DO2BKK7.png)
 
 
 
