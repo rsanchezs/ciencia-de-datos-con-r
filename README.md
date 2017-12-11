@@ -1,4 +1,4 @@
-__CURSO DE UDEMY EN LÍNEA CON ACCESO PARA SIEMPRE __
+__CURSO DE UDEMY EN LÍNEA CON ACCESO PARA SIEMPRE__
 
 La __Ciencia de Datos__ en una disciplina apasionante que permite analizar datos para extraer conocimiento o un mejor entendimiento de datos en sus diferentes formas. El objetivo de [Ciencia de Datos con R](https://www.udemy.com/ciencia-de-datos-con-r/)  es ayudarte a aprender las herramientas mas importantes en R que te permitirán abordar un proyecto típico en Ciencia de Datos.
 Después de seguir este curso, dispondrás de los útiles necesarios para afrontar una amplia variedad de tareas en el análisis de datos, usando las mejores partes de R.
@@ -17,9 +17,6 @@ Es un curso innovador que utiliza herramientas avanzadas como [RStudio](https://
 No esperes más y descubre por qué la Ciencia de Datos es el __"trabajo mas sexy del siglo XXI"__, mejora tus conocimientos y da un salto adelante en tu carrera profesional.
 
 Haz clic en el siguiente cupón ![__VOUCHER10__](https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10) para obtener el curso por tan sólo __10€__.
-
-
-[![Foo](http://www.google.com.au/images/nav_logo7.png)](http://google.com.au/)
 
 
 [![VOUCHER10](https://i.imgur.com/PX5xzOt.png)]https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10)
