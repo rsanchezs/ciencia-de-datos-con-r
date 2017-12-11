@@ -30,6 +30,7 @@ El objetivo de este curso es proporcionarte unos fundamentos sólidos en la gran
 
 ## ¿Cómo esta organizado este curso?
 
+
 El curso está organizado de acuerdo con las herramientas necesarias en un proyecto típico de Ciencia de Datos, en el orden en que las usaremos en nuestros análisis de datos.
 
 ### Programación en R
@@ -87,3 +88,6 @@ Haz clic en la siguiente imagen para obtener el libro por tan sólo __5€__:
 <a href="https://leanpub.com/ciencia-de-datos-con-r/c/CSI5qnSGUUkL" target="_blank"><img src="https://i.imgur.com/VRMrT0I.png" width="200" height="90"></a>
 
 
+## Contacto
+
+<a href="https://leanpub.com/ciencia-de-datos-con-r/c/CSI5qnSGUUkL" target="_blank"><img src="https://i.imgur.com/3tMEBfU.png"></a>
