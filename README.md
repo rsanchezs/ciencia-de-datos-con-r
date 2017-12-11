@@ -90,3 +90,9 @@ Haz clic en la siguiente imagen para obtener el libro por tan sólo __5€__:
 ## Contacto
 
 <a href="https://plus.google.com/+RubénSánchezSancho?hl=es" target="_blank"><img src="https://i.imgur.com/nFk0c7l.png"></a>
+<a href="https://plus.google.com/+RubénSánchezSancho?hl=es" target="_blank"><img src="https://i.imgur.com/ccAeFjJ.png"></a>
+<a href="https://plus.google.com/+RubénSánchezSancho?hl=es" target="_blank"><img src="https://i.imgur.com/DF48Oy0.png"></a>
+<a href="https://plus.google.com/+RubénSánchezSancho?hl=es" target="_blank"><img src="https://i.imgur.com/GqYvC8A.png"></a>
+<a href="https://plus.google.com/+RubénSánchezSancho?hl=es" target="_blank"><img src="https://i.imgur.com/NmPCBRQ.png"></a>
+
+
