@@ -1,8 +1,5 @@
-<a href=https://github.com/rsanchezs/ciencia-datos-con-r-tareas target="_blank">tareas</a>
 
-
-
-
+# Ciencia de Datos con R
 
 La __Ciencia de Datos__ en una disciplina apasionante que permite analizar datos para extraer conocimiento o un mejor entendimiento de datos en sus diferentes formas. El objetivo de <a href=https://www.udemy.com/ciencia-de-datos-con-r target="_blank">Ciencia de Datos con R</a>
  es ayudarte a aprender las herramientas mas importantes en R que te permitirán abordar un proyecto típico en Ciencia de Datos.
@@ -12,7 +9,7 @@ Después de seguir este curso, dispondrás de los útiles necesarios para afront
 
 Este es el __curso en español más completo y exhaustivo__ que encontrarás sobre <a href=https://www.udemy.com/ciencia-de-datos-con-r target="_blank">Ciencia de Datos con R en Udemy</a>. Perfectamente organizado y metódico, introduce todos los temas de forma sencilla, gradual y 100% práctica.
 
-Dividido en cuatro partes con <a href="https://www.youtube.com/playlist?list=PLwMc8F2IRi4U6ZFeMO0PPcypEogkJp2GL" target="_blank">presentaciones en video</a>, <a href=https://leanpub.com/ciencia-de-datos-con-r target="_blank">libro de texto</a>, guías de referencia, [ejercicios prácticos de programación](https://github.com/rsanchezs/ciencia-datos-con-r-tareas), <a href=https://github.com/rsanchezs/ciencia-datos-con-r-tareas target="_blank">tareas</a>, casos de estudio y un proyecto final:
+Dividido en cuatro partes con <a href="https://www.youtube.com/playlist?list=PLwMc8F2IRi4U6ZFeMO0PPcypEogkJp2GL" target="_blank">presentaciones en video</a>, <a href=https://leanpub.com/ciencia-de-datos-con-r target="_blank">libro de texto</a>,    guías de referencia, [ejercicios prácticos de programación](https://github.com/rsanchezs/ciencia-datos-con-r-tareas), <a href=https://github.com/rsanchezs/ciencia-datos-con-r-tareas target="_blank">tareas</a>, casos de estudio y un proyecto final:
 
 * Programación en R
 * Importar Datos en R
