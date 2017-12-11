@@ -1,5 +1,6 @@
 
 
+
 # Ciencia de Datos con R
 
 La __Ciencia de Datos__ en una disciplina apasionante que permite analizar datos para extraer conocimiento o un mejor entendimiento de datos en sus diferentes formas. El objetivo de <a href=https://www.udemy.com/ciencia-de-datos-con-r target="_blank">Ciencia de Datos con R</a>
@@ -36,6 +37,9 @@ El objetivo de este libro es proporcionarte unos fundamentos sólidos en la gran
 
 ## ¿Cómo esta organizado este curso?
 
+El curso está organizado de acuerdo con las herramientas necesarias en un proyecto típico de Ciencia de Datos, en el orden en el que las usaremos en nuestros análisis de datos:
+
+
 ### Programación en R
 
 En la primera parte del curso, aprenderemos el lenguaje de programación R:
@@ -49,7 +53,7 @@ En la primera parte del curso, aprenderemos el lenguaje de programación R:
 
 ### Importar Datos en R
 
-En la segunda parte del curso trataremos las dos tareas de la fase de importar datos:
+En la segunda parte del curso trataremos las dos tareas de la fase de importar datos.
 
 En primer lugar, veremos como _importar_ nuestros datos a R. Con esto queremos decir, que nos encontraremos datos almacenados en archivos, bases de datos, o en una API web, y el objetivo de esta tarea será cargar los datos en un dataframe.
 
@@ -57,7 +61,7 @@ Una vez hemos importado nuestros datos, la siguiente tarea será _"tidy"_ nuestr
 
 ### Exploraración de Datos
 
-En la tercera parte del curso trataremos las tareas de la fase de exploración de nuestros datos, conocido en inglés como _data wrangling_:
+En la tercera parte del curso trataremos las tareas de la fase de exploración de nuestros datos, conocido en inglés como _data wrangling_.
 
 En primer lugar, una tarea común es _transformar_ nuestros datos. Transformar nuestros datos incluye filtrar las observaciones de nuestro interés (como por ejemplo, todo la gente en una ciudad, o todos los datos del último año), creación de nuevas variables resultado del cálculo de funciones de variables existentes (como por ejemplo, calcular la velocidad con el espacio y el tiempo) y, calcular un conjunto de indicadores estadísticos en un resumen (como medias o desviaciones típicas).
 
