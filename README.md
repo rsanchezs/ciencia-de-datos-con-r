@@ -68,12 +68,15 @@ La visualización es fundamental en la actividad humana. Un visualización bien 
 El último paso en la ciencia de datos es la _comunicación_, una parte absolutamente crítica en un proyecto de análisis de datos. Indiscutiblemente, no importa lo bien que hayamos modelado o visualizado nuestros datos, si posteriormente no somos capaces de comunicar nuestros resultados con los demás.
 
 
+
+
 No esperes más y descubre por qué la Ciencia de Datos es el __"trabajo mas sexy del siglo XXI"__, mejora tus conocimientos y da un salto adelante en tu carrera profesional.
 
 Haz clic en el siguiente cupón [__VOUCHER10__](https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10) para obtener el curso por tan sólo __10€__.
 
+<a href="https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10" target="_blank"><img src="https://i.imgur.com/zjjWEWV.png" width="170" height="70"></a>
 
-[![VOUCHER10](https://i.imgur.com/zjjWEWV.png)](https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10)
+
 
 
 
