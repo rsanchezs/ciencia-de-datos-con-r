@@ -51,6 +51,7 @@ En primer lugar, veremos como _importar_ nuestros datos a R. Con esto queremos d
 Una vez hemos importado nuestros datos, la siguiente tarea será _"tidy"_ nuestros datos. El objetivo de esta tarea es almacenar nuestros datos en un formato consistente en el que coincida la semántica del conjunto de datos con el medio en que están almacenados. En resumen, nuestros datos estarán en formato tidy cuando, cada variable se encuentre en una columna y cada observación en su propia fila
 ### Exploración de Datos
 
+
 En la tercera parte del curso trataremos las tareas de la fase de exploración de nuestros datos, conocido en inglés como _data wrangling_.
 
 En primer lugar, una tarea común es _transformar_ nuestros datos. Transformar nuestros datos incluye filtrar las observaciones de nuestro interés (como por ejemplo, todo la gente en una ciudad, o todos los datos del último año), creación de nuevas variables resultado del cálculo de funciones de variables existentes (como por ejemplo, calcular la velocidad con el espacio y el tiempo) y, calcular un conjunto de indicadores estadísticos en un resumen (como medias o desviaciones típicas).
@@ -88,6 +89,10 @@ Haz clic en la siguiente imagen para obtener el libro por tan sólo __5€__:
 ## Contacto
 
 El siguiente curso dipone una página web para el libro, puedes acceder a esta página en <a href="https://rsanchezs.gitbooks.io/ciencia-de-datos-con-r/content/" target="_blank">https://rsanchezs.gitbooks.io/ciencia-de-datos-con-r/content/</a>
+
+Para comentarios y erratas, envía un correo electrónico a <a href="mailto:ciencia.datos.con.r@gmail.com" target="_blank"><img src="https://i.imgur.com/PJGlEba.png"></a>.
+
+__Sigueme en:__
 
 <a href="https://plus.google.com/+RubénSánchezSancho?hl=es" target="_blank"><img src="https://i.imgur.com/nFk0c7l.png"></a>
 <a href="https://www.linkedin.com/in/ruben-sanchez-sancho-767993139/" target="_blank"><img src="https://i.imgur.com/ccAeFjJ.png"></a>
