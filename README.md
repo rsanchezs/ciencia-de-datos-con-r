@@ -7,7 +7,7 @@ Después de seguir este curso, dispondrás de los útiles necesarios para afront
 
 Este es el __curso en español más completo y exhaustivo__ que encontrarás sobre  [Ciencia de Datos con R en Udemy](https://www.udemy.com/ciencia-de-datos-con-r/) . Perfectamente organizado y metódico, introduce todos los temas de forma sencilla, gradual y 100% práctica.
 
-Dividido en cuatro partes con __presentaciones en video, libro de texto, guías de referencia, [ejercicios prácticos de programación](https://github.com/rsanchezs/ciencia-datos-con-r-tareas), casos de estudio y un proyecto final__:
+Dividido en cuatro partes con __presentaciones en video, [libro de texto, guías de referencia](https://leanpub.com/ciencia-de-datos-con-r/), [ejercicios prácticos de programación](https://github.com/rsanchezs/ciencia-datos-con-r-tareas), casos de estudio y un proyecto final__:
 
 * Programación en R
 * Importar Datos en R
