@@ -1,4 +1,5 @@
 
+
 # Ciencia de Datos con R
 
 La __Ciencia de Datos__ en una disciplina apasionante que permite analizar datos para extraer conocimiento o un mejor entendimiento de datos en sus diferentes formas. El objetivo de <a href=https://www.udemy.com/ciencia-de-datos-con-r target="_blank">Ciencia de Datos con R</a>
@@ -14,7 +15,7 @@ Dividido en cuatro partes con <a href="https://www.youtube.com/playlist?list=PLw
 * Programación en R
 * Importar Datos en R
 * Explorar Datos en R
-* Comunicar resultados
+* Comunicar Resultados
 
 Es un curso innovador que utiliza herramientas avanzadas como [RStudio](https://www.rstudio.com/), un IDE que nos facilitará los procesos de trabajo en las diferentes tareas de un proyecto de Ciencia de Datos y [`Tidyverse`](https://www.tidyverse.org/) un conjunto de paquetes que abarcan todo el flujo de trabajo en el análisis de datos, fáciles de aprender y usar.
 
@@ -33,16 +34,38 @@ El objetivo de este libro es proporcionarte unos fundamentos sólidos en la gran
 ![Fases Proyecto en Ciencia de Datos](https://i.imgur.com/DO2BKK7.png)
 
 
+## ¿Cómo esta organizado este curso?
 
-En primer lugar, será _importar_ nuestros datos a R. Con esto queremos decir, que nos encontraremos datos almacenados en archivos, bases de datos, o en una API web, y el objetivo de esta tarea será cargar los datos en un dataframe.
+### Programación en R
+
+En la primera parte del curso, aprenderemos el lenguaje de programación R:
+
+1. La Sintaxis de R.
+2. Estructuras de Datos en R.
+3. Estructuras de Control en R.
+4. Funciones en R.
+5. Paquetes en R.
+
+
+### Importar Datos en R
+
+En la segunda parte del curso trataremos las dos tareas de la fase de importar datos:
+
+En primer lugar, veremos como _importar_ nuestros datos a R. Con esto queremos decir, que nos encontraremos datos almacenados en archivos, bases de datos, o en una API web, y el objetivo de esta tarea será cargar los datos en un dataframe.
 
 Una vez hemos importado nuestros datos, la siguiente tarea será _"tidy"_ nuestros datos. El objetivo de esta tarea es almacenar nuestros datos en un formato consistente en el que coincida la semántica del conjunto de datos con el medio en que están almacenados. En resumen, nuestros datos estarán en formato tidy cuando, cada variable se encuentre en una columna y cada observación en su propia fila.
 
-A continuación, una tarea común es _transformar_ nuestros datos. Transformar nuestros datos incluye filtrar las observaciones de nuestro interés (como por ejemplo, todo la gente en una ciudad, o todos los datos del último año), creación de nuevas variables resultado del cálculo de funciones de variables existentes (como por ejemplo, calcular la velocidad con el espacio y el tiempo) y, calcular un conjunto de indicadores estadísticos en un resumen (como medias o desviaciones típicas).
+### Exploraración de Datos
+
+En la tercera parte del curso trataremos las tareas de la fase de exploración de nuestros datos, conocido en inglés como _data wrangling_:
+
+En primer lugar, una tarea común es _transformar_ nuestros datos. Transformar nuestros datos incluye filtrar las observaciones de nuestro interés (como por ejemplo, todo la gente en una ciudad, o todos los datos del último año), creación de nuevas variables resultado del cálculo de funciones de variables existentes (como por ejemplo, calcular la velocidad con el espacio y el tiempo) y, calcular un conjunto de indicadores estadísticos en un resumen (como medias o desviaciones típicas).
 
 Después, visualizaremos y modelaremos nuestros datos. En este curso únicamente trataremos la _visualización_.
 
 La visualización es fundamental en la actividad humana. Un visualización bien hecha nos muestra cosas que no esperábamos, o nos conduce a formularnos nuevas cuestiones en nuestros datos. Además, puede indicarnos que no estamos formulando las cuestiones correctas, o que necesitamos recoger  nuevos datos.
+
+### Comunicar los Resultados
 
 El último paso en la ciencia de datos es la _comunicación_, una parte absolutamente crítica en un proyecto de análisis de datos. Indiscutiblemente, no importa lo bien que hayamos modelado o visualizado nuestros datos, si posteriormente no somos capaces de comunicar nuestros resultados con los demás.
 
