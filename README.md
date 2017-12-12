@@ -11,18 +11,18 @@
 Después de seguir este curso, dispondrás de los útiles necesarios para afrontar una amplia variedad de tareas en el análisis de datos, usando las mejores partes de R.</p>
 
 
-Este es el __curso en español más completo y exhaustivo__ que encontrarás sobre <a href=https://www.udemy.com/ciencia-de-datos-con-r target="_blank">Ciencia de Datos con R en Udemy</a>. Perfectamente organizado y metódico, introduce todos los temas de forma sencilla, gradual y 100% práctica.
+<p align="justify">Este es el <strong>curso en español más completo y exhaustivo</strong> que encontrarás sobre <a href=https://www.udemy.com/ciencia-de-datos-con-r target="_blank">Ciencia de Datos con R en Udemy</a>. Perfectamente organizado y metódico, introduce todos los temas de forma sencilla, gradual y 100% práctica.</p>
 
-Dividido en cuatro partes con <a href="https://www.youtube.com/playlist?list=PLwMc8F2IRi4U6ZFeMO0PPcypEogkJp2GL" target="_blank">presentaciones en video</a>, <a href=https://leanpub.com/ciencia-de-datos-con-r target="_blank">libro de texto</a>,    guías de referencia, <a href=https://github.com/rsanchezs/programacion-en-r target="_blank">ejercicio prácticos de programación</a>, <a href=https://github.com/rsanchezs/ciencia-datos-con-r-tareas target="_blank">tareas</a>, casos de estudio y un proyecto final.
+<p align="justify">Dividido en cuatro partes con <a href="https://www.youtube.com/playlist?list=PLwMc8F2IRi4U6ZFeMO0PPcypEogkJp2GL" target="_blank">presentaciones en video</a>, <a href=https://leanpub.com/ciencia-de-datos-con-r target="_blank">libro de texto</a>,    guías de referencia, <a href=https://github.com/rsanchezs/programacion-en-r target="_blank">ejercicio prácticos de programación</a>, <a href=https://github.com/rsanchezs/ciencia-datos-con-r-tareas target="_blank">tareas</a>, casos de estudio y un proyecto final.</p>
 
-En otras palabras, es un curso innovador que utiliza herramientas avanzadas como [RStudio](https://www.rstudio.com/), un IDE que nos facilitará los procesos de trabajo en las diferentes tareas de un proyecto de Ciencia de Datos y [`Tidyverse`](https://www.tidyverse.org/) un conjunto de paquetes que abarcan todo el flujo de trabajo en el análisis de datos, fáciles de aprender y usar.
+<p align="justify">En otras palabras, es un curso innovador que utiliza herramientas avanzadas como <a href=https://www.rstudio.com target="_blank">RStudio</a>, un IDE que nos facilitará los procesos de trabajo en las diferentes tareas de un proyecto de Ciencia de Datos y <a href=https://www.tidyverse.org/ target="_blank"><code>Tidyverse</code></a> un conjunto de paquetes que abarcan todo el flujo de trabajo en el análisis de datos, fáciles de aprender y usar.</p>
 
 
 ## ¿Que Aprenderás con este Curso?
 
 
 
-El objetivo de este curso es proporcionarte unos fundamentos sólidos en la gran mayoría de herramientas. Nuestro modelo de herramientas necesarias en un proyecto típico de Ciencia de Datos es el que se muestra en la siguiente figura:
+<p align="justify">El objetivo de este curso es proporcionarte unos fundamentos sólidos en la gran mayoría de herramientas. Nuestro modelo de herramientas necesarias en un proyecto típico de Ciencia de Datos es el que se muestra en la siguiente figura:</p>
 
 
 
@@ -31,7 +31,7 @@ El objetivo de este curso es proporcionarte unos fundamentos sólidos en la gran
 ## ¿Cómo Está Organizado Este Curso?
 
 
-El curso está organizado de acuerdo con las herramientas necesarias en un proyecto típico de Ciencia de Datos, en el orden en que las usaremos en nuestros análisis de datos.
+<p align="justify">El curso está organizado de acuerdo con las herramientas necesarias en un proyecto típico de Ciencia de Datos, en el orden en que las usaremos en nuestros análisis de datos.</p>
 
 ### Programación en R
 
@@ -46,35 +46,37 @@ En la primera parte del curso, aprenderemos el lenguaje de programación R:
 
 En la segunda parte del curso trataremos las dos tareas de la fase de importar datos.
 
-En primer lugar, veremos como _importar_ nuestros datos a R. Con esto queremos decir, que nos encontraremos datos almacenados en archivos, bases de datos, o en una API web, y el objetivo de esta tarea será cargar los datos en un dataframe.
+<p align="justify">En primer lugar, veremos como _importar_ nuestros datos a R. Con esto queremos decir, que nos encontraremos datos almacenados en archivos, bases de datos, o en una API web, y el objetivo de esta tarea será cargar los datos en un dataframe.</p>
 
 
-Una vez hemos importado nuestros datos, la siguiente tarea será _"tidy"_ nuestros datos. El objetivo de esta tarea es almacenar nuestros datos en un formato consistente en el que coincida la semántica del conjunto de datos con el medio en que están almacenados. En resumen, nuestros datos estarán en formato tidy cuando, cada variable se encuentre en una columna y cada observación en su propia fila
+<p align="justify">Una vez hemos importado nuestros datos, la siguiente tarea será _"tidy"_ nuestros datos. El objetivo de esta tarea es almacenar nuestros datos en un formato consistente en el que coincida la semántica del conjunto de datos con el medio en que están almacenados. En resumen, nuestros datos estarán en formato tidy cuando, cada variable se encuentre en una columna y cada observación en su propia fila.</p>
+ 
+
 ### Exploración de Datos
 
 
-En la tercera parte del curso trataremos las tareas de la fase de exploración de nuestros datos, conocido en inglés como _data wrangling_.
+<p align="justify">En la tercera parte del curso trataremos las tareas de la fase de exploración de nuestros datos, conocido en inglés como _data wrangling_.</p>
 
-En primer lugar, una tarea común es _transformar_ nuestros datos. Transformar nuestros datos incluye filtrar las observaciones de nuestro interés (como por ejemplo, todo la gente en una ciudad, o todos los datos del último año), creación de nuevas variables resultado del cálculo de funciones de variables existentes (como por ejemplo, calcular la velocidad con el espacio y el tiempo) y, calcular un conjunto de indicadores estadísticos en un resumen (como medias o desviaciones típicas).
+<p align="justify">En primer lugar, una tarea común es _transformar_ nuestros datos. Transformar nuestros datos incluye filtrar las observaciones de nuestro interés (como por ejemplo, todo la gente en una ciudad, o todos los datos del último año), creación de nuevas variables resultado del cálculo de funciones de variables existentes (como por ejemplo, calcular la velocidad con el espacio y el tiempo) y, calcular un conjunto de indicadores estadísticos en un resumen (como medias o desviaciones típicas).</p>
 
 Después, visualizaremos y modelaremos nuestros datos. En este curso únicamente trataremos la _visualización_.
 
-La visualización es fundamental en la actividad humana. Un visualización bien hecha nos muestra cosas que no esperábamos, o nos conduce a formularnos nuevas cuestiones en nuestros datos. Además, puede indicarnos que no estamos formulando las cuestiones correctas, o que necesitamos recoger  nuevos datos.
+<p align="justify">La visualización es fundamental en la actividad humana. Un visualización bien hecha nos muestra cosas que no esperábamos, o nos conduce a formularnos nuevas cuestiones en nuestros datos. Además, puede indicarnos que no estamos formulando las cuestiones correctas, o que necesitamos recoger  nuevos datos.</p>
 
 ### Comunicar los Resultados
 
-El último paso en la ciencia de datos es la _comunicación_, una parte absolutamente crítica en un proyecto de análisis de datos. Indiscutiblemente, no importa lo bien que hayamos modelado o visualizado nuestros datos, si posteriormente no somos capaces de comunicar nuestros resultados con los demás.
+<p align="justify">El último paso en la ciencia de datos es la _comunicación_, una parte absolutamente crítica en un proyecto de análisis de datos. Indiscutiblemente, no importa lo bien que hayamos modelado o visualizado nuestros datos, si posteriormente no somos capaces de comunicar nuestros resultados con los demás.</p>
 
 
 ## Udemy
 
-No esperes más y descubre por qué la Ciencia de Datos es el __"trabajo mas sexy del siglo XXI"__, mejora tus conocimientos y da un salto adelante en tu carrera profesional.
+<p align="justify">No esperes más y descubre por qué la Ciencia de Datos es el __"trabajo mas sexy del siglo XXI"__, mejora tus conocimientos y da un salto adelante en tu carrera profesional.</p>
 
-Haz clic en el siguiente cupón [__VOUCHER10__](https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10) o en la imagen para obtener el curso por tan sólo __10€__.
+<p align="justify">Haz clic en el siguiente cupón [__VOUCHER10__](https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10) o en la imagen para obtener el curso por tan sólo __10€__.</p>
 
 
 <a href="https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10" target="_blank"><img src="https://i.imgur.com/zjjWEWV.png" width="170" height="70"></a>
-<a href="https://www.udemy.com/ciencia-de-datos-con-r/?src=sac&kw=cien#instructor-1" target="_blank"><img src="https://imgur.com/Yi2ZFiu.png" width="170" height="70"></a>
+<a href="https://www.udemy.com/ciencia-de-datos-con-r/?src=sac&kw=cien#instructor-1" target="_blank"><img src="https://imgur.com/Yi2ZFiu.png" width="170" height="70"></a></p>
 
 
 
@@ -89,9 +91,9 @@ Haz clic en la siguiente imagen para obtener el libro por tan sólo __5€__:
 
 ## Contacto
 
-El siguiente curso dipone una página web para el libro, puedes acceder a esta página en <a href="https://rsanchezs.gitbooks.io/ciencia-de-datos-con-r/content/" target="_blank">https://rsanchezs.gitbooks.io/ciencia-de-datos-con-r/content/</a>
+<p align="justify">El siguiente curso dipone una página web para el libro, puedes acceder a esta página en <a href="https://rsanchezs.gitbooks.io/ciencia-de-datos-con-r/content/" target="_blank">https://rsanchezs.gitbooks.io/ciencia-de-datos-con-r/content/</a></p>
 
-Para comentarios y erratas, envía un correo electrónico a <a href="mailto:ciencia.datos.con.r@gmail.com" target="_blank"><img src="https://i.imgur.com/PJGlEba.png"></a>.
+<p align="justify">Para comentarios y erratas, envía un correo electrónico a <a href="mailto:ciencia.datos.con.r@gmail.com" target="_blank"><img src="https://i.imgur.com/PJGlEba.png"></a>.</p>
 
 __Sígueme en:__
 
