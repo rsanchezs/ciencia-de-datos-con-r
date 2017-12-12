@@ -1,4 +1,5 @@
- 
+
+
 
 
 
@@ -34,7 +35,9 @@ Después de seguir este curso, dispondrás de los útiles necesarios para afront
 
 ### Programación en R
 
-En la primera parte del curso, aprenderemos el lenguaje de programación R:1. La Sintaxis de R.
+En la primera parte del curso, aprenderemos el lenguaje de programación R:
+
+1. La Sintaxis de R.
 2. Estructuras de Datos en R.
 3. Estructuras de Control en R.
 4. Funciones en R.
