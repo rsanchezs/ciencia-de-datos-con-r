@@ -21,7 +21,6 @@ Después de seguir este curso, dispondrás de los útiles necesarios para afront
 
 ## ¿Que Aprenderás con este Curso?
 
-
 <p align="justify">El objetivo de este curso es proporcionarte unos fundamentos sólidos en la gran mayoría de herramientas. Nuestro modelo de herramientas necesarias en un proyecto típico de Ciencia de Datos es el que se muestra en la siguiente figura:</p>
 
 
@@ -45,10 +44,9 @@ En la primera parte del curso, aprenderemos el lenguaje de programación R:
 
 ### Importar Datos en 
 
-En la segunda parte del curso trataremos las dos tareas de la fase de importar datos y que pasamos a analizar a continuación:
+<p align="justify">En la segunda parte del curso trataremos las dos tareas de la fase de importar datos y que pasamos a analizar a continuación:</p>
 
 <p align="justify">En primer lugar, veremos como <strong>importar</strong> nuestros datos a R. Con esto queremos decir, que nos encontraremos datos almacenados en archivos, bases de datos, o en una API web, y el objetivo de esta tarea será cargar los datos en un dataframe.</p>
-/
 
 <p align="justify">Una vez hemos importado nuestros datos, la siguiente tarea será <a href=https://en.wikipedia.org/wiki/Tidy_data target="_blank"><i><em>tidy</i></em></a> nuestros datos. El objetivo de esta tarea es almacenar nuestros datos en un formato consistente en el que coincida la semántica del conjunto de datos con el medio en que están almacenados. En resumen, nuestros datos estarán en formato tidy cuando, cada variable se encuentre en una columna y cada observación en su propia fila.</p
 
@@ -63,6 +61,8 @@ En la segunda parte del curso trataremos las dos tareas de la fase de importar d
 Después, visualizaremos y modelaremos nuestros datos. En este curso únicamente trataremos la <strong>visualización</strong>.
 
 <p align="justify">La visualización es fundamental en la actividad humana. Un visualización bien hecha nos muestra cosas que no esperábamos, o nos conduce a formularnos nuevas cuestiones en nuestros datos. Además, puede indicarnos que no estamos formulando las cuestiones correctas, o que necesitamos recoger  nuevos datos.</p>
+
+
 ### Comunicar los Resultados
 
 <p align="justify">El último paso en la ciencia de datos es la <strong>comunicación</strong>, una parte absolutamente crítica en un proyecto de análisis de datos. Indiscutiblemente, no importa lo bien que hayamos modelado o visualizado nuestros datos, si posteriormente no somos capaces de comunicar nuestros resultados con los demás.</p>
@@ -80,10 +80,9 @@ Después, visualizaremos y modelaremos nuestros datos. En este curso únicamente
 
 
 
-
 ## LeanPub
 
-Haz clic en la siguiente imagen para obtener el libro por tan sólo <strong>5€</strong>:
+<p align="justify">Haz clic en la siguiente imagen para obtener el libro por tan sólo <strong>5€</strong>:</p>
 
 
 <a href="https://leanpub.com/ciencia-de-datos-con-r/c/CSI5qnSGUUkL" target="_blank"><img src="https://i.imgur.com/VRMrT0I.png" width="200" height="90"></a>
