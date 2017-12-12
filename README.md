@@ -34,8 +34,7 @@ Después de seguir este curso, dispondrás de los útiles necesarios para afront
 
 ### Programación en R
 
-En la primera parte del curso, aprenderemos el lenguaje de programación R:
-1. La Sintaxis de R.
+En la primera parte del curso, aprenderemos el lenguaje de programación R:1. La Sintaxis de R.
 2. Estructuras de Datos en R.
 3. Estructuras de Control en R.
 4. Funciones en R.
@@ -54,7 +53,7 @@ En la segunda parte del curso trataremos las dos tareas de la fase de importar d
 ### Exploración de Datos
 
 
-<p align="justify">En la tercera parte del curso trataremos las tareas de la fase de exploración de nuestros datos, conocido en inglés como _data wrangling_.</p>
+<p align="justify">En la tercera parte del curso trataremos las tareas de la fase de exploración de nuestros datos, conocido en inglés como <i><em>data wrangling</i></em>.</p>
 
 <p align="justify">En primer lugar, una tarea común es <strong>transformar</strong> nuestros datos. Transformar nuestros datos incluye filtrar las observaciones de nuestro interés (como por ejemplo, todo la gente en una ciudad, o todos los datos del último año), creación de nuevas variables resultado del cálculo de funciones de variables existentes (como por ejemplo, calcular la velocidad con el espacio y el tiempo) y, calcular un conjunto de indicadores estadísticos en un resumen (como medias o desviaciones típicas).</p>
 
