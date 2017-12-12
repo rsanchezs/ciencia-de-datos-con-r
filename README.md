@@ -71,7 +71,7 @@ Después, visualizaremos y modelaremos nuestros datos. En este curso únicamente
 
 <p align="justify">No esperes más y descubre por qué la Ciencia de Datos es el <strong>"trabajo mas sexy del siglo XXI"</strong>, mejora tus conocimientos y da un salto adelante en tu carrera profesional.</p>
 
-<p align="justify">Haz clic en el siguiente cupón <a href="https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10" target="_blank">VOUCHER10</a> o en la imagen para obtener el curso por tan sólo <font size=5><strong>10€</strong></font>.</p>
+<p align="justify">Haz clic en el siguiente cupón <a href="https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10" target="_blank">VOUCHER10</a> o en la imagen para obtener el curso por tan sólo <strong>10€</strong>.</p>
 
 
 <a href="https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10" target="_blank"><img src="https://i.imgur.com/zjjWEWV.png" width="170" height="70"></a>
@@ -81,7 +81,7 @@ Después, visualizaremos y modelaremos nuestros datos. En este curso únicamente
 
 ## LeanPub
 
-<p align="justify">Haz clic en la siguiente imagen para obtener el libro por tan sólo <font size=20><strong>5€</strong></font>:</p>
+<p align="justify">Haz clic en la siguiente imagen para obtener el libro por tan sólo <strong>5€</strong>:</p>
 
 
 <a href="https://leanpub.com/ciencia-de-datos-con-r/c/CSI5qnSGUUkL" target="_blank"><img src="https://i.imgur.com/VRMrT0I.png" width="200" height="90"></a>
