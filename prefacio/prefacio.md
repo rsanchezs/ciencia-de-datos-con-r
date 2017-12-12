@@ -36,7 +36,7 @@ Estas tres cuestiones (informática y computación, métodos estadísticos y ár
 
 El objetivo de este libro es proporcionarte unos fundamentos sólidos en la gran mayoría de herramientas. Nuestro modelo de herramientas necesarias en un proyecto típico de Ciencia de Datos es el que se muestra en la siguiente figura:
 
-![Fases Proyecto en Ciencia de Datos](https://i.imgur.com/3B12lde.png)
+![Fases Proyecto en Ciencia de Datos](https://i.imgur.com/DO2BKK7.png))
 
 En primer lugar, será _importar_ nuestros datos a R. Con esto queremos decir, que nos encontraremos datos almacenados en archivos, bases de datos, o en una API web, y el objetivo de esta tarea será cargar los datos en un dataframe.
 

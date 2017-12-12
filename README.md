@@ -28,7 +28,7 @@ El objetivo de este curso es proporcionarte unos fundamentos sólidos en la gran
 
 ![Fases Proyecto en Ciencia de Datos](https://i.imgur.com/DO2BKK7.png)
 
-## ¿Cómo esta organizado este curso?
+## ¿Cómo Está Organizado Este Curso?
 
 
 El curso está organizado de acuerdo con las herramientas necesarias en un proyecto típico de Ciencia de Datos, en el orden en que las usaremos en nuestros análisis de datos.
@@ -43,6 +43,7 @@ En la primera parte del curso, aprenderemos el lenguaje de programación R:
 5. Paquetes en R.
 
 ### Importar Datos en 
+
 En la segunda parte del curso trataremos las dos tareas de la fase de importar datos.
 
 En primer lugar, veremos como _importar_ nuestros datos a R. Con esto queremos decir, que nos encontraremos datos almacenados en archivos, bases de datos, o en una API web, y el objetivo de esta tarea será cargar los datos en un dataframe.
@@ -92,7 +93,7 @@ El siguiente curso dipone una página web para el libro, puedes acceder a esta p
 
 Para comentarios y erratas, envía un correo electrónico a <a href="mailto:ciencia.datos.con.r@gmail.com" target="_blank"><img src="https://i.imgur.com/PJGlEba.png"></a>.
 
-__Sigueme en:__
+__Sígueme en:__
 
 <a href="https://plus.google.com/+RubénSánchezSancho?hl=es" target="_blank"><img src="https://i.imgur.com/nFk0c7l.png"></a>
 <a href="https://www.linkedin.com/in/ruben-sanchez-sancho-767993139/" target="_blank"><img src="https://i.imgur.com/ccAeFjJ.png"></a>
