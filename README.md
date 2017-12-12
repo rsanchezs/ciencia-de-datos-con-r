@@ -45,13 +45,15 @@ En la primera parte del curso, aprenderemos el lenguaje de programación R:
 
 ### Importar Datos en 
 
-En la segunda parte del curso trataremos las dos tareas de la fase de importar datos.
+En la segunda parte del curso trataremos las dos tareas de la fase de importar datos y que pasamos a analizar a continuación:
 
 <p align="justify">En primer lugar, veremos como <strong>importar</strong> nuestros datos a R. Con esto queremos decir, que nos encontraremos datos almacenados en archivos, bases de datos, o en una API web, y el objetivo de esta tarea será cargar los datos en un dataframe.</p>
 
 
-<p align="justify">Una vez hemos importado nuestros datos, la siguiente tarea será <em>"tidy"</em> nuestros datos. El objetivo de esta tarea es almacenar nuestros datos en un formato consistente en el que coincida la semántica del conjunto de datos con el medio en que están almacenados. En resumen, nuestros datos estarán en formato tidy cuando, cada variable se encuentre en una columna y cada observación en su propia fila.</p>
- 
+<p align="justify">Una vez hemos importado nuestros datos, la siguiente tarea será <a href=https://en.wikipedia.org/wiki/Tidy_data target="_blank"><i><em>tidy</i></em></a> nuestros datos. El objetivo de esta tarea es almacenar nuestros datos en un formato consistente en el que coincida la semántica del conjunto de datos con el medio en que están almacenados. En resumen, nuestros datos estarán en formato tidy cuando, cada variable se encuentre en una columna y cada observación en su propia fila.</p>
+
+
+
 
 ### Exploración de Datos
 
