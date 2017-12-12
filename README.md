@@ -53,7 +53,6 @@ En la segunda parte del curso trataremos las dos tareas de la fase de importar d
 <p align="justify">Una vez hemos importado nuestros datos, la siguiente tarea será <a href=https://en.wikipedia.org/wiki/Tidy_data target="_blank"><i><em>tidy</i></em></a> nuestros datos. El objetivo de esta tarea es almacenar nuestros datos en un formato consistente en el que coincida la semántica del conjunto de datos con el medio en que están almacenados. En resumen, nuestros datos estarán en formato tidy cuando, cada variable se encuentre en una columna y cada observación en su propia fila.</p
 
 
-
 ### Exploración de Datos
 
 
@@ -77,7 +76,7 @@ Después, visualizaremos y modelaremos nuestros datos. En este curso únicamente
 
 
 <a href="https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10" target="_blank"><img src="https://i.imgur.com/zjjWEWV.png" width="170" height="70"></a>
-<a href="https://www.udemy.com/ciencia-de-datos-con-r/?src=sac&kw=cien#instructor-1" target="_blank"><img src="https://imgur.com/Yi2ZFiu.png" width="170" height="70"></a></p>
+<a href="https://www.udemy.com/ciencia-de-datos-con-r/?src=sac&kw=cien#instructor-1" target="_blank"><img src="https://imgur.com/Yi2ZFiu.png" width="170" height="70"></a>
 
 
 
