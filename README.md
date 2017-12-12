@@ -45,7 +45,6 @@ En la primera parte del curso, aprenderemos el lenguaje de programación R:
 ### Importar Datos en 
 
 <p align="justify">En la segunda parte del curso trataremos las dos tareas de la fase de importar datos y que pasamos a analizar a continuación:</p>
-
 <p align="justify">En primer lugar, veremos como <strong>importar</strong> nuestros datos a R. Con esto queremos decir, que nos encontraremos datos almacenados en archivos, bases de datos, o en una API web, y el objetivo de esta tarea será cargar los datos en un dataframe.</p>
 
 <p align="justify">Una vez hemos importado nuestros datos, la siguiente tarea será <a href=https://en.wikipedia.org/wiki/Tidy_data target="_blank"><i><em>tidy</i></em></a> nuestros datos. El objetivo de esta tarea es almacenar nuestros datos en un formato consistente en el que coincida la semántica del conjunto de datos con el medio en que están almacenados. En resumen, nuestros datos estarán en formato tidy cuando, cada variable se encuentre en una columna y cada observación en su propia fila.</p>
@@ -82,7 +81,7 @@ Después, visualizaremos y modelaremos nuestros datos. En este curso únicamente
 
 ## LeanPub
 
-<p align="justify">Haz clic en la siguiente imagen para obtener el libro por tan sólo <font size=5><strong>5€</strong></font>:</p>
+<p align="justify">Haz clic en la siguiente imagen para obtener el libro por tan sólo <font size=20><strong>5€</strong></font>:</p>
 
 
 <a href="https://leanpub.com/ciencia-de-datos-con-r/c/CSI5qnSGUUkL" target="_blank"><img src="https://i.imgur.com/VRMrT0I.png" width="200" height="90"></a>
