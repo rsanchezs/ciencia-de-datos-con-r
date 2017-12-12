@@ -21,7 +21,6 @@ Después de seguir este curso, dispondrás de los útiles necesarios para afront
 ## ¿Que Aprenderás con este Curso?
 
 
-
 <p align="justify">El objetivo de este curso es proporcionarte unos fundamentos sólidos en la gran mayoría de herramientas. Nuestro modelo de herramientas necesarias en un proyecto típico de Ciencia de Datos es el que se muestra en la siguiente figura:</p>
 
 
@@ -46,10 +45,10 @@ En la primera parte del curso, aprenderemos el lenguaje de programación R:
 
 En la segunda parte del curso trataremos las dos tareas de la fase de importar datos.
 
-<p align="justify">En primer lugar, veremos como _importar_ nuestros datos a R. Con esto queremos decir, que nos encontraremos datos almacenados en archivos, bases de datos, o en una API web, y el objetivo de esta tarea será cargar los datos en un dataframe.</p>
+<p align="justify">En primer lugar, veremos como <strong>importar</strong> nuestros datos a R. Con esto queremos decir, que nos encontraremos datos almacenados en archivos, bases de datos, o en una API web, y el objetivo de esta tarea será cargar los datos en un dataframe.</p>
 
 
-<p align="justify">Una vez hemos importado nuestros datos, la siguiente tarea será _"tidy"_ nuestros datos. El objetivo de esta tarea es almacenar nuestros datos en un formato consistente en el que coincida la semántica del conjunto de datos con el medio en que están almacenados. En resumen, nuestros datos estarán en formato tidy cuando, cada variable se encuentre en una columna y cada observación en su propia fila.</p>
+<p align="justify">Una vez hemos importado nuestros datos, la siguiente tarea será <em>"tidy"</em> nuestros datos. El objetivo de esta tarea es almacenar nuestros datos en un formato consistente en el que coincida la semántica del conjunto de datos con el medio en que están almacenados. En resumen, nuestros datos estarán en formato tidy cuando, cada variable se encuentre en una columna y cada observación en su propia fila.</p>
  
 
 ### Exploración de Datos
@@ -57,22 +56,22 @@ En la segunda parte del curso trataremos las dos tareas de la fase de importar d
 
 <p align="justify">En la tercera parte del curso trataremos las tareas de la fase de exploración de nuestros datos, conocido en inglés como _data wrangling_.</p>
 
-<p align="justify">En primer lugar, una tarea común es _transformar_ nuestros datos. Transformar nuestros datos incluye filtrar las observaciones de nuestro interés (como por ejemplo, todo la gente en una ciudad, o todos los datos del último año), creación de nuevas variables resultado del cálculo de funciones de variables existentes (como por ejemplo, calcular la velocidad con el espacio y el tiempo) y, calcular un conjunto de indicadores estadísticos en un resumen (como medias o desviaciones típicas).</p>
+<p align="justify">En primer lugar, una tarea común es <strong>transformar</strong> nuestros datos. Transformar nuestros datos incluye filtrar las observaciones de nuestro interés (como por ejemplo, todo la gente en una ciudad, o todos los datos del último año), creación de nuevas variables resultado del cálculo de funciones de variables existentes (como por ejemplo, calcular la velocidad con el espacio y el tiempo) y, calcular un conjunto de indicadores estadísticos en un resumen (como medias o desviaciones típicas).</p>
 
-Después, visualizaremos y modelaremos nuestros datos. En este curso únicamente trataremos la _visualización_.
+Después, visualizaremos y modelaremos nuestros datos. En este curso únicamente trataremos la <strong>visualización</strong>.
 
 <p align="justify">La visualización es fundamental en la actividad humana. Un visualización bien hecha nos muestra cosas que no esperábamos, o nos conduce a formularnos nuevas cuestiones en nuestros datos. Además, puede indicarnos que no estamos formulando las cuestiones correctas, o que necesitamos recoger  nuevos datos.</p>
 
 ### Comunicar los Resultados
 
-<p align="justify">El último paso en la ciencia de datos es la _comunicación_, una parte absolutamente crítica en un proyecto de análisis de datos. Indiscutiblemente, no importa lo bien que hayamos modelado o visualizado nuestros datos, si posteriormente no somos capaces de comunicar nuestros resultados con los demás.</p>
+<p align="justify">El último paso en la ciencia de datos es la <strong>comunicación</strong>, una parte absolutamente crítica en un proyecto de análisis de datos. Indiscutiblemente, no importa lo bien que hayamos modelado o visualizado nuestros datos, si posteriormente no somos capaces de comunicar nuestros resultados con los demás.</p>
 
 
 ## Udemy
 
-<p align="justify">No esperes más y descubre por qué la Ciencia de Datos es el __"trabajo mas sexy del siglo XXI"__, mejora tus conocimientos y da un salto adelante en tu carrera profesional.</p>
+<p align="justify">No esperes más y descubre por qué la Ciencia de Datos es el <strong>"trabajo mas sexy del siglo XXI"</strong>, mejora tus conocimientos y da un salto adelante en tu carrera profesional.</p>
 
-<p align="justify">Haz clic en el siguiente cupón [__VOUCHER10__](https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10) o en la imagen para obtener el curso por tan sólo __10€__.</p>
+<p align="justify">Haz clic en el siguiente cupón <a href="https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10" target="_blank">VOUCHER10</a> o en la imagen para obtener el curso por tan sólo <em>10€</em>.</p>
 
 
 <a href="https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10" target="_blank"><img src="https://i.imgur.com/zjjWEWV.png" width="170" height="70"></a>
