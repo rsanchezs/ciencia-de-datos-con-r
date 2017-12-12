@@ -58,8 +58,6 @@ En la segunda parte del curso trataremos las dos tareas de la fase de importar d
 ### Exploración de Datos
 
 
-
-
 <p align="justify">En la tercera parte del curso trataremos las tareas de la fase de exploración de nuestros datos, conocido en inglés como <a href=https://en.wikipedia.org/wiki/Data_wrangling target="_blank"><i><em>data wrangling</i></em></a>.</p>
 
 <p align="justify">En primer lugar, una tarea común es <strong>transformar</strong> nuestros datos. Transformar nuestros datos incluye filtrar las observaciones de nuestro interés (como por ejemplo, todo la gente en una ciudad, o todos los datos del último año), creación de nuevas variables resultado del cálculo de funciones de variables existentes (como por ejemplo, calcular la velocidad con el espacio y el tiempo) y, calcular un conjunto de indicadores estadísticos en un resumen (como medias o desviaciones típicas).</p>
@@ -77,7 +75,7 @@ Después, visualizaremos y modelaremos nuestros datos. En este curso únicamente
 
 <p align="justify">No esperes más y descubre por qué la Ciencia de Datos es el <strong>"trabajo mas sexy del siglo XXI"</strong>, mejora tus conocimientos y da un salto adelante en tu carrera profesional.</p>
 
-<p align="justify">Haz clic en el siguiente cupón <a href="https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10" target="_blank">VOUCHER10</a> o en la imagen para obtener el curso por tan sólo <em>10€</em>.</p>
+<p align="justify">Haz clic en el siguiente cupón <a href="https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10" target="_blank">VOUCHER10</a> o en la imagen para obtener el curso por tan sólo </big><em>10€</em></big>.</p>
 
 
 <a href="https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10" target="_blank"><img src="https://i.imgur.com/zjjWEWV.png" width="170" height="70"></a>
@@ -88,7 +86,7 @@ Después, visualizaremos y modelaremos nuestros datos. En este curso únicamente
 
 ## LeanPub
 
-Haz clic en la siguiente imagen para obtener el libro por tan sólo __5€__:
+Haz clic en la siguiente imagen para obtener el libro por tan sólo <big><em>5€</big></em>:
 
 
 <a href="https://leanpub.com/ciencia-de-datos-con-r/c/CSI5qnSGUUkL" target="_blank"><img src="https://i.imgur.com/VRMrT0I.png" width="200" height="90"></a>
