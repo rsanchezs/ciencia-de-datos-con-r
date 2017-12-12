@@ -48,7 +48,7 @@ En la primera parte del curso, aprenderemos el lenguaje de programación R:
 En la segunda parte del curso trataremos las dos tareas de la fase de importar datos y que pasamos a analizar a continuación:
 
 <p align="justify">En primer lugar, veremos como <strong>importar</strong> nuestros datos a R. Con esto queremos decir, que nos encontraremos datos almacenados en archivos, bases de datos, o en una API web, y el objetivo de esta tarea será cargar los datos en un dataframe.</p>
-
+/
 
 <p align="justify">Una vez hemos importado nuestros datos, la siguiente tarea será <a href=https://en.wikipedia.org/wiki/Tidy_data target="_blank"><i><em>tidy</i></em></a> nuestros datos. El objetivo de esta tarea es almacenar nuestros datos en un formato consistente en el que coincida la semántica del conjunto de datos con el medio en que están almacenados. En resumen, nuestros datos estarán en formato tidy cuando, cada variable se encuentre en una columna y cada observación en su propia fila.</p
 
@@ -72,7 +72,7 @@ Después, visualizaremos y modelaremos nuestros datos. En este curso únicamente
 
 <p align="justify">No esperes más y descubre por qué la Ciencia de Datos es el <strong>"trabajo mas sexy del siglo XXI"</strong>, mejora tus conocimientos y da un salto adelante en tu carrera profesional.</p>
 
-<p align="justify">Haz clic en el siguiente cupón <a href="https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10" target="_blank">VOUCHER10</a> o en la imagen para obtener el curso por tan sólo <strong>10€<strong>.</p>
+<p align="justify">Haz clic en el siguiente cupón <a href="https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10" target="_blank">VOUCHER10</a> o en la imagen para obtener el curso por tan sólo <strong>10€</strong>.</p>
 
 
 <a href="https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10" target="_blank"><img src="https://i.imgur.com/zjjWEWV.png" width="170" height="70"></a>
