@@ -65,7 +65,6 @@ En la segunda parte del curso trataremos las dos tareas de la fase de importar d
 Después, visualizaremos y modelaremos nuestros datos. En este curso únicamente trataremos la <strong>visualización</strong>.
 
 <p align="justify">La visualización es fundamental en la actividad humana. Un visualización bien hecha nos muestra cosas que no esperábamos, o nos conduce a formularnos nuevas cuestiones en nuestros datos. Además, puede indicarnos que no estamos formulando las cuestiones correctas, o que necesitamos recoger  nuevos datos.</p>
-
 ### Comunicar los Resultados
 
 <p align="justify">El último paso en la ciencia de datos es la <strong>comunicación</strong>, una parte absolutamente crítica en un proyecto de análisis de datos. Indiscutiblemente, no importa lo bien que hayamos modelado o visualizado nuestros datos, si posteriormente no somos capaces de comunicar nuestros resultados con los demás.</p>
@@ -75,7 +74,7 @@ Después, visualizaremos y modelaremos nuestros datos. En este curso únicamente
 
 <p align="justify">No esperes más y descubre por qué la Ciencia de Datos es el <strong>"trabajo mas sexy del siglo XXI"</strong>, mejora tus conocimientos y da un salto adelante en tu carrera profesional.</p>
 
-<p align="justify">Haz clic en el siguiente cupón <a href="https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10" target="_blank">VOUCHER10</a> o en la imagen para obtener el curso por tan sólo </big><em>10€</em></big>.</p>
+<p align="justify">Haz clic en el siguiente cupón <a href="https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10" target="_blank">VOUCHER10</a> o en la imagen para obtener el curso por tan sólo <big><strong>10€<strong></big>.</p>
 
 
 <a href="https://www.udemy.com/ciencia-de-datos-con-r/?couponCode=VOUCHER10" target="_blank"><img src="https://i.imgur.com/zjjWEWV.png" width="170" height="70"></a>
@@ -86,7 +85,7 @@ Después, visualizaremos y modelaremos nuestros datos. En este curso únicamente
 
 ## LeanPub
 
-Haz clic en la siguiente imagen para obtener el libro por tan sólo <big><em>5€</big></em>:
+Haz clic en la siguiente imagen para obtener el libro por tan sólo <big><strong>5€</big></strong>:
 
 
 <a href="https://leanpub.com/ciencia-de-datos-con-r/c/CSI5qnSGUUkL" target="_blank"><img src="https://i.imgur.com/VRMrT0I.png" width="200" height="90"></a>
