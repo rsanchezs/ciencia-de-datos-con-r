@@ -58,7 +58,9 @@ En la segunda parte del curso trataremos las dos tareas de la fase de importar d
 ### Exploración de Datos
 
 
-<p align="justify">En la tercera parte del curso trataremos las tareas de la fase de exploración de nuestros datos, conocido en inglés como <i><em>data wrangling</i></em>.</p>
+
+
+<p align="justify">En la tercera parte del curso trataremos las tareas de la fase de exploración de nuestros datos, conocido en inglés como <a href=https://en.wikipedia.org/wiki/Data_wrangling target="_blank"><i><em>data wrangling</i></em></a>.</p>
 
 <p align="justify">En primer lugar, una tarea común es <strong>transformar</strong> nuestros datos. Transformar nuestros datos incluye filtrar las observaciones de nuestro interés (como por ejemplo, todo la gente en una ciudad, o todos los datos del último año), creación de nuevas variables resultado del cálculo de funciones de variables existentes (como por ejemplo, calcular la velocidad con el espacio y el tiempo) y, calcular un conjunto de indicadores estadísticos en un resumen (como medias o desviaciones típicas).</p>
 
