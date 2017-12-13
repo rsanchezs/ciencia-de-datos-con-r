@@ -23,7 +23,7 @@ Después de seguir este curso, dispondrás de los útiles necesarios para afront
 
 <p align="justify">El objetivo de este curso es proporcionarte unos fundamentos sólidos en la gran mayoría de herramientas. Nuestro modelo de herramientas necesarias en un proyecto típico de Ciencia de Datos es el que se muestra en la siguiente figura:</p>
 
-<img src="https://i.imgur.com/DO2BKK7.png"</img>
+<img src="https://i.imgur.com/DO2BKK7.png">
 
 
 ## ¿Cómo Está Organizado Este Curso?
