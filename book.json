@@ -1,11 +1,9 @@
 {
     "structure": {
-        "readme": "myIntro.md"
-    }
-}
-   
-{
+        "readme": "prefacio.md"
+    },
 
+   
     "plugins": [
         "image-captions",
         "alerts",
