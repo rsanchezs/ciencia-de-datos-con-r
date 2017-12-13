@@ -1,7 +1,9 @@
-
+{
+    "structure": {
+        "readme": "myIntro.md"
+    }
+}
    
-
-
 {
 
     "plugins": [
@@ -20,9 +22,6 @@
         "js": ["custom.js"], 
         "css": ["./css/custom.css"] }
       
-  },
-  "structure": {
-        "readme": "prefacio.md"
-    }
-
+  }
+  
 }
