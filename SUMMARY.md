@@ -3,7 +3,7 @@
 
 
 * [Portada](README.md)
-* [Prefacio](prefacio/prefacio.md)
+* [Prefacio](prefacio.md)
 
 
 #### Parte 1. Lenguaje R
