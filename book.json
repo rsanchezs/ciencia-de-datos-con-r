@@ -1,4 +1,9 @@
+
+   
+
+
 {
+
     "plugins": [
         "image-captions",
         "alerts",
@@ -15,7 +20,9 @@
         "js": ["custom.js"], 
         "css": ["./css/custom.css"] }
       
-  }
-
+  },
+  "structure": {
+        "readme": "prefacio.md"
+    }
 
 }

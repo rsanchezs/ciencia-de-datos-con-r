@@ -18,14 +18,13 @@ Después de seguir este curso, dispondrás de los útiles necesarios para afront
 
 <p align="justify">En otras palabras, es un curso innovador que utiliza herramientas avanzadas como <a href=https://www.rstudio.com target="_blank">RStudio</a>, un IDE que nos facilitará los procesos de trabajo en las diferentes tareas de un proyecto de Ciencia de Datos y <a href=https://www.tidyverse.org/ target="_blank"><code>Tidyverse</code></a> un conjunto de paquetes que abarcan todo el flujo de trabajo en el análisis de datos, fáciles de aprender y usar.</p>
 
->
+
 ## ¿Que Aprenderás con este Curso?
 
 <p align="justify">El objetivo de este curso es proporcionarte unos fundamentos sólidos en la gran mayoría de herramientas. Nuestro modelo de herramientas necesarias en un proyecto típico de Ciencia de Datos es el que se muestra en la siguiente figura:</p>
 
+<img src="https://i.imgur.com/DO2BKK7.png"</img>
 
-
-![Fases Proyecto en Ciencia de Datos](https://i.imgur.com/DO2BKK7.png)
 
 ## ¿Cómo Está Organizado Este Curso?
 
