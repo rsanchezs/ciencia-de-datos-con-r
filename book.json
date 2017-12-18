@@ -1,9 +1,5 @@
 {
-    "structure": {
-        "readme": "prefacio.md"
-    },
 
-   
     "plugins": [
         "image-captions",
         "alerts",
