@@ -2,8 +2,8 @@
 
 
 
-* [Portada](README.md)
-* [Prefacio](prefacio.md)
+* [Introducción](README.md)
+* [Instalación de Herramientas](prefacio.md)
 
 
 #### Parte 1. Lenguaje R
