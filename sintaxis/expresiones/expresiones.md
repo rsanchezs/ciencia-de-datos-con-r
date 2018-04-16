@@ -70,9 +70,7 @@ Alternativamente, podemos colocarlas en la misma línea, separadas por punto y c
 
 
 ```r
-x <- 1
-y <- 2
-z <- 3
+x <- 1; y <- 2; z <- 3
 ```
 
 ### Paréntesis
